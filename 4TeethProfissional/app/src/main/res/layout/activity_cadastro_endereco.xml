@@ -22,7 +22,7 @@
         android:id="@+id/EtEndereco1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rua"
+        android:hint="Rua"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
@@ -42,7 +42,7 @@
         android:id="@+id/EtEndereco2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bairro"
+        android:hint="Bairro"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
@@ -62,7 +62,7 @@
         android:id="@+id/EtEndereco3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Complemento"
+        android:hint="Complemento"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />

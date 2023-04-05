@@ -36,6 +36,7 @@
         android:id="@+id/EtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Exemplo nome"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
@@ -55,7 +56,7 @@
         android:id="@+id/EtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="E-mail"
+        android:hint="E-mail"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
@@ -75,7 +76,7 @@
         android:id="@+id/EtTelefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="(19) 99997-998"
+        android:hint="(19) 99997-998"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
@@ -97,6 +98,7 @@
         android:id="@+id/EtCurriculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Exemplo currículo"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
