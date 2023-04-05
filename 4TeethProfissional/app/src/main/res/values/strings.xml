@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">4TeethProfissional</string>
+    <string name="app_name">4Teeth Profissional</string>
+    <string name="profile_managment">Gerenciar Perfil</string>
 </resources>

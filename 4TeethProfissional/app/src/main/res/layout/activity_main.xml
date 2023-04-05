@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!---android:background="@color/gelo_esverdeado"-->
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/gelo_esverdeado"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,7 +14,7 @@
         android:id="@+id/TvGerenciarPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gerenciar Perfil"
+        android:text="@string/profile_managment"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:textStyle="bold"
