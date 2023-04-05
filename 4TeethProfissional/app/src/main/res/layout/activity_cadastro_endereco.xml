@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/gelo_esverdeado"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gelo_esverdeado"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    >
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvGerenciarPerfil"
+        android:id="@+id/TvEndereco1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gerenciar Perfil"
+        android:text="Endereço 1:"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
-        android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/EtEndereco1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvNome"
+        android:id="@+id/TvEndereco2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome:"
+        android:text="Endereço 2:"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:textSize="20sp"
@@ -33,18 +39,19 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtNome"
+        android:id="@+id/EtEndereco2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Bairro"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvEmail"
+        android:id="@+id/TvEndereco3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-mail:"
+        android:text="Endereço 3:"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:textSize="20sp"
@@ -52,67 +59,19 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtEmail"
+        android:id="@+id/EtEndereco3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="E-mail"
+        android:text="Complemento"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvTelefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Telefone:"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtTelefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="(19) 99997-998"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvCurriculo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mini Currículo:"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtCurriculo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnConfirmar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirmar"
-        android:layout_gravity="center"/>
 
     <ImageView
-        android:id="@+id/icNavegarProx"
+        android:id="@+id/icNavegarVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_navegar_prox"
+        android:src="@drawable/ic_navegar_voltar"
         android:layout_margin="5dp"
         />
 
