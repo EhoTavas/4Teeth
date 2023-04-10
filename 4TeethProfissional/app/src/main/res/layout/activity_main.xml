@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:theme="@style/Theme.4TeethProfissional"
     tools:context=".MainActivity">
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvGerenciarPerfil"
@@ -19,6 +19,7 @@
         android:layout_margin="10dp"
         android:textStyle="bold"
         android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -103,8 +104,12 @@
         android:id="@+id/btnConfirmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="@string/confirm"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        />
 
     <ImageView
         android:id="@+id/icNavegarProx"

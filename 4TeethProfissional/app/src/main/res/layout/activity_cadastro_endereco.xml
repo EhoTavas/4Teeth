@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gelo_esverdeado"
     android:orientation="vertical"
+    android:theme="@style/Theme.4TeethProfissional"
     >
 
     <androidx.appcompat.widget.AppCompatTextView

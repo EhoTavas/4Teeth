@@ -1,14 +1,22 @@
 package br.com.ForTeethDentalCare
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.ForTeethDentalCare.databinding.ActivityCadastroEnderecoBinding
 import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 
 class CadastroEndereco : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityCadastroEnderecoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_endereco)
+        binding = ActivityCadastroEnderecoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.icNavegarVoltar.setOnClickListener {
+            val continuarCadastro = Intent (this, MainActivity::class.java)
+            startActivities(arrayOf(continuarCadastro))
+        }
     }
 }
