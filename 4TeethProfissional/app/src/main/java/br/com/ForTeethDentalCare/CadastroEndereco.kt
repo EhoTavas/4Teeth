@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.ForTeethDentalCare.databinding.ActivityCadastroEnderecoBinding
-import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 
 class CadastroEndereco : AppCompatActivity() {
 
