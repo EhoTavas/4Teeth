@@ -8,65 +8,6 @@
     android:theme="@style/Theme.4TeethProfissional"
     >
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvEndereco1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Endereço 1:"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtEndereco1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Rua"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvEndereco2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Endereço 2:"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtEndereco2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Bairro"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvEndereco3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Endereço 3:"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtEndereco3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Complemento"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
     <ImageView
         android:id="@+id/icNavegarVoltar"
         android:layout_width="wrap_content"
@@ -74,5 +15,106 @@
         android:src="@drawable/ic_navegar_voltar"
         android:layout_margin="5dp"
         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strAtendimento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvEndereco1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strEndereco1"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle=""
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strRua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strComplemento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvEndereco2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strEndereco2"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strRua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strComplemento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strEndereco3"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strRua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strComplemento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/btnConfirm"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        />
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

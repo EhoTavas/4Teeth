@@ -1,13 +1,28 @@
 <resources>
+    
+    
     <string name="app_name">4Teeth Profissional</string>
-    <string name="profile_managment">Gerenciar Perfil</string>
+    
+    //Strings tela cadastro inicial
+    <string name="sing_up">Criar conta</string>
     <string name="name">Nome</string>
-    <string name="example_name">Fulano de Tal</string>
+    <string name="example_name">Nomel</string>
     <string name="email">E-mail</string>
     <string name="example_email">example@email.com</string>
     <string name="fone">Telefone</string>
     <string name="example_fone_number">(11) 98765-4321</string>
     <string name="mini_curriculum">Mini-currículo</string>
     <string name="example_mini_curriculum">Experiência de 2 anos...</string>
-    <string name="confirm">Confirmar</string>
+    <string name="btnContinue">Prosseguir</string>
+    <string name="btnConfirm">Finalizar</string>
+    
+    //Strings tela cadastro endereços
+    <string name="strAtendimento">Endereços de atendimento</string>
+    <string name="strEndereco1">Endereço:</string>
+    <string name="strEndereco2">Endereço 2(Opcional):</string>
+    <string name="strEndereco3">Endereço 3(Opcional):</string>
+    <string name="strRua">Rua...</string>
+    <string name="strComplemento">Complemento...</string>
+
+
 </resources>

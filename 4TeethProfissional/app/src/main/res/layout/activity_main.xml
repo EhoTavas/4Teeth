@@ -14,7 +14,7 @@
         android:id="@+id/TvGerenciarPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profile_managment"
+        android:text="@string/sing_up"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:textStyle="bold"
@@ -30,6 +30,7 @@
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:textSize="20sp"
+
         />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -101,22 +102,15 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnConfirmar"
+        android:id="@+id/btnContinuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="@string/confirm"
+        android:text="@string/btnContinue"
         android:layout_gravity="center"
         android:background="@drawable/rounded_button"
         />
 
-    <ImageView
-        android:id="@+id/icNavegarProx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_navegar_prox"
-        android:layout_margin="5dp"
-        />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

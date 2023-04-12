@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.icNavegarProx.setOnClickListener {
-           val continuarCadastro = Intent (this, CadastroEndereco::class.java)
+        binding.btnContinuar.setOnClickListener {
+            val continuarCadastro = Intent (this, CadastroEndereco::class.java)
             startActivities(arrayOf(continuarCadastro))
         }
     }
