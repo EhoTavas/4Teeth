@@ -13,9 +13,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnContinuar.setOnClickListener {
-            val continuarCadastro = Intent (this, CadastroEndereco::class.java)
-            startActivities(arrayOf(continuarCadastro))
+        binding.btnSignUp.setOnClickListener {
+            val criarConta = Intent (this, CadastroUm::class.java)
+            startActivities(arrayOf(criarConta))
+        }
+
+        binding.btnLogin.setOnClickListener {
+            val entrarConta = Intent (this, LogIn::class.java)
+            startActivities(arrayOf(entrarConta))
         }
     }
 }

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
+    tools:context=".CadastroEndereco"
     >
 
     <ImageView
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_navegar_voltar"
-        android:layout_margin="5dp"
+
         />
 
     <androidx.appcompat.widget.AppCompatTextView

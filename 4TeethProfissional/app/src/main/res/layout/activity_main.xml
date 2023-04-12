@@ -11,10 +11,9 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvGerenciarPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sing_up"
+        android:text="@string/strBemVindo"
         android:layout_marginTop="10dp"
         android:layout_margin="10dp"
         android:textStyle="bold"
@@ -22,92 +21,26 @@
         android:layout_gravity="center_horizontal"
         />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/example_name"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/example_email"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvTelefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fone"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtTelefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/example_fone_number"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/TvCurriculo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mini_curriculum"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtCurriculo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/example_mini_curriculum"
-        android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        />
-
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnContinuar"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="@string/btnContinue"
+        android:text="@string/btnEntrar"
+        android:layout_marginTop="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignUp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/btnCadastrar"
         android:layout_gravity="center"
         android:background="@drawable/rounded_button"
         />

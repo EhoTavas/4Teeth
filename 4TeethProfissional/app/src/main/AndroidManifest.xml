@@ -12,6 +12,9 @@
         android:theme="@style/Theme.4TeethProfissional"
         tools:targetApi="31" >
         <activity
+            android:name=".LogIn"
+            android:exported="false" />
+        <activity
             android:name=".CadastroUm"
             android:exported="false" />
         <activity

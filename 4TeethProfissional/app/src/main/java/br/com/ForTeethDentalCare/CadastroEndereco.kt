@@ -14,9 +14,13 @@ class CadastroEndereco : AppCompatActivity() {
         binding = ActivityCadastroEnderecoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnConfirmar.setOnClickListener {
+            val finalizarCadastro = Intent (this, MainActivity::class.java)
+            startActivities(arrayOf(finalizarCadastro))
+        }
         binding.icNavegarVoltar.setOnClickListener {
-            val continuarCadastro = Intent (this, MainActivity::class.java)
-            startActivities(arrayOf(continuarCadastro))
+            val voltarPagina = Intent (this, CadastroUm::class.java)
+            startActivities(arrayOf(voltarPagina))
         }
     }
 }

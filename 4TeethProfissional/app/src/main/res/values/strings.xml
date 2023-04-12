@@ -1,12 +1,17 @@
 <resources>
-    
-    
+
+
     <string name="app_name">4Teeth Profissional</string>
-    
+
+    //Strings tela inicial
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnCadastrar">Cadastrar-se</string>
+    <string name="strBemVindo">Bem Vindo</string>
+
     //Strings tela cadastro inicial
     <string name="sing_up">Criar conta</string>
     <string name="name">Nome</string>
-    <string name="example_name">Nomel</string>
+    <string name="example_name">Nome Completo</string>
     <string name="email">E-mail</string>
     <string name="example_email">example@email.com</string>
     <string name="fone">Telefone</string>
@@ -15,7 +20,7 @@
     <string name="example_mini_curriculum">Experiência de 2 anos...</string>
     <string name="btnContinue">Prosseguir</string>
     <string name="btnConfirm">Finalizar</string>
-    
+
     //Strings tela cadastro endereços
     <string name="strAtendimento">Endereços de atendimento</string>
     <string name="strEndereco1">Endereço:</string>
