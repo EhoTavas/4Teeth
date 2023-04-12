@@ -79,11 +79,15 @@
       android:textSize="20sp"
       />
 
-  <androidx.appcompat.widget.AppCompatEditText
-      android:id="@+id/EtTelefone"
+  <com.santalu.maskara.widget.MaskEditText
+      android:id="@+id/etTelefone"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:hint="@string/example_fone_number"
+      android:inputType="number"
+      app:mask="+55 (__) _____-____"
+      app:maskCharacter="_"
+      app:maskStyle="completable"
       android:layout_marginTop="10dp"
       android:layout_margin="10dp"
       />

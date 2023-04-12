@@ -15,7 +15,7 @@
     <string name="email">E-mail</string>
     <string name="example_email">example@email.com</string>
     <string name="fone">Telefone</string>
-    <string name="example_fone_number">(11) 98765-4321</string>
+    <string name="example_fone_number">+55 (11) 98765-4321</string>
     <string name="mini_curriculum">Mini-currículo</string>
     <string name="example_mini_curriculum">Experiência de 2 anos...</string>
     <string name="btnContinue">Prosseguir</string>
