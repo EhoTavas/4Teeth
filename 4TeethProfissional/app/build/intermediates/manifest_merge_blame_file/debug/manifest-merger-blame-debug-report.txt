@@ -1,0 +1,104 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="br.com.ForTeethDentalCare"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
+10
+11    <permission
+11-->[androidx.core:core:1.9.0] C:\Users\mathe\.gradle\caches\transforms-3\c73afc1fa215d9ca128620a3c01802b0\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+12        android:name="br.com.ForTeethDentalCare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.9.0] C:\Users\mathe\.gradle\caches\transforms-3\c73afc1fa215d9ca128620a3c01802b0\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.9.0] C:\Users\mathe\.gradle\caches\transforms-3\c73afc1fa215d9ca128620a3c01802b0\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="br.com.ForTeethDentalCare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.9.0] C:\Users\mathe\.gradle\caches\transforms-3\c73afc1fa215d9ca128620a3c01802b0\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.9.0] C:\Users\mathe\.gradle\caches\transforms-3\c73afc1fa215d9ca128620a3c01802b0\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:5:5-32:19
+18        android:allowBackup="true"
+18-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.9.0] C:\Users\mathe\.gradle\caches\transforms-3\c73afc1fa215d9ca128620a3c01802b0\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+20        android:dataExtractionRules="@xml/data_extraction_rules"
+20-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:7:9-65
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:fullBackupContent="@xml/backup_rules"
+23-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:8:9-54
+24        android:icon="@mipmap/ic_launcher"
+24-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:9:9-43
+25        android:label="@string/app_name"
+25-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:10:9-41
+26        android:supportsRtl="true"
+26-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:11:9-35
+27        android:testOnly="true"
+28        android:theme="@style/Theme.4TeethProfissional" >
+28-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:12:9-56
+29        <activity
+29-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:14:9-16:40
+30            android:name="br.com.ForTeethDentalCare.LogIn"
+30-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:15:13-34
+31            android:exported="false" />
+31-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:16:13-37
+32        <activity
+32-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:17:9-19:40
+33            android:name="br.com.ForTeethDentalCare.CadastroUm"
+33-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:18:13-39
+34            android:exported="false" />
+34-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:19:13-37
+35        <activity
+35-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:20:9-22:40
+36            android:name="br.com.ForTeethDentalCare.CadastroEndereco"
+36-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:21:13-45
+37            android:exported="false" />
+37-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:22:13-37
+38        <activity
+38-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:23:9-31:20
+39            android:name="br.com.ForTeethDentalCare.MainActivity"
+39-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:24:13-41
+40            android:exported="true" >
+40-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:25:13-36
+41            <intent-filter>
+41-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:26:13-30:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:27:17-69
+42-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:27:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:29:17-77
+44-->C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:29:27-74
+45            </intent-filter>
+46        </activity>
+47
+48        <provider
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+49            android:name="androidx.startup.InitializationProvider"
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+50            android:authorities="br.com.ForTeethDentalCare.androidx-startup"
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+51            android:exported="false" >
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+52            <meta-data
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+54                android:value="androidx.startup" />
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mathe\.gradle\caches\transforms-3\66814d0c9c223a08105bc116aeb53dd5\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+55            <meta-data
+55-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\mathe\.gradle\caches\transforms-3\d64e7ca6b93f4a6c092b1dd37cf249d6\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+56-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\mathe\.gradle\caches\transforms-3\d64e7ca6b93f4a6c092b1dd37cf249d6\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+57                android:value="androidx.startup" />
+57-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\mathe\.gradle\caches\transforms-3\d64e7ca6b93f4a6c092b1dd37cf249d6\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+58        </provider>
+59    </application>
+60
+61</manifest>

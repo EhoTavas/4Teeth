@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.4TeethProfissional"
+    tools:context=".CadastroEndereco"
+    >
+
+    <ImageView
+        android:id="@+id/icNavegarVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_navegar_voltar"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strAtendimento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvEndereco1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strEndereco1"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle=""
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strRua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strComplemento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvEndereco2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strEndereco2"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strRua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strComplemento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strEndereco3"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strRua"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strComplemento"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/btnConfirm"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
