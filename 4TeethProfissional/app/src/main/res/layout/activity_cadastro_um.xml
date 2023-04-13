@@ -78,7 +78,7 @@
       android:layout_margin="10dp"
       android:textSize="20sp"
       />
-
+<!--
   <com.santalu.maskara.widget.MaskEditText
       android:id="@+id/etTelefone"
       android:layout_width="match_parent"
@@ -91,7 +91,7 @@
       android:layout_marginTop="10dp"
       android:layout_margin="10dp"
       />
-
+  -->
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/TvCurriculo"
       android:layout_width="wrap_content"

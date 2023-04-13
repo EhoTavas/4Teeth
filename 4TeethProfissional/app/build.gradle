@@ -48,5 +48,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     //Maskara - https://github.com/santalu/maskara
-    implementation 'com.github.santalu:maskara:1.0.0'
+    //implementation 'com.github.santalu:maskara:1.0.0'
 }
