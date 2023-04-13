@@ -13,5 +13,9 @@
         <item name="android:statusBarColor">@color/teal_200</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/gelo_esverdeado</item>
+
     </style>
+
+
+
 </resources>
