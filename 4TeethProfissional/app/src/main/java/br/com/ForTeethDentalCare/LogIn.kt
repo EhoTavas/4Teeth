@@ -6,9 +6,12 @@ import android.os.Bundle
 import br.com.ForTeethDentalCare.databinding.ActivityCadastroUmBinding
 import br.com.ForTeethDentalCare.databinding.ActivityLogInBinding
 import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
+import com.google.android.gms.tasks.Task
+import com.google.firebase.functions.FirebaseFunctions
 
 class LogIn : AppCompatActivity() {
     private lateinit var binding: ActivityLogInBinding
+    private lateinit var functions: FirebaseFunctions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +23,5 @@ class LogIn : AppCompatActivity() {
             startActivities(arrayOf(voltarTela))
         }
     }
-
 
 }

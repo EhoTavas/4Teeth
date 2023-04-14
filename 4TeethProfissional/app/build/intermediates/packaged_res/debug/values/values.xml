@@ -18,14 +18,21 @@
     <string name="btnConfirm">Finalizar</string>
     <string name="btnContinue">Prosseguir</string>
     <string name="btnEntrar">Entrar</string>
+    <string name="default_web_client_id" translatable="false">389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com</string>
     <string name="email">E-mail</string>
     <string name="example_email">example@email.com</string>
     <string name="example_fone_number">+55 (11) 98765-4321</string>
     <string name="example_mini_curriculum">Experiência de 2 anos...</string>
     <string name="example_name">Nome Completo</string>
     <string name="fone">Telefone</string>
+    <string name="gcm_defaultSenderId" translatable="false">389378064222</string>
+    <string name="google_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
+    <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
+    <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
     <string name="mini_curriculum">Mini-currículo</string>
     <string name="name">Nome</string>
+    <string name="project_id" translatable="false">teeth-playground</string>
     <string name="sing_up">Criar conta</string>
     <string name="strAtendimento">Endereços de atendimento</string>
     <string name="strBemVindo">Bem Vindo</string>
