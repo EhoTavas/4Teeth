@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 anim fade_in
 anim fade_out
+color azul_gelo
 color azul_pastel
 color azul_quase_turquesa
 color black
@@ -15,12 +16,14 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable border_rounded_login_screen
 drawable ic_error
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_navegar_prox
 drawable ic_navegar_voltar
 drawable rounded_button
+drawable tooth_png_temp
 id EtCurriculo
 id EtEmail
 id EtNome
@@ -37,6 +40,7 @@ id btnLogin
 id btnSignUp
 id etTelefone
 id icNavegarVoltar
+id imageView
 layout activity_cadastro_endereco
 layout activity_cadastro_um
 layout activity_log_in
@@ -67,10 +71,13 @@ string sing_up
 string strAtendimento
 string strBemVindo
 string strComplemento
+string strEmail
 string strEndereco1
 string strEndereco2
 string strEndereco3
+string strLogin
 string strRua
+string strSenha
 style Theme.4TeethProfissional
 xml backup_rules
 xml data_extraction_rules

@@ -5,8 +5,11 @@
 
     //Strings tela inicial
     <string name="btnEntrar">Entrar</string>
-    <string name="btnCadastrar">Cadastrar-se</string>
-    <string name="strBemVindo">Bem Vindo</string>
+    <string name="btnCadastrar"><u>Não possui cadastro?</u></string>
+    <string name="strBemVindo">4Teeth</string>
+    <string name="strLogin">Login</string>
+    <string name="strEmail">E-mail</string>
+    <string name="strSenha">Senha</string>
 
     //Strings tela cadastro inicial
     <string name="sing_up">Criar conta</string>

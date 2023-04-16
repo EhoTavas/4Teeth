@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="azul_gelo">#A0D4D1</color>
     <color name="azul_pastel">#C0ECE8</color>
     <color name="azul_quase_turquesa">#65CECF</color>
     <color name="black">#FF000000</color>
@@ -14,7 +15,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">4Teeth Profissional</string>
-    <string name="btnCadastrar">Cadastrar-se</string>
+    <string name="btnCadastrar"><u>Não possui cadastro?</u></string>
     <string name="btnConfirm">Finalizar</string>
     <string name="btnContinue">Prosseguir</string>
     <string name="btnEntrar">Entrar</string>
@@ -35,12 +36,15 @@
     <string name="project_id" translatable="false">teeth-playground</string>
     <string name="sing_up">Criar conta</string>
     <string name="strAtendimento">Endereços de atendimento</string>
-    <string name="strBemVindo">Bem Vindo</string>
+    <string name="strBemVindo">4Teeth</string>
     <string name="strComplemento">Complemento...</string>
+    <string name="strEmail">E-mail</string>
     <string name="strEndereco1">Endereço:</string>
     <string name="strEndereco2">Endereço 2(Opcional):</string>
     <string name="strEndereco3">Endereço 3(Opcional):</string>
+    <string name="strLogin">Login</string>
     <string name="strRua">Rua...</string>
+    <string name="strSenha">Senha</string>
     <style name="Theme.4TeethProfissional" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
@@ -54,6 +58,5 @@
         <item name="android:statusBarColor">@color/teal_200</item>
         
         <item name="android:windowBackground">@color/gelo_esverdeado</item>
-
     </style>
 </resources>

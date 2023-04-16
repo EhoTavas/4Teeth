@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "389378064222",
+    "project_id": "teeth-playground",
+    "storage_bucket": "teeth-playground.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389378064222:android:3cce7f4841de8c3cc4d9cf",
+        "android_client_info": {
+          "package_name": "br.com.ForTeethDentalCare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

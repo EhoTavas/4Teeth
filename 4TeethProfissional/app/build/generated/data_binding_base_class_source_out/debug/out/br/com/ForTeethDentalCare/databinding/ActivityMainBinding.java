@@ -4,6 +4,7 @@ package br.com.ForTeethDentalCare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -25,11 +26,16 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final AppCompatButton btnSignUp;
 
+  @NonNull
+  public final ImageView imageView;
+
   private ActivityMainBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatButton btnLogin, @NonNull AppCompatButton btnSignUp) {
+      @NonNull AppCompatButton btnLogin, @NonNull AppCompatButton btnSignUp,
+      @NonNull ImageView imageView) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.btnSignUp = btnSignUp;
+    this.imageView = imageView;
   }
 
   @Override
@@ -71,7 +77,13 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayoutCompat) rootView, btnLogin, btnSignUp);
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((LinearLayoutCompat) rootView, btnLogin, btnSignUp, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
