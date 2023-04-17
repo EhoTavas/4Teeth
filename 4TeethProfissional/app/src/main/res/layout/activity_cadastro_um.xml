@@ -64,7 +64,7 @@
         android:text="@string/fone" />
 
     <com.santalu.maskara.widget.MaskEditText
-        android:id="@+id/etTelefone"
+        android:id="@+id/EtTelefone"
         style="@style/inputSignUp"
         android:hint="@string/signUpNumberHint"
         android:inputType="number"
@@ -113,5 +113,13 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="@string/btnContinue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/TvErro"
+      style="@style/labelsMainScreen"
+      android:layout_gravity="center"
+      android:layout_marginTop="10dp"
+      android:textColor="@color/red"
+      android:text=""/>
   </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

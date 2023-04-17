@@ -13,6 +13,7 @@ color gelo_esverdeado
 color purple_200
 color purple_500
 color purple_700
+color red
 color teal_200
 color teal_700
 color white
@@ -32,10 +33,12 @@ id EtNome
 id EtPassword
 id EtPasswordConfirm
 id EtPasswordLogin
+id EtTelefone
 id TvEmail
 id TvEndereco1
 id TvEndereco2
 id TvEndereco3
+id TvErro
 id TvGerenciarPerfil
 id TvNome
 id TvPassword
@@ -45,7 +48,6 @@ id btnConfirmar
 id btnContinuar
 id btnLogin
 id btnSignUp
-id etTelefone
 id icNavegarVoltar
 id imageView
 layout activity_cadastro_endereco

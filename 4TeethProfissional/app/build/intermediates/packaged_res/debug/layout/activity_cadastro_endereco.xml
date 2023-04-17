@@ -41,7 +41,8 @@
         <com.santalu.maskara.widget.MaskEditText
             style="@style/inputSignUp"
             android:hint="@string/strCep"
-            app:mask="__.___-___"/>
+            app:mask="__.___-___"
+            android:inputType="number" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:hint="@string/strNumResidencia" />

@@ -36,7 +36,13 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
   public final AppCompatEditText EtPasswordConfirm;
 
   @NonNull
+  public final MaskEditText EtTelefone;
+
+  @NonNull
   public final AppCompatTextView TvEmail;
+
+  @NonNull
+  public final AppCompatTextView TvErro;
 
   @NonNull
   public final AppCompatTextView TvGerenciarPerfil;
@@ -57,32 +63,30 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
   public final AppCompatButton btnContinuar;
 
   @NonNull
-  public final MaskEditText etTelefone;
-
-  @NonNull
   public final ImageView icNavegarVoltar;
 
   private ActivityCadastroUmBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull AppCompatEditText EtEmail, @NonNull AppCompatEditText EtNome,
       @NonNull AppCompatEditText EtPassword, @NonNull AppCompatEditText EtPasswordConfirm,
-      @NonNull AppCompatTextView TvEmail, @NonNull AppCompatTextView TvGerenciarPerfil,
+      @NonNull MaskEditText EtTelefone, @NonNull AppCompatTextView TvEmail,
+      @NonNull AppCompatTextView TvErro, @NonNull AppCompatTextView TvGerenciarPerfil,
       @NonNull AppCompatTextView TvNome, @NonNull AppCompatTextView TvPassword,
       @NonNull AppCompatTextView TvPasswordConfirm, @NonNull AppCompatTextView TvTelefone,
-      @NonNull AppCompatButton btnContinuar, @NonNull MaskEditText etTelefone,
-      @NonNull ImageView icNavegarVoltar) {
+      @NonNull AppCompatButton btnContinuar, @NonNull ImageView icNavegarVoltar) {
     this.rootView = rootView;
     this.EtEmail = EtEmail;
     this.EtNome = EtNome;
     this.EtPassword = EtPassword;
     this.EtPasswordConfirm = EtPasswordConfirm;
+    this.EtTelefone = EtTelefone;
     this.TvEmail = TvEmail;
+    this.TvErro = TvErro;
     this.TvGerenciarPerfil = TvGerenciarPerfil;
     this.TvNome = TvNome;
     this.TvPassword = TvPassword;
     this.TvPasswordConfirm = TvPasswordConfirm;
     this.TvTelefone = TvTelefone;
     this.btnContinuar = btnContinuar;
-    this.etTelefone = etTelefone;
     this.icNavegarVoltar = icNavegarVoltar;
   }
 
@@ -137,9 +141,21 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.EtTelefone;
+      MaskEditText EtTelefone = ViewBindings.findChildViewById(rootView, id);
+      if (EtTelefone == null) {
+        break missingId;
+      }
+
       id = R.id.TvEmail;
       AppCompatTextView TvEmail = ViewBindings.findChildViewById(rootView, id);
       if (TvEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.TvErro;
+      AppCompatTextView TvErro = ViewBindings.findChildViewById(rootView, id);
+      if (TvErro == null) {
         break missingId;
       }
 
@@ -179,12 +195,6 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.etTelefone;
-      MaskEditText etTelefone = ViewBindings.findChildViewById(rootView, id);
-      if (etTelefone == null) {
-        break missingId;
-      }
-
       id = R.id.icNavegarVoltar;
       ImageView icNavegarVoltar = ViewBindings.findChildViewById(rootView, id);
       if (icNavegarVoltar == null) {
@@ -192,8 +202,8 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
       }
 
       return new ActivityCadastroUmBinding((LinearLayoutCompat) rootView, EtEmail, EtNome,
-          EtPassword, EtPasswordConfirm, TvEmail, TvGerenciarPerfil, TvNome, TvPassword,
-          TvPasswordConfirm, TvTelefone, btnContinuar, etTelefone, icNavegarVoltar);
+          EtPassword, EtPasswordConfirm, EtTelefone, TvEmail, TvErro, TvGerenciarPerfil, TvNome,
+          TvPassword, TvPasswordConfirm, TvTelefone, btnContinuar, icNavegarVoltar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
