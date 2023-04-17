@@ -24,16 +24,16 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final AppCompatEditText EtCurriculo;
-
-  @NonNull
   public final AppCompatEditText EtEmail;
 
   @NonNull
   public final AppCompatEditText EtNome;
 
   @NonNull
-  public final AppCompatTextView TvCurriculo;
+  public final AppCompatEditText EtPassword;
+
+  @NonNull
+  public final AppCompatEditText EtPasswordConfirm;
 
   @NonNull
   public final AppCompatTextView TvEmail;
@@ -43,6 +43,12 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
 
   @NonNull
   public final AppCompatTextView TvNome;
+
+  @NonNull
+  public final AppCompatTextView TvPassword;
+
+  @NonNull
+  public final AppCompatTextView TvPasswordConfirm;
 
   @NonNull
   public final AppCompatTextView TvTelefone;
@@ -57,20 +63,23 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
   public final ImageView icNavegarVoltar;
 
   private ActivityCadastroUmBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatEditText EtCurriculo, @NonNull AppCompatEditText EtEmail,
-      @NonNull AppCompatEditText EtNome, @NonNull AppCompatTextView TvCurriculo,
+      @NonNull AppCompatEditText EtEmail, @NonNull AppCompatEditText EtNome,
+      @NonNull AppCompatEditText EtPassword, @NonNull AppCompatEditText EtPasswordConfirm,
       @NonNull AppCompatTextView TvEmail, @NonNull AppCompatTextView TvGerenciarPerfil,
-      @NonNull AppCompatTextView TvNome, @NonNull AppCompatTextView TvTelefone,
+      @NonNull AppCompatTextView TvNome, @NonNull AppCompatTextView TvPassword,
+      @NonNull AppCompatTextView TvPasswordConfirm, @NonNull AppCompatTextView TvTelefone,
       @NonNull AppCompatButton btnContinuar, @NonNull MaskEditText etTelefone,
       @NonNull ImageView icNavegarVoltar) {
     this.rootView = rootView;
-    this.EtCurriculo = EtCurriculo;
     this.EtEmail = EtEmail;
     this.EtNome = EtNome;
-    this.TvCurriculo = TvCurriculo;
+    this.EtPassword = EtPassword;
+    this.EtPasswordConfirm = EtPasswordConfirm;
     this.TvEmail = TvEmail;
     this.TvGerenciarPerfil = TvGerenciarPerfil;
     this.TvNome = TvNome;
+    this.TvPassword = TvPassword;
+    this.TvPasswordConfirm = TvPasswordConfirm;
     this.TvTelefone = TvTelefone;
     this.btnContinuar = btnContinuar;
     this.etTelefone = etTelefone;
@@ -104,12 +113,6 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.EtCurriculo;
-      AppCompatEditText EtCurriculo = ViewBindings.findChildViewById(rootView, id);
-      if (EtCurriculo == null) {
-        break missingId;
-      }
-
       id = R.id.EtEmail;
       AppCompatEditText EtEmail = ViewBindings.findChildViewById(rootView, id);
       if (EtEmail == null) {
@@ -122,9 +125,15 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.TvCurriculo;
-      AppCompatTextView TvCurriculo = ViewBindings.findChildViewById(rootView, id);
-      if (TvCurriculo == null) {
+      id = R.id.EtPassword;
+      AppCompatEditText EtPassword = ViewBindings.findChildViewById(rootView, id);
+      if (EtPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.EtPasswordConfirm;
+      AppCompatEditText EtPasswordConfirm = ViewBindings.findChildViewById(rootView, id);
+      if (EtPasswordConfirm == null) {
         break missingId;
       }
 
@@ -143,6 +152,18 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
       id = R.id.TvNome;
       AppCompatTextView TvNome = ViewBindings.findChildViewById(rootView, id);
       if (TvNome == null) {
+        break missingId;
+      }
+
+      id = R.id.TvPassword;
+      AppCompatTextView TvPassword = ViewBindings.findChildViewById(rootView, id);
+      if (TvPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.TvPasswordConfirm;
+      AppCompatTextView TvPasswordConfirm = ViewBindings.findChildViewById(rootView, id);
+      if (TvPasswordConfirm == null) {
         break missingId;
       }
 
@@ -170,9 +191,9 @@ public final class ActivityCadastroUmBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCadastroUmBinding((LinearLayoutCompat) rootView, EtCurriculo, EtEmail,
-          EtNome, TvCurriculo, TvEmail, TvGerenciarPerfil, TvNome, TvTelefone, btnContinuar,
-          etTelefone, icNavegarVoltar);
+      return new ActivityCadastroUmBinding((LinearLayoutCompat) rootView, EtEmail, EtNome,
+          EtPassword, EtPasswordConfirm, TvEmail, TvGerenciarPerfil, TvNome, TvPassword,
+          TvPasswordConfirm, TvTelefone, btnContinuar, etTelefone, icNavegarVoltar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

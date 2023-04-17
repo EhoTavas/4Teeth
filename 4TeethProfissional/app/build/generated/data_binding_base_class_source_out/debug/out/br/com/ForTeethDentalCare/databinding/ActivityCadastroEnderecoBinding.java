@@ -28,6 +28,9 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
   public final AppCompatTextView TvEndereco2;
 
   @NonNull
+  public final AppCompatTextView TvEndereco3;
+
+  @NonNull
   public final AppCompatButton btnConfirmar;
 
   @NonNull
@@ -35,10 +38,12 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
 
   private ActivityCadastroEnderecoBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull AppCompatTextView TvEndereco1, @NonNull AppCompatTextView TvEndereco2,
-      @NonNull AppCompatButton btnConfirmar, @NonNull ImageView icNavegarVoltar) {
+      @NonNull AppCompatTextView TvEndereco3, @NonNull AppCompatButton btnConfirmar,
+      @NonNull ImageView icNavegarVoltar) {
     this.rootView = rootView;
     this.TvEndereco1 = TvEndereco1;
     this.TvEndereco2 = TvEndereco2;
+    this.TvEndereco3 = TvEndereco3;
     this.btnConfirmar = btnConfirmar;
     this.icNavegarVoltar = icNavegarVoltar;
   }
@@ -82,6 +87,12 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.TvEndereco3;
+      AppCompatTextView TvEndereco3 = ViewBindings.findChildViewById(rootView, id);
+      if (TvEndereco3 == null) {
+        break missingId;
+      }
+
       id = R.id.btnConfirmar;
       AppCompatButton btnConfirmar = ViewBindings.findChildViewById(rootView, id);
       if (btnConfirmar == null) {
@@ -95,7 +106,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
       }
 
       return new ActivityCadastroEnderecoBinding((LinearLayoutCompat) rootView, TvEndereco1,
-          TvEndereco2, btnConfirmar, icNavegarVoltar);
+          TvEndereco2, TvEndereco3, btnConfirmar, icNavegarVoltar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

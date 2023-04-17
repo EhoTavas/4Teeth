@@ -13,37 +13,87 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/strBemVindo"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textStyle="bold"
-        android:textSize="30sp"
+        android:text="@string/strAppName"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strAppMotto"
+        android:textSize="20sp"
         android:layout_gravity="center_horizontal"
         />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogin"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="@string/btnEntrar"
-        android:layout_marginTop="300dp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
         android:layout_gravity="center"
-        android:background="@drawable/rounded_button"
-        />
+        app:srcCompat="@drawable/tooth_png_temp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSignUp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="@string/btnCadastrar"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_button"
-        />
+        android:background="@drawable/border_rounded_login_screen"
+        android:orientation="vertical"
+        android:theme="@style/Theme.4TeethProfissional"
+        tools:context=".MainActivity">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/strLogin"
+            android:textColor="@color/black"
+            android:textSize="35sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/labelsMainScreen"
+            android:text="@string/strEmail" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/EtEmailLogin"
+            style="@style/inputMainScreen"
+            android:inputType="textEmailAddress"
+            android:hint="@string/signUpEmailHint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/labelsMainScreen"
+            android:text="@string/strPassword" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/EtPasswordLogin"
+            style="@style/inputMainScreen"
+            android:inputType="textPassword"
+            android:hint="@string/signUpPasswordHint" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/btnCadastrar"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/btnEntrar" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -4,8 +4,8 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-36:\\layout\\activity_log_in.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-33:/layout/activity_main.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-36:/layout/activity_main.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-33:/layout/activity_cadastro_endereco.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-36:/layout/activity_cadastro_endereco.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-33:\\layout\\activity_cadastro_endereco.xml",

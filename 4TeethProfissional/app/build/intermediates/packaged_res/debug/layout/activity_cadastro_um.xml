@@ -10,116 +10,108 @@
     android:theme="@style/Theme.4TeethProfissional"
     tools:context=".CadastroUm">
 
-  <ImageView
-      android:id="@+id/icNavegarVoltar"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:src="@drawable/ic_navegar_voltar"
-      />
-
-  <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/TvGerenciarPerfil"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/sing_up"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      android:textStyle="bold"
-      android:textSize="30sp"
-      android:layout_gravity="center_horizontal"
-      />
-
-  <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/TvNome"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/name"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      android:textSize="20sp"
-
-      />
-
-  <androidx.appcompat.widget.AppCompatEditText
-      android:id="@+id/EtNome"
+  <androidx.appcompat.widget.LinearLayoutCompat
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="@string/example_name"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      />
+      android:orientation="horizontal">
 
-  <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/TvEmail"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/email"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      android:textSize="20sp"
+    <ImageView
+        android:id="@+id/icNavegarVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_navegar_voltar" />
 
-      />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvGerenciarPerfil"
+        style="@style/tituloTelas"
+        android:text="@string/sign_up" />
 
-  <androidx.appcompat.widget.AppCompatEditText
-      android:id="@+id/EtEmail"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:hint="@string/example_email"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      />
-
-  <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/TvTelefone"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/fone"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      android:textSize="20sp"
-      />
-
-  <com.santalu.maskara.widget.MaskEditText
-      android:id="@+id/etTelefone"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:hint="@string/example_fone_number"
-      android:inputType="number"
-      app:mask="+55 (__) _____-____"
-      app:maskCharacter="_"
-      app:maskStyle="completable"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      />
-
-  <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/TvCurriculo"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/mini_curriculum"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      android:textSize="20sp"
-
-      />
-
-  <androidx.appcompat.widget.AppCompatEditText
-      android:id="@+id/EtCurriculo"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:hint="@string/example_mini_curriculum"
-      android:layout_marginTop="10dp"
-      android:layout_margin="10dp"
-      />
-
-  <androidx.appcompat.widget.AppCompatButton
-      android:id="@+id/btnContinuar"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingLeft="10dp"
-      android:paddingRight="10dp"
-      android:text="@string/btnContinue"
-      android:layout_gravity="center"
-      android:background="@drawable/rounded_button"
-      />
   </androidx.appcompat.widget.LinearLayoutCompat>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+      android:background="@drawable/border_rounded_login_screen"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical" >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvNome"
+        style="@style/labelsMainScreen"
+        android:layout_marginTop="15dp"
+        android:text="@string/name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/EtNome"
+        style="@style/inputSignUp"
+        android:inputType="textCapWords"
+        android:hint="@string/signUpNameHint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvEmail"
+        style="@style/labelsMainScreen"
+        android:text="@string/email" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/EtEmail"
+        style="@style/inputSignUp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/signUpEmailHint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvTelefone"
+        style="@style/labelsMainScreen"
+        android:text="@string/fone" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/etTelefone"
+        style="@style/inputSignUp"
+        android:hint="@string/signUpNumberHint"
+        android:inputType="number"
+        app:mask="+55 (__) _____-____"
+        app:maskCharacter="_"
+        app:maskStyle="completable" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvPassword"
+        style="@style/labelsMainScreen"
+        android:text="@string/strPassword" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/EtPassword"
+        style="@style/inputSignUp"
+        android:inputType="textPassword"
+        android:hint="@string/signUpPasswordHint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvPasswordConfirm"
+        style="@style/labelsMainScreen"
+        android:text="@string/strPasswordConfirm" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/EtPasswordConfirm"
+        style="@style/inputSignUp"
+        android:inputType="textPassword"
+        android:hint="@string/signUpPasswordHint" />
+<!--
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/TvCurriculo"
+        style="@style/labelsMainScreen"
+        android:text="@string/miniCurriculum" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/EtCurriculo"
+        style="@style/inputSignUp"
+        android:hint="@string/signUpMiniCurriculum" />
+-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/btnContinue" />
+  </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

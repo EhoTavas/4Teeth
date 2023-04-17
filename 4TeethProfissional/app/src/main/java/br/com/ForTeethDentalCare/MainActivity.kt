@@ -24,3 +24,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+/*
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // This callback will only be called when MyFragment is at least Started.
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // Handle the back button event
+        }
+
+        // The callback can be enabled or disabled here or in the lambda
+    }
+
+*/

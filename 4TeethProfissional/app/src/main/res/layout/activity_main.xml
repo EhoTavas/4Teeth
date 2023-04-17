@@ -13,10 +13,16 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/strBemVindo"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_margin="10dp"
-        android:textSize="30sp"
+        android:text="@string/strAppName"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strAppMotto"
+        android:textSize="20sp"
         android:layout_gravity="center_horizontal"
         />
 
@@ -47,35 +53,24 @@
             android:textSize="35sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="45dp"
-            android:text="@string/strEmail"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            style="@style/labelsMainScreen"
+            android:text="@string/strEmail" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="30dp"
-            android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/white"/>
+            android:id="@+id/EtEmailLogin"
+            style="@style/inputMainScreen"
+            android:inputType="textEmailAddress"
+            android:hint="@string/signUpEmailHint" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="45dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/strSenha"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            style="@style/labelsMainScreen"
+            android:text="@string/strPassword" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="30dp"
-            android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/white"/>
+            android:id="@+id/EtPasswordLogin"
+            style="@style/inputMainScreen"
+            android:inputType="textPassword"
+            android:hint="@string/signUpPasswordHint" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUp"
@@ -86,7 +81,8 @@
             android:background="@android:color/transparent"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="@string/btnCadastrar"/>
+            android:text="@string/btnCadastrar"
+            android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
@@ -96,7 +92,7 @@
             android:background="@drawable/rounded_button"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="@string/btnEntrar"/>
+            android:text="@string/btnEntrar" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

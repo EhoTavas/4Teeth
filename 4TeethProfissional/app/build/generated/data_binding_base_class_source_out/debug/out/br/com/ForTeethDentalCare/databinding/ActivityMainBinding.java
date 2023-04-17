@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -21,6 +22,12 @@ public final class ActivityMainBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final AppCompatEditText EtEmailLogin;
+
+  @NonNull
+  public final AppCompatEditText EtPasswordLogin;
+
+  @NonNull
   public final AppCompatButton btnLogin;
 
   @NonNull
@@ -30,9 +37,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView imageView;
 
   private ActivityMainBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull AppCompatEditText EtEmailLogin, @NonNull AppCompatEditText EtPasswordLogin,
       @NonNull AppCompatButton btnLogin, @NonNull AppCompatButton btnSignUp,
       @NonNull ImageView imageView) {
     this.rootView = rootView;
+    this.EtEmailLogin = EtEmailLogin;
+    this.EtPasswordLogin = EtPasswordLogin;
     this.btnLogin = btnLogin;
     this.btnSignUp = btnSignUp;
     this.imageView = imageView;
@@ -65,6 +75,18 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.EtEmailLogin;
+      AppCompatEditText EtEmailLogin = ViewBindings.findChildViewById(rootView, id);
+      if (EtEmailLogin == null) {
+        break missingId;
+      }
+
+      id = R.id.EtPasswordLogin;
+      AppCompatEditText EtPasswordLogin = ViewBindings.findChildViewById(rootView, id);
+      if (EtPasswordLogin == null) {
+        break missingId;
+      }
+
       id = R.id.btnLogin;
       AppCompatButton btnLogin = ViewBindings.findChildViewById(rootView, id);
       if (btnLogin == null) {
@@ -83,7 +105,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayoutCompat) rootView, btnLogin, btnSignUp, imageView);
+      return new ActivityMainBinding((LinearLayoutCompat) rootView, EtEmailLogin, EtPasswordLogin,
+          btnLogin, btnSignUp, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

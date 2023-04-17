@@ -1,36 +1,43 @@
 <resources>
 
-
     <string name="app_name">4Teeth Profissional</string>
 
     //Strings tela inicial
+    <string name="strAppName">4Teeth</string>
+    <string name="strAppMotto">Dental Care</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnCadastrar"><u>Não possui cadastro?</u></string>
-    <string name="strBemVindo">4Teeth</string>
     <string name="strLogin">Login</string>
-    <string name="strEmail">E-mail</string>
-    <string name="strSenha">Senha</string>
+    <string name="strEmail">E-mail:</string>
+    <string name="strPassword">Senha:</string>
+    <string name="strPasswordConfirm">Confirme sua Senha:</string>
 
     //Strings tela cadastro inicial
-    <string name="sing_up">Criar conta</string>
-    <string name="name">Nome</string>
-    <string name="example_name">Nome Completo</string>
-    <string name="email">E-mail</string>
-    <string name="example_email">example@email.com</string>
-    <string name="fone">Telefone</string>
-    <string name="example_fone_number">+55 (11) 98765-4321</string>
-    <string name="mini_curriculum">Mini-currículo</string>
-    <string name="example_mini_curriculum">Experiência de 2 anos...</string>
+    <string name="sign_up">Criar conta</string>
+    <string name="name">Nome:</string>
+    <string name="email">E-mail:</string>
+    <string name="fone">Telefone:</string>
+    <string name="miniCurriculum">Mini-currículo:</string>
+    <string name="signUpNameHint">Nome Completo</string>
+    <string name="signUpEmailHint">example@email.com</string>
+    <string name="signUpPasswordHint">senha</string>
+    <string name="signUpNumberHint">+55 (11) 98765-4321</string>
+    <string name="signUpMiniCurriculum">Experiência de 2 anos...</string>
     <string name="btnContinue">Prosseguir</string>
     <string name="btnConfirm">Finalizar</string>
 
     //Strings tela cadastro endereços
     <string name="strAtendimento">Endereços de atendimento</string>
     <string name="strEndereco1">Endereço:</string>
-    <string name="strEndereco2">Endereço 2(Opcional):</string>
-    <string name="strEndereco3">Endereço 3(Opcional):</string>
-    <string name="strRua">Rua...</string>
-    <string name="strComplemento">Complemento...</string>
+    <string name="strEndereco2">Endereço 2 (Opcional):</string>
+    <string name="strEndereco3">Endereço 3 (Opcional):</string>
+    <string name="strCep">Cep</string>
+    <string name="strNumResidencia">Número da residência ou s/n</string>
+    <string name="strComplemento">Complemento (opcional)</string>
+    <string name="strRua">Rua</string>
+    <string name="strBairro">Bairro</string>
+    <string name="strCidade">Cidade</string>
+    <string name="strEstado">Estado</string>
 
 
 </resources>
