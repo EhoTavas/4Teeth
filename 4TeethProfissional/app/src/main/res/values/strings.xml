@@ -29,6 +29,7 @@
     //Strings tela cadastro endereços
     <string name="strAtendimento">Endereços de atendimento</string>
     <string name="strEndereco1">Endereço:</string>
+    <string name="strAddAddress">Adicionar endereço</string>
     <string name="strEndereco2">Endereço 2 (Opcional):</string>
     <string name="strEndereco3">Endereço 3 (Opcional):</string>
     <string name="strCep">Cep</string>

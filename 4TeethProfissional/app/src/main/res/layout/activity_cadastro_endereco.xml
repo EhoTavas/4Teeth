@@ -34,36 +34,69 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/TvEndereco1"
-            style="@style/labelsMainScreen"
+            style="@style/labelsMainScreen_LinearLayout"
             android:layout_marginTop="15dp"
             android:text="@string/strEndereco1" />
 
         <com.santalu.maskara.widget.MaskEditText
             style="@style/inputSignUp"
             android:hint="@string/strCep"
-            app:mask="__.___-___"
-            android:inputType="number" />
+            android:inputType="textPostalAddress"
+            app:mask="__.___-___" />
+
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:hint="@string/strNumResidencia"
-            android:inputType="text" />
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:hint="@string/strComplemento"
-            android:inputType="" />
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strRua" />
+            android:hint="@string/strRua"
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strBairro" />
+            android:hint="@string/strBairro"
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strCidade" />
+            android:hint="@string/strCidade"
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:hint="@string/strEstado" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside">
+
+            <TextView
+                android:id="@+id/TvAddAddress"
+                style="@style/labelsMainScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/strAddAddress"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icAddAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_plus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/TvEndereco2"
             style="@style/labelsMainScreen"
@@ -87,16 +120,22 @@
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:hint="@string/strComplemento" />
+-->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnConfirmar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="@string/btnConfirm"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_button" />
+            android:layout_marginBottom="5dp"
+            android:text="@string/btnConfirm" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

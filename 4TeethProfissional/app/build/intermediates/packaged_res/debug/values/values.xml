@@ -37,6 +37,7 @@
     <string name="signUpNumberHint">+55 (11) 98765-4321</string>
     <string name="signUpPasswordHint">senha</string>
     <string name="sign_up">Criar conta</string>
+    <string name="strAddAddress">Adicionar endereço</string>
     <string name="strAppMotto">Dental Care</string>
     <string name="strAppName">4Teeth</string>
     <string name="strAtendimento">Endereços de atendimento</string>
@@ -89,9 +90,11 @@
     </style>
     <style name="labelsMainScreen">
         <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17.5sp</item>
+    </style>
+    <style name="labelsMainScreen_LinearLayout" parent="labelsMainScreen">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textSize">17.5sp</item>
         <item name="android:layout_marginHorizontal">45dp</item>
     </style>
     <style name="tituloTelas">

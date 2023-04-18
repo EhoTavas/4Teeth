@@ -23,6 +23,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_navegar_prox
 drawable ic_navegar_voltar
+drawable ic_plus
 drawable rounded_button
 drawable tooth_png_temp
 font poppins_family
@@ -34,10 +35,9 @@ id EtPassword
 id EtPasswordConfirm
 id EtPasswordLogin
 id EtTelefone
+id TvAddAddress
 id TvEmail
 id TvEndereco1
-id TvEndereco2
-id TvEndereco3
 id TvErro
 id TvGerenciarPerfil
 id TvNome
@@ -48,6 +48,7 @@ id btnConfirmar
 id btnContinuar
 id btnLogin
 id btnSignUp
+id icAddAddress
 id icNavegarVoltar
 id imageView
 layout activity_cadastro_endereco
@@ -78,6 +79,7 @@ string signUpNameHint
 string signUpNumberHint
 string signUpPasswordHint
 string sign_up
+string strAddAddress
 string strAppMotto
 string strAppName
 string strAtendimento
@@ -99,6 +101,7 @@ style Theme.4TeethProfissional
 style inputMainScreen
 style inputSignUp
 style labelsMainScreen
+style labelsMainScreen_LinearLayout
 style tituloTelas
 xml backup_rules
 xml data_extraction_rules

@@ -17,30 +17,27 @@ class CadastroUm : AppCompatActivity() {
 
         binding.btnContinuar.setOnClickListener {
 
-            var name = findViewById<EditText>(R.id.EtNome)
-            var email = findViewById<EditText>(R.id.EtEmail)
-            var phone = findViewById<EditText>(R.id.EtTelefone)
-            var password = findViewById<EditText>(R.id.EtPassword)
-            var passwordConfirm = findViewById<EditText>(R.id.EtPasswordConfirm)
+            val name = findViewById<EditText>(R.id.EtNome)
+            val email = findViewById<EditText>(R.id.EtEmail)
+            val phone = findViewById<EditText>(R.id.EtTelefone)
+            val password = findViewById<EditText>(R.id.EtPassword)
+            val passwordConfirm = findViewById<EditText>(R.id.EtPasswordConfirm)
 
             if (
-                name.text.isNotEmpty() &&
-                email.text.isNotEmpty() &&
-                phone.text.isNotEmpty() &&
-                password.text.isNotEmpty() &&
-                passwordConfirm.text.isNotEmpty()
+                name.text.isEmpty() ||
+                email.text.isEmpty() ||
+                phone.text.isEmpty() ||
+                password.text.isEmpty() ||
+                passwordConfirm.text.isEmpty()
             ) {
-                val continuarCadastro = Intent(this, CadastroEndereco::class.java)
-                startActivities(arrayOf(continuarCadastro))
-            } else {
                 findViewById<TextView>(R.id.TvErro).text = "Preencha todos os campos"
-            }
-
-            if (password.text == passwordConfirm.text) {
-                val continuarCadastro = Intent(this, CadastroEndereco::class.java)
-                startActivities(arrayOf(continuarCadastro))
             } else {
-                findViewById<TextView>(R.id.TvErro).text = "As senhas não coincidem"
+                if (password.text.toString() == passwordConfirm.text.toString()) {
+                    val continuarCadastro = Intent(this, CadastroEndereco::class.java)
+                    startActivities(arrayOf(continuarCadastro))
+                } else {
+                    findViewById<TextView>(R.id.TvErro).text = "As senhas não coincidem"
+                }
             }
         }
 

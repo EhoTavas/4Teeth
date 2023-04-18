@@ -37,19 +37,20 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvNome"
-        style="@style/labelsMainScreen"
+        style="@style/labelsMainScreen_LinearLayout"
         android:layout_marginTop="15dp"
         android:text="@string/name" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/EtNome"
         style="@style/inputSignUp"
-        android:inputType="textCapWords"
-        android:hint="@string/signUpNameHint" />
+        android:autofillHints="name"
+        android:hint="@string/signUpNameHint"
+        android:inputType="textPersonName|textCapWords" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvEmail"
-        style="@style/labelsMainScreen"
+        style="@style/labelsMainScreen_LinearLayout"
         android:text="@string/email" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -60,21 +61,21 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvTelefone"
-        style="@style/labelsMainScreen"
+        style="@style/labelsMainScreen_LinearLayout"
         android:text="@string/fone" />
 
     <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/EtTelefone"
         style="@style/inputSignUp"
         android:hint="@string/signUpNumberHint"
-        android:inputType="number"
+        android:inputType="phone"
         app:mask="+55 (__) _____-____"
         app:maskCharacter="_"
         app:maskStyle="completable" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvPassword"
-        style="@style/labelsMainScreen"
+        style="@style/labelsMainScreen_LinearLayout"
         android:text="@string/strPassword" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -85,7 +86,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvPasswordConfirm"
-        style="@style/labelsMainScreen"
+        style="@style/labelsMainScreen_LinearLayout"
         android:text="@string/strPasswordConfirm" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -116,7 +117,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/TvErro"
-      style="@style/labelsMainScreen"
+      style="@style/labelsMainScreen_LinearLayout"
       android:layout_gravity="center"
       android:layout_marginTop="10dp"
       android:textColor="@color/red"

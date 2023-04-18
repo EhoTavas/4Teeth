@@ -2816,6 +2816,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_navegar_prox
 drawable ic_navegar_voltar
+drawable ic_plus
 drawable ic_search_black_24
 drawable m3_appbar_background
 drawable m3_avd_hide_password
@@ -2916,10 +2917,9 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id TvAddAddress
 id TvEmail
 id TvEndereco1
-id TvEndereco2
-id TvEndereco3
 id TvErro
 id TvGerenciarPerfil
 id TvNome
@@ -3132,6 +3132,7 @@ id homeAsUp
 id honorRequest
 id horizontal_only
 id hybrid
+id icAddAddress
 id icNavegarVoltar
 id icon
 id icon_group
@@ -3814,6 +3815,7 @@ string signUpNumberHint
 string signUpPasswordHint
 string sign_up
 string status_bar_notification_info_overflow
+string strAddAddress
 string strAppMotto
 string strAppName
 string strAtendimento
@@ -4928,6 +4930,7 @@ style Widget_Support_CoordinatorLayout
 style inputMainScreen
 style inputSignUp
 style labelsMainScreen
+style labelsMainScreen_LinearLayout
 style tituloTelas
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity

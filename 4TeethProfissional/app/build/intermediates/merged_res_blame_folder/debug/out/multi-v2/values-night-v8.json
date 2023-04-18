@@ -4,26 +4,7 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-33:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\luant\\OneDrive\\Documentos\\GitHub\\4Teeth\\4TeethProfissional\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "18,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "1027,102",
-                        "endLines": "18,17",
-                        "endColumns": "59,12",
-                        "endOffsets": "1082,1021"
-                    },
-                    "to": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,115",
-                        "endLines": "2,18",
-                        "endColumns": "59,12",
-                        "endOffsets": "110,898"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\193c651c39a1b2998a4f18986e8ede38\\transformed\\material-1.8.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\193c651c39a1b2998a4f18986e8ede38\\transformed\\material-1.8.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\49d6aa0a181a3fb8c12025c362c74bf2\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\49d6aa0a181a3fb8c12025c362c74bf2\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -54,6 +35,25 @@
                         "startOffsets": "903,973,1057,1141,1237,1339,1441,4296",
                         "endColumns": "69,83,83,95,101,101,93,88",
                         "endOffsets": "968,1052,1136,1232,1334,1436,1530,4380"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\Documents\\GitHub\\4Teeth\\4TeethProfissional\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "18,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "1027,102",
+                        "endLines": "18,17",
+                        "endColumns": "59,12",
+                        "endOffsets": "1082,1021"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,115",
+                        "endLines": "2,18",
+                        "endColumns": "59,12",
+                        "endOffsets": "110,898"
                     }
                 }
             ]
