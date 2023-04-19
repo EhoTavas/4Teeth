@@ -19,9 +19,9 @@ class CadastroEndereco : AppCompatActivity() {
         binding = ActivityCadastroEnderecoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //binding.icAddAddress.setOnClickListener {
+        binding.icAddAddress.setOnClickListener {
 
-        //}
+        }
 
         binding.btnConfirmar.setOnClickListener {
             val finalizarCadastro = Intent(this, MainActivity::class.java)

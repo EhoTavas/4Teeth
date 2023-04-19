@@ -40,32 +40,38 @@
 
         <com.santalu.maskara.widget.MaskEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtCep1"
             android:hint="@string/strCep"
             android:inputType="textPostalAddress"
             app:mask="__.___-___" />
-
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtNum1"
             android:hint="@string/strNumResidencia"
             android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtComp1"
             android:hint="@string/strComplemento"
             android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtStreet1"
             android:hint="@string/strRua"
             android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtNh1"
             android:hint="@string/strBairro"
             android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtCity1"
             android:hint="@string/strCidade"
             android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
+            android:id="@+id/EtState1"
             android:hint="@string/strEstado" />
 
         <androidx.constraintlayout.widget.ConstraintLayout

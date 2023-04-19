@@ -2893,6 +2893,7 @@ drawable rounded_button
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable tooth_3d
 drawable tooth_png_temp
 font poppins_family
 font poppins_regular
@@ -2900,12 +2901,19 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id EtCep1
+id EtCity1
+id EtComp1
 id EtEmail
 id EtEmailLogin
+id EtNh1
 id EtNome
+id EtNum1
 id EtPassword
 id EtPasswordConfirm
 id EtPasswordLogin
+id EtState1
+id EtStreet1
 id EtTelefone
 id FUNCTION
 id META

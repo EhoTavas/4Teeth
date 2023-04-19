@@ -9,11 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import br.com.ForTeethDentalCare.R;
+import com.santalu.maskara.widget.MaskEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,6 +23,27 @@ import java.lang.String;
 public final class ActivityCadastroEnderecoBinding implements ViewBinding {
   @NonNull
   private final LinearLayoutCompat rootView;
+
+  @NonNull
+  public final MaskEditText EtCep1;
+
+  @NonNull
+  public final AppCompatEditText EtCity1;
+
+  @NonNull
+  public final AppCompatEditText EtComp1;
+
+  @NonNull
+  public final AppCompatEditText EtNh1;
+
+  @NonNull
+  public final AppCompatEditText EtNum1;
+
+  @NonNull
+  public final AppCompatEditText EtState1;
+
+  @NonNull
+  public final AppCompatEditText EtStreet1;
 
   @NonNull
   public final TextView TvAddAddress;
@@ -38,10 +61,20 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
   public final ImageView icNavegarVoltar;
 
   private ActivityCadastroEnderecoBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull TextView TvAddAddress, @NonNull AppCompatTextView TvEndereco1,
-      @NonNull AppCompatButton btnConfirmar, @NonNull ImageView icAddAddress,
-      @NonNull ImageView icNavegarVoltar) {
+      @NonNull MaskEditText EtCep1, @NonNull AppCompatEditText EtCity1,
+      @NonNull AppCompatEditText EtComp1, @NonNull AppCompatEditText EtNh1,
+      @NonNull AppCompatEditText EtNum1, @NonNull AppCompatEditText EtState1,
+      @NonNull AppCompatEditText EtStreet1, @NonNull TextView TvAddAddress,
+      @NonNull AppCompatTextView TvEndereco1, @NonNull AppCompatButton btnConfirmar,
+      @NonNull ImageView icAddAddress, @NonNull ImageView icNavegarVoltar) {
     this.rootView = rootView;
+    this.EtCep1 = EtCep1;
+    this.EtCity1 = EtCity1;
+    this.EtComp1 = EtComp1;
+    this.EtNh1 = EtNh1;
+    this.EtNum1 = EtNum1;
+    this.EtState1 = EtState1;
+    this.EtStreet1 = EtStreet1;
     this.TvAddAddress = TvAddAddress;
     this.TvEndereco1 = TvEndereco1;
     this.btnConfirmar = btnConfirmar;
@@ -76,6 +109,48 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.EtCep1;
+      MaskEditText EtCep1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtCep1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtCity1;
+      AppCompatEditText EtCity1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtCity1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtComp1;
+      AppCompatEditText EtComp1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtComp1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtNh1;
+      AppCompatEditText EtNh1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtNh1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtNum1;
+      AppCompatEditText EtNum1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtNum1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtState1;
+      AppCompatEditText EtState1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtState1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtStreet1;
+      AppCompatEditText EtStreet1 = ViewBindings.findChildViewById(rootView, id);
+      if (EtStreet1 == null) {
+        break missingId;
+      }
+
       id = R.id.TvAddAddress;
       TextView TvAddAddress = ViewBindings.findChildViewById(rootView, id);
       if (TvAddAddress == null) {
@@ -106,8 +181,9 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCadastroEnderecoBinding((LinearLayoutCompat) rootView, TvAddAddress,
-          TvEndereco1, btnConfirmar, icAddAddress, icNavegarVoltar);
+      return new ActivityCadastroEnderecoBinding((LinearLayoutCompat) rootView, EtCep1, EtCity1,
+          EtComp1, EtNh1, EtNum1, EtState1, EtStreet1, TvAddAddress, TvEndereco1, btnConfirmar,
+          icAddAddress, icNavegarVoltar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
