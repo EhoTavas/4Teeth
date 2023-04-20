@@ -17,4 +17,17 @@
         <item name="android:navigationBarColor">@color/azul_gelo</item>
         <item name="android:windowLightStatusBar">@color/black</item>
     </style>
+
+    <style name="Theme.4TeethProfissional.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="fragmentsBackground" parent="Theme.4TeethProfissional">
+        <item name="android:windowBackground">@color/azul_gelo</item>
+    </style>
+
+    <style name="Theme.4TeethProfissional.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.4TeethProfissional.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

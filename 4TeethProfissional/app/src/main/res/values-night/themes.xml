@@ -16,5 +16,9 @@
         <item name="android:fontFamily">@font/poppins_family</item>
         <item name="android:navigationBarColor">@color/azul_gelo</item>
     </style>
+
+    <style name="fragmentsBackground" parent="Theme.4TeethProfissional">
+        <item name="android:windowBackground">@color/azul_gelo</item>
+    </style>
     <color name="errorColor">@color/gelo_esverdeado</color>
 </resources>
