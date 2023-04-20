@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
+    android:background="@drawable/gradient_login_screen"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
