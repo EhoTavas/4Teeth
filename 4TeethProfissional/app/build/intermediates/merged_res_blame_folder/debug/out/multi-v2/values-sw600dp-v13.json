@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-33:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-48:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\49d6aa0a181a3fb8c12025c362c74bf2\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\193c651c39a1b2998a4f18986e8ede38\\transformed\\material-1.8.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\51d7887c7eeaa3ed19aa9e590392d163\\transformed\\material-1.8.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",

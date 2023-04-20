@@ -42,6 +42,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.4TeethProfissional" >
+        <activity
+            android:name="br.com.ForTeethDentalCare.inicial_menu"
+            android:exported="false"
+            android:label="@string/title_activity_inicial_menu"
+            android:theme="@style/Theme.4TeethProfissional.NoActionBar" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />
@@ -104,6 +110,13 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

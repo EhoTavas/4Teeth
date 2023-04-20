@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">389378064222</string>
+    <string name="google_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
+    <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
+    <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
+    <string name="project_id" translatable="false">teeth-playground</string>
+</resources>
