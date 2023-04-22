@@ -6,235 +6,288 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
-8-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
+8-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
+9-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:6:5-79
-12-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:6:22-76
-13
-14    <uses-feature
-14-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
-15        android:glEsVersion="0x00020000"
-15-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
-16        android:required="true" />
-16-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
-17
-18    <queries>
-18-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
-19
-20        <!-- Needs to be explicitly declared on Android R+ -->
-21        <package android:name="com.google.android.apps.maps" />
-21-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
-21-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
-22    </queries>
-23
-24    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-24-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:24:5-68
-24-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:24:22-65
-25    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-25-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:26:5-82
-25-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:26:22-79
+12-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:9:5-81
+13-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:9:22-78
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:10:5-79
+14-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:10:22-76
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:11:5-76
+15-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:11:22-73
+16
+17    <uses-feature
+17-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
+18        android:glEsVersion="0x00020000"
+18-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
+19        android:required="true" />
+19-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
+20
+21    <queries>
+21-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+22
+23        <!-- Needs to be explicitly declared on Android R+ -->
+24        <package android:name="com.google.android.apps.maps" />
+24-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
+24-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
+25    </queries>
 26
-27    <permission
-27-->[androidx.core:core:1.10.0] C:\Users\luant\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
-28        android:name="br.com.ForTeethDentalCare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-28-->[androidx.core:core:1.10.0] C:\Users\luant\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
-29        android:protectionLevel="signature" />
-29-->[androidx.core:core:1.10.0] C:\Users\luant\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
-30
-31    <uses-permission android:name="br.com.ForTeethDentalCare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-31-->[androidx.core:core:1.10.0] C:\Users\luant\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
-31-->[androidx.core:core:1.10.0] C:\Users\luant\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
-32
-33    <application
-33-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:8:5-45:19
-34        android:allowBackup="true"
-34-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:9:9-35
-35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-35-->[androidx.core:core:1.10.0] C:\Users\luant\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
-36        android:dataExtractionRules="@xml/data_extraction_rules"
-36-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:10:9-65
-37        android:debuggable="true"
-38        android:extractNativeLibs="false"
-39        android:fullBackupContent="@xml/backup_rules"
-39-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:11:9-54
-40        android:icon="@mipmap/ic_launcher"
-40-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:12:9-43
-41        android:label="@string/app_name"
-41-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:13:9-41
-42        android:supportsRtl="true"
-42-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:14:9-35
-43        android:testOnly="true"
-44        android:theme="@style/Theme.4TeethProfissional" >
-44-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:15:9-56
-45        <activity
-45-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:17:9-21:75
-46            android:name="br.com.ForTeethDentalCare.inicial_menu"
-46-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:18:13-41
-47            android:exported="false"
-47-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:19:13-37
-48            android:label="@string/title_activity_inicial_menu"
-48-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:20:13-64
-49            android:theme="@style/Theme.4TeethProfissional.NoActionBar" />
-49-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:21:13-72
-50
-51        <meta-data
-51-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:23:9-25:71
-52            android:name="com.google.android.geo.API_KEY"
-52-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:24:13-58
-53            android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />
-53-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:25:13-68
-54
-55        <activity
-55-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:27:9-29:40
-56            android:name="br.com.ForTeethDentalCare.LogIn"
-56-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:28:13-34
-57            android:exported="false" />
-57-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:29:13-37
+27    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+27-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:24:5-68
+27-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:24:22-65
+28    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+28-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:26:5-82
+28-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:26:22-79
+29
+30    <permission
+30-->[androidx.core:core:1.10.0] C:\Users\Luan\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+31        android:name="br.com.ForTeethDentalCare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.10.0] C:\Users\Luan\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.10.0] C:\Users\Luan\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="br.com.ForTeethDentalCare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.10.0] C:\Users\Luan\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.10.0] C:\Users\Luan\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+35
+36    <application
+36-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:8:5-45:19
+37        android:allowBackup="true"
+37-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:9:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.10.0] C:\Users\Luan\.gradle\caches\transforms-3\fdfd030f76d30366b91b278684f9d1e4\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
+39        android:dataExtractionRules="@xml/data_extraction_rules"
+39-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:10:9-65
+40        android:debuggable="true"
+41        android:extractNativeLibs="false"
+42        android:fullBackupContent="@xml/backup_rules"
+42-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:11:9-54
+43        android:icon="@mipmap/ic_launcher"
+43-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:12:9-43
+44        android:label="@string/app_name"
+44-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:13:9-41
+45        android:supportsRtl="true"
+45-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:14:9-35
+46        android:testOnly="true"
+47        android:theme="@style/Theme.4TeethProfissional" >
+47-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:15:9-56
+48        <activity
+48-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:17:9-21:75
+49            android:name="br.com.ForTeethDentalCare.inicial_menu"
+49-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:18:13-41
+50            android:exported="false"
+50-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:19:13-37
+51            android:label="@string/title_activity_inicial_menu"
+51-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:20:13-64
+52            android:theme="@style/Theme.4TeethProfissional.NoActionBar" />
+52-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:21:13-72
+53
+54        <meta-data
+54-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:23:9-25:71
+55            android:name="com.google.android.geo.API_KEY"
+55-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:24:13-58
+56            android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />
+56-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:25:13-68
+57
 58        <activity
-58-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:30:9-32:40
-59            android:name="br.com.ForTeethDentalCare.CadastroUm"
-59-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:31:13-39
+58-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:27:9-29:40
+59            android:name="br.com.ForTeethDentalCare.LogIn"
+59-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:28:13-34
 60            android:exported="false" />
-60-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:32:13-37
+60-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:29:13-37
 61        <activity
-61-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:33:9-35:40
-62            android:name="br.com.ForTeethDentalCare.CadastroEndereco"
-62-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:34:13-45
+61-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:30:9-32:40
+62            android:name="br.com.ForTeethDentalCare.CadastroUm"
+62-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:31:13-39
 63            android:exported="false" />
-63-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:35:13-37
+63-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:32:13-37
 64        <activity
-64-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:36:9-44:20
-65            android:name="br.com.ForTeethDentalCare.MainActivity"
-65-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:37:13-41
-66            android:exported="true" >
-66-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:38:13-36
-67            <intent-filter>
-67-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:39:13-43:29
-68                <action android:name="android.intent.action.MAIN" />
-68-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:40:17-69
-68-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:40:25-66
-69
-70                <category android:name="android.intent.category.LAUNCHER" />
-70-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:42:17-77
-70-->C:\Users\luant\OneDrive\Documentos\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:42:27-74
-71            </intent-filter>
-72        </activity>
-73
-74        <service
-74-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:11:9-17:19
-75            android:name="com.google.firebase.components.ComponentDiscoveryService"
-75-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:12:13-84
-76            android:directBootAware="true"
-76-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:34:13-43
-77            android:exported="false" >
-77-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:13:13-37
-78            <meta-data
-78-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:14:13-16:85
-79                android:name="com.google.firebase.components:com.google.firebase.functions.ktx.FirebaseFunctionsKtxRegistrar"
-79-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:15:17-126
-80                android:value="com.google.firebase.components.ComponentRegistrar" />
-80-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:16:17-82
+64-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:33:9-35:40
+65            android:name="br.com.ForTeethDentalCare.CadastroEndereco"
+65-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:34:13-45
+66            android:exported="false" />
+66-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:35:13-37
+67        <activity
+67-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:36:9-44:20
+68            android:name="br.com.ForTeethDentalCare.MainActivity"
+68-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:37:13-41
+69            android:exported="true" >
+69-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:38:13-36
+70            <intent-filter>
+70-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:39:13-43:29
+71                <action android:name="android.intent.action.MAIN" />
+71-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:40:17-69
+71-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:40:25-66
+72
+73                <category android:name="android.intent.category.LAUNCHER" />
+73-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:42:17-77
+73-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:42:27-74
+74            </intent-filter>
+75        </activity>
+76
+77        <service
+77-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:11:9-17:19
+78            android:name="com.google.firebase.components.ComponentDiscoveryService"
+78-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:12:13-84
+79            android:directBootAware="true"
+79-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:34:13-43
+80            android:exported="false" >
+80-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:13:13-37
 81            <meta-data
-81-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\36c17b43cbda1051a2d31e2997e478a4\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:14:13-16:85
-82                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-82-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\36c17b43cbda1051a2d31e2997e478a4\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:15:17-113
+81-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:14:13-16:85
+82                android:name="com.google.firebase.components:com.google.firebase.functions.ktx.FirebaseFunctionsKtxRegistrar"
+82-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:15:17-126
 83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\36c17b43cbda1051a2d31e2997e478a4\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:16:17-82
+83-->[com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:16:17-82
 84            <meta-data
-84-->[com.google.firebase:firebase-functions:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:17:13-19:85
-85                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
-85-->[com.google.firebase:firebase-functions:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:18:17-111
+84-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\36c17b43cbda1051a2d31e2997e478a4\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:14:13-16:85
+85                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+85-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\36c17b43cbda1051a2d31e2997e478a4\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:15:17-113
 86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[com.google.firebase:firebase-functions:20.2.2] C:\Users\luant\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:19:17-82
+86-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\36c17b43cbda1051a2d31e2997e478a4\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:16:17-82
 87            <meta-data
-87-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:32:13-34:85
-88                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-88-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:33:17-96
+87-->[com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:17:13-19:85
+88                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
+88-->[com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:18:17-111
 89                android:value="com.google.firebase.components.ComponentRegistrar" />
-89-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\luant\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:34:17-82
+89-->[com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:19:17-82
 90            <meta-data
-90-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\luant\.gradle\caches\transforms-3\85d0b034a7cc785287a67d82796e5b30\transformed\firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
-91                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-91-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\luant\.gradle\caches\transforms-3\85d0b034a7cc785287a67d82796e5b30\transformed\firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+90-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:32:13-34:85
+91                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+91-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:33:17-96
 92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\luant\.gradle\caches\transforms-3\85d0b034a7cc785287a67d82796e5b30\transformed\firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
-93        </service> <!-- Needs to be explicitly declared on P+ -->
-94        <uses-library
-94-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
-95            android:name="org.apache.http.legacy"
-95-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
-96            android:required="false" />
-96-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+92-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:34:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Luan\.gradle\caches\transforms-3\85d0b034a7cc785287a67d82796e5b30\transformed\firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+94                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+94-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Luan\.gradle\caches\transforms-3\85d0b034a7cc785287a67d82796e5b30\transformed\firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Luan\.gradle\caches\transforms-3\85d0b034a7cc785287a67d82796e5b30\transformed\firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+96        </service>
 97
 98        <activity
-98-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-99            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-99-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+98-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:15:9-21:20
+99            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
+99-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:16:13-91
 100            android:exported="false"
-100-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-101            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-101-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
-102
-103        <provider
-103-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:25:9-30:39
-104            android:name="com.google.firebase.provider.FirebaseInitProvider"
-104-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:26:13-77
-105            android:authorities="br.com.ForTeethDentalCare.firebaseinitprovider"
-105-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:27:13-72
-106            android:directBootAware="true"
-106-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:28:13-43
-107            android:exported="false"
-107-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:29:13-37
-108            android:initOrder="100" />
-108-->[com.google.firebase:firebase-common:20.3.0] C:\Users\luant\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:30:13-36
-109
-110        <meta-data
-110-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\b115fcfb3d8108d481b4bc564e196ba0\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-111            android:name="com.google.android.gms.version"
-111-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\b115fcfb3d8108d481b4bc564e196ba0\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-112            android:value="@integer/google_play_services_version" />
-112-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\luant\.gradle\caches\transforms-3\b115fcfb3d8108d481b4bc564e196ba0\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+100-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:17:13-37
+101            android:label="@string/places_autocomplete_label"
+101-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:18:13-62
+102            android:theme="@style/PlacesAutocompleteOverlay"
+102-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:19:13-61
+103            android:windowSoftInputMode="adjustResize" >
+103-->[com.google.android.libraries.places:places:3.1.0] C:\Users\Luan\.gradle\caches\transforms-3\86f8e98dc2d00ca24a488943580f6321\transformed\places-3.1.0\AndroidManifest.xml:20:13-55
+104        </activity> <!-- Needs to be explicitly declared on P+ -->
+105        <uses-library
+105-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
+106            android:name="org.apache.http.legacy"
+106-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
+107            android:required="false" />
+107-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+108
+109        <activity
+109-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+110            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+110-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+111            android:exported="false"
+111-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+112            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+112-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\67a213bfc6c89b2ceb1b0a839c656f75\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
 113
-114        <uses-library
-114-->[androidx.window:window:1.0.0] C:\Users\luant\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-115            android:name="androidx.window.extensions"
-115-->[androidx.window:window:1.0.0] C:\Users\luant\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-116            android:required="false" />
-116-->[androidx.window:window:1.0.0] C:\Users\luant\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-117        <uses-library
-117-->[androidx.window:window:1.0.0] C:\Users\luant\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-118            android:name="androidx.window.sidecar"
-118-->[androidx.window:window:1.0.0] C:\Users\luant\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-119            android:required="false" />
-119-->[androidx.window:window:1.0.0] C:\Users\luant\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+114        <provider
+114-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:25:9-30:39
+115            android:name="com.google.firebase.provider.FirebaseInitProvider"
+115-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:26:13-77
+116            android:authorities="br.com.ForTeethDentalCare.firebaseinitprovider"
+116-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:27:13-72
+117            android:directBootAware="true"
+117-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:28:13-43
+118            android:exported="false"
+118-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:29:13-37
+119            android:initOrder="100" />
+119-->[com.google.firebase:firebase-common:20.3.0] C:\Users\Luan\.gradle\caches\transforms-3\0e4f2eb215ffe16143d2f36854d2eee1\transformed\firebase-common-20.3.0\AndroidManifest.xml:30:13-36
 120
-121        <provider
-121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-122            android:name="androidx.startup.InitializationProvider"
-122-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-123            android:authorities="br.com.ForTeethDentalCare.androidx-startup"
-123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-124            android:exported="false" >
-124-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-125            <meta-data
-125-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-126                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-126-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-127                android:value="androidx.startup" />
-127-->[androidx.emoji2:emoji2:1.2.0] C:\Users\luant\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-128            <meta-data
-128-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\luant\.gradle\caches\transforms-3\d530432d80dc2b70ae2c1c0f2aef3353\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-129                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-129-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\luant\.gradle\caches\transforms-3\d530432d80dc2b70ae2c1c0f2aef3353\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-130                android:value="androidx.startup" />
-130-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\luant\.gradle\caches\transforms-3\d530432d80dc2b70ae2c1c0f2aef3353\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-131        </provider>
-132    </application>
-133
-134</manifest>
+121        <meta-data
+121-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\b115fcfb3d8108d481b4bc564e196ba0\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+122            android:name="com.google.android.gms.version"
+122-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\b115fcfb3d8108d481b4bc564e196ba0\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+123            android:value="@integer/google_play_services_version" />
+123-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\b115fcfb3d8108d481b4bc564e196ba0\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+124
+125        <uses-library
+125-->[androidx.window:window:1.0.0] C:\Users\Luan\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+126            android:name="androidx.window.extensions"
+126-->[androidx.window:window:1.0.0] C:\Users\Luan\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+127            android:required="false" />
+127-->[androidx.window:window:1.0.0] C:\Users\Luan\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+128        <uses-library
+128-->[androidx.window:window:1.0.0] C:\Users\Luan\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+129            android:name="androidx.window.sidecar"
+129-->[androidx.window:window:1.0.0] C:\Users\Luan\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+130            android:required="false" />
+130-->[androidx.window:window:1.0.0] C:\Users\Luan\.gradle\caches\transforms-3\cfc53479def76e082295ef11d281d06f\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+131
+132        <provider
+132-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+133            android:name="androidx.startup.InitializationProvider"
+133-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+134            android:authorities="br.com.ForTeethDentalCare.androidx-startup"
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+135            android:exported="false" >
+135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+136            <meta-data
+136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+137                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+138                android:value="androidx.startup" />
+138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Luan\.gradle\caches\transforms-3\d5adef346c0692110bd81d340533d308\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+139            <meta-data
+139-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Luan\.gradle\caches\transforms-3\d530432d80dc2b70ae2c1c0f2aef3353\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+140                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+140-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Luan\.gradle\caches\transforms-3\d530432d80dc2b70ae2c1c0f2aef3353\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+141                android:value="androidx.startup" />
+141-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Luan\.gradle\caches\transforms-3\d530432d80dc2b70ae2c1c0f2aef3353\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+142        </provider>
+143
+144        <service
+144-->[com.google.android.datatransport:transport-backend-cct:2.3.0] C:\Users\Luan\.gradle\caches\transforms-3\84d80cff909d16a855892b771950b654\transformed\transport-backend-cct-2.3.0\AndroidManifest.xml:29:9-35:19
+145            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+145-->[com.google.android.datatransport:transport-backend-cct:2.3.0] C:\Users\Luan\.gradle\caches\transforms-3\84d80cff909d16a855892b771950b654\transformed\transport-backend-cct-2.3.0\AndroidManifest.xml:30:13-103
+146            android:exported="false" >
+146-->[com.google.android.datatransport:transport-backend-cct:2.3.0] C:\Users\Luan\.gradle\caches\transforms-3\84d80cff909d16a855892b771950b654\transformed\transport-backend-cct-2.3.0\AndroidManifest.xml:31:13-37
+147            <meta-data
+147-->[com.google.android.datatransport:transport-backend-cct:2.3.0] C:\Users\Luan\.gradle\caches\transforms-3\84d80cff909d16a855892b771950b654\transformed\transport-backend-cct-2.3.0\AndroidManifest.xml:32:13-34:39
+148                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+148-->[com.google.android.datatransport:transport-backend-cct:2.3.0] C:\Users\Luan\.gradle\caches\transforms-3\84d80cff909d16a855892b771950b654\transformed\transport-backend-cct-2.3.0\AndroidManifest.xml:33:17-94
+149                android:value="cct" />
+149-->[com.google.android.datatransport:transport-backend-cct:2.3.0] C:\Users\Luan\.gradle\caches\transforms-3\84d80cff909d16a855892b771950b654\transformed\transport-backend-cct-2.3.0\AndroidManifest.xml:34:17-36
+150        </service>
+151        <service
+151-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:26:9-30:19
+152            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+152-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:27:13-117
+153            android:exported="false"
+153-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:28:13-37
+154            android:permission="android.permission.BIND_JOB_SERVICE" >
+154-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:29:13-69
+155        </service>
+156
+157        <receiver
+157-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:32:9-34:40
+158            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+158-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:33:13-132
+159            android:exported="false" />
+159-->[com.google.android.datatransport:transport-runtime:2.2.3] C:\Users\Luan\.gradle\caches\transforms-3\2f6e348b35b2193e0246b285304c42d8\transformed\transport-runtime-2.2.3\AndroidManifest.xml:34:13-37
+160    </application>
+161
+162</manifest>

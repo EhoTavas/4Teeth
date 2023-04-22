@@ -12,28 +12,14 @@ import com.google.firebase.functions.FirebaseFunctions
 class CadastroEndereco : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastroEnderecoBinding
-    private lateinit var cepEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCadastroEnderecoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-/*
-        binding.icAddAddress.setOnClickListener {
-            val layout = findViewById<LinearLayout>(R.id.LayoutAddresses)
-            val editText = EditText(this)
-            ViewCompat.setStyle(editText, R.style.labelsMainScreen_LinearLayout)
-            editText.layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            editText.hint = "Digite aqui"
-            editText.inputType = InputType.TYPE_CLASS_TEXT
-            layout.addView(editText)
-        }
-*/
+
         binding.btnConfirmar.setOnClickListener {
-            val finalizarCadastro = Intent(this, MainActivity::class.java)
+            val finalizarCadastro = Intent(this, LogIn::class.java)
             startActivities(arrayOf(finalizarCadastro))
         }
         binding.icNavegarVoltar.setOnClickListener {

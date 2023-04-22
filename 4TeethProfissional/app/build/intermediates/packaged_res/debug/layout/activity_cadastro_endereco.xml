@@ -26,10 +26,15 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/LayoutAddresses"
         android:background="@drawable/border_rounded_login_screen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -41,9 +46,12 @@
         <com.santalu.maskara.widget.MaskEditText
             style="@style/inputSignUp"
             android:id="@+id/EtCep1"
+            android:autofillHints="postalCode"
             android:hint="@string/strCep"
-            android:inputType="textPostalAddress"
-            app:mask="__.___-___" />
+            android:inputType="textPostalAddress|number"
+            app:mask="_____-___"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:id="@+id/EtNum1"
@@ -72,60 +80,125 @@
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
             android:id="@+id/EtState1"
-            android:hint="@string/strEstado" />
+            android:hint="@string/strEstado"
+            android:inputType="textCapSentences" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="35dp"
-            app:layout_constraintHorizontal_chainStyle="spread_inside">
 
-            <TextView
-                android:id="@+id/TvAddAddress"
-                style="@style/labelsMainScreen"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/strAddAddress"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/icAddAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_plus"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-<!--
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/TvEndereco2"
-            style="@style/labelsMainScreen"
+            style="@style/labelsMainScreen_LinearLayout"
+            android:layout_marginTop="15dp"
             android:text="@string/strEndereco2" />
 
+        <com.santalu.maskara.widget.MaskEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtCep2"
+            android:hint="@string/strCep"
+            android:inputType="textPostalAddress|number"
+            app:mask="_____-___"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strRua" />
+            android:id="@+id/EtNum2"
+            android:hint="@string/strNumResidencia"
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strComplemento" />
+            android:id="@+id/EtComp2"
+            android:hint="@string/strComplemento"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtStreet2"
+            android:hint="@string/strRua"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtNh2"
+            android:hint="@string/strBairro"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtCity2"
+            android:hint="@string/strCidade"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtState2"
+            android:hint="@string/strEstado"
+            android:inputType="textCapSentences" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/TvEndereco3"
-            style="@style/labelsMainScreen"
+            style="@style/labelsMainScreen_LinearLayout"
+            android:layout_marginTop="15dp"
             android:text="@string/strEndereco3" />
 
+        <com.santalu.maskara.widget.MaskEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtCep3"
+            android:hint="@string/strCep"
+            android:inputType="textPostalAddress|number"
+            app:mask="_____-___"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strRua" />
+            android:id="@+id/EtNum3"
+            android:hint="@string/strNumResidencia"
+            android:inputType="textCapSentences" />
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/inputSignUp"
-            android:hint="@string/strComplemento" />
--->
+            android:id="@+id/EtComp3"
+            android:hint="@string/strComplemento"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtStreet3"
+            android:hint="@string/strRua"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtNh3"
+            android:hint="@string/strBairro"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtCity3"
+            android:hint="@string/strCidade"
+            android:inputType="textCapSentences" />
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/inputSignUp"
+            android:id="@+id/EtState3"
+            android:hint="@string/strEstado"
+            android:inputType="textCapSentences" />
+
+        <!--
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/TvEndereco2"
+                    style="@style/labelsMainScreen"
+                    android:text="@string/strEndereco2" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/inputSignUp"
+                    android:hint="@string/strRua" />
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/inputSignUp"
+                    android:hint="@string/strComplemento" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/TvEndereco3"
+                    style="@style/labelsMainScreen"
+                    android:text="@string/strEndereco3" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/inputSignUp"
+                    android:hint="@string/strRua" />
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/inputSignUp"
+                    android:hint="@string/strComplemento" />
+        -->
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -143,5 +216,6 @@
             android:text="@string/btnConfirm" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

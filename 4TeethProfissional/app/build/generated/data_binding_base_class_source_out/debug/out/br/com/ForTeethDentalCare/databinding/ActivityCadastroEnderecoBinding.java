@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -28,57 +27,124 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
   public final MaskEditText EtCep1;
 
   @NonNull
+  public final MaskEditText EtCep2;
+
+  @NonNull
+  public final MaskEditText EtCep3;
+
+  @NonNull
   public final AppCompatEditText EtCity1;
+
+  @NonNull
+  public final AppCompatEditText EtCity2;
+
+  @NonNull
+  public final AppCompatEditText EtCity3;
 
   @NonNull
   public final AppCompatEditText EtComp1;
 
   @NonNull
+  public final AppCompatEditText EtComp2;
+
+  @NonNull
+  public final AppCompatEditText EtComp3;
+
+  @NonNull
   public final AppCompatEditText EtNh1;
+
+  @NonNull
+  public final AppCompatEditText EtNh2;
+
+  @NonNull
+  public final AppCompatEditText EtNh3;
 
   @NonNull
   public final AppCompatEditText EtNum1;
 
   @NonNull
+  public final AppCompatEditText EtNum2;
+
+  @NonNull
+  public final AppCompatEditText EtNum3;
+
+  @NonNull
   public final AppCompatEditText EtState1;
+
+  @NonNull
+  public final AppCompatEditText EtState2;
+
+  @NonNull
+  public final AppCompatEditText EtState3;
 
   @NonNull
   public final AppCompatEditText EtStreet1;
 
   @NonNull
-  public final TextView TvAddAddress;
+  public final AppCompatEditText EtStreet2;
+
+  @NonNull
+  public final AppCompatEditText EtStreet3;
+
+  @NonNull
+  public final LinearLayoutCompat LayoutAddresses;
 
   @NonNull
   public final AppCompatTextView TvEndereco1;
 
   @NonNull
-  public final AppCompatButton btnConfirmar;
+  public final AppCompatTextView TvEndereco2;
 
   @NonNull
-  public final ImageView icAddAddress;
+  public final AppCompatTextView TvEndereco3;
+
+  @NonNull
+  public final AppCompatButton btnConfirmar;
 
   @NonNull
   public final ImageView icNavegarVoltar;
 
   private ActivityCadastroEnderecoBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull MaskEditText EtCep1, @NonNull AppCompatEditText EtCity1,
-      @NonNull AppCompatEditText EtComp1, @NonNull AppCompatEditText EtNh1,
-      @NonNull AppCompatEditText EtNum1, @NonNull AppCompatEditText EtState1,
-      @NonNull AppCompatEditText EtStreet1, @NonNull TextView TvAddAddress,
-      @NonNull AppCompatTextView TvEndereco1, @NonNull AppCompatButton btnConfirmar,
-      @NonNull ImageView icAddAddress, @NonNull ImageView icNavegarVoltar) {
+      @NonNull MaskEditText EtCep1, @NonNull MaskEditText EtCep2, @NonNull MaskEditText EtCep3,
+      @NonNull AppCompatEditText EtCity1, @NonNull AppCompatEditText EtCity2,
+      @NonNull AppCompatEditText EtCity3, @NonNull AppCompatEditText EtComp1,
+      @NonNull AppCompatEditText EtComp2, @NonNull AppCompatEditText EtComp3,
+      @NonNull AppCompatEditText EtNh1, @NonNull AppCompatEditText EtNh2,
+      @NonNull AppCompatEditText EtNh3, @NonNull AppCompatEditText EtNum1,
+      @NonNull AppCompatEditText EtNum2, @NonNull AppCompatEditText EtNum3,
+      @NonNull AppCompatEditText EtState1, @NonNull AppCompatEditText EtState2,
+      @NonNull AppCompatEditText EtState3, @NonNull AppCompatEditText EtStreet1,
+      @NonNull AppCompatEditText EtStreet2, @NonNull AppCompatEditText EtStreet3,
+      @NonNull LinearLayoutCompat LayoutAddresses, @NonNull AppCompatTextView TvEndereco1,
+      @NonNull AppCompatTextView TvEndereco2, @NonNull AppCompatTextView TvEndereco3,
+      @NonNull AppCompatButton btnConfirmar, @NonNull ImageView icNavegarVoltar) {
     this.rootView = rootView;
     this.EtCep1 = EtCep1;
+    this.EtCep2 = EtCep2;
+    this.EtCep3 = EtCep3;
     this.EtCity1 = EtCity1;
+    this.EtCity2 = EtCity2;
+    this.EtCity3 = EtCity3;
     this.EtComp1 = EtComp1;
+    this.EtComp2 = EtComp2;
+    this.EtComp3 = EtComp3;
     this.EtNh1 = EtNh1;
+    this.EtNh2 = EtNh2;
+    this.EtNh3 = EtNh3;
     this.EtNum1 = EtNum1;
+    this.EtNum2 = EtNum2;
+    this.EtNum3 = EtNum3;
     this.EtState1 = EtState1;
+    this.EtState2 = EtState2;
+    this.EtState3 = EtState3;
     this.EtStreet1 = EtStreet1;
-    this.TvAddAddress = TvAddAddress;
+    this.EtStreet2 = EtStreet2;
+    this.EtStreet3 = EtStreet3;
+    this.LayoutAddresses = LayoutAddresses;
     this.TvEndereco1 = TvEndereco1;
+    this.TvEndereco2 = TvEndereco2;
+    this.TvEndereco3 = TvEndereco3;
     this.btnConfirmar = btnConfirmar;
-    this.icAddAddress = icAddAddress;
     this.icNavegarVoltar = icNavegarVoltar;
   }
 
@@ -115,9 +181,33 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.EtCep2;
+      MaskEditText EtCep2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtCep2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtCep3;
+      MaskEditText EtCep3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtCep3 == null) {
+        break missingId;
+      }
+
       id = R.id.EtCity1;
       AppCompatEditText EtCity1 = ViewBindings.findChildViewById(rootView, id);
       if (EtCity1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtCity2;
+      AppCompatEditText EtCity2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtCity2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtCity3;
+      AppCompatEditText EtCity3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtCity3 == null) {
         break missingId;
       }
 
@@ -127,9 +217,33 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.EtComp2;
+      AppCompatEditText EtComp2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtComp2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtComp3;
+      AppCompatEditText EtComp3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtComp3 == null) {
+        break missingId;
+      }
+
       id = R.id.EtNh1;
       AppCompatEditText EtNh1 = ViewBindings.findChildViewById(rootView, id);
       if (EtNh1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtNh2;
+      AppCompatEditText EtNh2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtNh2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtNh3;
+      AppCompatEditText EtNh3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtNh3 == null) {
         break missingId;
       }
 
@@ -139,9 +253,33 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.EtNum2;
+      AppCompatEditText EtNum2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtNum2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtNum3;
+      AppCompatEditText EtNum3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtNum3 == null) {
+        break missingId;
+      }
+
       id = R.id.EtState1;
       AppCompatEditText EtState1 = ViewBindings.findChildViewById(rootView, id);
       if (EtState1 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtState2;
+      AppCompatEditText EtState2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtState2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtState3;
+      AppCompatEditText EtState3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtState3 == null) {
         break missingId;
       }
 
@@ -151,9 +289,21 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.TvAddAddress;
-      TextView TvAddAddress = ViewBindings.findChildViewById(rootView, id);
-      if (TvAddAddress == null) {
+      id = R.id.EtStreet2;
+      AppCompatEditText EtStreet2 = ViewBindings.findChildViewById(rootView, id);
+      if (EtStreet2 == null) {
+        break missingId;
+      }
+
+      id = R.id.EtStreet3;
+      AppCompatEditText EtStreet3 = ViewBindings.findChildViewById(rootView, id);
+      if (EtStreet3 == null) {
+        break missingId;
+      }
+
+      id = R.id.LayoutAddresses;
+      LinearLayoutCompat LayoutAddresses = ViewBindings.findChildViewById(rootView, id);
+      if (LayoutAddresses == null) {
         break missingId;
       }
 
@@ -163,15 +313,21 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnConfirmar;
-      AppCompatButton btnConfirmar = ViewBindings.findChildViewById(rootView, id);
-      if (btnConfirmar == null) {
+      id = R.id.TvEndereco2;
+      AppCompatTextView TvEndereco2 = ViewBindings.findChildViewById(rootView, id);
+      if (TvEndereco2 == null) {
         break missingId;
       }
 
-      id = R.id.icAddAddress;
-      ImageView icAddAddress = ViewBindings.findChildViewById(rootView, id);
-      if (icAddAddress == null) {
+      id = R.id.TvEndereco3;
+      AppCompatTextView TvEndereco3 = ViewBindings.findChildViewById(rootView, id);
+      if (TvEndereco3 == null) {
+        break missingId;
+      }
+
+      id = R.id.btnConfirmar;
+      AppCompatButton btnConfirmar = ViewBindings.findChildViewById(rootView, id);
+      if (btnConfirmar == null) {
         break missingId;
       }
 
@@ -181,9 +337,10 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCadastroEnderecoBinding((LinearLayoutCompat) rootView, EtCep1, EtCity1,
-          EtComp1, EtNh1, EtNum1, EtState1, EtStreet1, TvAddAddress, TvEndereco1, btnConfirmar,
-          icAddAddress, icNavegarVoltar);
+      return new ActivityCadastroEnderecoBinding((LinearLayoutCompat) rootView, EtCep1, EtCep2,
+          EtCep3, EtCity1, EtCity2, EtCity3, EtComp1, EtComp2, EtComp3, EtNh1, EtNh2, EtNh3, EtNum1,
+          EtNum2, EtNum3, EtState1, EtState2, EtState3, EtStreet1, EtStreet2, EtStreet3,
+          LayoutAddresses, TvEndereco1, TvEndereco2, TvEndereco3, btnConfirmar, icNavegarVoltar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
