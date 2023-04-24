@@ -64,7 +64,7 @@
     <string name="strPassword">Senha:</string>
     <string name="strPasswordConfirm">Confirme sua Senha:</string>
     <string name="strRua">Rua</string>
-    <string name="title_activity_inicial_menu">inicial_menu</string>
+    <string name="title_activity_initial_menu">inicial_menu</string>
     <style name="Theme.4TeethProfissional" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

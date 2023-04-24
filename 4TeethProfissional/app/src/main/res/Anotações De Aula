@@ -1,4 +1,0 @@
-Na main activity, existe um método chamado "askPermitions"
-Arrumar: ao clicar na notificação, não deve ser necessário refazer o login
-Melhoria: ao enviar uma mensagem, guardá-la em uma coleção de mensagens, com os atributos "who" e "msg" (mudar a function de envio de mensagem)
-Desafio: notificações desabilitadas manualmente (pelas configurações de notificação). Aplicativo deve detectar e avisar o usuário

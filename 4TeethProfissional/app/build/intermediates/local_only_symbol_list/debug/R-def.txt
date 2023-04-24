@@ -145,7 +145,7 @@ string strNumResidencia
 string strPassword
 string strPasswordConfirm
 string strRua
-string title_activity_inicial_menu
+string title_activity_initial_menu
 style Theme.4TeethProfissional
 style Theme.4TeethProfissional.AppBarOverlay
 style Theme.4TeethProfissional.NoActionBar
