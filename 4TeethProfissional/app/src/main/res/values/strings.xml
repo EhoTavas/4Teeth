@@ -39,7 +39,7 @@
     <string name="strBairro">Bairro</string>
     <string name="strCidade">Cidade</string>
     <string name="strEstado">Estado</string>
-    <string name="title_activity_inicial_menu">inicial_menu</string>
+    <string name="title_activity_initial_menu">inicial_menu</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

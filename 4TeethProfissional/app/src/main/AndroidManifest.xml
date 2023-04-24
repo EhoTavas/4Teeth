@@ -15,9 +15,9 @@
         android:theme="@style/Theme.4TeethProfissional"
         tools:targetApi="31">
         <activity
-            android:name=".inicial_menu"
+            android:name=".InitialMenu"
             android:exported="false"
-            android:label="@string/title_activity_inicial_menu"
+            android:label="@string/title_activity_initial_menu"
             android:theme="@style/Theme.4TeethProfissional.NoActionBar" />
 
         <meta-data
@@ -42,6 +42,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="imagem que quisermos para colocar a notificação"/>
+        <meta-data
+            android:name="com.google"
+            android:resource="cor para a nofiticação"/>
+
+        <service
+            android:name=".messaging.DefaultMessageService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        -->
     </application>
 
 </manifest>
