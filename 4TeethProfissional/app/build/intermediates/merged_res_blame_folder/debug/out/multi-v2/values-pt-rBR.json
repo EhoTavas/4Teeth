@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-49:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-51:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\858f1cd2e9d9d45143a1beb96e307b97\\transformed\\navigation-ui-2.4.1\\res\\values-pt-rBR\\values-pt-rBR.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,119",
-                        "endOffsets": "162,282"
-                    },
-                    "to": {
-                        "startLines": "119,120",
-                        "startColumns": "4,4",
-                        "startOffsets": "10993,11105",
-                        "endColumns": "111,119",
-                        "endOffsets": "11100,11220"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\67a213bfc6c89b2ceb1b0a839c656f75\\transformed\\play-services-base-18.1.0\\res\\values-pt-rBR\\values.xml",
                     "from": {
@@ -35,6 +18,23 @@
                         "startOffsets": "4525,4630,4778,4905,5013,5180,5310,5432,5682,5852,5960,6124,6254,6411,6568,6637,6703",
                         "endColumns": "104,147,126,107,166,129,121,104,169,107,163,129,156,156,68,65,83",
                         "endOffsets": "4625,4773,4900,5008,5175,5305,5427,5532,5847,5955,6119,6249,6406,6563,6632,6698,6782"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,119",
+                        "endOffsets": "162,282"
+                    },
+                    "to": {
+                        "startLines": "119,120",
+                        "startColumns": "4,4",
+                        "startOffsets": "10993,11105",
+                        "endColumns": "111,119",
+                        "endOffsets": "11100,11220"
                     }
                 },
                 {

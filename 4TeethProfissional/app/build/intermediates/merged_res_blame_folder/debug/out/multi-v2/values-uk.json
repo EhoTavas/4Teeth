@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-49:/values-uk/values-uk.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-51:/values-uk/values-uk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\67a213bfc6c89b2ceb1b0a839c656f75\\transformed\\play-services-base-18.1.0\\res\\values-uk\\values.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "4613,4721,4884,5011,5121,5275,5404,5519,5770,5938,6044,6206,6331,6478,6620,6690,6751",
                         "endColumns": "107,162,126,109,153,128,114,104,167,105,161,124,146,141,69,60,87",
                         "endOffsets": "4716,4879,5006,5116,5270,5399,5514,5619,5933,6039,6201,6326,6473,6615,6685,6746,6834"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\858f1cd2e9d9d45143a1beb96e307b97\\transformed\\navigation-ui-2.4.1\\res\\values-uk\\values-uk.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,163",
-                        "endColumns": "107,119",
-                        "endOffsets": "158,278"
-                    },
-                    "to": {
-                        "startLines": "121,122",
-                        "startColumns": "4,4",
-                        "startOffsets": "10946,11054",
-                        "endColumns": "107,119",
-                        "endOffsets": "11049,11169"
                     }
                 },
                 {
@@ -88,6 +71,23 @@
                         "endLines": "7,35,36,37,38,39,47,48,49,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,123",
                         "endColumns": "12,77,77,87,107,90,95,115,82,66,90,65,62,87,61,66,57,70,58,53,113,59,62,53,72,118,85,82,138,84,86,87,56,50,65,71,75,89,72,76,80,73,89,78,90,95,73,80,94,53,65,86,85,61,63,62,106,91,97,91,60,54,81",
                         "endOffsets": "419,3221,3299,3387,3495,3586,4409,4525,4608,6901,6992,7058,7121,7209,7271,7338,7396,7467,7526,7580,7694,7754,7817,7871,7944,8063,8149,8232,8371,8456,8543,8631,8688,8739,8805,8877,8953,9043,9116,9193,9274,9348,9438,9517,9608,9704,9778,9859,9954,10008,10074,10161,10247,10309,10373,10436,10543,10635,10733,10825,10886,10941,11251"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,119",
+                        "endOffsets": "158,278"
+                    },
+                    "to": {
+                        "startLines": "121,122",
+                        "startColumns": "4,4",
+                        "startOffsets": "10946,11054",
+                        "endColumns": "107,119",
+                        "endOffsets": "11049,11169"
                     }
                 },
                 {

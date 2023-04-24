@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-49:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-51:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\51d7887c7eeaa3ed19aa9e590392d163\\transformed\\material-1.8.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
@@ -20,23 +20,6 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,121",
                         "endColumns": "12,63,61,69,69,76,90,105,72,61,76,58,58,77,60,56,55,58,57,53,84,55,57,53,64,91,73,75,121,61,61,78,49,50,65,63,68,77,60,70,66,59,78,66,82,84,73,64,75,47,63,75,77,61,63,62,79,75,77,76,53,54,68",
                         "endOffsets": "292,2913,2975,3045,3115,3192,3947,4053,4126,6002,6079,6138,6197,6275,6336,6393,6449,6508,6566,6620,6705,6761,6819,6873,6938,7030,7104,7180,7302,7364,7426,7505,7555,7606,7672,7736,7805,7883,7944,8015,8082,8142,8221,8288,8371,8456,8530,8595,8671,8719,8783,8859,8937,8999,9063,9126,9206,9282,9360,9437,9491,9546,9819"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\858f1cd2e9d9d45143a1beb96e307b97\\transformed\\navigation-ui-2.4.1\\res\\values-zh-rCN\\values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,156",
-                        "endColumns": "100,102",
-                        "endOffsets": "151,254"
-                    },
-                    "to": {
-                        "startLines": "119,120",
-                        "startColumns": "4,4",
-                        "startOffsets": "9551,9652",
-                        "endColumns": "100,102",
-                        "endOffsets": "9647,9750"
                     }
                 },
                 {
@@ -122,6 +105,23 @@
                         "startOffsets": "4993",
                         "endColumns": "98",
                         "endOffsets": "5087"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,156",
+                        "endColumns": "100,102",
+                        "endOffsets": "151,254"
+                    },
+                    "to": {
+                        "startLines": "119,120",
+                        "startColumns": "4,4",
+                        "startOffsets": "9551,9652",
+                        "endColumns": "100,102",
+                        "endOffsets": "9647,9750"
                     }
                 }
             ]

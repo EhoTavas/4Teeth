@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-49:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-51:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\858f1cd2e9d9d45143a1beb96e307b97\\transformed\\navigation-ui-2.4.1\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,162",
-                        "endColumns": "106,122",
-                        "endOffsets": "157,280"
-                    },
-                    "to": {
-                        "startLines": "120,121",
-                        "startColumns": "4,4",
-                        "startOffsets": "10880,10987",
-                        "endColumns": "106,122",
-                        "endOffsets": "10982,11105"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\fdfd030f76d30366b91b278684f9d1e4\\transformed\\core-1.10.0\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
                     "from": {
@@ -69,6 +52,23 @@
                         "startOffsets": "374,481,582,688,774,878,1000,1085,1167,1258,1351,1446,1540,1640,1733,1828,1933,2024,2115,2201,2306,2412,2515,2622,2731,2838,3008,11777",
                         "endColumns": "106,100,105,85,103,121,84,81,90,92,94,93,99,92,94,104,90,90,85,104,105,102,106,108,106,169,96,86",
                         "endOffsets": "476,577,683,769,873,995,1080,1162,1253,1346,1441,1535,1635,1728,1823,1928,2019,2110,2196,2301,2407,2510,2617,2726,2833,3003,3100,11859"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,162",
+                        "endColumns": "106,122",
+                        "endOffsets": "157,280"
+                    },
+                    "to": {
+                        "startLines": "120,121",
+                        "startColumns": "4,4",
+                        "startOffsets": "10880,10987",
+                        "endColumns": "106,122",
+                        "endOffsets": "10982,11105"
                     }
                 },
                 {

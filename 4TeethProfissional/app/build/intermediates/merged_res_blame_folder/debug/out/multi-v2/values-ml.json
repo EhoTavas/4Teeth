@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-49:/values-ml/values-ml.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-51:/values-ml/values-ml.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\858f1cd2e9d9d45143a1beb96e307b97\\transformed\\navigation-ui-2.4.1\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,180",
-                        "endColumns": "124,118",
-                        "endOffsets": "175,294"
-                    },
-                    "to": {
-                        "startLines": "119,120",
-                        "startColumns": "4,4",
-                        "startOffsets": "11224,11349",
-                        "endColumns": "124,118",
-                        "endOffsets": "11344,11463"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-ml\\values-ml.xml",
                     "from": {
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,121",
                         "endColumns": "12,79,82,86,105,98,93,109,91,64,98,65,59,101,61,75,57,77,64,53,116,63,63,53,79,133,85,88,135,84,87,94,57,51,65,78,81,90,75,76,76,70,106,79,96,99,73,80,104,57,66,90,91,61,63,62,102,115,104,115,61,55,83",
                         "endOffsets": "316,3145,3228,3315,3421,3520,4351,4461,4553,6979,7078,7144,7204,7306,7368,7444,7502,7580,7645,7699,7816,7880,7944,7998,8078,8212,8298,8387,8523,8608,8696,8791,8849,8901,8967,9046,9128,9219,9295,9372,9449,9520,9627,9707,9804,9904,9978,10059,10164,10222,10289,10380,10472,10534,10598,10661,10764,10880,10985,11101,11163,11219,11547"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,180",
+                        "endColumns": "124,118",
+                        "endOffsets": "175,294"
+                    },
+                    "to": {
+                        "startLines": "119,120",
+                        "startColumns": "4,4",
+                        "startOffsets": "11224,11349",
+                        "endColumns": "124,118",
+                        "endOffsets": "11344,11463"
                     }
                 },
                 {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-49:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-51:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-zh-rTW\\values-zh-rTW.xml",
@@ -37,23 +37,6 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,121",
                         "endColumns": "12,63,61,66,69,76,93,106,72,61,77,59,59,77,60,57,55,59,57,53,84,55,57,53,64,91,73,76,119,62,62,76,49,50,65,62,67,77,60,70,66,61,78,64,82,84,73,63,75,47,63,75,77,61,63,62,79,76,75,76,53,54,68",
                         "endOffsets": "292,2922,2984,3051,3121,3198,3953,4060,4133,6014,6092,6152,6212,6290,6351,6409,6465,6525,6583,6637,6722,6778,6836,6890,6955,7047,7121,7198,7318,7381,7444,7521,7571,7622,7688,7751,7819,7897,7958,8029,8096,8158,8237,8302,8385,8470,8544,8608,8684,8732,8796,8872,8950,9012,9076,9139,9219,9296,9372,9449,9503,9558,9826"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\858f1cd2e9d9d45143a1beb96e307b97\\transformed\\navigation-ui-2.4.1\\res\\values-zh-rTW\\values-zh-rTW.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,154",
-                        "endColumns": "98,99",
-                        "endOffsets": "149,249"
-                    },
-                    "to": {
-                        "startLines": "119,120",
-                        "startColumns": "4,4",
-                        "startOffsets": "9563,9662",
-                        "endColumns": "98,99",
-                        "endOffsets": "9657,9757"
                     }
                 },
                 {
@@ -122,6 +105,23 @@
                         "startOffsets": "5002",
                         "endColumns": "102",
                         "endOffsets": "5100"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,154",
+                        "endColumns": "98,99",
+                        "endOffsets": "149,249"
+                    },
+                    "to": {
+                        "startLines": "119,120",
+                        "startColumns": "4,4",
+                        "startOffsets": "9563,9662",
+                        "endColumns": "98,99",
+                        "endOffsets": "9657,9757"
                     }
                 }
             ]
