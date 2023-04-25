@@ -94,6 +94,7 @@
             <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCep2"
+                android:autofillHints="postalCode"
                 android:hint="@string/strCep"
                 android:inputType="textPostalAddress|number"
                 app:mask="_____-___"
@@ -139,6 +140,7 @@
             <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCep3"
+                android:autofillHints="postalCode"
                 android:hint="@string/strCep"
                 android:inputType="textPostalAddress|number"
                 app:mask="_____-___"
@@ -169,16 +171,19 @@
                 android:id="@+id/EtCity3"
                 android:hint="@string/strCidade"
                 android:inputType="textCapSentences" />
-            <androidx.appcompat.widget.AppCompatEditText
+            <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtState3"
                 android:hint="@string/strEstado"
-                android:inputType="textCapSentences" />
+                android:inputType="textCapSentences"
+                app:mask="##"
+                app:maskCharacter="#"
+                app:maskStyle="completable" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnConfirmar"
