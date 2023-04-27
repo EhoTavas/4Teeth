@@ -1,3 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+android/local.properties
+.android/local.properties
