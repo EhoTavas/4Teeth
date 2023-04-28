@@ -75,7 +75,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
   public final AppCompatEditText EtState2;
 
   @NonNull
-  public final AppCompatEditText EtState3;
+  public final MaskEditText EtState3;
 
   @NonNull
   public final AppCompatEditText EtStreet1;
@@ -113,7 +113,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
       @NonNull AppCompatEditText EtNh3, @NonNull AppCompatEditText EtNum1,
       @NonNull AppCompatEditText EtNum2, @NonNull AppCompatEditText EtNum3,
       @NonNull AppCompatEditText EtState1, @NonNull AppCompatEditText EtState2,
-      @NonNull AppCompatEditText EtState3, @NonNull AppCompatEditText EtStreet1,
+      @NonNull MaskEditText EtState3, @NonNull AppCompatEditText EtStreet1,
       @NonNull AppCompatEditText EtStreet2, @NonNull AppCompatEditText EtStreet3,
       @NonNull LinearLayoutCompat LayoutAddresses, @NonNull AppCompatTextView TvEndereco1,
       @NonNull AppCompatTextView TvEndereco2, @NonNull AppCompatTextView TvEndereco3,
@@ -278,7 +278,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
       }
 
       id = R.id.EtState3;
-      AppCompatEditText EtState3 = ViewBindings.findChildViewById(rootView, id);
+      MaskEditText EtState3 = ViewBindings.findChildViewById(rootView, id);
       if (EtState3 == null) {
         break missingId;
       }
