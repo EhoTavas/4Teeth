@@ -13,6 +13,8 @@
     <color name="gelo_azulado">#F0FAF9</color>
     <color name="branco_gelo">#FAFFFE</color>
     <color name="errorColor">#FF018786</color>
+    <color name="very_light_cyan">#E5FFFE</color>
+    <color name="bright_cyan">#33DCDE</color>
     <color name="azul_gelo">#88C3BF</color>
     <color name="red">#FF0000</color>
     <color name="gradient_start_color">@color/teal_700</color>

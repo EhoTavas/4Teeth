@@ -24,7 +24,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvGerenciarPerfil"
-        style="@style/tituloTelas"
+        style="@style/screenTitle"
         android:text="@string/sign_up" />
 
   </androidx.appcompat.widget.LinearLayoutCompat>
@@ -107,13 +107,7 @@
 -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinuar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_button"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:elevation="5dp"
+        style="@style/BtnDefault"
         android:text="@string/btnContinue" />
 
     <androidx.appcompat.widget.AppCompatTextView
