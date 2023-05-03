@@ -107,7 +107,7 @@
 -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinuar"
-        style="@style/BtnDefault"
+        style="@style/btnDefault"
         android:text="@string/btnContinue" />
 
     <androidx.appcompat.widget.AppCompatTextView

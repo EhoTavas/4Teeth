@@ -5,6 +5,7 @@
     <color name="azul_quase_turquesa">#65CECF</color>
     <color name="black">#FF000000</color>
     <color name="branco_gelo">#FAFFFE</color>
+    <color name="bright_cyan">#33DCDE</color>
     <color name="errorColor">#FF018786</color>
     <color name="gelo_azulado">#F0FAF9</color>
     <color name="gelo_esverdeado">#E5F3F2</color>
@@ -16,6 +17,7 @@
     <color name="red">#FF0000</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="very_light_cyan">#E5FFFE</color>
     <color name="white">#FFFFFFFF</color>
     <dimen name="fab_margin">16dp</dimen>
     <string name="app_name">4Teeth Profissional</string>
@@ -88,6 +90,16 @@
         <item name="windowNoTitle">true</item>
     </style>
     <style name="Theme.4TeethProfissional.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="btnDefault">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
     <style name="fragmentsBackground" parent="Theme.4TeethProfissional">
         <item name="android:windowBackground">@color/azul_gelo</item>
     </style>
@@ -106,6 +118,7 @@
     <style name="inputSignUp" parent="inputMainScreen">
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:elevation">3dp</item>
     </style>
     <style name="labelsMainScreen">
         <item name="android:textColor">@color/black</item>
@@ -116,7 +129,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginHorizontal">45dp</item>
     </style>
-    <style name="tituloTelas">
+    <style name="screenTitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>

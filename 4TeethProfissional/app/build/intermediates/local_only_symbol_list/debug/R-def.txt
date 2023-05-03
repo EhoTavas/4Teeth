@@ -7,6 +7,7 @@ color azul_pastel
 color azul_quase_turquesa
 color black
 color branco_gelo
+color bright_cyan
 color errorColor
 color gelo_azulado
 color gelo_esverdeado
@@ -18,6 +19,7 @@ color purple_700
 color red
 color teal_200
 color teal_700
+color very_light_cyan
 color white
 dimen fab_margin
 drawable border_rounded_login_screen
@@ -84,6 +86,7 @@ id icNavBackLogin
 id imageView
 id nav_graph
 id nav_host_fragment_content_main
+id toolbar
 layout activity_cadastro_endereco
 layout activity_log_in
 layout activity_main
@@ -145,11 +148,12 @@ style Theme.4TeethProfissional
 style Theme.4TeethProfissional.AppBarOverlay
 style Theme.4TeethProfissional.NoActionBar
 style Theme.4TeethProfissional.PopupOverlay
+style btnDefault
 style fragmentsBackground
 style inputMainScreen
 style inputSignUp
 style labelsMainScreen
 style labelsMainScreen_LinearLayout
-style tituloTelas
+style screenTitle
 xml backup_rules
 xml data_extraction_rules

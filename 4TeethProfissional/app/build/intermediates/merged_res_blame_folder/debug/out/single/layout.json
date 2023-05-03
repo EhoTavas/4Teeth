@@ -8,8 +8,8 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\activity_main.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-58:/layout/activity_cadastro_endereco.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/activity_cadastro_endereco.xml"
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-58:\\layout\\fragment_sign_up.xml",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\fragment_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-58:\\layout\\content_main_activity.xml",
@@ -36,10 +36,6 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\activity_log_in.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-58:/layout/fragment_sign_up.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/fragment_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-58:\\layout\\activity_cadastro_endereco.xml",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\activity_cadastro_endereco.xml"
     },
@@ -48,8 +44,8 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\fragment_main_menu.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-58:/layout/activity_log_in.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/activity_log_in.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-58:/layout/activity_main.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-58:\\layout\\activity_initial_menu.xml",

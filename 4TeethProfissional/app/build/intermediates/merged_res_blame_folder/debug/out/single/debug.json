@@ -104,12 +104,8 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-merged_res-59:/layout_activity_cadastro_endereco.xml.flat",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/activity_cadastro_endereco.xml"
-    },
-    {
-        "merged": "br.com.ForTeethDentalCare.app-merged_res-59:/layout_fragment_sign_up.xml.flat",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/fragment_sign_up.xml"
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\layout_fragment_sign_up.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\fragment_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\drawable_ic_navegar_voltar.xml.flat",
@@ -126,10 +122,6 @@
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "br.com.ForTeethDentalCare.app-merged_res-59:/navigation_nav_graph.xml.flat",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/navigation/nav_graph.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -168,6 +160,10 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
+        "merged": "br.com.ForTeethDentalCare.app-merged_res-59:/layout_activity_main.xml.flat",
+        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\mipmap-mdpi\\ic_launcher_foreground.webp"
     },
@@ -180,10 +176,6 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-merged_res-59:/layout_activity_log_in.xml.flat",
-        "source": "br.com.ForTeethDentalCare.app-main-61:/layout/activity_log_in.xml"
-    },
-    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\layout_content_initial_menu.xml.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\layout\\content_initial_menu.xml"
     },
@@ -192,11 +184,11 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\drawable\\tooth_3d.webp"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-59:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-61:\\mipmap-xhdpi\\ic_launcher_round.webp"
     }
 ]
