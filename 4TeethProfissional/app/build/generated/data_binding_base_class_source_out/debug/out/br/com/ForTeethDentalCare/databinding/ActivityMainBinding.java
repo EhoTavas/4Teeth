@@ -4,53 +4,25 @@ package br.com.ForTeethDentalCare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
-import androidx.viewbinding.ViewBindings;
 import br.com.ForTeethDentalCare.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
-import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final CoordinatorLayout rootView;
 
-  @NonNull
-  public final AppCompatEditText EtEmailLogin;
-
-  @NonNull
-  public final AppCompatEditText EtPasswordLogin;
-
-  @NonNull
-  public final AppCompatButton btnLogin;
-
-  @NonNull
-  public final AppCompatButton btnSignUp;
-
-  @NonNull
-  public final ImageView imageView;
-
-  private ActivityMainBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatEditText EtEmailLogin, @NonNull AppCompatEditText EtPasswordLogin,
-      @NonNull AppCompatButton btnLogin, @NonNull AppCompatButton btnSignUp,
-      @NonNull ImageView imageView) {
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView) {
     this.rootView = rootView;
-    this.EtEmailLogin = EtEmailLogin;
-    this.EtPasswordLogin = EtPasswordLogin;
-    this.btnLogin = btnLogin;
-    this.btnSignUp = btnSignUp;
-    this.imageView = imageView;
   }
 
   @Override
   @NonNull
-  public LinearLayoutCompat getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -71,44 +43,10 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMainBinding bind(@NonNull View rootView) {
-    // The body of this method is generated in a way you would not otherwise write.
-    // This is done to optimize the compiled bytecode for size and performance.
-    int id;
-    missingId: {
-      id = R.id.EtEmailLogin;
-      AppCompatEditText EtEmailLogin = ViewBindings.findChildViewById(rootView, id);
-      if (EtEmailLogin == null) {
-        break missingId;
-      }
-
-      id = R.id.EtPasswordLogin;
-      AppCompatEditText EtPasswordLogin = ViewBindings.findChildViewById(rootView, id);
-      if (EtPasswordLogin == null) {
-        break missingId;
-      }
-
-      id = R.id.btnLogin;
-      AppCompatButton btnLogin = ViewBindings.findChildViewById(rootView, id);
-      if (btnLogin == null) {
-        break missingId;
-      }
-
-      id = R.id.btnSignUp;
-      AppCompatButton btnSignUp = ViewBindings.findChildViewById(rootView, id);
-      if (btnSignUp == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((LinearLayoutCompat) rootView, EtEmailLogin, EtPasswordLogin,
-          btnLogin, btnSignUp, imageView);
+    if (rootView == null) {
+      throw new NullPointerException("rootView");
     }
-    String missingId = rootView.getResources().getResourceName(id);
-    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
+
+    return new ActivityMainBinding((CoordinatorLayout) rootView);
   }
 }

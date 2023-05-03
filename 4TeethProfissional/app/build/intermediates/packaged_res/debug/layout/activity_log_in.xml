@@ -9,7 +9,7 @@
     tools:context=".LogIn">
 
     <ImageView
-      android:id="@+id/icNavegarVoltar"
+      android:id="@+id/icNavBack"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:src="@drawable/ic_navegar_voltar"
@@ -22,9 +22,5 @@
       android:layout_gravity="center_vertical"
       android:layout_marginHorizontal="100dp"
       />
-
-
-
-
 
   </androidx.appcompat.widget.LinearLayoutCompat>

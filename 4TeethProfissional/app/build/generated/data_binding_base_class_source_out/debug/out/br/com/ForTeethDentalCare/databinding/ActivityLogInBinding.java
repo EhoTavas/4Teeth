@@ -20,12 +20,11 @@ public final class ActivityLogInBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final ImageView icNavegarVoltar;
+  public final ImageView icNavBack;
 
-  private ActivityLogInBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull ImageView icNavegarVoltar) {
+  private ActivityLogInBinding(@NonNull LinearLayoutCompat rootView, @NonNull ImageView icNavBack) {
     this.rootView = rootView;
-    this.icNavegarVoltar = icNavegarVoltar;
+    this.icNavBack = icNavBack;
   }
 
   @Override
@@ -55,13 +54,13 @@ public final class ActivityLogInBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.icNavegarVoltar;
-      ImageView icNavegarVoltar = ViewBindings.findChildViewById(rootView, id);
-      if (icNavegarVoltar == null) {
+      id = R.id.icNavBack;
+      ImageView icNavBack = ViewBindings.findChildViewById(rootView, id);
+      if (icNavBack == null) {
         break missingId;
       }
 
-      return new ActivityLogInBinding((LinearLayoutCompat) rootView, icNavegarVoltar);
+      return new ActivityLogInBinding((LinearLayoutCompat) rootView, icNavBack);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

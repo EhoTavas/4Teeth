@@ -102,7 +102,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
   public final AppCompatButton btnConfirmar;
 
   @NonNull
-  public final ImageView icNavegarVoltar;
+  public final ImageView icNavBack;
 
   private ActivityCadastroEnderecoBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull MaskEditText EtCep1, @NonNull MaskEditText EtCep2, @NonNull MaskEditText EtCep3,
@@ -117,7 +117,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
       @NonNull AppCompatEditText EtStreet2, @NonNull AppCompatEditText EtStreet3,
       @NonNull LinearLayoutCompat LayoutAddresses, @NonNull AppCompatTextView TvEndereco1,
       @NonNull AppCompatTextView TvEndereco2, @NonNull AppCompatTextView TvEndereco3,
-      @NonNull AppCompatButton btnConfirmar, @NonNull ImageView icNavegarVoltar) {
+      @NonNull AppCompatButton btnConfirmar, @NonNull ImageView icNavBack) {
     this.rootView = rootView;
     this.EtCep1 = EtCep1;
     this.EtCep2 = EtCep2;
@@ -145,7 +145,7 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
     this.TvEndereco2 = TvEndereco2;
     this.TvEndereco3 = TvEndereco3;
     this.btnConfirmar = btnConfirmar;
-    this.icNavegarVoltar = icNavegarVoltar;
+    this.icNavBack = icNavBack;
   }
 
   @Override
@@ -331,16 +331,16 @@ public final class ActivityCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.icNavegarVoltar;
-      ImageView icNavegarVoltar = ViewBindings.findChildViewById(rootView, id);
-      if (icNavegarVoltar == null) {
+      id = R.id.icNavBack;
+      ImageView icNavBack = ViewBindings.findChildViewById(rootView, id);
+      if (icNavBack == null) {
         break missingId;
       }
 
       return new ActivityCadastroEnderecoBinding((LinearLayoutCompat) rootView, EtCep1, EtCep2,
           EtCep3, EtCity1, EtCity2, EtCity3, EtComp1, EtComp2, EtComp3, EtNh1, EtNh2, EtNh3, EtNum1,
           EtNum2, EtNum3, EtState1, EtState2, EtState3, EtStreet1, EtStreet2, EtStreet3,
-          LayoutAddresses, TvEndereco1, TvEndereco2, TvEndereco3, btnConfirmar, icNavegarVoltar);
+          LayoutAddresses, TvEndereco1, TvEndereco2, TvEndereco3, btnConfirmar, icNavBack);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

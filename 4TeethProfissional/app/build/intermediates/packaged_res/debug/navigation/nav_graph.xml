@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="br.com.ForTeethDentalCare.FirstFragment"
+        android:name="br.com.ForTeethDentalCare.LoginFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_main_menu">
+        tools:layout="@layout/activity_main">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="br.com.ForTeethDentalCare.SecondFragment"
+        android:name="br.com.ForTeethDentalCare.SignUpFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_sign_up">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

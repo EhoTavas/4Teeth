@@ -1,20 +1,37 @@
 package br.com.ForTeethDentalCare
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import android.view.Menu
+import android.view.MenuItem
 import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //setSupportActionBar(binding.toolbar)
+
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    /*
         binding.btnSignUp.setOnClickListener {
-            val criarConta = Intent (this, CadastroUm::class.java)
+            val criarConta = Intent (this, SignUpFragment::class.java)
             startActivities(arrayOf(criarConta))
         }
 
@@ -22,19 +39,6 @@ class MainActivity : AppCompatActivity() {
             val entrarConta = Intent (this, LogIn::class.java)
             startActivities(arrayOf(entrarConta))
         }
+    */
     }
 }
-/*
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // This callback will only be called when MyFragment is at least Started.
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
-            // Handle the back button event
-        }
-
-        // The callback can be enabled or disabled here or in the lambda
-    }
-
-*/

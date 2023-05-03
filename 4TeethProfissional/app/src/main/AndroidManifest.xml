@@ -15,7 +15,7 @@
         android:theme="@style/Theme.4TeethProfissional"
         tools:targetApi="31">
         <activity
-            android:name=".InitialMenu"
+            android:name=".LoginFragment"
             android:exported="false"
             android:label="@string/title_activity_initial_menu"
             android:theme="@style/Theme.4TeethProfissional.NoActionBar" />
@@ -28,7 +28,7 @@
             android:name=".LogIn"
             android:exported="false" />
         <activity
-            android:name=".CadastroUm"
+            android:name=".SignUpFragment"
             android:exported="false" />
         <activity
             android:name=".CadastroEndereco"
