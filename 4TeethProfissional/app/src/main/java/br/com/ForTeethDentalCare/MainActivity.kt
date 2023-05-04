@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
-    public var dentist: Dentist = Dentist("", "", "", "","")
+
+    public var dentist: Dentist = Dentist("", "", "", "","","","","","","","")
 
 
     private fun prepareFirebaseAppCheckDebug(){

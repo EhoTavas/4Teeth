@@ -56,12 +56,29 @@ class CadastroEnderecoFragment : Fragment() {
         }
 
         binding.btnConfirmar.setOnClickListener {
+            (activity as MainActivity).let{
+                it.dentist.endereco1 = binding.EtStreet1.text.toString() + ", " + binding.EtNum1.text.toString() + ", " + binding.EtComp1.text.toString() + ", " + binding.EtNh1.text.toString() + ", " + binding.EtCity1.text.toString() + ", " + binding.EtState1.text.toString()
+                it.dentist.endereco2 = binding.EtStreet2.text.toString() + ", " + binding.EtNum2.text.toString() + ", " + binding.EtComp2.text.toString() + ", " + binding.EtNh2.text.toString() + ", " + binding.EtCity2.text.toString() + ", " + binding.EtState2.text.toString()
+                it.dentist.endereco3 = binding.EtStreet3.text.toString() + ", " + binding.EtNum3.text.toString() + ", " + binding.EtComp3.text.toString() + ", " + binding.EtNh3.text.toString() + ", " + binding.EtCity3.text.toString() + ", " + binding.EtState3.text.toString()
+                it.dentist.cep1 = binding.EtCep1.text.toString()
+                it.dentist.cep2 = binding.EtCep2.text.toString()
+                it.dentist.cep3 = binding.EtCep3.text.toString()
+            }
+
+
+
             signUpNewAccount(
                 (activity as MainActivity).dentist.nome,
                 (activity as MainActivity).dentist.telefone,
                 (activity as MainActivity).dentist.email,
                 (activity as MainActivity).dentist.senha,
                 (activity as MainActivity).dentist.curriculo,
+                (activity as MainActivity).dentist.cep1,
+                (activity as MainActivity).dentist.endereco1,
+                (activity as MainActivity).dentist.cep2,
+                (activity as MainActivity).dentist.endereco2,
+                (activity as MainActivity).dentist.cep3,
+                (activity as MainActivity).dentist.endereco3,
                 (activity as MainActivity).getFcmToken(),
             );
 
@@ -87,7 +104,7 @@ class CadastroEnderecoFragment : Fragment() {
         imm.hideSoftInputFromWindow(requireView().windowToken, 0)
     }
 
-    private fun signUpNewAccount(nome: String, telefone: String, email: String, password: String, curriculo: String, fcmToken: String) {
+    private fun signUpNewAccount(nome: String, telefone: String, email: String, password: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, fcmToken: String) {
         auth = Firebase.auth
         // auth.useEmulator("127.0.0.1", 5001)
         // invocar a função e receber o retorno fazendo Cast para "CustomResponse"
@@ -100,7 +117,7 @@ class CadastroEnderecoFragment : Fragment() {
                     val user = auth.currentUser
                     (activity as MainActivity).storeUserId(user!!.uid)
                     // atualizar o perfil do usuário com os dados chamando a function.
-                    updateUserProfile(nome, telefone, email, curriculo, user!!.uid, fcmToken)
+                    updateUserProfile(nome, telefone, email, curriculo, cep1, endereco1, cep2, endereco2, cep3, endereco3, user!!.uid, fcmToken)
                         .addOnCompleteListener(requireActivity()) { res ->
                             // conta criada com sucesso.
                             if(res.result.status == "SUCCESS"){
@@ -120,7 +137,7 @@ class CadastroEnderecoFragment : Fragment() {
             }
     }
 
-    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, uid: String, fcmToken: String) : Task<CustomResponse>{
+    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, uid: String, fcmToken: String) : Task<CustomResponse>{
         // chamar a function para atualizar o perfil.
         functions = Firebase.functions("southamerica-east1")
 
@@ -130,6 +147,12 @@ class CadastroEnderecoFragment : Fragment() {
             "telefone" to telefone,
             "email" to email,
             "curriculo" to curriculo,
+            "cep1" to cep1,
+            "endereco1" to endereco1,
+            "cep2" to cep2,
+            "endereco2" to endereco2,
+            "cep3" to cep3,
+            "endereco3" to endereco3,
             "uid" to uid,
             "fcmToken" to fcmToken
         )

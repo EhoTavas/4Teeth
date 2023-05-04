@@ -1,17 +1,25 @@
-
 /* eslint-disable linebreak-style */
+
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 
 // inicializando o firebase admin
 const firebase = admin.initializeApp();
+
     type Dentista = {
     nome: string,
     email: string,
     telefone: string,
+    curriculo: string,
+    cep1: string,
+    endereco1: string,
+    cep2: string,
+    endereco2: string,
+    cep3: string,
+    endereco3: string,
     fcmToken: string | undefined,
     uid: string,
-  }
+    }
 
   /**
    * Tipo para facilitar o retorno
@@ -37,6 +45,7 @@ function hasAccountData(data: Dentista) {
   if (data.nome != undefined &&
         data.email != undefined &&
         data.telefone != undefined &&
+        data.curriculo != undefined &&
         data.uid != undefined &&
         data.fcmToken != undefined) {
     return true;
@@ -69,7 +78,7 @@ export const setUserProfile = functions
     if (hasAccountData(dentista)) {
       try {
         const doc = await firebase.firestore()
-          .collection("users")
+          .collection("Dentista")
           .add(dentista);
         if (doc.id != undefined) {
           cResponse.status = "SUCCESS";

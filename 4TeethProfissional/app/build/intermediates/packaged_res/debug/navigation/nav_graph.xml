@@ -41,11 +41,11 @@
         android:label="@string/Addresses_title"
         tools:layout="@layout/fragment_cadastro_endereco">
         <action
-            android:id="@+id/Addresses_to_menuFragment"
-            app:destination="@id/menuFragment" />
-        <action
             android:id="@+id/Addresses_to_SignUp"
             app:destination="@id/SignUp" />
+        <action
+            android:id="@+id/Addresses_to_Login"
+            app:destination="@id/Login" />
     </fragment>
     <fragment
         android:id="@+id/notificationsAreDisabledFragment"

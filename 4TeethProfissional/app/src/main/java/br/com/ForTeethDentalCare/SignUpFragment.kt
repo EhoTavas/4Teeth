@@ -70,3 +70,40 @@ class SignUpFragment : Fragment() {
     }
 
 }
+
+/*override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = FragmentSignUpBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    binding.btnContinuar.setOnClickListener {
+
+        val name = findViewById<EditText>(R.id.EtNome)
+        val email = findViewById<EditText>(R.id.EtEmail)
+        val phone = findViewById<EditText>(R.id.EtTelefone)
+        val password = findViewById<EditText>(R.id.EtPassword)
+        val passwordConfirm = findViewById<EditText>(R.id.EtPasswordConfirm)
+
+        if (
+            name.text.isEmpty() ||
+            email.text.isEmpty() ||
+            phone.text.isEmpty() ||
+            password.text.isEmpty() ||
+            passwordConfirm.text.isEmpty()
+        ) {
+            findViewById<TextView>(R.id.TvErro).text = "Preencha todos os campos"
+        } else {
+            if (password.text.toString() == passwordConfirm.text.toString()) {
+                val continuarCadastro = Intent(this, CadastroEnderecoFragment::class.java)
+                startActivities(arrayOf(continuarCadastro))
+            } else {
+                findViewById<TextView>(R.id.TvErro).text = "As senhas não coincidem"
+            }
+        }
+    }
+
+    binding.icNavegarVoltar.setOnClickListener {
+        val voltarTela = Intent (this, MainActivity ::class.java)
+        startActivities(arrayOf(voltarTela))
+    }
+}*/
