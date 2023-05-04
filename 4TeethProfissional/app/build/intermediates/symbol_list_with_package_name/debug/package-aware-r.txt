@@ -1477,6 +1477,7 @@ color gradient_end_color
 color gradient_start_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_ice
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3385,8 +3386,10 @@ id LayoutAddresses
 id Login
 id Login_to_SignUp
 id Login_to_loggedIn
+id Login_to_notificationsAreDisabledFragment
 id META
 id NO_DEBUG
+id NotificationsAreDisabledFragment_to_Login
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -3501,9 +3504,12 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAndroidSettings
 id btnConfirmar
 id btnContinuar
 id btnLogin
+id btnLogin2
+id btnLogin3
 id btnSignUp
 id buttonPanel
 id cache_measures
@@ -3742,6 +3748,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notificationsAreDisabledFragment
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3922,6 +3929,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvMessage
 id unchecked
 id uniform
 id unlabeled
@@ -4078,6 +4086,7 @@ layout design_text_input_start_icon
 layout fragment_cadastro_endereco
 layout fragment_login
 layout fragment_menu
+layout fragment_notifications_are_disabled
 layout fragment_sign_up
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -4252,6 +4261,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -5510,6 +5520,7 @@ style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style appBarLayout
 style btnDefault
+style btnMenu
 style fragmentsBackground
 style inputMainScreen
 style inputSignUp

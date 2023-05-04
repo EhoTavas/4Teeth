@@ -31,6 +31,9 @@
         <action
             android:id="@+id/Login_to_loggedIn"
             app:destination="@id/loggedIn" />
+        <action
+            android:id="@+id/Login_to_notificationsAreDisabledFragment"
+            app:destination="@id/notificationsAreDisabledFragment" />
     </fragment>
     <fragment
         android:id="@+id/Addresses"
@@ -49,4 +52,13 @@
         android:name="br.com.ForTeethDentalCare.LogIn"
         android:label="activity_log_in"
         tools:layout="@layout/activity_log_in" />
+    <fragment
+        android:id="@+id/notificationsAreDisabledFragment"
+        android:name="br.com.ForTeethDentalCare.NotificationsAreDisabledFragment"
+        android:label="fragment_notifications_are_disabled"
+        tools:layout="@layout/fragment_notifications_are_disabled" >
+        <action
+            android:id="@+id/NotificationsAreDisabledFragment_to_Login"
+            app:destination="@id/Login" />
+    </fragment>
 </navigation>
