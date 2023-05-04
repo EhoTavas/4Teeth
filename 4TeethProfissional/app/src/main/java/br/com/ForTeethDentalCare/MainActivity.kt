@@ -1,22 +1,15 @@
 package br.com.ForTeethDentalCare
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.navigation.findNavController
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
@@ -29,6 +22,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.ktx.messaging
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
+import br.com.ForTeethDentalCare.dataStore.Dentist
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
+    public var dentist: Dentist = Dentist("", "", "", "")
 
 
     private fun prepareFirebaseAppCheckDebug(){

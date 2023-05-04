@@ -20,9 +20,6 @@ class LoginFragment : Fragment() {
     private lateinit var email: String;
     private lateinit var password: String;
     private lateinit var auth: FirebaseAuth;
-
-
-
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
@@ -47,7 +44,6 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.Login_to_SignUp)
         }
     }
-
 
     private fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
