@@ -52,133 +52,21 @@ class SignUpFragment : Fragment() {
         }
 
         binding.btnContinuar.setOnClickListener {
-            // criar a conta...
-            signUpNewAccount(
-                binding.EtNome.text.toString(),
-                binding.EtTelefone.text.toString(),
-                binding.EtEmail.text.toString(),
-                binding.EtPassword.text.toString(),
-                (activity as MainActivity).getFcmToken()
-            );
+            (activity as MainActivity).let {
+                it.dentist.email = binding.EtEmail.text.toString()
+                it.dentist.nome = binding.EtNome.text.toString()
+                it.dentist.telefone = binding.EtTelefone.text.toString()
+                it.dentist.senha = binding.EtPassword.text.toString()
+                it.dentist.curriculo = binding.EtCurriculo.text.toString()
+            }
+
+            findNavController().navigate(R.id.SignUp_to_Addresses)
         }
-    }
-
-    fun JSONObject.toMap(): Map<String, *> = keys().asSequence().associateWith {
-        when (val value = this[it])
-        {
-            is JSONArray ->
-            {
-                val map = (0 until value.length()).associate { Pair(it.toString(), value[it]) }
-                JSONObject(map).toMap().values.toList()
-            }
-            is JSONObject -> value.toMap()
-            JSONObject.NULL -> null
-            else            -> value
-        }
-    }
-
-    private fun hideKeyboard(){
-        val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(requireView().windowToken, 0)
-    }
-
-    private fun signUpNewAccount(nome: String, telefone: String, email: String, password: String, fcmToken: String) {
-        auth = Firebase.auth
-        // auth.useEmulator("127.0.0.1", 5001)
-        // invocar a função e receber o retorno fazendo Cast para "CustomResponse"
-
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(requireActivity()) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
-                    (activity as MainActivity).storeUserId(user!!.uid)
-                    // atualizar o perfil do usuário com os dados chamando a function.
-                    updateUserProfile(nome, telefone, email, user!!.uid, fcmToken)
-                        .addOnCompleteListener(requireActivity()) { res ->
-                            // conta criada com sucesso.
-                            if(res.result.status == "SUCCESS"){
-                                hideKeyboard()
-                                Snackbar.make(requireView(),"Conta cadastrada! Pode fazer o login!",Snackbar.LENGTH_LONG).show()
-                                findNavController().navigate(R.id.SignUp_to_Login)
-                            }
-                        }
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(requireActivity(), "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-
-                    // dar seguimento ao tratamento de erro.
-                }
-            }
-    }
-
-    private fun updateUserProfile(nome: String, telefone: String, email: String, uid: String, fcmToken: String) : Task<CustomResponse>{
-        // chamar a function para atualizar o perfil.
-        functions = Firebase.functions("southamerica-east1")
-
-        // Create the arguments to the callable function.
-        val data = hashMapOf(
-            "nome" to nome,
-            "telefone" to telefone,
-            "email" to email,
-            "uid" to uid,
-            "fcmToken" to fcmToken
-        )
-
-        return functions
-            .getHttpsCallable("setUserProfile")
-            .call(data)
-            .continueWith { task ->
-
-                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
-                result
-            }
-
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-    /*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = FragmentSignUpBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        binding.btnContinuar.setOnClickListener {
-
-            val name = findViewById<EditText>(R.id.EtNome)
-            val email = findViewById<EditText>(R.id.EtEmail)
-            val phone = findViewById<EditText>(R.id.EtTelefone)
-            val password = findViewById<EditText>(R.id.EtPassword)
-            val passwordConfirm = findViewById<EditText>(R.id.EtPasswordConfirm)
-
-            if (
-                name.text.isEmpty() ||
-                email.text.isEmpty() ||
-                phone.text.isEmpty() ||
-                password.text.isEmpty() ||
-                passwordConfirm.text.isEmpty()
-            ) {
-                findViewById<TextView>(R.id.TvErro).text = "Preencha todos os campos"
-            } else {
-                if (password.text.toString() == passwordConfirm.text.toString()) {
-                    val continuarCadastro = Intent(this, CadastroEnderecoFragment::class.java)
-                    startActivities(arrayOf(continuarCadastro))
-                } else {
-                    findViewById<TextView>(R.id.TvErro).text = "As senhas não coincidem"
-                }
-            }
-        }
-
-        binding.icNavegarVoltar.setOnClickListener {
-            val voltarTela = Intent (this, MainActivity ::class.java)
-            startActivities(arrayOf(voltarTela))
-        }
-    }
-    */
 }

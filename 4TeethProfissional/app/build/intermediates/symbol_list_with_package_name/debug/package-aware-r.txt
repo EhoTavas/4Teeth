@@ -3347,8 +3347,8 @@ font poppins_family
 font poppins_regular
 id ALT
 id Addresses
+id Addresses_to_Login
 id Addresses_to_SignUp
-id Addresses_to_menuFragment
 id BOTTOM_END
 id BOTTOM_START
 id CTRL

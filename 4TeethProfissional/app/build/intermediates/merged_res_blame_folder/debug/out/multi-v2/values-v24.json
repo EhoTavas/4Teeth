@@ -4,17 +4,7 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-60:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\b2f47cd668271b58b8dadf1e10bca4be\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\mathe\\.gradle\\caches\\transforms-3\\b2f47cd668271b58b8dadf1e10bca4be\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -31,7 +21,17 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\51d7887c7eeaa3ed19aa9e590392d163\\transformed\\material-1.8.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\mathe\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\mathe\\.gradle\\caches\\transforms-3\\51d7887c7eeaa3ed19aa9e590392d163\\transformed\\material-1.8.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

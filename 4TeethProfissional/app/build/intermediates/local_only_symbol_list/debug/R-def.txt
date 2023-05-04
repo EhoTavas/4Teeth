@@ -36,8 +36,8 @@ drawable tooth_3d
 font poppins_family
 font poppins_regular
 id Addresses
+id Addresses_to_Login
 id Addresses_to_SignUp
-id Addresses_to_menuFragment
 id EtCep1
 id EtCep2
 id EtCep3
