@@ -46,6 +46,7 @@ id EtCity3
 id EtComp1
 id EtComp2
 id EtComp3
+id EtCurriculo
 id EtEmail
 id EtEmailLogin
 id EtNh1
@@ -72,6 +73,7 @@ id Login_to_loggedIn
 id SignUp
 id SignUp_to_Addresses
 id SignUp_to_Login
+id TvCurriculo
 id TvEmail
 id TvEndereco1
 id TvEndereco2
@@ -86,6 +88,7 @@ id btnConfirmar
 id btnContinuar
 id btnLogin
 id btnSignUp
+id elevation
 id icNavBack
 id icNavBackLogin
 id icNavBackSignUp
@@ -99,11 +102,13 @@ layout activity_main
 layout content_main
 layout fragment_cadastro_endereco
 layout fragment_login
+layout fragment_menu
 layout fragment_sign_up
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
+string Addresses_title
 string app_name
 string btnCadastrar
 string btnConfirm
@@ -111,21 +116,17 @@ string btnContinue
 string btnEntrar
 string default_web_client_id
 string email
-string first_fragment_label
 string fone
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_first_fragment
-string hello_second_fragment
 string miniCurriculum
 string name
 string next
 string previous
 string project_id
-string second_fragment_label
 string signUpEmailHint
 string signUpMiniCurriculum
 string signUpNameHint
@@ -135,7 +136,6 @@ string sign_up
 string strAddAddress
 string strAppMotto
 string strAppName
-string strAtendimento
 string strBairro
 string strCep
 string strCidade
@@ -155,6 +155,7 @@ style Theme.4TeethProfissional
 style Theme.4TeethProfissional.AppBarOverlay
 style Theme.4TeethProfissional.NoActionBar
 style Theme.4TeethProfissional.PopupOverlay
+style appBarLayout
 style btnDefault
 style fragmentsBackground
 style inputMainScreen

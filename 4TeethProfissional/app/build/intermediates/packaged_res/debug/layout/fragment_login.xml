@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/elevation"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_login_screen"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
-    android:background="@drawable/gradient_login_screen"
     tools:context=".LoginFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -21,9 +21,9 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/strAppMotto"
-        android:textSize="20sp"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -57,8 +57,8 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/EtEmailLogin"
             style="@style/inputMainScreen"
-            android:inputType="textEmailAddress"
-            android:hint="@string/signUpEmailHint" />
+            android:hint="@string/signUpEmailHint"
+            android:inputType="textEmailAddress" />
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/labelsMainScreen_LinearLayout"
@@ -67,8 +67,8 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/EtPasswordLogin"
             style="@style/inputMainScreen"
-            android:inputType="textPassword"
-            android:hint="@string/signUpPasswordHint" />
+            android:hint="@string/signUpPasswordHint"
+            android:inputType="textPassword" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUp"
@@ -85,12 +85,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_button"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:elevation="5dp"
+            style="@style/btnDefault"
             android:text="@string/btnEntrar" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

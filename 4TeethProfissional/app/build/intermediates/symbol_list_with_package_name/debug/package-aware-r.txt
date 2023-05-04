@@ -1999,6 +1999,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color notification_material_background_media_default_color
 color places_autocomplete_error_button
 color places_autocomplete_error_message
 color places_autocomplete_fullscreen_background
@@ -3105,6 +3106,10 @@ dimen places_autocomplete_search_input_padding
 dimen places_autocomplete_search_input_text
 dimen places_autocomplete_vertical_dropdown
 dimen sliding_pane_detail_pane_width
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -3355,6 +3360,7 @@ id EtCity3
 id EtComp1
 id EtComp2
 id EtComp3
+id EtCurriculo
 id EtEmail
 id EtEmailLogin
 id EtNh1
@@ -3391,6 +3397,7 @@ id SignUp_to_Addresses
 id SignUp_to_Login
 id TOP_END
 id TOP_START
+id TvCurriculo
 id TvEmail
 id TvEndereco1
 id TvEndereco2
@@ -3435,6 +3442,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id action0
 id actionDown
 id actionDownUp
 id actionUp
@@ -3500,6 +3508,7 @@ id btnSignUp
 id buttonPanel
 id cache_measures
 id callMeasure
+id cancel_action
 id cancel_button
 id carryVelocity
 id center
@@ -3573,9 +3582,11 @@ id easeOut
 id east
 id edit_query
 id elastic
+id elevation
 id embed
 id end
 id endToStart
+id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id exitUntilCollapsed
@@ -3674,6 +3685,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id media_actions
 id message
 id middle
 id mini
@@ -3856,6 +3868,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id status_bar_latest_event_content
 id stop
 id stretch
 id submenuarrow
@@ -4064,6 +4077,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_cadastro_endereco
 layout fragment_login
+layout fragment_menu
 layout fragment_sign_up
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -4118,8 +4132,17 @@ layout mtrl_search_bar
 layout mtrl_search_view
 layout notification_action
 layout notification_action_tombstone
+layout notification_media_action
+layout notification_media_cancel_action
+layout notification_template_big_media
+layout notification_template_big_media_custom
+layout notification_template_big_media_narrow
+layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
+layout notification_template_lines_media
+layout notification_template_media
+layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout places_autocomplete_activity
@@ -4141,6 +4164,7 @@ navigation nav_graph
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 raw places_keep
+string Addresses_title
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -4222,15 +4246,12 @@ string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string fcm_fallback_notification_channel_label
-string first_fragment_label
 string fone
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_first_fragment
-string hello_second_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -4353,7 +4374,6 @@ string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
-string second_fragment_label
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string signUpEmailHint
@@ -4366,7 +4386,6 @@ string status_bar_notification_info_overflow
 string strAddAddress
 string strAppMotto
 string strAppName
-string strAtendimento
 string strBairro
 string strCep
 string strCidade
@@ -4825,9 +4844,14 @@ style TextAppearance_AppCompat_Widget_Switch
 style TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
+style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
+style TextAppearance_Compat_Notification_Line2_Media
+style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
+style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
+style TextAppearance_Compat_Notification_Title_Media
 style TextAppearance_Design_CollapsingToolbar_Expanded
 style TextAppearance_Design_Counter
 style TextAppearance_Design_Counter_Overflow
@@ -5484,6 +5508,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style appBarLayout
 style btnDefault
 style fragmentsBackground
 style inputMainScreen

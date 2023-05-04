@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/SignUp"
         android:name="br.com.ForTeethDentalCare.SignUpFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/sign_up"
         tools:layout="@layout/activity_main">
         <action
             android:id="@+id/SignUp_to_Addresses"
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/Login"
         android:name="br.com.ForTeethDentalCare.LoginFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/app_name"
         tools:layout="@layout/activity_main">
 
         <action
@@ -35,8 +35,8 @@
     <fragment
         android:id="@+id/Addresses"
         android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
-        android:label="fragment_cadastro_endereco"
-        tools:layout="@layout/fragment_cadastro_endereco" >
+        android:label="@string/Addresses_title"
+        tools:layout="@layout/fragment_cadastro_endereco">
         <action
             android:id="@+id/Addresses_to_LoggedIn"
             app:destination="@id/loggedIn" />

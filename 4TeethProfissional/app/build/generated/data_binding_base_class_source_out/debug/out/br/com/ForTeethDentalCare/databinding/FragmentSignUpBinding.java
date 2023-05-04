@@ -24,6 +24,9 @@ public final class FragmentSignUpBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final AppCompatEditText EtCurriculo;
+
+  @NonNull
   public final AppCompatEditText EtEmail;
 
   @NonNull
@@ -37,6 +40,9 @@ public final class FragmentSignUpBinding implements ViewBinding {
 
   @NonNull
   public final MaskEditText EtTelefone;
+
+  @NonNull
+  public final AppCompatTextView TvCurriculo;
 
   @NonNull
   public final AppCompatTextView TvEmail;
@@ -66,19 +72,22 @@ public final class FragmentSignUpBinding implements ViewBinding {
   public final ImageView icNavBackLogin;
 
   private FragmentSignUpBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatEditText EtEmail, @NonNull AppCompatEditText EtNome,
-      @NonNull AppCompatEditText EtPassword, @NonNull AppCompatEditText EtPasswordConfirm,
-      @NonNull MaskEditText EtTelefone, @NonNull AppCompatTextView TvEmail,
+      @NonNull AppCompatEditText EtCurriculo, @NonNull AppCompatEditText EtEmail,
+      @NonNull AppCompatEditText EtNome, @NonNull AppCompatEditText EtPassword,
+      @NonNull AppCompatEditText EtPasswordConfirm, @NonNull MaskEditText EtTelefone,
+      @NonNull AppCompatTextView TvCurriculo, @NonNull AppCompatTextView TvEmail,
       @NonNull AppCompatTextView TvErro, @NonNull AppCompatTextView TvGerenciarPerfil,
       @NonNull AppCompatTextView TvNome, @NonNull AppCompatTextView TvPassword,
       @NonNull AppCompatTextView TvPasswordConfirm, @NonNull AppCompatTextView TvTelefone,
       @NonNull AppCompatButton btnContinuar, @NonNull ImageView icNavBackLogin) {
     this.rootView = rootView;
+    this.EtCurriculo = EtCurriculo;
     this.EtEmail = EtEmail;
     this.EtNome = EtNome;
     this.EtPassword = EtPassword;
     this.EtPasswordConfirm = EtPasswordConfirm;
     this.EtTelefone = EtTelefone;
+    this.TvCurriculo = TvCurriculo;
     this.TvEmail = TvEmail;
     this.TvErro = TvErro;
     this.TvGerenciarPerfil = TvGerenciarPerfil;
@@ -117,6 +126,12 @@ public final class FragmentSignUpBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.EtCurriculo;
+      AppCompatEditText EtCurriculo = ViewBindings.findChildViewById(rootView, id);
+      if (EtCurriculo == null) {
+        break missingId;
+      }
+
       id = R.id.EtEmail;
       AppCompatEditText EtEmail = ViewBindings.findChildViewById(rootView, id);
       if (EtEmail == null) {
@@ -144,6 +159,12 @@ public final class FragmentSignUpBinding implements ViewBinding {
       id = R.id.EtTelefone;
       MaskEditText EtTelefone = ViewBindings.findChildViewById(rootView, id);
       if (EtTelefone == null) {
+        break missingId;
+      }
+
+      id = R.id.TvCurriculo;
+      AppCompatTextView TvCurriculo = ViewBindings.findChildViewById(rootView, id);
+      if (TvCurriculo == null) {
         break missingId;
       }
 
@@ -201,9 +222,10 @@ public final class FragmentSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSignUpBinding((LinearLayoutCompat) rootView, EtEmail, EtNome, EtPassword,
-          EtPasswordConfirm, EtTelefone, TvEmail, TvErro, TvGerenciarPerfil, TvNome, TvPassword,
-          TvPasswordConfirm, TvTelefone, btnContinuar, icNavBackLogin);
+      return new FragmentSignUpBinding((LinearLayoutCompat) rootView, EtCurriculo, EtEmail, EtNome,
+          EtPassword, EtPasswordConfirm, EtTelefone, TvCurriculo, TvEmail, TvErro,
+          TvGerenciarPerfil, TvNome, TvPassword, TvPasswordConfirm, TvTelefone, btnContinuar,
+          icNavBackLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

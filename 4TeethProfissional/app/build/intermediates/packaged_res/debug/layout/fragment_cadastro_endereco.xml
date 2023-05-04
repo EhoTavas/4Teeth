@@ -23,7 +23,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/screenTitle"
-            android:text="@string/strAtendimento" />
+            android:text="@string/Addresses_title" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

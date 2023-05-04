@@ -34,17 +34,21 @@ public final class FragmentLoginBinding implements ViewBinding {
   public final AppCompatButton btnSignUp;
 
   @NonNull
+  public final LinearLayoutCompat elevation;
+
+  @NonNull
   public final ImageView imageView;
 
   private FragmentLoginBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull AppCompatEditText EtEmailLogin, @NonNull AppCompatEditText EtPasswordLogin,
       @NonNull AppCompatButton btnLogin, @NonNull AppCompatButton btnSignUp,
-      @NonNull ImageView imageView) {
+      @NonNull LinearLayoutCompat elevation, @NonNull ImageView imageView) {
     this.rootView = rootView;
     this.EtEmailLogin = EtEmailLogin;
     this.EtPasswordLogin = EtPasswordLogin;
     this.btnLogin = btnLogin;
     this.btnSignUp = btnSignUp;
+    this.elevation = elevation;
     this.imageView = imageView;
   }
 
@@ -99,6 +103,8 @@ public final class FragmentLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      LinearLayoutCompat elevation = (LinearLayoutCompat) rootView;
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -106,7 +112,7 @@ public final class FragmentLoginBinding implements ViewBinding {
       }
 
       return new FragmentLoginBinding((LinearLayoutCompat) rootView, EtEmailLogin, EtPasswordLogin,
-          btnLogin, btnSignUp, imageView);
+          btnLogin, btnSignUp, elevation, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

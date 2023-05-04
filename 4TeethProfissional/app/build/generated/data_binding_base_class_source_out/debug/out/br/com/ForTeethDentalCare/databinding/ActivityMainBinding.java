@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import br.com.ForTeethDentalCare.R;
-import com.google.android.material.appbar.MaterialToolbar;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,10 +20,9 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final MaterialToolbar toolbar;
+  public final Toolbar toolbar;
 
-  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull MaterialToolbar toolbar) {
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
     this.toolbar = toolbar;
   }
@@ -56,7 +55,7 @@ public final class ActivityMainBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.toolbar;
-      MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
+      Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
