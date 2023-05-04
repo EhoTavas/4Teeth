@@ -3347,8 +3347,8 @@ font poppins_family
 font poppins_regular
 id ALT
 id Addresses
-id Addresses_to_LoggedIn
 id Addresses_to_SignUp
+id Addresses_to_menuFragment
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -3385,7 +3385,7 @@ id FUNCTION
 id LayoutAddresses
 id Login
 id Login_to_SignUp
-id Login_to_loggedIn
+id Login_to_menuFragment
 id Login_to_notificationsAreDisabledFragment
 id META
 id NO_DEBUG
@@ -3508,8 +3508,6 @@ id btnAndroidSettings
 id btnConfirmar
 id btnContinuar
 id btnLogin
-id btnLogin2
-id btnLogin3
 id btnSignUp
 id buttonPanel
 id cache_measures
@@ -3663,7 +3661,6 @@ id linear
 id listMode
 id list_item
 id locale
-id loggedIn
 id ltr
 id m3_side_sheet
 id marquee
@@ -3692,6 +3689,7 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id media_actions
+id menuFragment
 id message
 id middle
 id mini

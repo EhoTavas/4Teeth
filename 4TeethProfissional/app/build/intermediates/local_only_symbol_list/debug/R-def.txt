@@ -36,8 +36,8 @@ drawable tooth_3d
 font poppins_family
 font poppins_regular
 id Addresses
-id Addresses_to_LoggedIn
 id Addresses_to_SignUp
+id Addresses_to_menuFragment
 id EtCep1
 id EtCep2
 id EtCep3
@@ -70,7 +70,7 @@ id EtTelefone
 id LayoutAddresses
 id Login
 id Login_to_SignUp
-id Login_to_loggedIn
+id Login_to_menuFragment
 id Login_to_notificationsAreDisabledFragment
 id NotificationsAreDisabledFragment_to_Login
 id SignUp
@@ -91,15 +91,13 @@ id btnAndroidSettings
 id btnConfirmar
 id btnContinuar
 id btnLogin
-id btnLogin2
-id btnLogin3
 id btnSignUp
 id elevation
 id icNavBack
 id icNavBackLogin
 id icNavBackSignUp
 id imageView
-id loggedIn
+id menuFragment
 id nav_graph
 id nav_host_fragment_content_main
 id notificationsAreDisabledFragment

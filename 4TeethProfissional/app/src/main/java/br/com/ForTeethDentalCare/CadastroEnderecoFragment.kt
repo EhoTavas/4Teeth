@@ -29,7 +29,7 @@ class CadastroEnderecoFragment : Fragment() {
         }
 
         binding.btnConfirmar.setOnClickListener {
-            findNavController().navigate(R.id.Addresses_to_LoggedIn)
+            findNavController().navigate(R.id.Addresses_to_menuFragment)
         }
     }
     //btnContinuar
