@@ -25,7 +25,11 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.icNavBackLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            findNavController().navigate(R.id.SignUp_to_Login)
+        }
+
+        binding.btnContinuar.setOnClickListener {
+            findNavController().navigate(R.id.SignUp_to_Addresses)
         }
     }
 
@@ -57,7 +61,7 @@ class SignUpFragment : Fragment() {
                 findViewById<TextView>(R.id.TvErro).text = "Preencha todos os campos"
             } else {
                 if (password.text.toString() == passwordConfirm.text.toString()) {
-                    val continuarCadastro = Intent(this, CadastroEndereco::class.java)
+                    val continuarCadastro = Intent(this, CadastroEnderecoFragment::class.java)
                     startActivities(arrayOf(continuarCadastro))
                 } else {
                     findViewById<TextView>(R.id.TvErro).text = "As senhas não coincidem"

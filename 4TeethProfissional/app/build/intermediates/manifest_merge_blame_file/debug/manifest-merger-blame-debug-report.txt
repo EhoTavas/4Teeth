@@ -128,8 +128,8 @@
 68-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:32:13-37
 69        <activity
 69-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:33:9-35:40
-70            android:name="br.com.ForTeethDentalCare.CadastroEndereco"
-70-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:34:13-45
+70            android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
+70-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:34:13-53
 71            android:exported="false" />
 71-->C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:35:13-37
 72

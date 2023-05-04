@@ -67,7 +67,7 @@
             android:name="br.com.ForTeethDentalCare.LogIn"
             android:exported="false" />
         <activity
-            android:name="br.com.ForTeethDentalCare.CadastroEndereco"
+            android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
             android:exported="false" />
 
         <!--

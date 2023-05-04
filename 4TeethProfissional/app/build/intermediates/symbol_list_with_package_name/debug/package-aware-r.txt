@@ -3340,6 +3340,9 @@ drawable tooth_3d
 font poppins_family
 font poppins_regular
 id ALT
+id Addresses
+id Addresses_to_LoggedIn
+id Addresses_to_SignUp
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -3372,8 +3375,10 @@ id EtStreet2
 id EtStreet3
 id EtTelefone
 id FUNCTION
-id FirstFragment
 id LayoutAddresses
+id Login
+id Login_to_SignUp
+id Login_to_loggedIn
 id META
 id NO_DEBUG
 id SHIFT
@@ -3381,7 +3386,9 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
-id SecondFragment
+id SignUp
+id SignUp_to_Addresses
+id SignUp_to_Login
 id TOP_END
 id TOP_START
 id TvEmail
@@ -3431,8 +3438,6 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
-id action_FirstFragment_to_SecondFragment
-id action_SecondFragment_to_FirstFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3610,6 +3615,7 @@ id horizontal_only
 id hybrid
 id icNavBack
 id icNavBackLogin
+id icNavBackSignUp
 id icon
 id icon_group
 id icon_only
@@ -3640,6 +3646,7 @@ id linear
 id listMode
 id list_item
 id locale
+id loggedIn
 id ltr
 id m3_side_sheet
 id marquee
@@ -4034,7 +4041,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_cadastro_endereco
 layout activity_log_in
 layout activity_main
 layout browser_actions_context_menu_page
@@ -4056,6 +4062,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_cadastro_endereco
 layout fragment_login
 layout fragment_sign_up
 layout m3_alert_dialog

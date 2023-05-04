@@ -348,12 +348,12 @@ ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main
 		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
 		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:31:13-34
-activity#br.com.ForTeethDentalCare.CadastroEndereco
+activity#br.com.ForTeethDentalCare.CadastroEnderecoFragment
 ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:33:9-35:40
 	android:exported
 		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:34:13-45
+		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:34:13-53
 uses-sdk
 INJECTED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml

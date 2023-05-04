@@ -31,7 +31,7 @@
             android:name=".LogIn"
             android:exported="false" />
         <activity
-            android:name=".CadastroEndereco"
+            android:name=".CadastroEnderecoFragment"
             android:exported="false" />
 
         <!--

@@ -3339,6 +3339,9 @@ int drawable tooth_3d 0x7f070107
 int font poppins_family 0x7f080000
 int font poppins_regular 0x7f080001
 int id ALT 0x7f090000
+int id Addresses 0x7f09024b
+int id Addresses_to_LoggedIn 0x7f09024c
+int id Addresses_to_SignUp 0x7f09024d
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
 int id CTRL 0x7f090003
@@ -3371,8 +3374,10 @@ int id EtStreet2 0x7f09001d
 int id EtStreet3 0x7f09001e
 int id EtTelefone 0x7f09001f
 int id FUNCTION 0x7f090020
-int id FirstFragment 0x7f090021
 int id LayoutAddresses 0x7f090022
+int id Login 0x7f09024e
+int id Login_to_SignUp 0x7f09024f
+int id Login_to_loggedIn 0x7f090255
 int id META 0x7f090023
 int id NO_DEBUG 0x7f090024
 int id SHIFT 0x7f090025
@@ -3380,7 +3385,9 @@ int id SHOW_ALL 0x7f090026
 int id SHOW_PATH 0x7f090027
 int id SHOW_PROGRESS 0x7f090028
 int id SYM 0x7f090029
-int id SecondFragment 0x7f09002a
+int id SignUp 0x7f090250
+int id SignUp_to_Addresses 0x7f090251
+int id SignUp_to_Login 0x7f090252
 int id TOP_END 0x7f09002b
 int id TOP_START 0x7f09002c
 int id TvEmail 0x7f09002d
@@ -3430,8 +3437,6 @@ int id accessibility_custom_action_9 0x7f090058
 int id actionDown 0x7f090059
 int id actionDownUp 0x7f09005a
 int id actionUp 0x7f09005b
-int id action_FirstFragment_to_SecondFragment 0x7f09005c
-int id action_SecondFragment_to_FirstFragment 0x7f09005d
 int id action_bar 0x7f09005e
 int id action_bar_activity_content 0x7f09005f
 int id action_bar_container 0x7f090060
@@ -3609,6 +3614,7 @@ int id horizontal_only 0x7f09010b
 int id hybrid 0x7f09010c
 int id icNavBack 0x7f09010d
 int id icNavBackLogin 0x7f09010e
+int id icNavBackSignUp 0x7f090253
 int id icon 0x7f09010f
 int id icon_group 0x7f090110
 int id icon_only 0x7f090111
@@ -3639,6 +3645,7 @@ int id linear 0x7f090129
 int id listMode 0x7f09012a
 int id list_item 0x7f09012b
 int id locale 0x7f09012c
+int id loggedIn 0x7f090254
 int id ltr 0x7f09012d
 int id m3_side_sheet 0x7f09012e
 int id marquee 0x7f09012f
@@ -4033,7 +4040,6 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
-int layout activity_cadastro_endereco 0x7f0c001c
 int layout activity_log_in 0x7f0c001d
 int layout activity_main 0x7f0c001e
 int layout browser_actions_context_menu_page 0x7f0c001f
@@ -4055,6 +4061,7 @@ int layout design_navigation_menu 0x7f0c002e
 int layout design_navigation_menu_item 0x7f0c002f
 int layout design_text_input_end_icon 0x7f0c0030
 int layout design_text_input_start_icon 0x7f0c0031
+int layout fragment_cadastro_endereco 0x7f0c0079
 int layout fragment_login 0x7f0c0032
 int layout fragment_sign_up 0x7f0c0033
 int layout m3_alert_dialog 0x7f0c0034
