@@ -2,7 +2,7 @@
 
     <string name="app_name">4Teeth Profissional</string>
 
-    //Strings tela inicial
+    //Strings tela Inicial
     <string name="strAppName">4Teeth</string>
     <string name="strAppMotto">Dental Care</string>
     <string name="btnEntrar">Entrar</string>
@@ -12,7 +12,7 @@
     <string name="strPassword">Senha:</string>
     <string name="strPasswordConfirm">Confirme sua Senha:</string>
 
-    //Strings tela cadastro inicial
+    //Strings tela cadastro Inicial
     <string name="sign_up">Criar conta</string>
     <string name="name">Nome:</string>
     <string name="email">E-mail:</string>
@@ -21,16 +21,16 @@
     <string name="signUpNameHint">Nome Completo</string>
     <string name="signUpEmailHint">example@email.com</string>
     <string name="signUpPasswordHint">senha</string>
-    <string name="signUpNumberHint">+55 (11) 98765-4321</string>
-    <string name="signUpMiniCurriculum">Experiência de 2 anos...</string>
+    <string name="signUpNumberHint">+55 (11) 98765–4321</string>
+    <string name="signUpMiniCurriculum">Experiência de 2 anos…</string>
+    <string name="btnContinue">Prosseguir</string>
+    <string name="btnConfirm">Finalizar</string>
     <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
     <string name="missmatchPasswords">As senhas não coincidem</string>
     <string name="invalidEmail">O email não é válido</string>
-    <string name="passwordLength">A senha deve possuir ao menos 4 dígitos</string>
-    <string name="btnContinue">Prosseguir</string>
-    <string name="btnConfirm">Finalizar</string>
+    <string name="passwordLength">A senha deve possuir ao menos 6 dígitos</string>
 
-    //Strings tela cadastro endereços
+    //Strings tela cadastro Endereços
     <string name="Addresses_title">Endereços de atendimento</string>
     <string name="strEndereco1">Endereço:</string>
     <string name="strAddAddress">Adicionar endereço</string>
@@ -74,8 +74,14 @@
         <item>TO</item>
     </string-array>
 
-    //Strings tela de status
-    <string name="strStatus">Meu Status</string>
-    <string name="strDisponibilidade">Disponível para emergências</string>
+    //Strings tela Status
+    <string name="title_fragment_status">Meu Status</string>
+    <string name="strDisponibilidade">Diponível para emergências</string>
+
+    //Strings tela Avaliação
+    <string name="title_fragment_avaliacao">Solicitar Avaliação</string>
+    <string name="strAvaliacao">Deseja solicitar uma avaliação do responsável?</string>
+    <string name="btnSim">Sim</string>
+    <string name="btnNao">Não</string>
 
 </resources>

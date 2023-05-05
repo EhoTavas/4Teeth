@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="@string/title_fragment_status"
+        android:text="@string/title_fragment_avaliacao"
         android:textSize="30sp" />
 
     <ImageView
@@ -50,16 +50,27 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:gravity="center"
-                android:text="@string/strDisponibilidade"
+                android:text="@string/strAvaliacao"
                 android:textColor="@color/black"
                 android:textSize="23sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/BtnSwitch"
-                android:layout_gravity="center"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAvaliacaoSim"
+                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:textColor="@color/black"/>
+                android:layout_weight="1"
+                style="@style/btnDefault"
+                android:text="@string/btnSim" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAvaliacaoNao"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                style="@style/btnDefault"
+                android:text="@string/btnNao" />
+
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

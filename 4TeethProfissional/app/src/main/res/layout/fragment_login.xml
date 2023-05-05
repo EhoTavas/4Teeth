@@ -84,7 +84,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             style="@style/btnDefault"
             android:text="@string/btnEntrar" />
 
