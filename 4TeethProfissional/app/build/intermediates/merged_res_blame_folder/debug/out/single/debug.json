@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\drawable\\ic_plus.xml"
     },
     {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\drawable_container_status.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\drawable\\container_status.xml"
+    },
+    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\xml\\data_extraction_rules.xml"
     },
@@ -30,10 +34,6 @@
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\anim_fade_out.xml.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\anim\\fade_out.xml"
-    },
-    {
-        "merged": "br.com.ForTeethDentalCare.app-merged_res-62:/layout_fragment_status.xml.flat",
-        "source": "br.com.ForTeethDentalCare.app-main-64:/layout/fragment_status.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\layout_fragment_sign_up.xml.flat",
@@ -80,10 +80,6 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\content_main.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-merged_res-62:/drawable_container_status.xml.flat",
-        "source": "br.com.ForTeethDentalCare.app-main-64:/drawable/container_status.xml"
-    },
-    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\layout_fragment_notifications_are_disabled.xml.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_notifications_are_disabled.xml"
     },
@@ -118,6 +114,10 @@
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\layout_fragment_status.xml.flat",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_status.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-merged_res-62:\\drawable_tooth_3d.webp.flat",

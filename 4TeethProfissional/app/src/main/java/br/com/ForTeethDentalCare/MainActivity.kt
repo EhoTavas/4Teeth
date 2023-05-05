@@ -13,6 +13,7 @@ import android.os.Build
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.ui.navigateUp
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
@@ -32,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
     public var dentist: Dentist = Dentist("", "", "", "","","","","","","","")
-
 
     private fun prepareFirebaseAppCheckDebug(){
         // Ajustando o AppCheck para modo depuração.
@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
@@ -108,22 +107,13 @@ class MainActivity : AppCompatActivity() {
 
         // disponibilizando o token (que deve ser colocado lá no APP CHECK do Firebase).
         prepareFirebaseAppCheckDebug()
-
         // guardar o token FCM pois iremos precisar.
-        storeFcmToken();
-
+        storeFcmToken()
         // invocar as permissões para notificar.
-        askNotificationPermission();
-    /*
-        binding.btnSignUp.setOnClickListener {
-            val criarConta = Intent (this, SignUpFragment::class.java)
-            startActivities(arrayOf(criarConta))
-        }
-
-        binding.btnLogin.setOnClickListener {
-            val entrarConta = Intent (this, LogIn::class.java)
-            startActivities(arrayOf(entrarConta))
-        }
-    */
+        askNotificationPermission()
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

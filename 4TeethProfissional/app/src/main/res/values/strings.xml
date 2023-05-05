@@ -47,6 +47,6 @@
 
     //Strings tela de status
     <string name="strStatus">Meu Status</string>
-    <string name="strDisponibilidade">Disponível</string>
+    <string name="strDisponibilidade">Disponível para emergências</string>
 
 </resources>

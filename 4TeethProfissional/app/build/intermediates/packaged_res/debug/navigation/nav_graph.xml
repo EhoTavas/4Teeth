@@ -58,6 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="br.com.ForTeethDentalCare.MenuFragment"
-        android:label="MenuFragment" />
+        android:name="br.com.ForTeethDentalCare.StatusFragment"
+        android:label="@string/strStatus"
+        tools:layout="@layout/fragment_status" />
 </navigation>

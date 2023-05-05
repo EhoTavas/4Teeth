@@ -56,7 +56,7 @@
     <string name="strCep">Cep</string>
     <string name="strCidade">Cidade</string>
     <string name="strComplemento">Complemento (opcional)</string>
-    <string name="strDisponibilidade">Disponível</string>
+    <string name="strDisponibilidade">Disponível para emergências</string>
     <string name="strEmail">E-mail:</string>
     <string name="strEndereco1">Endereço:</string>
     <string name="strEndereco2">Endereço 2 (Opcional):</string>

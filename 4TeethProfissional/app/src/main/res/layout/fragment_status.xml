@@ -37,9 +37,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
             android:background="@drawable/container_status"
             android:orientation="vertical"
             android:theme="@style/Theme.4TeethProfissional">
@@ -48,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="40dp"
+                android:layout_margin="20dp"
                 android:gravity="center"
                 android:text="@string/strDisponibilidade"
                 android:textColor="@color/black"
@@ -56,9 +55,10 @@
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/BtnSwitch"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:text="Switch Button"/>
+                android:textColor="@color/black"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
