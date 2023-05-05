@@ -15,6 +15,7 @@
     <color name="errorColor">#FF018786</color>
     <color name="very_light_cyan">#DFFDFC</color>
     <color name="light_ice">#EEFFFD</color>
+    <color name="container_light_cyan">#EEFFFD</color>
     <color name="bright_cyan">#33DCDE</color>
     <color name="azul_gelo">#88C3BF</color>
     <color name="red">#FF0000</color>

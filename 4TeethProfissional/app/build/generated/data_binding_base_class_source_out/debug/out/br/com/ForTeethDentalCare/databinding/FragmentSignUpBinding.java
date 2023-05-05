@@ -48,7 +48,7 @@ public final class FragmentSignUpBinding implements ViewBinding {
   public final AppCompatTextView TvEmail;
 
   @NonNull
-  public final AppCompatTextView TvErro;
+  public final AppCompatTextView TvError;
 
   @NonNull
   public final AppCompatTextView TvGerenciarPerfil;
@@ -76,7 +76,7 @@ public final class FragmentSignUpBinding implements ViewBinding {
       @NonNull AppCompatEditText EtNome, @NonNull AppCompatEditText EtPassword,
       @NonNull AppCompatEditText EtPasswordConfirm, @NonNull MaskEditText EtTelefone,
       @NonNull AppCompatTextView TvCurriculo, @NonNull AppCompatTextView TvEmail,
-      @NonNull AppCompatTextView TvErro, @NonNull AppCompatTextView TvGerenciarPerfil,
+      @NonNull AppCompatTextView TvError, @NonNull AppCompatTextView TvGerenciarPerfil,
       @NonNull AppCompatTextView TvNome, @NonNull AppCompatTextView TvPassword,
       @NonNull AppCompatTextView TvPasswordConfirm, @NonNull AppCompatTextView TvTelefone,
       @NonNull AppCompatButton btnContinuar, @NonNull ImageView icNavBackLogin) {
@@ -89,7 +89,7 @@ public final class FragmentSignUpBinding implements ViewBinding {
     this.EtTelefone = EtTelefone;
     this.TvCurriculo = TvCurriculo;
     this.TvEmail = TvEmail;
-    this.TvErro = TvErro;
+    this.TvError = TvError;
     this.TvGerenciarPerfil = TvGerenciarPerfil;
     this.TvNome = TvNome;
     this.TvPassword = TvPassword;
@@ -174,9 +174,9 @@ public final class FragmentSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.TvErro;
-      AppCompatTextView TvErro = ViewBindings.findChildViewById(rootView, id);
-      if (TvErro == null) {
+      id = R.id.TvError;
+      AppCompatTextView TvError = ViewBindings.findChildViewById(rootView, id);
+      if (TvError == null) {
         break missingId;
       }
 
@@ -223,7 +223,7 @@ public final class FragmentSignUpBinding implements ViewBinding {
       }
 
       return new FragmentSignUpBinding((LinearLayoutCompat) rootView, EtCurriculo, EtEmail, EtNome,
-          EtPassword, EtPasswordConfirm, EtTelefone, TvCurriculo, TvEmail, TvErro,
+          EtPassword, EtPasswordConfirm, EtTelefone, TvCurriculo, TvEmail, TvError,
           TvGerenciarPerfil, TvNome, TvPassword, TvPasswordConfirm, TvTelefone, btnContinuar,
           icNavBackLogin);
     }

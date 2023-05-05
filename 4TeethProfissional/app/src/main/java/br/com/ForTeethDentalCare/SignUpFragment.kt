@@ -1,32 +1,17 @@
 package br.com.ForTeethDentalCare
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.databinding.FragmentSignUpBinding
-import com.google.android.gms.tasks.Task
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import br.com.ForTeethDentalCare.CustomResponse
 import com.google.firebase.functions.FirebaseFunctions
-import com.google.firebase.functions.ktx.functions
-import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
-import org.json.JSONArray
-import org.json.JSONObject
 
 class SignUpFragment : Fragment() {
-
 
     private val TAG = "SignUpFragment"
     private lateinit var auth: FirebaseAuth
@@ -52,15 +37,33 @@ class SignUpFragment : Fragment() {
         }
 
         binding.btnContinuar.setOnClickListener {
+
+            val email = binding.EtEmail.text.toString()
+            val name = binding.EtNome.text.toString()
+            val phone = binding.EtTelefone.text.toString()
+            val password = binding.EtPassword.text.toString()
+            val passwordConfirm = binding.EtPasswordConfirm.text.toString()
+            val curricullum = binding.EtCurriculo.text.toString()
+
             (activity as MainActivity).let {
-                it.dentist.email = binding.EtEmail.text.toString()
-                it.dentist.nome = binding.EtNome.text.toString()
-                it.dentist.telefone = binding.EtTelefone.text.toString()
-                it.dentist.senha = binding.EtPassword.text.toString()
-                it.dentist.curriculo = binding.EtCurriculo.text.toString()
+                it.dentist.email = email
+                it.dentist.nome = name
+                it.dentist.telefone = phone
+                it.dentist.senha = password
+                it.dentist.curriculo = curricullum
             }
 
-            findNavController().navigate(R.id.SignUp_to_Addresses)
+            if (name == "" || email == "" || phone == "" || password == "" || passwordConfirm == "" || curricullum == "" ) {
+                binding.TvError.text = getString(R.string.inputsEmpty)
+            } else if (password != passwordConfirm) {
+                binding.TvError.text = getString(R.string.missmatchPasswords)
+            } else if (password.length < 6) {
+                binding.TvError.text = getString(R.string.passwordLength)
+            } else if ((!email.endsWith(".com") && !email.endsWith(".br")) || !email.contains("@")) {
+                binding.TvError.text = getString(R.string.invalidEmail)
+            } else {
+                findNavController().navigate(R.id.SignUp_to_Addresses)
+            }
         }
     }
 
@@ -68,7 +71,6 @@ class SignUpFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
 
 /*override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,13 +93,13 @@ class SignUpFragment : Fragment() {
             password.text.isEmpty() ||
             passwordConfirm.text.isEmpty()
         ) {
-            findViewById<TextView>(R.id.TvErro).text = "Preencha todos os campos"
+            findViewById<TextView>(R.id.TvError).text = "Preencha todos os campos"
         } else {
             if (password.text.toString() == passwordConfirm.text.toString()) {
                 val continuarCadastro = Intent(this, CadastroEnderecoFragment::class.java)
                 startActivities(arrayOf(continuarCadastro))
             } else {
-                findViewById<TextView>(R.id.TvErro).text = "As senhas não coincidem"
+                findViewById<TextView>(R.id.TvError).text = "As senhas não coincidem"
             }
         }
     }

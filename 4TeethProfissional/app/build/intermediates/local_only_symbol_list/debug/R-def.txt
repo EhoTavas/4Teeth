@@ -8,6 +8,7 @@ color azul_quase_turquesa
 color black
 color branco_gelo
 color bright_cyan
+color container_light_cyan
 color errorColor
 color gelo_azulado
 color gelo_esverdeado
@@ -24,6 +25,7 @@ color very_light_cyan
 color white
 dimen fab_margin
 drawable border_rounded_login_screen
+drawable container_status
 drawable gradient_login_screen
 drawable ic_error
 drawable ic_launcher_background
@@ -38,6 +40,7 @@ font poppins_regular
 id Addresses
 id Addresses_to_Login
 id Addresses_to_SignUp
+id BtnSwitch
 id EtCep1
 id EtCep2
 id EtCep3
@@ -81,7 +84,7 @@ id TvEmail
 id TvEndereco1
 id TvEndereco2
 id TvEndereco3
-id TvErro
+id TvError
 id TvGerenciarPerfil
 id TvNome
 id TvPassword
@@ -111,6 +114,7 @@ layout fragment_login
 layout fragment_menu
 layout fragment_notifications_are_disabled
 layout fragment_sign_up
+layout fragment_status
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -129,11 +133,12 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_blank_fragment
+string inputsEmpty
+string invalidEmail
 string miniCurriculum
+string missmatchPasswords
 string name
-string next
-string previous
+string passwordLength
 string project_id
 string signUpEmailHint
 string signUpMiniCurriculum
@@ -148,6 +153,7 @@ string strBairro
 string strCep
 string strCidade
 string strComplemento
+string strDisponibilidade
 string strEmail
 string strEndereco1
 string strEndereco2
@@ -158,6 +164,7 @@ string strNumResidencia
 string strPassword
 string strPasswordConfirm
 string strRua
+string strStatus
 string title_activity_initial_menu
 style Theme.4TeethProfissional
 style Theme.4TeethProfissional.AppBarOverlay

@@ -23,5 +23,4 @@ class LogIn : AppCompatActivity() {
             startActivities(arrayOf(voltarTela))
         }
     }
-
 }

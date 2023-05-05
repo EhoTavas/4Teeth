@@ -100,22 +100,23 @@
         style="@style/labelsMainScreen_LinearLayout"
         android:text="@string/miniCurriculum" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/EtCurriculo"
-        style="@style/inputSignUp"
-        android:hint="@string/signUpMiniCurriculum" />
+      <androidx.appcompat.widget.AppCompatEditText
+          android:id="@+id/EtCurriculo"
+          style="@style/inputSignUp"
+          android:hint="@string/signUpMiniCurriculum" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnContinuar"
-        style="@style/btnDefault"
-        android:text="@string/btnContinue" />
+      <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/btnContinuar"
+          style="@style/btnDefault"
+          android:text="@string/btnContinue" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-      android:id="@+id/TvErro"
-      style="@style/labelsMainScreen_LinearLayout"
-      android:layout_gravity="center"
-      android:layout_marginTop="10dp"
-      android:textColor="@color/red"
-      android:text=""/>
-  </androidx.appcompat.widget.LinearLayoutCompat>
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/TvError"
+          style="@style/labelsMainScreen_LinearLayout"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:layout_marginTop="10dp"
+          android:textColor="@color/red"
+          android:text=""/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -6,6 +6,7 @@
     <color name="black">#FF000000</color>
     <color name="branco_gelo">#FAFFFE</color>
     <color name="bright_cyan">#33DCDE</color>
+    <color name="container_light_cyan">#EEFFFD</color>
     <color name="errorColor">#FF018786</color>
     <color name="gelo_azulado">#F0FAF9</color>
     <color name="gelo_esverdeado">#E5F3F2</color>
@@ -35,11 +36,12 @@
     <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
     <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
+    <string name="invalidEmail">O email não é válido</string>
     <string name="miniCurriculum">Mini-currículo:</string>
+    <string name="missmatchPasswords">As senhas não coincidem</string>
     <string name="name">Nome:</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="passwordLength">A senha deve possuir ao menos 4 dígitos</string>
     <string name="project_id" translatable="false">teeth-playground</string>
     <string name="signUpEmailHint">example@email.com</string>
     <string name="signUpMiniCurriculum">Experiência de 2 anos...</string>
@@ -54,6 +56,7 @@
     <string name="strCep">Cep</string>
     <string name="strCidade">Cidade</string>
     <string name="strComplemento">Complemento (opcional)</string>
+    <string name="strDisponibilidade">Disponível</string>
     <string name="strEmail">E-mail:</string>
     <string name="strEndereco1">Endereço:</string>
     <string name="strEndereco2">Endereço 2 (Opcional):</string>
@@ -64,6 +67,7 @@
     <string name="strPassword">Senha:</string>
     <string name="strPasswordConfirm">Confirme sua Senha:</string>
     <string name="strRua">Rua</string>
+    <string name="strStatus">Meu Status</string>
     <string name="title_activity_initial_menu">inicial_menu</string>
     <style name="Theme.4TeethProfissional" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         

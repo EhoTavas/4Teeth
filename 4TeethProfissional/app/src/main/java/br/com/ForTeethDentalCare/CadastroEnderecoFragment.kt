@@ -26,24 +26,19 @@ import org.json.JSONArray
 import org.json.JSONObject
 import br.com.ForTeethDentalCare.databinding.FragmentCadastroEnderecoBinding
 
-
 class CadastroEnderecoFragment : Fragment() {
-
 
     private val TAG = "SignUpFragment"
     private lateinit var auth: FirebaseAuth
     private lateinit var functions: FirebaseFunctions
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
-
     private var _binding: FragmentCadastroEnderecoBinding? = null
     private val binding get() = _binding!!
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCadastroEnderecoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,7 +51,8 @@ class CadastroEnderecoFragment : Fragment() {
         }
 
         binding.btnConfirmar.setOnClickListener {
-            (activity as MainActivity).let{
+
+            (activity as MainActivity).let {
                 it.dentist.endereco1 = binding.EtStreet1.text.toString() + ", " + binding.EtNum1.text.toString() + ", " + binding.EtComp1.text.toString() + ", " + binding.EtNh1.text.toString() + ", " + binding.EtCity1.text.toString() + ", " + binding.EtState1.text.toString()
                 it.dentist.endereco2 = binding.EtStreet2.text.toString() + ", " + binding.EtNum2.text.toString() + ", " + binding.EtComp2.text.toString() + ", " + binding.EtNh2.text.toString() + ", " + binding.EtCity2.text.toString() + ", " + binding.EtState2.text.toString()
                 it.dentist.endereco3 = binding.EtStreet3.text.toString() + ", " + binding.EtNum3.text.toString() + ", " + binding.EtComp3.text.toString() + ", " + binding.EtNh3.text.toString() + ", " + binding.EtCity3.text.toString() + ", " + binding.EtState3.text.toString()
@@ -64,24 +60,30 @@ class CadastroEnderecoFragment : Fragment() {
                 it.dentist.cep2 = binding.EtCep2.text.toString()
                 it.dentist.cep3 = binding.EtCep3.text.toString()
             }
-
-
-
-            signUpNewAccount(
-                (activity as MainActivity).dentist.nome,
-                (activity as MainActivity).dentist.telefone,
-                (activity as MainActivity).dentist.email,
-                (activity as MainActivity).dentist.senha,
-                (activity as MainActivity).dentist.curriculo,
-                (activity as MainActivity).dentist.cep1,
-                (activity as MainActivity).dentist.endereco1,
-                (activity as MainActivity).dentist.cep2,
-                (activity as MainActivity).dentist.endereco2,
-                (activity as MainActivity).dentist.cep3,
-                (activity as MainActivity).dentist.endereco3,
-                (activity as MainActivity).getFcmToken(),
-            );
-
+            if (
+                binding.EtStreet1.text.toString() == "" ||
+                binding.EtNum1.text.toString() == "" ||
+                binding.EtNh1.text.toString() == "" ||
+                binding.EtCity1.text.toString() == "" ||
+                binding.EtState1.text.toString() == ""
+            ) {
+                binding.TvError.text = getString(R.string.inputsEmpty)
+            } else {
+                signUpNewAccount(
+                    (activity as MainActivity).dentist.nome,
+                    (activity as MainActivity).dentist.telefone,
+                    (activity as MainActivity).dentist.email,
+                    (activity as MainActivity).dentist.senha,
+                    (activity as MainActivity).dentist.curriculo,
+                    (activity as MainActivity).dentist.cep1,
+                    (activity as MainActivity).dentist.endereco1,
+                    (activity as MainActivity).dentist.cep2,
+                    (activity as MainActivity).dentist.endereco2,
+                    (activity as MainActivity).dentist.cep3,
+                    (activity as MainActivity).dentist.endereco3,
+                    (activity as MainActivity).getFcmToken(),
+                )
+            }
         }
     }
 
@@ -131,7 +133,6 @@ class CadastroEnderecoFragment : Fragment() {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     Toast.makeText(requireActivity(), "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-
                     // dar seguimento ao tratamento de erro.
                 }
             }
@@ -161,11 +162,9 @@ class CadastroEnderecoFragment : Fragment() {
             .getHttpsCallable("setUserProfile")
             .call(data)
             .continueWith { task ->
-
                 val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
                 result
             }
-
     }
 
     override fun onDestroyView() {

@@ -1424,6 +1424,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color container_light_cyan
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -3228,6 +3229,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable container_status
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3351,6 +3353,7 @@ id Addresses_to_Login
 id Addresses_to_SignUp
 id BOTTOM_END
 id BOTTOM_START
+id BtnSwitch
 id CTRL
 id EtCep1
 id EtCep2
@@ -3405,7 +3408,7 @@ id TvEmail
 id TvEndereco1
 id TvEndereco2
 id TvEndereco3
-id TvErro
+id TvError
 id TvGerenciarPerfil
 id TvNome
 id TvPassword
@@ -4086,6 +4089,7 @@ layout fragment_login
 layout fragment_menu
 layout fragment_notifications_are_disabled
 layout fragment_sign_up
+layout fragment_status
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4259,9 +4263,10 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string inputsEmpty
+string invalidEmail
 string item_view_role_description
 string m3_sys_motion_easing_emphasized
 string m3_sys_motion_easing_emphasized_accelerate
@@ -4297,6 +4302,7 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string miniCurriculum
+string missmatchPasswords
 string mtrl_badge_numberless_content_description
 string mtrl_checkbox_button_icon_path_checked
 string mtrl_checkbox_button_icon_path_group_name
@@ -4362,7 +4368,7 @@ string mtrl_timepicker_confirm
 string name
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
-string next
+string passwordLength
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4376,7 +4382,6 @@ string places_cancel
 string places_powered_by_google
 string places_search_error
 string places_try_again
-string previous
 string project_id
 string search_menu_title
 string searchbar_scrolling_view_behavior
@@ -4398,6 +4403,7 @@ string strBairro
 string strCep
 string strCidade
 string strComplemento
+string strDisponibilidade
 string strEmail
 string strEndereco1
 string strEndereco2
@@ -4408,6 +4414,7 @@ string strNumResidencia
 string strPassword
 string strPasswordConfirm
 string strRua
+string strStatus
 string title_activity_initial_menu
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

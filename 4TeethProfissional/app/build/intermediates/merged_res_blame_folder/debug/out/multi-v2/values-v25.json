@@ -4,7 +4,7 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-60:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mathe\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",
