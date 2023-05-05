@@ -46,9 +46,9 @@ class CadastroEnderecoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.icNavBackSignUp.setOnClickListener {
-            findNavController().navigate(R.id.Addresses_to_SignUp)
-        }
+//        binding.icNavBackSignUp.setOnClickListener {
+//            findNavController().navigate(R.id.Addresses_to_SignUp)
+//        }
 
         binding.btnConfirmar.setOnClickListener {
 

@@ -83,6 +83,7 @@ int animator nav_default_enter_anim 0x7f020021
 int animator nav_default_exit_anim 0x7f020022
 int animator nav_default_pop_enter_anim 0x7f020023
 int animator nav_default_pop_exit_anim 0x7f020024
+int array states_array 0x7f160000
 int attr SharedValue 0x7f030000
 int attr SharedValueId 0x7f030001
 int attr action 0x7f030002
@@ -3408,7 +3409,6 @@ int id TvEndereco1 0x7f09003a
 int id TvEndereco2 0x7f09003b
 int id TvEndereco3 0x7f09003c
 int id TvError 0x7f09003d
-int id TvGerenciarPerfil 0x7f09003e
 int id TvNome 0x7f09003f
 int id TvPassword 0x7f090040
 int id TvPasswordConfirm 0x7f090041
@@ -3631,8 +3631,6 @@ int id honorRequest 0x7f090119
 int id horizontal_only 0x7f09011a
 int id hybrid 0x7f09011b
 int id icNavBack 0x7f09011c
-int id icNavBackLogin 0x7f09011d
-int id icNavBackSignUp 0x7f09011e
 int id icon 0x7f09011f
 int id icon_group 0x7f090120
 int id icon_only 0x7f090121

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.databinding.FragmentLoginBinding
+import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -32,6 +33,9 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val activity = requireActivity() as MainActivity
+
+        binding.EtEmailLogin.setText(activity.dentist.email)
 
         // evento para tratar o login com auth.
         binding.btnLogin.setOnClickListener {
@@ -89,30 +93,4 @@ class LoginFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    /*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = FragmentLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        //setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        /*
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-        */
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
-    */
 }

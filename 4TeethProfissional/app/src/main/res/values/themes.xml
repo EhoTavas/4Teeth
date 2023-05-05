@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/gelo_esverdeado</item>
         <item name="android:fontFamily">@font/poppins_family</item>
-        <item name="android:navigationBarColor">@color/azul_gelo</item>
+        <item name="android:navigationBarColor">@color/very_light_cyan</item>
         <item name="android:windowLightStatusBar">@color/black</item>
     </style>
 

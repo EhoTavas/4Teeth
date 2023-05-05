@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 anim fade_in
 anim fade_out
+array states_array
 color azul_gelo
 color azul_pastel
 color azul_quase_turquesa
@@ -85,7 +86,6 @@ id TvEndereco1
 id TvEndereco2
 id TvEndereco3
 id TvError
-id TvGerenciarPerfil
 id TvNome
 id TvPassword
 id TvPasswordConfirm
@@ -97,8 +97,6 @@ id btnLogin
 id btnSignUp
 id elevation
 id icNavBack
-id icNavBackLogin
-id icNavBackSignUp
 id imageView
 id menuFragment
 id nav_graph

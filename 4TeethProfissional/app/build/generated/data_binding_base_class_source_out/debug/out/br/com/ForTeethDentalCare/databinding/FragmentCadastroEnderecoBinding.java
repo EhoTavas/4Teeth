@@ -4,7 +4,6 @@ package br.com.ForTeethDentalCare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -104,9 +103,6 @@ public final class FragmentCadastroEnderecoBinding implements ViewBinding {
   @NonNull
   public final AppCompatButton btnConfirmar;
 
-  @NonNull
-  public final ImageView icNavBackSignUp;
-
   private FragmentCadastroEnderecoBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull MaskEditText EtCep1, @NonNull MaskEditText EtCep2, @NonNull MaskEditText EtCep3,
       @NonNull AppCompatEditText EtCity1, @NonNull AppCompatEditText EtCity2,
@@ -120,8 +116,7 @@ public final class FragmentCadastroEnderecoBinding implements ViewBinding {
       @NonNull AppCompatEditText EtStreet2, @NonNull AppCompatEditText EtStreet3,
       @NonNull LinearLayoutCompat LayoutAddresses, @NonNull AppCompatTextView TvEndereco1,
       @NonNull AppCompatTextView TvEndereco2, @NonNull AppCompatTextView TvEndereco3,
-      @NonNull AppCompatTextView TvError, @NonNull AppCompatButton btnConfirmar,
-      @NonNull ImageView icNavBackSignUp) {
+      @NonNull AppCompatTextView TvError, @NonNull AppCompatButton btnConfirmar) {
     this.rootView = rootView;
     this.EtCep1 = EtCep1;
     this.EtCep2 = EtCep2;
@@ -150,7 +145,6 @@ public final class FragmentCadastroEnderecoBinding implements ViewBinding {
     this.TvEndereco3 = TvEndereco3;
     this.TvError = TvError;
     this.btnConfirmar = btnConfirmar;
-    this.icNavBackSignUp = icNavBackSignUp;
   }
 
   @Override
@@ -342,17 +336,10 @@ public final class FragmentCadastroEnderecoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.icNavBackSignUp;
-      ImageView icNavBackSignUp = ViewBindings.findChildViewById(rootView, id);
-      if (icNavBackSignUp == null) {
-        break missingId;
-      }
-
       return new FragmentCadastroEnderecoBinding((LinearLayoutCompat) rootView, EtCep1, EtCep2,
           EtCep3, EtCity1, EtCity2, EtCity3, EtComp1, EtComp2, EtComp3, EtNh1, EtNh2, EtNh3, EtNum1,
           EtNum2, EtNum3, EtState1, EtState2, EtState3, EtStreet1, EtStreet2, EtStreet3,
-          LayoutAddresses, TvEndereco1, TvEndereco2, TvEndereco3, TvError, btnConfirmar,
-          icNavBackSignUp);
+          LayoutAddresses, TvEndereco1, TvEndereco2, TvEndereco3, TvError, btnConfirmar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

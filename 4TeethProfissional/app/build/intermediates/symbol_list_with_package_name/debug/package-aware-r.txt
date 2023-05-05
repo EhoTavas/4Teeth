@@ -84,6 +84,7 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array states_array
 attr SharedValue
 attr SharedValueId
 attr action
@@ -3409,7 +3410,6 @@ id TvEndereco1
 id TvEndereco2
 id TvEndereco3
 id TvError
-id TvGerenciarPerfil
 id TvNome
 id TvPassword
 id TvPasswordConfirm
@@ -3632,8 +3632,6 @@ id honorRequest
 id horizontal_only
 id hybrid
 id icNavBack
-id icNavBackLogin
-id icNavBackSignUp
 id icon
 id icon_group
 id icon_only

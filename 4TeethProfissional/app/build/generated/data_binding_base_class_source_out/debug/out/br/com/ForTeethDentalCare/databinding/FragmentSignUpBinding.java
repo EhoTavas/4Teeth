@@ -4,7 +4,6 @@ package br.com.ForTeethDentalCare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -51,9 +50,6 @@ public final class FragmentSignUpBinding implements ViewBinding {
   public final AppCompatTextView TvError;
 
   @NonNull
-  public final AppCompatTextView TvGerenciarPerfil;
-
-  @NonNull
   public final AppCompatTextView TvNome;
 
   @NonNull
@@ -68,18 +64,14 @@ public final class FragmentSignUpBinding implements ViewBinding {
   @NonNull
   public final AppCompatButton btnContinuar;
 
-  @NonNull
-  public final ImageView icNavBackLogin;
-
   private FragmentSignUpBinding(@NonNull LinearLayoutCompat rootView,
       @NonNull AppCompatEditText EtCurriculo, @NonNull AppCompatEditText EtEmail,
       @NonNull AppCompatEditText EtNome, @NonNull AppCompatEditText EtPassword,
       @NonNull AppCompatEditText EtPasswordConfirm, @NonNull MaskEditText EtTelefone,
       @NonNull AppCompatTextView TvCurriculo, @NonNull AppCompatTextView TvEmail,
-      @NonNull AppCompatTextView TvError, @NonNull AppCompatTextView TvGerenciarPerfil,
-      @NonNull AppCompatTextView TvNome, @NonNull AppCompatTextView TvPassword,
-      @NonNull AppCompatTextView TvPasswordConfirm, @NonNull AppCompatTextView TvTelefone,
-      @NonNull AppCompatButton btnContinuar, @NonNull ImageView icNavBackLogin) {
+      @NonNull AppCompatTextView TvError, @NonNull AppCompatTextView TvNome,
+      @NonNull AppCompatTextView TvPassword, @NonNull AppCompatTextView TvPasswordConfirm,
+      @NonNull AppCompatTextView TvTelefone, @NonNull AppCompatButton btnContinuar) {
     this.rootView = rootView;
     this.EtCurriculo = EtCurriculo;
     this.EtEmail = EtEmail;
@@ -90,13 +82,11 @@ public final class FragmentSignUpBinding implements ViewBinding {
     this.TvCurriculo = TvCurriculo;
     this.TvEmail = TvEmail;
     this.TvError = TvError;
-    this.TvGerenciarPerfil = TvGerenciarPerfil;
     this.TvNome = TvNome;
     this.TvPassword = TvPassword;
     this.TvPasswordConfirm = TvPasswordConfirm;
     this.TvTelefone = TvTelefone;
     this.btnContinuar = btnContinuar;
-    this.icNavBackLogin = icNavBackLogin;
   }
 
   @Override
@@ -180,12 +170,6 @@ public final class FragmentSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.TvGerenciarPerfil;
-      AppCompatTextView TvGerenciarPerfil = ViewBindings.findChildViewById(rootView, id);
-      if (TvGerenciarPerfil == null) {
-        break missingId;
-      }
-
       id = R.id.TvNome;
       AppCompatTextView TvNome = ViewBindings.findChildViewById(rootView, id);
       if (TvNome == null) {
@@ -216,16 +200,9 @@ public final class FragmentSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.icNavBackLogin;
-      ImageView icNavBackLogin = ViewBindings.findChildViewById(rootView, id);
-      if (icNavBackLogin == null) {
-        break missingId;
-      }
-
       return new FragmentSignUpBinding((LinearLayoutCompat) rootView, EtCurriculo, EtEmail, EtNome,
-          EtPassword, EtPasswordConfirm, EtTelefone, TvCurriculo, TvEmail, TvError,
-          TvGerenciarPerfil, TvNome, TvPassword, TvPasswordConfirm, TvTelefone, btnContinuar,
-          icNavBackLogin);
+          EtPassword, EtPasswordConfirm, EtTelefone, TvCurriculo, TvEmail, TvError, TvNome,
+          TvPassword, TvPasswordConfirm, TvTelefone, btnContinuar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
