@@ -68,6 +68,7 @@ dependencies {
 
     // Kotlin Coroutines Worker
     implementation 'androidx.work:work-runtime-ktx:2.8.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 
     //google
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
@@ -76,9 +77,10 @@ dependencies {
     //DataStore
     implementation 'androidx.datastore:datastore-preferences-core:1.0.0'
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    //Kotlin
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
     implementation 'com.google.android.libraries.places:places:3.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'

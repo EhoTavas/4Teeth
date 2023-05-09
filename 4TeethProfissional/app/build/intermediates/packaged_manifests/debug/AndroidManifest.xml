@@ -64,28 +64,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.ForTeethDentalCare.LogIn"
-            android:exported="false" />
-        <activity
             android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
             android:exported="false" />
 
-        <!--
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="imagem que quisermos para colocar a notificação"/>
-        <meta-data
-            android:name="com.google"
-            android:resource="cor para a nofiticação"/>
-
         <service
-            android:name=".messaging.DefaultMessageService"
-            android:exported="false">
+            android:name="br.com.ForTeethDentalCare.messaging.DefaultMessageService"
+            android:exported="false" >
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        -->
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_error" />
+        <meta-data
+            android:name="com.google"
+            android:resource="@color/gradient_end_color" />
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"

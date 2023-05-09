@@ -42,13 +42,13 @@
                 android:id="@+id/TvEndereco1"
                 style="@style/labelsMainScreen_LinearLayout"
                 android:layout_marginTop="15dp"
-                android:text="@string/strEndereco1" />
+                android:text="@string/strAddress1" />
 
             <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCep1"
                 android:autofillHints="postalCode"
-                android:hint="@string/strCep"
+                android:hint="@string/strZipCode"
                 android:inputType="textPostalAddress|number"
                 app:mask="_____-___"
                 app:maskCharacter="_"
@@ -56,12 +56,12 @@
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtNum1"
-                android:hint="@string/strNumResidencia"
+                android:hint="@string/strAddressNumber"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtComp1"
-                android:hint="@string/strComplemento"
+                android:hint="@string/strComplement"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
@@ -71,17 +71,17 @@
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtNh1"
-                android:hint="@string/strBairro"
+                android:hint="@string/strNeighborhood"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCity1"
-                android:hint="@string/strCidade"
+                android:hint="@string/strCity"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/EtState1"
                 style="@style/inputSignUp"
-                android:hint="@string/strEstado"
+                android:hint="@string/strState"
                 android:inputType="textCapSentences" />
 
 
@@ -89,13 +89,13 @@
                 android:id="@+id/TvEndereco2"
                 style="@style/labelsMainScreen_LinearLayout"
                 android:layout_marginTop="15dp"
-                android:text="@string/strEndereco2" />
+                android:text="@string/strAddress2" />
 
             <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCep2"
                 android:autofillHints="postalCode"
-                android:hint="@string/strCep"
+                android:hint="@string/strZipCode"
                 android:inputType="textPostalAddress|number"
                 app:mask="_____-___"
                 app:maskCharacter="_"
@@ -103,12 +103,12 @@
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtNum2"
-                android:hint="@string/strNumResidencia"
+                android:hint="@string/strAddressNumber"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtComp2"
-                android:hint="@string/strComplemento"
+                android:hint="@string/strComplement"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
@@ -118,30 +118,30 @@
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtNh2"
-                android:hint="@string/strBairro"
+                android:hint="@string/strNeighborhood"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCity2"
-                android:hint="@string/strCidade"
+                android:hint="@string/strCity"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtState2"
-                android:hint="@string/strEstado"
+                android:hint="@string/strState"
                 android:inputType="textCapSentences" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/TvEndereco3"
                 style="@style/labelsMainScreen_LinearLayout"
                 android:layout_marginTop="15dp"
-                android:text="@string/strEndereco3" />
+                android:text="@string/strAddress3" />
 
             <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCep3"
                 android:autofillHints="postalCode"
-                android:hint="@string/strCep"
+                android:hint="@string/strZipCode"
                 android:inputType="textPostalAddress|number"
                 app:mask="_____-___"
                 app:maskCharacter="_"
@@ -149,12 +149,12 @@
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtNum3"
-                android:hint="@string/strNumResidencia"
+                android:hint="@string/strAddressNumber"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtComp3"
-                android:hint="@string/strComplemento"
+                android:hint="@string/strComplement"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
@@ -164,17 +164,17 @@
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtNh3"
-                android:hint="@string/strBairro"
+                android:hint="@string/strNeighborhood"
                 android:inputType="textCapSentences" />
             <androidx.appcompat.widget.AppCompatEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtCity3"
-                android:hint="@string/strCidade"
+                android:hint="@string/strCity"
                 android:inputType="textCapSentences" />
             <com.santalu.maskara.widget.MaskEditText
                 style="@style/inputSignUp"
                 android:id="@+id/EtState3"
-                android:hint="@string/strEstado"
+                android:hint="@string/strState"
                 android:inputType="textCapSentences"
                 app:mask="##"
                 app:maskCharacter="#"
