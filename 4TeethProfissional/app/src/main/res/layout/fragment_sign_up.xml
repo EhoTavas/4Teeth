@@ -39,7 +39,7 @@
         android:id="@+id/TvNome"
         style="@style/labelsMainScreen_LinearLayout"
         android:layout_marginTop="15dp"
-        android:text="@string/name" />
+        android:text="@string/strName" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/EtNome"
@@ -51,7 +51,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvEmail"
         style="@style/labelsMainScreen_LinearLayout"
-        android:text="@string/email" />
+        android:text="@string/strEmail" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/EtEmail"
@@ -62,7 +62,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvTelefone"
         style="@style/labelsMainScreen_LinearLayout"
-        android:text="@string/fone" />
+        android:text="@string/strPhone" />
 
     <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/EtTelefone"
@@ -98,7 +98,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TvCurriculo"
         style="@style/labelsMainScreen_LinearLayout"
-        android:text="@string/miniCurriculum" />
+        android:text="@string/strMiniCurriculum" />
 
       <androidx.appcompat.widget.AppCompatEditText
           android:id="@+id/EtCurriculo"

@@ -1,23 +1,31 @@
 <resources>
 
     <string name="app_name">4Teeth Profissional</string>
+    
+    //Strings para mensagem
+    <string name="default_notification_channel_id">Você tem uma nova emergência!</string>
+    <string name="fcm_default_title_message">4Teeth</string>
+
+    //Strings gerais
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="toothImageDescription">Dente 3D</string>
 
     //Strings tela Inicial
     <string name="strAppName">4Teeth</string>
     <string name="strAppMotto">Dental Care</string>
-    <string name="btnEntrar">Entrar</string>
-    <string name="btnCadastrar"><u>Não possui cadastro?</u></string>
+    <string name="btnSignIn">Entrar</string>
+    <string name="btnSignUp"><u>Não possui cadastro?</u></string>
     <string name="strLogin">Login</string>
     <string name="strEmail">E-mail:</string>
     <string name="strPassword">Senha:</string>
-    <string name="strPasswordConfirm">Confirme sua Senha:</string>
 
     //Strings tela cadastro Inicial
-    <string name="sign_up">Criar conta</string>
-    <string name="name">Nome:</string>
-    <string name="email">E-mail:</string>
-    <string name="fone">Telefone:</string>
-    <string name="miniCurriculum">Mini-currículo:</string>
+    <string name="title_sign_up">Criar conta</string>
+    <string name="strName">Nome:</string>
+    <string name="strPhone">Telefone:</string>
+    <string name="strMiniCurriculum">Mini-currículo:</string>
+    <string name="strPasswordConfirm">Confirme sua Senha:</string>
     <string name="signUpNameHint">Nome Completo</string>
     <string name="signUpEmailHint">example@email.com</string>
     <string name="signUpPasswordHint">senha</string>
@@ -26,24 +34,23 @@
     <string name="btnContinue">Prosseguir</string>
     <string name="btnConfirm">Finalizar</string>
     <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
-    <string name="missmatchPasswords">As senhas não coincidem</string>
+    <string name="mismatchPasswords">As senhas não coincidem</string>
     <string name="invalidEmail">O email não é válido</string>
     <string name="passwordLength">A senha deve possuir ao menos 6 dígitos</string>
 
     //Strings tela cadastro Endereços
-    <string name="Addresses_title">Endereços de atendimento</string>
-    <string name="strEndereco1">Endereço:</string>
+    <string name="title_addresses">Endereços de atendimento</string>
+    <string name="strAddress1">Endereço:</string>
     <string name="strAddAddress">Adicionar endereço</string>
-    <string name="strEndereco2">Endereço 2 (Opcional):</string>
-    <string name="strEndereco3">Endereço 3 (Opcional):</string>
-    <string name="strCep">Cep</string>
-    <string name="strNumResidencia">Número da residência ou s/n</string>
-    <string name="strComplemento">Complemento (opcional)</string>
+    <string name="strAddress2">Endereço 2 (Opcional):</string>
+    <string name="strAddress3">Endereço 3 (Opcional):</string>
+    <string name="strZipCode">Cep</string>
+    <string name="strAddressNumber">Número da residência ou s/n</string>
+    <string name="strComplement">Complemento (opcional)</string>
     <string name="strRua">Rua</string>
-    <string name="strBairro">Bairro</string>
-    <string name="strCidade">Cidade</string>
-    <string name="strEstado">Estado</string>
-    <string name="title_activity_initial_menu">inicial_menu</string>
+    <string name="strNeighborhood">Bairro</string>
+    <string name="strCity">Cidade</string>
+    <string name="strState">Estado</string>
     <string-array name="states_array">
         <item>AC</item>
         <item>AL</item>
@@ -76,12 +83,13 @@
 
     //Strings tela Status
     <string name="title_fragment_status">Meu Status</string>
-    <string name="strDisponibilidade">Diponível para emergências</string>
+    <string name="strAvailability">Diponível para emergências</string>
+
+    //Strings tela Menu
+    <string name="title_activity_initial_menu">Menu</string>
 
     //Strings tela Avaliação
-    <string name="title_fragment_avaliacao">Solicitar Avaliação</string>
-    <string name="strAvaliacao">Deseja solicitar uma avaliação do responsável?</string>
-    <string name="btnSim">Sim</string>
-    <string name="btnNao">Não</string>
+    <string name="title_fragment_rating">Solicitar Avaliação</string>
+    <string name="strRating">Deseja solicitar uma avaliação do responsável?</string>
 
 </resources>

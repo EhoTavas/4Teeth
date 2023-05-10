@@ -28,20 +28,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LogIn"
-            android:exported="false" />
-        <activity
             android:name=".CadastroEnderecoFragment"
             android:exported="false" />
-
-        <!--
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="imagem que quisermos para colocar a notificação"/>
-        <meta-data
-            android:name="com.google"
-            android:resource="cor para a nofiticação"/>
-
         <service
             android:name=".messaging.DefaultMessageService"
             android:exported="false">
@@ -49,7 +37,12 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_error"/>
+        <meta-data
+            android:name="com.google"
+            android:resource="@color/gradient_end_color"/>
     </application>
 
 </manifest>

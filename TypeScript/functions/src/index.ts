@@ -118,7 +118,7 @@ export const sendFcmMessage = functions
       message: "Dados não fornecidos ou incompletos",
       payload: undefined,
     };
-      // enviar uma mensagem para o token que veio.
+    // enviar uma mensagem para o token que veio.
     if (data.fcmToken != undefined && data.textContent != undefined) {
       try {
         const message = {

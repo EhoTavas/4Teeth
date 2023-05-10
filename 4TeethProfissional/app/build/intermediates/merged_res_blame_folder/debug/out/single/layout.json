@@ -20,6 +20,14 @@
         "source": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\content_main.xml"
     },
     {
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-61:/layout/content_main.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-64:/layout/content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\fragment_rating.xml",
+        "source": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_rating.xml"
+    },
+    {
         "merged": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\activity_main.xml",
         "source": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\activity_main.xml"
     },
@@ -32,15 +40,7 @@
         "source": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_menu.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-61:/layout/fragment_cadastro_endereco.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-64:/layout/fragment_cadastro_endereco.xml"
-    },
-    {
         "merged": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\fragment_notifications_are_disabled.xml",
         "source": "C:\\Users\\luant\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_notifications_are_disabled.xml"
-    },
-    {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-61:/layout/fragment_sign_up.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-64:/layout/fragment_sign_up.xml"
     }
 ]

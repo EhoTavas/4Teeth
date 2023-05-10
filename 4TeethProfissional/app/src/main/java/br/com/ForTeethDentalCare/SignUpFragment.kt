@@ -62,7 +62,7 @@ class SignUpFragment : Fragment() {
             if (name == "" || email == "" || phone == "" || password == "" || passwordConfirm == "" || curricullum == "" ) {
                 binding.TvError.text = getString(R.string.inputsEmpty)
             } else if (password != passwordConfirm) {
-                binding.TvError.text = getString(R.string.missmatchPasswords)
+                binding.TvError.text = getString(R.string.mismatchPasswords)
             } else if (password.length < 6) {
                 binding.TvError.text = getString(R.string.passwordLength)
             } else if ((!email.endsWith(".com") && !email.endsWith(".br")) || !email.contains("@")) {

@@ -8,15 +8,18 @@
     <fragment
         android:id="@+id/SignUp"
         android:name="br.com.ForTeethDentalCare.SignUpFragment"
-        android:label="@string/sign_up"
+        android:label="@string/title_sign_up"
         tools:layout="@layout/activity_main">
         <action
             android:id="@+id/SignUp_to_Addresses"
             app:destination="@id/Addresses"
-            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/SignUp_to_Login"
-            app:destination="@id/Login" />
+            app:destination="@id/Login"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/Login"
@@ -27,25 +30,34 @@
         <action
             android:id="@+id/Login_to_SignUp"
             app:destination="@id/SignUp"
-            app:enterAnim="@anim/nav_default_pop_enter_anim" />
-        <action
-            android:id="@+id/Login_to_menuFragment"
-            app:destination="@id/menuFragment" />
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/Login_to_notificationsAreDisabledFragment"
-            app:destination="@id/notificationsAreDisabledFragment" />
+            app:destination="@id/notificationsAreDisabledFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/Login_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/Addresses"
         android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
-        android:label="@string/Addresses_title"
+        android:label="@string/title_addresses"
         tools:layout="@layout/fragment_cadastro_endereco">
         <action
             android:id="@+id/Addresses_to_SignUp"
-            app:destination="@id/SignUp" />
+            app:destination="@id/SignUp"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/Addresses_to_Login"
-            app:destination="@id/Login" />
+            app:destination="@id/Login"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/notificationsAreDisabledFragment"
@@ -54,11 +66,12 @@
         tools:layout="@layout/fragment_notifications_are_disabled" >
         <action
             android:id="@+id/NotificationsAreDisabledFragment_to_Login"
-            app:destination="@id/Login" />
+            app:destination="@id/Login"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="br.com.ForTeethDentalCare.StatusFragment"
-        android:label="@string/strStatus"
-        tools:layout="@layout/fragment_status" />
+        android:name="br.com.ForTeethDentalCare.MenuFragment"
+        android:label="@string/title_activity_initial_menu" />
 </navigation>

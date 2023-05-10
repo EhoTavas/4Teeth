@@ -51,15 +51,14 @@
     <color name="very_light_cyan">#DFFDFC</color>
     <color name="white">#FFFFFFFF</color>
     <dimen name="fab_margin">16dp</dimen>
-    <string name="Addresses_title">Endereços de atendimento</string>
     <string name="app_name">4Teeth Profissional</string>
-    <string name="btnCadastrar"><u>Não possui cadastro?</u></string>
     <string name="btnConfirm">Finalizar</string>
     <string name="btnContinue">Prosseguir</string>
-    <string name="btnEntrar">Entrar</string>
+    <string name="btnSignIn">Entrar</string>
+    <string name="btnSignUp"><u>Não possui cadastro?</u></string>
+    <string name="default_notification_channel_id">Você tem uma nova emergência!</string>
     <string name="default_web_client_id" translatable="false">389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com</string>
-    <string name="email">E-mail:</string>
-    <string name="fone">Telefone:</string>
+    <string name="fcm_default_title_message">4Teeth</string>
     <string name="gcm_defaultSenderId" translatable="false">389378064222</string>
     <string name="google_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
     <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
@@ -67,37 +66,44 @@
     <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
     <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
     <string name="invalidEmail">O email não é válido</string>
-    <string name="miniCurriculum">Mini-currículo:</string>
-    <string name="missmatchPasswords">As senhas não coincidem</string>
-    <string name="name">Nome:</string>
-    <string name="passwordLength">A senha deve possuir ao menos 4 dígitos</string>
+    <string name="mismatchPasswords">As senhas não coincidem</string>
+    <string name="no">Não</string>
+    <string name="passwordLength">A senha deve possuir ao menos 6 dígitos</string>
     <string name="project_id" translatable="false">teeth-playground</string>
     <string name="signUpEmailHint">example@email.com</string>
-    <string name="signUpMiniCurriculum">Experiência de 2 anos...</string>
+    <string name="signUpMiniCurriculum">Experiência de 2 anos…</string>
     <string name="signUpNameHint">Nome Completo</string>
-    <string name="signUpNumberHint">+55 (11) 98765-4321</string>
+    <string name="signUpNumberHint">+55 (11) 98765–4321</string>
     <string name="signUpPasswordHint">senha</string>
-    <string name="sign_up">Criar conta</string>
     <string name="strAddAddress">Adicionar endereço</string>
+    <string name="strAddress1">Endereço:</string>
+    <string name="strAddress2">Endereço 2 (Opcional):</string>
+    <string name="strAddress3">Endereço 3 (Opcional):</string>
+    <string name="strAddressNumber">Número da residência ou s/n</string>
     <string name="strAppMotto">Dental Care</string>
     <string name="strAppName">4Teeth</string>
-    <string name="strBairro">Bairro</string>
-    <string name="strCep">Cep</string>
-    <string name="strCidade">Cidade</string>
-    <string name="strComplemento">Complemento (opcional)</string>
-    <string name="strDisponibilidade">Disponível para emergências</string>
+    <string name="strAvailability">Diponível para emergências</string>
+    <string name="strCity">Cidade</string>
+    <string name="strComplement">Complemento (opcional)</string>
     <string name="strEmail">E-mail:</string>
-    <string name="strEndereco1">Endereço:</string>
-    <string name="strEndereco2">Endereço 2 (Opcional):</string>
-    <string name="strEndereco3">Endereço 3 (Opcional):</string>
-    <string name="strEstado">Estado</string>
     <string name="strLogin">Login</string>
-    <string name="strNumResidencia">Número da residência ou s/n</string>
+    <string name="strMiniCurriculum">Mini-currículo:</string>
+    <string name="strName">Nome:</string>
+    <string name="strNeighborhood">Bairro</string>
     <string name="strPassword">Senha:</string>
     <string name="strPasswordConfirm">Confirme sua Senha:</string>
+    <string name="strPhone">Telefone:</string>
+    <string name="strRating">Deseja solicitar uma avaliação do responsável?</string>
     <string name="strRua">Rua</string>
-    <string name="strStatus">Meu Status</string>
-    <string name="title_activity_initial_menu">inicial_menu</string>
+    <string name="strState">Estado</string>
+    <string name="strZipCode">Cep</string>
+    <string name="title_activity_initial_menu">Menu</string>
+    <string name="title_addresses">Endereços de atendimento</string>
+    <string name="title_fragment_rating">Solicitar Avaliação</string>
+    <string name="title_fragment_status">Meu Status</string>
+    <string name="title_sign_up">Criar conta</string>
+    <string name="toothImageDescription">Dente 3D</string>
+    <string name="yes">Sim</string>
     <style name="Theme.4TeethProfissional" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
@@ -173,6 +179,6 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:textSize">22.5sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
     </style>
 </resources>
