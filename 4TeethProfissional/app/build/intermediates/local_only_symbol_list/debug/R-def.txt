@@ -34,6 +34,7 @@ drawable ic_launcher_foreground
 drawable ic_navegar_prox
 drawable ic_navegar_voltar
 drawable ic_plus
+drawable logo_4teeth
 drawable rounded_button
 drawable tooth_3d
 font poppins_family

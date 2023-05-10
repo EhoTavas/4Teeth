@@ -16,12 +16,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="@string/title_fragment_avaliacao"
+        android:text="@string/title_fragment_rating"
         android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:contentDescription="@string/dente"
+        android:contentDescription="@string/toothImageDescription"
         android:layout_width="wrap_content"
         android:layout_height="90dp"
         android:layout_gravity="center"
@@ -40,7 +40,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_gravity="center"
-            android:background="@drawable/container_status_light_cyan"
             android:orientation="vertical"
             android:theme="@style/Theme.4TeethProfissional">
 
@@ -50,7 +49,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:gravity="center"
-                android:text="@string/strAvaliacao"
+                android:text="@string/strRating"
                 android:textColor="@color/black"
                 android:textSize="23sp" />
 
@@ -69,7 +68,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="0"
                     style="@style/btnDefault"
-                    android:text="@string/btnSim"
+                    android:text="@string/yes"
                     android:gravity="center"
                     android:textSize="20sp"/>
 
@@ -80,7 +79,7 @@
                     android:layout_width="130dp"
                     android:layout_margin="10dp"
                     style="@style/btnDefault"
-                    android:text="@string/btnNao"
+                    android:text="@string/no"
                     android:gravity="center"
                     android:textSize="20sp"/>
 

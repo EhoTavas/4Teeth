@@ -312,7 +312,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/add/baseline_add_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/shield/baseline_shield_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -322,8 +322,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_plus" />
-                            <entry key="sourceFile" value="C:\Users\mathe\Projeto4Teeth\4Teeth\4TeethProfissional" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="logo_4teeth" />
+                            <entry key="sourceFile" value="C:\Users\Luan\Downloads\logo_4teeth.svg" />
                           </map>
                         </option>
                       </PersistentState>

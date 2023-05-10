@@ -47,20 +47,19 @@ class LoginFragment : Fragment() {
             if (binding.EtEmailLogin.text.toString() == "" || binding.EtPasswordLogin.text.toString() == "") {
                 Snackbar.make(requireView(),"Não foi possível fazer o login, verifique os dados e tente novamente.", Snackbar.LENGTH_LONG).show()
             } else {
+                sendMessage(binding.EtEmailLogin.text.toString(),(activity).getFcmToken())
+                    .addOnCompleteListener(requireActivity()) { res ->
+                        // conta criada com sucesso.
+                        if(res.result.status == "SUCCESS"){
+                            hideKeyboard()
+                            Snackbar.make(requireView(),"Mensagem Enviada!", Snackbar.LENGTH_LONG).show()
+                        }
+                    }
                 login(binding.EtEmailLogin.text.toString(), binding.EtPasswordLogin.text.toString())
             }
         }
 
         binding.btnSignUp.setOnClickListener {
-            sendMessage(binding.EtEmailLogin.text.toString(),(activity).getFcmToken())
-                .addOnCompleteListener(requireActivity()) { res ->
-                    // conta criada com sucesso.
-                    if(res.result.status == "SUCCESS"){
-                        hideKeyboard()
-                        Snackbar.make(requireView(),"Mensagem Enviada!", Snackbar.LENGTH_LONG).show()
-                        binding.EtEmailLogin.text!!.clear()
-                    }
-                }
             findNavController().navigate(R.id.Login_to_SignUp)
         }
     }
@@ -80,8 +79,7 @@ class LoginFragment : Fragment() {
         return functions.getHttpsCallable("sendFcmMessage")
             .call(data)
             .continueWith { task ->
-                val result =
-                    gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
                 result
             }
     }

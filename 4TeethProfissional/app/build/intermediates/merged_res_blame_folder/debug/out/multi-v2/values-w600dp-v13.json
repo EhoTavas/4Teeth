@@ -4,13 +4,13 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-60:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\luant\\OneDrive\\Documentos\\GitHub\\4Teeth\\4TeethProfissional\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "C:\\Users\\Luan\\Documents\\GitHub\\4Teeth\\4TeethProfissional\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "16",
                         "endColumns": "41",
-                        "endOffsets": "54"
+                        "endOffsets": "53"
                     },
                     "to": {
                         "startLines": "2",

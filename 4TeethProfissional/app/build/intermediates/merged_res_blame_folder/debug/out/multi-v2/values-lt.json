@@ -4,58 +4,7 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-60:/values-lt/values-lt.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,221,325,438,525,627,749,832,912,1006,1102,1199,1295,1398,1494,1592,1688,1782,1876,1959,2068,2176,2276,2386,2491,2597,2773,2874",
-                        "endColumns": "115,103,112,86,101,121,82,79,93,95,96,95,102,95,97,95,93,93,82,108,107,99,109,104,105,175,100,83",
-                        "endOffsets": "216,320,433,520,622,744,827,907,1001,1097,1194,1290,1393,1489,1587,1683,1777,1871,1954,2063,2171,2271,2381,2486,2592,2768,2869,2953"
-                    },
-                    "to": {
-                        "startLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,136",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "425,541,645,758,845,947,1069,1152,1232,1326,1422,1519,1615,1718,1814,1912,2008,2102,2196,2279,2388,2496,2596,2706,2811,2917,3093,12504",
-                        "endColumns": "115,103,112,86,101,121,82,79,93,95,96,95,102,95,97,95,93,93,82,108,107,99,109,104,105,175,100,83",
-                        "endOffsets": "536,640,753,840,942,1064,1147,1227,1321,1417,1514,1610,1713,1809,1907,2003,2097,2191,2274,2383,2491,2591,2701,2806,2912,3088,3189,12583"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,118",
-                        "endOffsets": "160,279"
-                    },
-                    "to": {
-                        "startLines": "125,126",
-                        "startColumns": "4,4",
-                        "startOffsets": "11608,11718",
-                        "endColumns": "109,118",
-                        "endOffsets": "11713,11832"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\86f8e98dc2d00ca24a488943580f6321\\transformed\\places-3.1.0\\res\\values-lt\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11",
-                        "startColumns": "0,0,0,0,0,0,0,0",
-                        "startOffsets": "184,258,328,428,492,539,604,684",
-                        "endColumns": "73,69,99,63,46,64,79,52",
-                        "endOffsets": "257,327,427,491,538,603,683,736"
-                    },
-                    "to": {
-                        "startLines": "128,129,130,131,132,133,134,135",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "11919,11997,12071,12175,12243,12294,12363,12447",
-                        "endColumns": "77,73,103,67,50,68,83,56",
-                        "endOffsets": "11992,12066,12170,12238,12289,12358,12442,12499"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\67a213bfc6c89b2ceb1b0a839c656f75\\transformed\\play-services-base-18.1.0\\res\\values-lt\\values.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\67a213bfc6c89b2ceb1b0a839c656f75\\transformed\\play-services-base-18.1.0\\res\\values-lt\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\0aa7a5ebdaa7ee2cf36e56ef0382b61d\\transformed\\browser-1.4.0\\res\\values-lt\\values-lt.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\0aa7a5ebdaa7ee2cf36e56ef0382b61d\\transformed\\browser-1.4.0\\res\\values-lt\\values-lt.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -89,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\51d7887c7eeaa3ed19aa9e590392d163\\transformed\\material-1.8.0\\res\\values-lt\\values-lt.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\51d7887c7eeaa3ed19aa9e590392d163\\transformed\\material-1.8.0\\res\\values-lt\\values-lt.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -108,7 +57,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\b115fcfb3d8108d481b4bc564e196ba0\\transformed\\play-services-basement-18.1.0\\res\\values-lt\\values.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\e53dd46a4748b7cf4723a6eba72bb02d\\transformed\\navigation-ui-2.5.3\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,118",
+                        "endOffsets": "160,279"
+                    },
+                    "to": {
+                        "startLines": "125,126",
+                        "startColumns": "4,4",
+                        "startOffsets": "11608,11718",
+                        "endColumns": "109,118",
+                        "endOffsets": "11713,11832"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\86f8e98dc2d00ca24a488943580f6321\\transformed\\places-3.1.0\\res\\values-lt\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "0,0,0,0,0,0,0,0",
+                        "startOffsets": "184,258,328,428,492,539,604,684",
+                        "endColumns": "73,69,99,63,46,64,79,52",
+                        "endOffsets": "257,327,427,491,538,603,683,736"
+                    },
+                    "to": {
+                        "startLines": "128,129,130,131,132,133,134,135",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "11919,11997,12071,12175,12243,12294,12363,12447",
+                        "endColumns": "77,73,103,67,50,68,83,56",
+                        "endOffsets": "11992,12066,12170,12238,12289,12358,12442,12499"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\b115fcfb3d8108d481b4bc564e196ba0\\transformed\\play-services-basement-18.1.0\\res\\values-lt\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -125,7 +108,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\fdfd030f76d30366b91b278684f9d1e4\\transformed\\core-1.10.0\\res\\values-lt\\values-lt.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,221,325,438,525,627,749,832,912,1006,1102,1199,1295,1398,1494,1592,1688,1782,1876,1959,2068,2176,2276,2386,2491,2597,2773,2874",
+                        "endColumns": "115,103,112,86,101,121,82,79,93,95,96,95,102,95,97,95,93,93,82,108,107,99,109,104,105,175,100,83",
+                        "endOffsets": "216,320,433,520,622,744,827,907,1001,1097,1194,1290,1393,1489,1587,1683,1777,1871,1954,2063,2171,2271,2381,2486,2592,2768,2869,2953"
+                    },
+                    "to": {
+                        "startLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,136",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "425,541,645,758,845,947,1069,1152,1232,1326,1422,1519,1615,1718,1814,1912,2008,2102,2196,2279,2388,2496,2596,2706,2811,2917,3093,12504",
+                        "endColumns": "115,103,112,86,101,121,82,79,93,95,96,95,102,95,97,95,93,93,82,108,107,99,109,104,105,175,100,83",
+                        "endOffsets": "536,640,753,840,942,1064,1147,1227,1321,1417,1514,1610,1713,1809,1907,2003,2097,2191,2274,2383,2491,2591,2701,2806,2912,3088,3189,12583"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\fdfd030f76d30366b91b278684f9d1e4\\transformed\\core-1.10.0\\res\\values-lt\\values-lt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

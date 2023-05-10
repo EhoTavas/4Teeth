@@ -3263,6 +3263,7 @@ drawable ic_navegar_prox
 drawable ic_navegar_voltar
 drawable ic_plus
 drawable ic_search_black_24
+drawable logo_4teeth
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password

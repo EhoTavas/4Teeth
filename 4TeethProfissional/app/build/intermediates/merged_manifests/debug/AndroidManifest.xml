@@ -77,7 +77,7 @@
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_error" />
+            android:resource="@drawable/logo_4teeth" />
         <meta-data
             android:name="com.google"
             android:resource="@color/gradient_end_color" />
