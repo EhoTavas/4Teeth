@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
-            android:background="@drawable/container_status"
+            android:background="@drawable/container_status_light_cyan"
             android:orientation="vertical"
             android:theme="@style/Theme.4TeethProfissional">
 
