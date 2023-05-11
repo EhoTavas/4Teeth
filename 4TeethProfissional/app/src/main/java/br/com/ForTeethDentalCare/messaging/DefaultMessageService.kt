@@ -57,9 +57,8 @@ class DefaultMessageService : FirebaseMessagingService() {
      */
     private fun showNotification(messageBody: String) {
         val intent = Intent(this, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        val pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-            PendingIntent.FLAG_IMMUTABLE)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        val pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent, PendingIntent.FLAG_IMMUTABLE)
         val channelId = getString(R.string.default_notification_channel_id)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
@@ -77,7 +76,7 @@ class DefaultMessageService : FirebaseMessagingService() {
             NotificationManager.IMPORTANCE_HIGH)
         channel.enableVibration(true)
         channel.setBypassDnd(true)
-        channel.vibrationPattern = longArrayOf(0, 5000, 500, 500)
+        channel.vibrationPattern = longArrayOf(0, 500, 500, 500)
         notificationManager.createNotificationChannel(channel)
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())
     }

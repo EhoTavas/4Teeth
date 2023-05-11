@@ -23,15 +23,6 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*
-        binding.icNavBackLogin.setOnClickListener {
-            findNavController().navigate(R.id.SignUp_to_Login)
-        }
-
-        binding.btnContinuar.setOnClickListener {
-            findNavController().navigate(R.id.SignUp_to_Addresses)
-        }
-        */
     }
 
     override fun onDestroyView() {
