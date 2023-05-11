@@ -10,4 +10,5 @@ data class Dentist(var nome: String,
                    var cep2: String,
                    var endereco2: String,
                    var cep3: String,
-                   var endereco3: String)
+                   var endereco3: String,
+                   var fcmToken: String)

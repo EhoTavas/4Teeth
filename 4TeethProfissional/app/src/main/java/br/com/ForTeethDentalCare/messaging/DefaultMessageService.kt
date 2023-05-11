@@ -63,17 +63,21 @@ class DefaultMessageService : FirebaseMessagingService() {
         val channelId = getString(R.string.default_notification_channel_id)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(R.drawable.ic_error)
+            .setSmallIcon(R.drawable.logo_4teeth)
             .setContentTitle(getString(R.string.fcm_default_title_message))
             .setContentText(messageBody)
             .setAutoCancel(true)
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         // Since android Oreo notification channel is needed.
         val channel = NotificationChannel(channelId,
             "Channel human readable title",
-            NotificationManager.IMPORTANCE_DEFAULT)
+            NotificationManager.IMPORTANCE_HIGH)
+        channel.enableVibration(true)
+        channel.setBypassDnd(true)
+        channel.vibrationPattern = longArrayOf(0, 5000, 500, 500)
         notificationManager.createNotificationChannel(channel)
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())
     }

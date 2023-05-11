@@ -8,7 +8,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 import android.Manifest
+import android.app.NotificationManager
 import android.content.pm.PackageManager
+import android.content.Context
 import android.os.Build
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
-    public var dentist: Dentist = Dentist("", "", "", "","","","","","","","")
+    public var dentist: Dentist = Dentist("", "", "", "","","","","","","","", "")
 
     private fun prepareFirebaseAppCheckDebug(){
         // Ajustando o AppCheck para modo depuração.
@@ -111,7 +113,17 @@ class MainActivity : AppCompatActivity() {
         storeFcmToken()
         // invocar as permissões para notificar.
         askNotificationPermission()
+
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val areNotificationsEnabled = notificationManager.areNotificationsEnabled()
+
+        if (areNotificationsEnabled) {
+            Constants.sendMessage("DEU CERTO PORRA", getFcmToken())
+        } else {
+            navController.navigate(R.id.Login_to_notificationsAreDisabledFragment)
+        }
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

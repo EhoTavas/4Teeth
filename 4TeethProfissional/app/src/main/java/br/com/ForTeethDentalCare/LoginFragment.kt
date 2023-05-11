@@ -22,10 +22,8 @@ import com.google.gson.GsonBuilder
 class LoginFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var functions: FirebaseFunctions
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,14 +45,14 @@ class LoginFragment : Fragment() {
             if (binding.EtEmailLogin.text.toString() == "" || binding.EtPasswordLogin.text.toString() == "") {
                 Snackbar.make(requireView(),"Não foi possível fazer o login, verifique os dados e tente novamente.", Snackbar.LENGTH_LONG).show()
             } else {
-                sendMessage(binding.EtEmailLogin.text.toString(),(activity).getFcmToken())
-                    .addOnCompleteListener(requireActivity()) { res ->
-                        // conta criada com sucesso.
-                        if(res.result.status == "SUCCESS"){
-                            hideKeyboard()
-                            Snackbar.make(requireView(),"Mensagem Enviada!", Snackbar.LENGTH_LONG).show()
-                        }
-                    }
+//                Constants.sendMessage(binding.EtEmailLogin.text.toString(),(activity).getFcmToken())
+//                    .addOnCompleteListener(requireActivity()) { res ->
+//                        // conta criada com sucesso.
+//                        if(res.result.status == "SUCCESS"){
+//                            hideKeyboard()
+//                            Snackbar.make(requireView(),"Mensagem Enviada!", Snackbar.LENGTH_LONG).show()
+//                        }
+//                    }
                 login(binding.EtEmailLogin.text.toString(), binding.EtPasswordLogin.text.toString())
             }
         }
@@ -67,21 +65,6 @@ class LoginFragment : Fragment() {
     private fun hideKeyboard(){
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(requireView().windowToken, 0)
-    }
-
-    fun sendMessage(textContent: String, fcmToken: String) : Task<CustomResponse> {
-        val data = hashMapOf(
-            "textContent" to textContent,
-            "fcmToken" to fcmToken
-        )
-        // enviar a mensagem, invocando a function...
-        functions = Firebase.functions("southamerica-east1")
-        return functions.getHttpsCallable("sendFcmMessage")
-            .call(data)
-            .continueWith { task ->
-                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
-                result
-            }
     }
 
     private fun login(email: String, password: String){

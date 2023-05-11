@@ -59,6 +59,7 @@ class CadastroEnderecoFragment : Fragment() {
                 it.dentist.cep1 = binding.EtCep1.text.toString()
                 it.dentist.cep2 = binding.EtCep2.text.toString()
                 it.dentist.cep3 = binding.EtCep3.text.toString()
+                it.dentist.fcmToken = it.getFcmToken()
             }
             if (
                 binding.EtStreet1.text.toString() == "" ||
@@ -81,7 +82,7 @@ class CadastroEnderecoFragment : Fragment() {
                     (activity as MainActivity).dentist.endereco2,
                     (activity as MainActivity).dentist.cep3,
                     (activity as MainActivity).dentist.endereco3,
-                    (activity as MainActivity).getFcmToken(),
+                    (activity as MainActivity).dentist.fcmToken,
                 )
             }
         }

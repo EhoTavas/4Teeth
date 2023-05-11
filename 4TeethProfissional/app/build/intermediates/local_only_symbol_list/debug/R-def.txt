@@ -28,7 +28,6 @@ dimen fab_margin
 drawable border_rounded_login_screen
 drawable container_status
 drawable gradient_login_screen
-drawable ic_error
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_navegar_prox
