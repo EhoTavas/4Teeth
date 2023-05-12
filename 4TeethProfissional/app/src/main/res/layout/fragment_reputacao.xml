@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/elevation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_login_screen"
+    android:orientation="vertical"
+    android:theme="@style/Theme.4TeethProfissional"
+    tools:context=".StatusFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/screenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/title_fragment_reputacao"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_rounded_login_screen"
+        android:orientation="vertical"
+        android:theme="@style/Theme.4TeethProfissional">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/strCasos"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/container_status_light_cyan"
+            android:orientation="vertical"
+            android:theme="@style/Theme.4TeethProfissional">
+
+            <!-- fazer containers das avaliações -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAvaliacaoSim"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="@style/btnDefault"
+                android:text="@string/btnSim" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAvaliacaoNao"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                style="@style/btnDefault"
+                android:text="@string/btnNao" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/strClassificacaoGeral"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <!-- container de classificacao (nota) -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="5dp">
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@string/strComentarios"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/container_status_light_cyan"
+            android:orientation="vertical"
+            android:theme="@style/Theme.4TeethProfissional">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/container_status_white"
+                    android:gravity="center"
+                    android:text="@string/strExComentario1"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/container_status_white"
+                    android:gravity="center"
+                    android:text="@string/strExComentario2"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReputacaoFinalizar"
+            android:layout_margin="10dp"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            style="@style/btnDefault"
+            android:text="@string/btnConfirm">
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

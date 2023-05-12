@@ -89,7 +89,18 @@
     <string name="title_activity_initial_menu">Menu</string>
 
     //Strings tela Avaliação
-    <string name="title_fragment_rating">Solicitar Avaliação</string>
-    <string name="strRating">Deseja solicitar uma avaliação do responsável?</string>
+    <string name="title_fragment_avaliacao">Solicitar Avaliação</string>
+    <string name="strAvaliacao">Deseja solicitar uma avaliação do responsável?</string>
+    <string name="Yes">Sim</string>
+    <string name="No">Não</string>
+
+    //Strings tela Reputação
+    <string name="title_fragment_reputacao">Minha Reputação</string>
+    <string name="strCasos">Casos atendidos:</string>
+    <string name="strClassificacaoGeral">Classificação Geral:</string>
+    <string name="strComentarios">Comentários Recebidos:</string>
+    <string name="strExComentario1">"Ótimo profissional, resiliente e muito querido com todos seus pacientes."</string>
+    <string name="strExComentario2">"Embora seja um bom profissional, demorou muito a atender meu filho."</string>
+    <string name="btnConfirmar">Confirmar</string>
 
 </resources>
