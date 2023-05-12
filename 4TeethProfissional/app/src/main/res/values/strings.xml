@@ -103,4 +103,7 @@
     <string name="strExComentario2">"Embora seja um bom profissional, demorou muito a atender meu filho."</string>
     <string name="btnConfirmar">Confirmar</string>
 
+    <string name="strRating">4.1</string>
+    <string name="imgClient">Imagem Cliente</string>
+
 </resources>
