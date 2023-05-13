@@ -103,7 +103,10 @@
     <string name="strExComentario2">"Embora seja um bom profissional, demorou muito a atender meu filho."</string>
     <string name="btnConfirmar">Confirmar</string>
 
-    <string name="strRating">4.1</string>
-    <string name="imgClient">Imagem Cliente</string>
+    <string name="strRating4.1">4.1</string>
+    <string name="strRating5.0">5.0</string>
+    <string name="strRating3.2">3.2</string>
+    <string name="strClient1">Cliente 1</string>
+    <string name="strClient2">Cliente 2</string>
 
 </resources>
