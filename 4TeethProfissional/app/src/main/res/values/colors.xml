@@ -3,7 +3,7 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#2abfae</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -20,6 +20,7 @@
     <color name="azul_gelo">#88C3BF</color>
     <color name="red">#FF0000</color>
     <color name="gradient_start_color">@color/teal_700</color>
+    <color name="gradient_center_color">@color/teal_200</color>
     <color name="gradient_end_color">@color/gelo_esverdeado</color>
     <color name="rating_background_1">#D74E3A</color>
     <color name="rating_background_2">#FCA73B</color>
@@ -31,4 +32,5 @@
     <color name="rating_star_3">#FFFEDD</color>
     <color name="rating_star_4">#E7FFBF</color>
     <color name="rating_star_5">#CDFFC9</color>
+    <color name="light_red">#CDFFC9</color>
 </resources>

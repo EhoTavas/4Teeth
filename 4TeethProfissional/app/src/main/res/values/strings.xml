@@ -102,11 +102,21 @@
     <string name="strExComentario1">"Ótimo profissional, resiliente e muito querido com todos seus pacientes."</string>
     <string name="strExComentario2">"Embora seja um bom profissional, demorou muito a atender meu filho."</string>
     <string name="btnConfirmar">Confirmar</string>
+    <string name="clientImageDescription">.</string>
+    clientImageDescription
 
     <string name="strRating4.1">4.1</string>
     <string name="strRating5.0">5.0</string>
     <string name="strRating3.2">3.2</string>
     <string name="strClient1">Cliente 1</string>
     <string name="strClient2">Cliente 2</string>
+
+    //Strings tela Menu
+    <string name="title_fragment_menu">Menu</string>
+    <string name="docImageDescription">.</string>
+    <string name="strMinhaReputacao">Minha Reputação</string>
+    <string name="strMeuStatus">MeuStatus</string>
+    <string name="strEmergenciasDisponiveis">Emergências Disponíveis</string>
+    <string name="strSolicitarAvaliação">Solicitar Avaliação</string>
 
 </resources>
