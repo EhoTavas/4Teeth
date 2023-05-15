@@ -32,5 +32,6 @@
     <color name="rating_star_3">#FFFEDD</color>
     <color name="rating_star_4">#E7FFBF</color>
     <color name="rating_star_5">#CDFFC9</color>
-    <color name="light_red">#CDFFC9</color>
+    <color name="btnDecline">@color/rating_background_1</color>
+    <color name="btnAccept">@color/rating_background_5</color>
 </resources>

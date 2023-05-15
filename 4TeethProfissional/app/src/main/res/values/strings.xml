@@ -119,4 +119,14 @@
     <string name="strEmergenciasDisponiveis">Emergências Disponíveis</string>
     <string name="strSolicitarAvaliação">Solicitar Avaliação</string>
 
+    //Strings tela Emergências
+    <string name="title_fragment_emergency">Emergências Disponíveis</string>
+    <string name="strPaciente1">Paciente 1</string>
+    <string name="strPaciente2">Paciente 2</string>
+    <string name="strPaciente3">Paciente 3</string>
+    <string name="str13km">13km</string>
+    <string name="str18km">18km</string>
+    <string name="btnViewImg">Visualizar Imagem</string>
+    <string name="btnRefresh">Recarregar</string>
+
 </resources>
