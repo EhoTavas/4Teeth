@@ -7,6 +7,9 @@ private const val USER_PREFERENCES_NAME = "prefs_tokens"
 
 private const val UID_KEY = "uid"
 private const val FCMTOKEN_KEY = "fcmToken"
+private const val KEY_USERNAME = "username"
+private const val KEY_PASSWORD = "password"
+private const val OPENED_BEFORE = "firstTime"
 
 /**
  * Class that handles saving and retrieving user preferences
@@ -16,12 +19,25 @@ class UserPreferencesRepository private constructor(context: Context) {
     private val sharedPreferences =
         context.applicationContext.getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
 
-    /**
-     * Obter o UID.
-     */
     var uid: String = ""
         get() {
             return sharedPreferences.getString(UID_KEY, "")!!
+        }
+    var fcmToken: String = ""
+        get() {
+            return sharedPreferences.getString(FCMTOKEN_KEY, "")!!
+        }
+    val username: String
+        get() {
+            return sharedPreferences.getString(KEY_USERNAME, "")!!
+        }
+    val password: String
+        get() {
+            return sharedPreferences.getString(KEY_PASSWORD, "")!!
+        }
+    val firstTime: Int
+        get() {
+            return sharedPreferences.getInt(OPENED_BEFORE, 0)
         }
 
     fun updateUid(newUid: String) {
@@ -29,15 +45,24 @@ class UserPreferencesRepository private constructor(context: Context) {
             putString(UID_KEY, newUid)
         }
     }
-
-    var fcmToken: String = ""
-        get() {
-            return sharedPreferences.getString(FCMTOKEN_KEY, "")!!
-        }
-
     fun updateFcmToken(newFcmToken: String) {
         sharedPreferences.edit {
             putString(FCMTOKEN_KEY, newFcmToken)
+        }
+    }
+    fun updateUsername(username: String) {
+        sharedPreferences.edit {
+            putString(KEY_USERNAME, username)
+        }
+    }
+    fun updatePassword(password: String) {
+        sharedPreferences.edit {
+            putString(KEY_PASSWORD, password)
+        }
+    }
+    fun updateFirstTime(firstTime: Int) {
+        sharedPreferences.edit {
+            putInt(KEY_PASSWORD, firstTime)
         }
     }
 

@@ -8,6 +8,7 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import androidx.core.graphics.toColor
 import br.com.ForTeethDentalCare.MainActivity
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
@@ -38,7 +39,6 @@ class DefaultMessageService : FirebaseMessagingService() {
      * Sem implementação para este exemplo.
      */
     private fun sendRegistrationToServer(token: String?) {
-        // TODO: Implement this method to send token to your app server.
         Log.d("DefaultMessageService", "sendRegistrationTokenToServer($token)")
         // Guardar apenas no DataStore. Vamos manipular isso sempre no Login ou criação de conta.
         userPreferencesRepository = UserPreferencesRepository.getInstance(this)
@@ -58,10 +58,9 @@ class DefaultMessageService : FirebaseMessagingService() {
     private fun showNotification(messageBody: String) {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        val pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent, PendingIntent.FLAG_IMMUTABLE)
-        val channelId = getString(R.string.default_notification_channel_id)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-        val notificationBuilder = NotificationCompat.Builder(this, channelId)
+        val notificationBuilder = NotificationCompat.Builder(this, getString(R.string.default_notification_channel_id))
             .setSmallIcon(R.drawable.logo_4teeth)
             .setContentTitle(getString(R.string.fcm_default_title_message))
             .setContentText(messageBody)
@@ -69,15 +68,7 @@ class DefaultMessageService : FirebaseMessagingService() {
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        // Since android Oreo notification channel is needed.
-        val channel = NotificationChannel(channelId,
-            "Channel human readable title",
-            NotificationManager.IMPORTANCE_HIGH)
-        channel.enableVibration(true)
-        channel.setBypassDnd(true)
-        channel.vibrationPattern = longArrayOf(0, 500, 500, 500)
-        notificationManager.createNotificationChannel(channel)
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())
     }
 }

@@ -8,11 +8,21 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
 import android.Manifest
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.pm.PackageManager
 import android.content.Context
+import android.content.Intent
 import android.os.Build
+import android.util.Log
+import android.provider.Settings
+import android.view.Menu
+import android.view.MenuItem
+import android.window.OnBackInvokedDispatcher
+import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.ui.navigateUp
@@ -34,7 +44,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
-    public var dentist: Dentist = Dentist("", "", "", "","","","","","","","", "")
+
+    public var dentist: Dentist = Dentist("", "", "", "", "", "", "", "", "", "", "", "", 1F)
 
     private fun prepareFirebaseAppCheckDebug(){
         // Ajustando o AppCheck para modo depuração.
@@ -49,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         userPreferencesRepository.uid = uid
     }
 
-    private fun storeFcmToken(){
+    private fun storeFcmToken() {
         Firebase.messaging.token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
                 return@OnCompleteListener
@@ -59,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun getFcmToken(): String{
+    fun getFcmToken(): String {
         return userPreferencesRepository.fcmToken
     }
 
@@ -96,33 +107,51 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
+        //NOTIFICAÇÕES
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         userPreferencesRepository = UserPreferencesRepository.getInstance(this)
+        //Cria um canal de notificação
+        val channel = NotificationChannel(
+            getString(R.string.default_notification_channel_id),
+            "new emergency",
+            NotificationManager.IMPORTANCE_HIGH
+        ).apply {
+            description = "4teeth emergency"
+        }
+        channel.enableVibration(true)
+        channel.setBypassDnd(true)
+        channel.vibrationPattern = longArrayOf(0, 500, 500, 500)
+        notificationManager.createNotificationChannel(channel)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
         // disponibilizando o token (que deve ser colocado lá no APP CHECK do Firebase).
         prepareFirebaseAppCheckDebug()
         // guardar o token FCM pois iremos precisar.
         storeFcmToken()
         // invocar as permissões para notificar.
         askNotificationPermission()
-
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val areNotificationsEnabled = notificationManager.areNotificationsEnabled()
-
-        if (areNotificationsEnabled) {
-            Constants.sendMessage("DEU CERTO PORRA", getFcmToken())
-        } else {
-            navController.navigate(R.id.Login_to_notificationsAreDisabledFragment)
-        }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.appbar_menu, menu)
+        return true
+    }
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        return when (item.itemId) {
+//            R.id.action_settings -> true
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

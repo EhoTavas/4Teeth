@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 style="@style/btnDefault"
-                android:text="@string/btnSim" />
+                android:text="@string/yes" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAvaliacaoNao"
@@ -60,7 +60,7 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 style="@style/btnDefault"
-                android:text="@string/btnNao" />
+                android:text="@string/no" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

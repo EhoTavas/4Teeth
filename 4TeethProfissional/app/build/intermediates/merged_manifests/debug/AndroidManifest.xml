@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="26"
+        android:minSdkVersion="29"
         android:targetSdkVersion="33" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -76,11 +76,8 @@
         </service>
 
         <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/logo_4teeth" />
-        <meta-data
-            android:name="com.google"
-            android:resource="@color/gradient_end_color" />
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/teal_200" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

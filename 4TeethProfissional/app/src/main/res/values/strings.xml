@@ -3,8 +3,10 @@
     <string name="app_name">4Teeth Profissional</string>
     
     //Strings para mensagem
-    <string name="default_notification_channel_id">Você tem uma nova emergência!</string>
+    <string name="default_notification_channel_id">4teeth emergency</string>
     <string name="fcm_default_title_message">4Teeth</string>
+    <string name="unable_to_login">Não foi possível fazer o login, verifique os dados e tente novamente.</string>
+    <string name="logged_in">Login Efetuado!</string>
 
     //Strings gerais
     <string name="yes">Sim</string>
@@ -91,8 +93,6 @@
     //Strings tela Avaliação
     <string name="title_fragment_avaliacao">Solicitar Avaliação</string>
     <string name="strAvaliacao">Deseja solicitar uma avaliação do responsável?</string>
-    <string name="Yes">Sim</string>
-    <string name="No">Não</string>
 
     //Strings tela Reputação
     <string name="title_fragment_reputacao">Minha Reputação</string>

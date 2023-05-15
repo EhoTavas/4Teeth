@@ -6,32 +6,32 @@ import * as admin from "firebase-admin";
 // inicializando o firebase admin
 const firebase = admin.initializeApp();
 
-    type Dentista = {
-    nome: string,
-    email: string,
-    telefone: string,
-    curriculo: string,
-    cep1: string,
-    endereco1: string,
-    cep2: string,
-    endereco2: string,
-    cep3: string,
-    endereco3: string,
-    fcmToken: string | undefined,
-    uid: string,
-    }
+type Dentista = {
+  nome: string,
+  email: string,
+  telefone: string,
+  curriculo: string,
+  cep1: string,
+  endereco1: string,
+  cep2: string,
+  endereco2: string,
+  cep3: string,
+  endereco3: string,
+  fcmToken: string | undefined,
+  uid: string,
+}
 
-  /**
-   * Tipo para facilitar o retorno
-   * de qualquer função.
-   * Basta usar esse objeto sempre como
-   * retorno.
-   */
-  type CustomResponse = {
-    status: string | unknown,
-    message: string | unknown,
-    payload: unknown,
-  }
+/**
+ * Tipo para facilitar o retorno
+ * de qualquer função.
+ * Basta usar esse objeto sempre como
+ * retorno.
+ */
+type CustomResponse = {
+  status: string | unknown,
+  message: string | unknown,
+  payload: unknown,
+}
 
 /**
    * Essa função pura (sem ser cloud function)
@@ -43,11 +43,11 @@ const firebase = admin.initializeApp();
    */
 function hasAccountData(data: Dentista) {
   if (data.nome != undefined &&
-        data.email != undefined &&
-        data.telefone != undefined &&
-        data.curriculo != undefined &&
-        data.uid != undefined &&
-        data.fcmToken != undefined) {
+    data.email != undefined &&
+    data.telefone != undefined &&
+    data.curriculo != undefined &&
+    data.uid != undefined &&
+    data.fcmToken != undefined) {
     return true;
   } else {
     return false;
@@ -56,7 +56,7 @@ function hasAccountData(data: Dentista) {
 
 export const setUserProfile = functions
   .region("southamerica-east1")
-  .runWith({enforceAppCheck: false})
+  .runWith({ enforceAppCheck: false })
   .https
   .onCall(async (data, context) => {
     // verificando se o token de depuracao foi fornecido.
@@ -73,7 +73,7 @@ export const setUserProfile = functions
       message: "Dados não fornecidos",
       payload: undefined,
     };
-      // verificar se o objeto dentista foi fornecido
+    // verificar se o objeto dentista foi fornecido
     const dentista = (data as Dentista);
     if (hasAccountData(dentista)) {
       try {
@@ -83,11 +83,11 @@ export const setUserProfile = functions
         if (doc.id != undefined) {
           cResponse.status = "SUCCESS";
           cResponse.message = "Perfil de dentista inserido";
-          cResponse.payload = JSON.stringify({docId: doc.id});
+          cResponse.payload = JSON.stringify({ docId: doc.id });
         } else {
           cResponse.status = "ERROR";
           cResponse.message = "Não foi possível inserir o perfil do dentista.";
-          cResponse.payload = JSON.stringify({errorDetail: "doc.id"});
+          cResponse.payload = JSON.stringify({ errorDetail: "doc.id" });
         }
       } catch (e) {
         let exMessage;
@@ -110,7 +110,7 @@ export const setUserProfile = functions
 
 export const sendFcmMessage = functions
   .region("southamerica-east1")
-  .runWith({enforceAppCheck: false})
+  .runWith({ enforceAppCheck: false })
   .https
   .onCall(async (data, context) => {
     const cResponse: CustomResponse = {
@@ -130,7 +130,7 @@ export const sendFcmMessage = functions
         const messageId = await firebase.messaging().send(message);
         cResponse.status = "SUCCESS";
         cResponse.message = "Mensagem enviada";
-        cResponse.payload = JSON.stringify({messageId: messageId});
+        cResponse.payload = JSON.stringify({ messageId: messageId });
       } catch (e) {
         let exMessage;
         if (e instanceof Error) {

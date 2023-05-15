@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\fragment_reputacao.xml",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_reputacao.xml"
+    },
+    {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\fragment_rating.xml",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_rating.xml"
     },
@@ -8,12 +12,12 @@
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\activity_main.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-61:/layout/pop_up_notifications_blocked.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-64:/layout/pop_up_notifications_blocked.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-61:/layout/fragment_rating.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-64:/layout/fragment_rating.xml"
+        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-64:\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-61:\\layout\\fragment_cadastro_endereco.xml",

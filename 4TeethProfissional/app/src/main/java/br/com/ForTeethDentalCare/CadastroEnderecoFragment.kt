@@ -83,6 +83,7 @@ class CadastroEnderecoFragment : Fragment() {
                     (activity as MainActivity).dentist.cep3,
                     (activity as MainActivity).dentist.endereco3,
                     (activity as MainActivity).dentist.fcmToken,
+                    (activity as MainActivity).dentist.status,
                 )
             }
         }
@@ -107,7 +108,14 @@ class CadastroEnderecoFragment : Fragment() {
         imm.hideSoftInputFromWindow(requireView().windowToken, 0)
     }
 
-    private fun signUpNewAccount(nome: String, telefone: String, email: String, password: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, fcmToken: String) {
+    private fun signUpNewAccount(
+        nome: String, telefone: String,
+        email: String, password: String, curriculo: String,
+        cep1: String, endereco1: String,
+        cep2: String, endereco2: String,
+        cep3: String, endereco3: String,
+        fcmToken: String, status: Float
+    ) {
         auth = Firebase.auth
         // auth.useEmulator("127.0.0.1", 5001)
         // invocar a função e receber o retorno fazendo Cast para "CustomResponse"
@@ -120,7 +128,7 @@ class CadastroEnderecoFragment : Fragment() {
                     val user = auth.currentUser
                     (activity as MainActivity).storeUserId(user!!.uid)
                     // atualizar o perfil do usuário com os dados chamando a function.
-                    updateUserProfile(nome, telefone, email, curriculo, cep1, endereco1, cep2, endereco2, cep3, endereco3, user!!.uid, fcmToken)
+                    updateUserProfile(nome, telefone, email, curriculo, cep1, endereco1, cep2, endereco2, cep3, endereco3, user.uid, fcmToken, status)
                         .addOnCompleteListener(requireActivity()) { res ->
                             // conta criada com sucesso.
                             if(res.result.status == "SUCCESS"){
@@ -139,7 +147,7 @@ class CadastroEnderecoFragment : Fragment() {
             }
     }
 
-    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, uid: String, fcmToken: String) : Task<CustomResponse>{
+    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, uid: String, fcmToken: String, status: Float) : Task<CustomResponse>{
         // chamar a function para atualizar o perfil.
         functions = Firebase.functions("southamerica-east1")
 
@@ -156,7 +164,8 @@ class CadastroEnderecoFragment : Fragment() {
             "cep3" to cep3,
             "endereco3" to endereco3,
             "uid" to uid,
-            "fcmToken" to fcmToken
+            "fcmToken" to fcmToken,
+            "status" to status
         )
 
         return functions
