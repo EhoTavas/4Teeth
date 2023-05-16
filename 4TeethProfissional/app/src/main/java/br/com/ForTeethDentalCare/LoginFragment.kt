@@ -1,6 +1,7 @@
 package br.com.ForTeethDentalCare
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -102,7 +103,9 @@ class LoginFragment : Fragment() {
                     val sharedPref = UserPreferencesRepository.getInstance(requireContext())
                     sharedPref.updateUsername(email)
                     sharedPref.updatePassword(password)
-                    findNavController().navigate(R.id.Login_to_menuFragment)
+                    val intent = Intent(requireContext(), LoggedActivity::class.java)
+                    startActivity(intent)
+                    //findNavController().navigate(R.id.Login_to_menuFragment)
                     Constants.sendMessage(email, userPrefRep.fcmToken)
                     Snackbar.make(requireView(),R.string.logged_in, Snackbar.LENGTH_LONG).show()
                 } else {

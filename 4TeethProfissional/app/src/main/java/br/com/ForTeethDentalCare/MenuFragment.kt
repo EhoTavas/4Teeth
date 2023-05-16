@@ -22,6 +22,11 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val activity = requireActivity() as LoggedActivity
+
+        binding.availableEmergencies.setOnClickListener{
+            findNavController().navigate(R.id.menuFragment_to_emergencyFragment)
+        }
     }
 
     override fun onDestroyView() {

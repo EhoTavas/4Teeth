@@ -50,6 +50,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.4TeethProfissional" >
+        <activity
+            android:name="br.com.ForTeethDentalCare.LoggedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_logged" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />

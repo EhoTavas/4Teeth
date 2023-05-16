@@ -1,7 +1,14 @@
 [
   {
-    "name": "nav_graph",
+    "name": "nav_graph_logged",
     "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_graph_main",
+    "navigationXmlIds": [
+      "nav_graph_logged"
+    ],
     "deepLinks": []
   }
 ]

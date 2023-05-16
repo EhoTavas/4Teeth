@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_logged"
+    app:startDestination="@id/MenuFragment">
+
+    <fragment
+        android:id="@+id/MenuFragment"
+        android:name="br.com.ForTeethDentalCare.MenuFragment"
+        android:label="@string/title_fragment_menu" >
+        <action
+            android:id="@+id/menuFragment_to_emergencyFragment"
+            app:destination="@id/emergencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emergencyFragment"
+        android:name="br.com.ForTeethDentalCare.EmergencyFragment"
+        android:label="@string/title_fragment_emergency"
+        tools:layout="@layout/fragment_emergency">
+        <action
+            android:id="@+id/emergencyFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+</navigation>

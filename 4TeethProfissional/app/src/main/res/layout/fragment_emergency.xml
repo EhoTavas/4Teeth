@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_login_screen"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:theme="@style/Theme.4TeethProfissional"
+    tools:context=".EmergencyFragment">
+
+    <!--CONTAINER IMG-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="352dp"
+        android:layout_height="163dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/container_menu"
+        android:elevation="50dp"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imgTooth1"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/clientImageDescription"
+            app:srcCompat="@drawable/ic_man_cyan" />
+
+        <!--CONTAINER CONTEUDO-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="203dp"
+            android:layout_height="163dp"
+            android:layout_gravity="top|center"
+            android:orientation="vertical">
+
+            <!--STR TITLE-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/strPaciente1"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imgMapPing1"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="2dp"
+                    android:contentDescription="@string/clientImageDescription"
+                    app:srcCompat="@drawable/ic_map_ping" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str13km"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM STR TITLE-->
+
+            <!--CONTAINER BTN-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+                <!--BTN-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnViewImg1"
+                    style="@style/btnDefault"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="1dp"
+                    android:text="@string/btnViewImg"
+                    android:textSize="11sp">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM CONTAINER BTN-->
+
+            <!--CONTAINER BTN OPTIONS-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+                <!--BTN DECLINE-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDecline1"
+                    style="@style/btnDecline"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginVertical="1dp"
+                    android:drawableStart="@drawable/ic_decline">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN DECLINE-->
+                <!--BTN ACCEPT-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAccept1"
+                    style="@style/btnAccept"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginVertical="1dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:drawableStart="@drawable/ic_accept">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN ACCEPT-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM CONTAINER BTN OPTIONS-->
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <!--FIM CONTAINER CONTEÚDO-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!--FIM CONTAINER IMG-->
+
+    <!--CONTAINER IMG-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="352dp"
+        android:layout_height="163dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/container_menu"
+        android:elevation="50dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:theme="@style/Theme.4TeethProfissional">
+
+        <ImageView
+            android:id="@+id/imgTooth2"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/clientImageDescription"
+            app:srcCompat="@drawable/ic_man_red" />
+
+        <!--CONTAINER CONTEUDO-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="203dp"
+            android:layout_height="163dp"
+            android:layout_gravity="top|center"
+            android:orientation="vertical"
+            android:theme="@style/Theme.4TeethProfissional">
+
+            <!--STR TITLE-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/strPaciente2"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imgMapPing2"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="2dp"
+                    android:contentDescription="@string/clientImageDescription"
+                    app:srcCompat="@drawable/ic_map_ping" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str13km"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM STR TITLE-->
+
+            <!--CONTAINER BTN-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+                <!--BTN-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnViewImg2"
+                    style="@style/btnDefault"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="1dp"
+                    android:text="@string/btnViewImg"
+                    android:textSize="11sp">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM CONTAINER BTN-->
+
+            <!--CONTAINER BTN OPTIONS-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+                <!--BTN DECLINE-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDecline2"
+                    style="@style/btnDecline"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginVertical="1dp"
+                    android:drawableStart="@drawable/ic_decline">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN DECLINE-->
+                <!--BTN ACCEPT-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAccept2"
+                    style="@style/btnAccept"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginVertical="1dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:drawableStart="@drawable/ic_accept">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN ACCEPT-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM CONTAINER BTN OPTIONS-->
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <!--FIM CONTAINER CONTEÚDO-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!--FIM CONTAINER IMG-->
+
+    <!--CONTAINER IMG-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="352dp"
+        android:layout_height="163dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/container_menu"
+        android:elevation="50dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:theme="@style/Theme.4TeethProfissional">
+
+        <ImageView
+            android:id="@+id/imgTooth3"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/clientImageDescription"
+            app:srcCompat="@drawable/ic_woman" />
+
+        <!--CONTAINER CONTEUDO-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="203dp"
+            android:layout_height="163dp"
+            android:layout_gravity="top|center"
+            android:orientation="vertical"
+            android:theme="@style/Theme.4TeethProfissional">
+
+            <!--STR TITLE-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:theme="@style/Theme.4TeethProfissional">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/strPaciente3"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imgMapPing3"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="2dp"
+                    android:contentDescription="@string/clientImageDescription"
+                    app:srcCompat="@drawable/ic_map_ping" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str18km"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM STR TITLE-->
+
+            <!--CONTAINER BTN-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <!--BTN-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnViewImg3"
+                    style="@style/btnDefault"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="1dp"
+                    android:text="@string/btnViewImg"
+                    android:textSize="11sp">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM CONTAINER BTN-->
+
+            <!--CONTAINER BTN OPTIONS-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="50dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <!--BTN DECLINE-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDecline3"
+                    style="@style/btnDecline"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginVertical="1dp"
+                    android:drawableStart="@drawable/ic_decline">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN DECLINE-->
+                <!--BTN ACCEPT-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAccept3"
+                    style="@style/btnAccept"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginVertical="1dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:drawableStart="@drawable/ic_accept">
+                </androidx.appcompat.widget.AppCompatButton>
+                <!--FIM BTN ACCEPT-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--FIM CONTAINER BTN OPTIONS-->
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <!--FIM CONTAINER CONTEÚDO-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!--FIM CONTAINER IMG-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRefresh"
+        style="@style/btnDefault"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:drawableStart="@drawable/ic_refresh"
+        android:text="@string/btnRefresh">
+    </androidx.appcompat.widget.AppCompatButton>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+    <!--FIM TITLE-->

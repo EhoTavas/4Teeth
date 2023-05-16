@@ -4,20 +4,50 @@ package br.com.ForTeethDentalCare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import br.com.ForTeethDentalCare.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentMenuBinding implements ViewBinding {
   @NonNull
   private final LinearLayoutCompat rootView;
 
-  private FragmentMenuBinding(@NonNull LinearLayoutCompat rootView) {
+  @NonNull
+  public final LinearLayoutCompat askEvaluation;
+
+  @NonNull
+  public final LinearLayoutCompat availableEmergencies;
+
+  @NonNull
+  public final ImageView imgTooth3;
+
+  @NonNull
+  public final ImageView imgTooth4;
+
+  @NonNull
+  public final LinearLayoutCompat myReputation;
+
+  @NonNull
+  public final LinearLayoutCompat myStatus;
+
+  private FragmentMenuBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull LinearLayoutCompat askEvaluation, @NonNull LinearLayoutCompat availableEmergencies,
+      @NonNull ImageView imgTooth3, @NonNull ImageView imgTooth4,
+      @NonNull LinearLayoutCompat myReputation, @NonNull LinearLayoutCompat myStatus) {
     this.rootView = rootView;
+    this.askEvaluation = askEvaluation;
+    this.availableEmergencies = availableEmergencies;
+    this.imgTooth3 = imgTooth3;
+    this.imgTooth4 = imgTooth4;
+    this.myReputation = myReputation;
+    this.myStatus = myStatus;
   }
 
   @Override
@@ -43,10 +73,50 @@ public final class FragmentMenuBinding implements ViewBinding {
 
   @NonNull
   public static FragmentMenuBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.askEvaluation;
+      LinearLayoutCompat askEvaluation = ViewBindings.findChildViewById(rootView, id);
+      if (askEvaluation == null) {
+        break missingId;
+      }
 
-    return new FragmentMenuBinding((LinearLayoutCompat) rootView);
+      id = R.id.availableEmergencies;
+      LinearLayoutCompat availableEmergencies = ViewBindings.findChildViewById(rootView, id);
+      if (availableEmergencies == null) {
+        break missingId;
+      }
+
+      id = R.id.imgTooth3;
+      ImageView imgTooth3 = ViewBindings.findChildViewById(rootView, id);
+      if (imgTooth3 == null) {
+        break missingId;
+      }
+
+      id = R.id.imgTooth4;
+      ImageView imgTooth4 = ViewBindings.findChildViewById(rootView, id);
+      if (imgTooth4 == null) {
+        break missingId;
+      }
+
+      id = R.id.myReputation;
+      LinearLayoutCompat myReputation = ViewBindings.findChildViewById(rootView, id);
+      if (myReputation == null) {
+        break missingId;
+      }
+
+      id = R.id.myStatus;
+      LinearLayoutCompat myStatus = ViewBindings.findChildViewById(rootView, id);
+      if (myStatus == null) {
+        break missingId;
+      }
+
+      return new FragmentMenuBinding((LinearLayoutCompat) rootView, askEvaluation,
+          availableEmergencies, imgTooth3, imgTooth4, myReputation, myStatus);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
