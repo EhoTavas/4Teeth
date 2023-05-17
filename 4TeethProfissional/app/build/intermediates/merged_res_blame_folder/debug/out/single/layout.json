@@ -66,9 +66,5 @@
     {
         "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-63:\\layout\\fragment_login.xml",
         "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-66:\\layout\\fragment_login.xml"
-    },
-    {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_emergency.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_emergency.xml"
     }
 ]

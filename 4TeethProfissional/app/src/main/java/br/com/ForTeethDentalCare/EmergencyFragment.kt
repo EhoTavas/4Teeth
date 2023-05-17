@@ -42,7 +42,7 @@ class EmergencyFragment : Fragment() {
         val dataSetPatients = Constants.patientsList()
         val flowersAdapter = EmergenciesAdapter(dataSetPatients)
         val recyclerView: RecyclerView = binding.rvPatients
-        val activity = requireActivity() as LoggedActivity
+        recyclerView.adapter = flowersAdapter
     }
 
     override fun onDestroyView() {
