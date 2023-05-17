@@ -12,6 +12,15 @@
         <action
             android:id="@+id/menuFragment_to_emergencyFragment"
             app:destination="@id/emergencyFragment" />
+        <action
+            android:id="@+id/menuFragment_to_statusFragment"
+            app:destination="@id/statusFragment" />
+        <action
+            android:id="@+id/menuFragment_to_askRatingFragment"
+            app:destination="@id/askRatingFragment" />
+        <action
+            android:id="@+id/menuFragment_to_reputationFragment"
+            app:destination="@id/reputationFragment" />
     </fragment>
     <fragment
         android:id="@+id/emergencyFragment"
@@ -20,6 +29,31 @@
         tools:layout="@layout/fragment_emergency">
         <action
             android:id="@+id/emergencyFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reputationFragment"
+        android:name="br.com.ForTeethDentalCare.ReputationFragment"
+        android:label="@string/title_fragment_reputacao">
+        <action
+            android:id="@+id/reputationFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/askRatingFragment"
+        android:name="br.com.ForTeethDentalCare.AskEvaluationFragment"
+        android:label="@string/title_fragment_avaliacao">
+        <action
+            android:id="@+id/askRatingFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statusFragment"
+        android:name="br.com.ForTeethDentalCare.StatusFragment"
+        android:label="@string/title_fragment_status"
+        tools:layout="@layout/fragment_reputation">
+        <action
+            android:id="@+id/statusFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
     </fragment>
 </navigation>

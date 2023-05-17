@@ -1,5 +1,6 @@
 package br.com.ForTeethDentalCare
 
+import br.com.ForTeethDentalCare.dataStore.Patient
 import com.google.android.gms.tasks.Task
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
@@ -24,5 +25,15 @@ object Constants {
                     gson.fromJson((task.result?.data as String), CustomResponse::class.java)
                 result
             }
+    }
+
+    fun patientsList(): List<Patient> {
+        return listOf(
+            Patient(name = "Loren Tavolaro", distance = "50km"),
+            Patient(name = "Luan Magri", distance = "15km"),
+            Patient(name = "Luiza Límoli", distance = "5km"),
+            Patient(name = "Maria Eduarda", distance = "95km"),
+            Patient(name = "Matheus Taveira", distance = "80km"),
+        )
     }
 }

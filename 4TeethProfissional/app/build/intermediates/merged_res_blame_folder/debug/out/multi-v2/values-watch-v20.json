@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-61:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-62:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\luant\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

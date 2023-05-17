@@ -24,8 +24,17 @@ class MenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity() as LoggedActivity
 
+        binding.myReputation.setOnClickListener{
+            findNavController().navigate(R.id.menuFragment_to_reputationFragment)
+        }
+        binding.myStatus.setOnClickListener{
+            findNavController().navigate(R.id.menuFragment_to_statusFragment)
+        }
         binding.availableEmergencies.setOnClickListener{
             findNavController().navigate(R.id.menuFragment_to_emergencyFragment)
+        }
+        binding.askEvaluation.setOnClickListener{
+            findNavController().navigate(R.id.menuFragment_to_askRatingFragment)
         }
     }
 

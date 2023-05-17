@@ -10,15 +10,6 @@
     android:theme="@style/Theme.4TeethProfissional"
     tools:context=".StatusFragment">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        style="@style/screenTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="@string/title_fragment_status"
-        android:textSize="30sp" />
-
     <ImageView
         android:id="@+id/imageView"
         android:contentDescription="@string/toothImageDescription"

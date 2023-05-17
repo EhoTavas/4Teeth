@@ -13,6 +13,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentEmergencyBinding
 import br.com.ForTeethDentalCare.databinding.FragmentLoginBinding
@@ -38,6 +39,9 @@ class EmergencyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val dataSetPatients = Constants.patientsList()
+        val flowersAdapter = EmergenciesAdapter(dataSetPatients)
+        val recyclerView: RecyclerView = binding.rvPatients
         val activity = requireActivity() as LoggedActivity
     }
 
