@@ -4,6 +4,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
+import com.google.firebase.storage.StorageReference
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,14 +19,17 @@ class LoggedActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityLoggedBinding
+    lateinit var storage: FirebaseStorage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoggedBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.toolbar)
+        storage = Firebase.storage
+        var storageRef = storage.reference
+        var imagesRef: StorageReference? = storageRef.child("DentistUserPictures")
 
         val navController = findNavController(R.id.nav_host_fragment_content_logged)
         appBarConfiguration = AppBarConfiguration(navController.graph)

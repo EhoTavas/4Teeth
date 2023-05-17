@@ -1,5 +1,8 @@
 package br.com.ForTeethDentalCare.dataStore
 
+import android.media.Image
+import br.com.ForTeethDentalCare.R
+
 data class Dentist(var nome: String,
                    var telefone: String,
                    var email: String,
@@ -12,4 +15,5 @@ data class Dentist(var nome: String,
                    var cep3: String,
                    var endereco3: String,
                    var fcmToken: String,
-                   var status: Float)
+                   var status: Float,
+                   var picture: Int = R.drawable.ic_man_red)
