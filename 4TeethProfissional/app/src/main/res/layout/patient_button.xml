@@ -30,14 +30,11 @@
             android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:elevation="50dp"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:theme="@style/Theme.4TeethProfissional">
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPatientName"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/black"
@@ -48,7 +45,6 @@
                 android:layout_width="23dp"
                 android:layout_height="23dp"
                 android:layout_gravity="top|center_horizontal"
-                android:layout_marginHorizontal="3dp"
                 android:layout_marginTop="2dp"
                 android:textAppearance="?attr/textAppearanceHeadline5"
                 android:contentDescription="@string/clientImageDescription"
@@ -56,7 +52,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPatientDistance"
-                android:layout_width="wrap_content"
+                android:layout_width="39dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/black"
@@ -89,7 +85,7 @@
 
         <!--CONTAINER BTN OPTIONS-->
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="183dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
             android:elevation="50dp"

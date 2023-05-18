@@ -29,11 +29,11 @@ object Constants {
 
     fun patientsList(): List<Patient> {
         return listOf(
-            Patient(name = "Loren Tavolaro", distance = "50km"),
-            Patient(name = "Luan Magri", distance = "15km"),
-            Patient(name = "Luiza Límoli", distance = "5km"),
-            Patient(name = "Maria Eduarda", distance = "95km"),
-            Patient(name = "Matheus Taveira", distance = "80km"),
+            Patient(name = "Loren", distance = "50km"),
+            Patient(name = "Luan", distance = "15km"),
+            Patient(name = "Luiza", distance = "5km"),
+            Patient(name = "Duda", distance = "95km"),
+            Patient(name = "Matheus", distance = "80km"),
         )
     }
 }

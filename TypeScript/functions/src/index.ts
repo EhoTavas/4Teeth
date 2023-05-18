@@ -5,7 +5,7 @@ import * as admin from "firebase-admin";
 
 // inicializando o firebase admin
 const firebase = admin.initializeApp();
-
+const db = admin.firestore();
 type Dentista = {
   nome: string,
   email: string,
@@ -198,4 +198,16 @@ export const sendFcmMessage = functions
     return JSON.stringify(cResponse);
   });
 
-
+// exports.onEmergencyCreate = functions
+//   .firestore
+//   .document("Emergencias/{EmergenciaID}")
+//   .onCreate(async (snap, context)=>{
+//     const values = snap.data();
+//
+//     const cResponse: CustomResponse = {
+//       status: "ERROR",
+//       message: "Dados não fornecidos ou incompletos",
+//       payload: undefined,
+//     };
+//     // await db.collection("teste").add({descricao: "Teste de trigger"});
+//   });
