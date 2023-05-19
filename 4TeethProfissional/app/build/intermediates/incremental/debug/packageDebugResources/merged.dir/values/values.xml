@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+    <string-array name="states_array">
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SP</item>
+        <item>SE</item>
+        <item>TO</item>
+    </string-array>
+    <color name="azul_gelo">#88C3BF</color>
+    <color name="azul_pastel">#C0ECE8</color>
+    <color name="azul_quase_turquesa">#65CECF</color>
+    <color name="black">#FF000000</color>
+    <color name="branco_gelo">#FAFFFE</color>
+    <color name="bright_cyan">#33DCDE</color>
+    <color name="btnAccept">@color/rating_background_5</color>
+    <color name="btnDecline">@color/rating_background_1</color>
+    <color name="container_light_cyan">#EEFFFD</color>
+    <color name="errorColor">#FF018786</color>
+    <color name="gelo_azulado">#F0FAF9</color>
+    <color name="gelo_esverdeado">#E5F3F2</color>
+    <color name="gradient_center_color">@color/teal_200</color>
+    <color name="gradient_end_color">@color/gelo_esverdeado</color>
+    <color name="gradient_start_color">@color/teal_700</color>
+    <color name="light_ice">#EEFFFD</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="rating_background_1">#D74E3A</color>
+    <color name="rating_background_2">#FCA73B</color>
+    <color name="rating_background_3">#FDF53A</color>
+    <color name="rating_background_4">#B5EF55</color>
+    <color name="rating_background_5">#5BEF4E</color>
+    <color name="rating_star_1">#FFB6B6</color>
+    <color name="rating_star_2">#FDD3A4</color>
+    <color name="rating_star_3">#FFFEDD</color>
+    <color name="rating_star_4">#E7FFBF</color>
+    <color name="rating_star_5">#CDFFC9</color>
+    <color name="red">#FF0000</color>
+    <color name="teal_200">#2abfae</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="very_light_cyan">#DFFDFC</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="fab_margin">16dp</dimen>
+    <string name="app_name">4Teeth Profissional</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="btnConfirm">Finalizar</string>
+    <string name="btnConfirmar">Confirmar</string>
+    <string name="btnContinue">Prosseguir</string>
+    <string name="btnRefresh">Recarregar</string>
+    <string name="btnSignIn">Entrar</string>
+    <string name="btnSignUp"><u>Não possui cadastro?</u></string>
+    <string name="btnViewImg">Visualizar Imagem</string>
+    <string name="clientImageDescription">.</string>
+    <string name="default_notification_channel_id">4teeth emergency</string>
+    <string name="default_web_client_id" translatable="false">389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com</string>
+    <string name="docImageDescription">.</string>
+    <string name="fcm_default_title_message">4Teeth</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="gcm_defaultSenderId" translatable="false">389378064222</string>
+    <string name="google_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
+    <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
+    <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
+    <string name="invalidEmail">O email não é válido</string>
+    <string name="logged_in">Login Efetuado!</string>
+    <string name="messages_header">Messages</string>
+    <string name="mismatchPasswords">As senhas não coincidem</string>
+    <string name="next">Next</string>
+    <string name="no">Não</string>
+    <string name="passwordLength">A senha deve possuir ao menos 6 dígitos</string>
+    <string name="previous">Previous</string>
+    <string name="profile">Perfil</string>
+    <string name="project_id" translatable="false">teeth-playground</string>
+    <string name="reply_title">Default reply action</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="signUpEmailHint">example@email.com</string>
+    <string name="signUpMiniCurriculum">Experiência de 2 anos…</string>
+    <string name="signUpNameHint">Nome Completo</string>
+    <string name="signUpNumberHint">+55 (11) 98765–4321</string>
+    <string name="signUpPasswordHint">senha</string>
+    <string name="signature_title">Your signature</string>
+    <string name="str13km">13km</string>
+    <string name="str18km">18km</string>
+    <string name="strAddAddress">Adicionar endereço</string>
+    <string name="strAddress1">Endereço:</string>
+    <string name="strAddress2">Endereço 2 (Opcional):</string>
+    <string name="strAddress3">Endereço 3 (Opcional):</string>
+    <string name="strAddressNumber">Número da residência ou s/n</string>
+    <string name="strAppMotto">Dental Care</string>
+    <string name="strAppName">4Teeth</string>
+    <string name="strAvailability">Diponível para emergências</string>
+    <string name="strAvaliacao">Deseja solicitar uma avaliação do responsável?</string>
+    <string name="strCasos">Casos atendidos:</string>
+    <string name="strCity">Cidade</string>
+    <string name="strClassificacaoGeral">Classificação Geral:</string>
+    <string name="strClient1">Cliente 1</string>
+    <string name="strClient2">Cliente 2</string>
+    <string name="strComentarios">Comentários Recebidos:</string>
+    <string name="strComplement">Complemento (opcional)</string>
+    <string name="strEmail">E-mail:</string>
+    <string name="strEmergenciasDisponiveis">Emergências Disponíveis</string>
+    <string name="strExComentario1">"Ótimo profissional, resiliente e muito querido com todos seus pacientes."</string>
+    <string name="strExComentario2">"Embora seja um bom profissional, demorou muito a atender meu filho."</string>
+    <string name="strLogin">Login</string>
+    <string name="strMeuStatus">MeuStatus</string>
+    <string name="strMinhaReputacao">Minha Reputação</string>
+    <string name="strMiniCurriculum">Mini-currículo:</string>
+    <string name="strName">Nome:</string>
+    <string name="strNeighborhood">Bairro</string>
+    <string name="strPaciente1">Paciente 1</string>
+    <string name="strPaciente2">Paciente 2</string>
+    <string name="strPaciente3">Paciente 3</string>
+    <string name="strPassword">Senha:</string>
+    <string name="strPasswordConfirm">Confirme sua Senha:</string>
+    <string name="strPhone">Telefone:</string>
+    <string name="strRating3.2">3.2</string>
+    <string name="strRating4.1">4.1</string>
+    <string name="strRating5.0">5.0</string>
+    <string name="strRua">Rua</string>
+    <string name="strSolicitarAvaliação">Solicitar Avaliação</string>
+    <string name="strState">Estado</string>
+    <string name="strZipCode">Cep</string>
+    <string name="sync_header">Sync</string>
+    <string name="sync_title">Sync email periodically</string>
+    <string name="title_activity_initial_menu">Menu</string>
+    <string name="title_activity_logged">LoggedActivity</string>
+    <string name="title_addresses">Endereços de atendimento</string>
+    <string name="title_fragment_avaliacao">Solicitar Avaliação</string>
+    <string name="title_fragment_emergency">Emergências</string>
+    <string name="title_fragment_menu">Menu</string>
+    <string name="title_fragment_reputacao">Minha Reputação</string>
+    <string name="title_fragment_status">Meu Status</string>
+    <string name="title_sign_up">Criar conta</string>
+    <string name="toothImageDescription">Dente 3D</string>
+    <string name="unable_to_login">Não foi possível fazer o login, verifique os dados e tente novamente.</string>
+    <string name="yes">Sim</string>
+    <style name="Theme.4TeethProfissional" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">@color/gelo_esverdeado</item>
+        
+        <item name="android:windowBackground">@color/gelo_esverdeado</item>
+        <item name="android:fontFamily">@font/poppins_family</item>
+        <item name="android:navigationBarColor">@color/very_light_cyan</item>
+        <item name="android:windowLightStatusBar">@color/black</item>
+    </style>
+    <style name="Theme.4TeethProfissional.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="Theme.4TeethProfissional.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.4TeethProfissional.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="appBarLayout">
+        <item name="android:backgroundTint">@color/gradient_end_color</item>
+    </style>
+    <style name="btnAccept">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/btn_accept</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <style name="btnDecline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/btn_decline</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <style name="btnDefault">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <style name="btnMenu">
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:backgroundTint">@color/light_ice</item>
+    </style>
+    <style name="fragmentsBackground" parent="Theme.4TeethProfissional">
+        <item name="android:windowBackground">@color/azul_gelo</item>
+    </style>
+    <style name="inputMainScreen">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:layout_marginHorizontal">30dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textColorHint">#605F5F</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+    <style name="inputSignUp" parent="inputMainScreen">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="labelsMainScreen">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17.5sp</item>
+    </style>
+    <style name="labelsMainScreen_LinearLayout" parent="labelsMainScreen">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginHorizontal">45dp</item>
+    </style>
+    <style name="screenTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">22.5sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

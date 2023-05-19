@@ -26,8 +26,11 @@ class DefaultMessageService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         val msgData = remoteMessage.data
         val msg = msgData["text"]
-        Log.d("mensagem", msg.toString())
+        Log.d("mensagem", "Message data payload: ${remoteMessage.data}")
         showNotification(msg!!)
+        remoteMessage.notification?.let {
+            Log.d("notification body", "Message Notification Body: ${it.body}")
+        }
     }
 
     override fun onNewToken(token: String) {

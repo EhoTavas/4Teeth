@@ -15,5 +15,5 @@ data class Dentist(var nome: String,
                    var cep3: String,
                    var endereco3: String,
                    var fcmToken: String,
-                   var status: Float,
-                   var picture: Int = R.drawable.ic_man_red)
+                   var status: String
+    )

@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 /* eslint-disable spaced-comment */
+/* eslint-disable object-curly-spacing */
 
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
@@ -8,6 +9,7 @@ import * as admin from "firebase-admin";
 // inicializando o firebase admin
 const firebase = admin.initializeApp();
 const db = admin.firestore();
+
 type Dentista = {
   nome: string,
   email: string,
@@ -43,6 +45,7 @@ type CustomResponse = {
    * a senha não armazenamos no perfil do firestore).
    * @param {any} data - objeto data (any).
    * @return {boolean} - true se tiver dados corretos
+   * @param {MulticastMessage} multiMessage
    */
 function hasAccountData(data: Dentista) {
   if (data.nome != undefined &&
@@ -213,41 +216,25 @@ export const onEmergencyCreate = functions
   .firestore
   .document("Emergencias/{EmergenciaID}")
   .onCreate(async (snapshot, context) => {
-    db.collection("teste").add({teste: "Sim"});
-    const cResponse: CustomResponse = {
-      status: "ERROR",
-      message: "Dados não fornecidos",
-      payload: undefined,
-    };
-
     try {
-      const emergency = snapshot.data();
+      await db.collection("teste").add({teste: "Sim"});
 
-      if (emergency.status === '1') {
-        const dentistaSnapshot = await admin.firestore()
-          .collection('Dentista')
-          .where('status', '==', '1')
-          .get();
+      const emergencyDocId = snapshot.data().docId;
+      const dentistaSnapshot = await admin.firestore()
+        .collection('Dentista')
+        .where('status', '==', '1')
+        .get();
+      const tokens = dentistaSnapshot.docs.map((doc) => doc.data().fcmToken);
+      const multiMessage = {
+        data: {
+          text: emergencyDocId + "Nova emergência disponível",
+        },
+        tokens: tokens,
+      };
 
-        dentistaSnapshot.forEach((dentista) => {
-          const dentistaData = dentista.data();
-          const message = {
-            data: {
-              text: "Nova emergência disponível",
-            },
-            token: dentistaData.fcmToken,
-          };
-
-          const messageId = firebase.messaging().send(message);
-          cResponse.status = "SUCCESS";
-          cResponse.message = "Mensagem enviada";
-          cResponse.payload = JSON.stringify({messageId: messageId});
-          return JSON.stringify(cResponse);
-        });
-      }
+      await firebase
+        .messaging().sendEachForMulticast(multiMessage);
     } catch (error) {
-      console.error('Erro ao enviar notificação:', error);
-      throw new functions.https
-        .HttpsError('internal', 'Erro enviar notificação');
+      functions.logger.error("Erro critico notificacoes", error);
     }
   });

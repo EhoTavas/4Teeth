@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
-    public var dentist: Dentist = Dentist("", "", "", "", "", "", "", "", "", "", "", "", 1F)
+    public var dentist: Dentist = Dentist("", "", "", "", "", "", "", "", "", "", "", "", "1")
 
     private fun prepareFirebaseAppCheckDebug(){
         // Ajustando o AppCheck para modo depuração.

@@ -114,7 +114,8 @@ class CadastroEnderecoFragment : Fragment() {
         cep1: String, endereco1: String,
         cep2: String, endereco2: String,
         cep3: String, endereco3: String,
-        fcmToken: String, status: Float
+        fcmToken: String,
+        status: String
     ) {
         auth = Firebase.auth
         // auth.useEmulator("127.0.0.1", 5001)
@@ -147,7 +148,7 @@ class CadastroEnderecoFragment : Fragment() {
             }
     }
 
-    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, uid: String, fcmToken: String, status: Float) : Task<CustomResponse>{
+    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, uid: String, fcmToken: String, status: String) : Task<CustomResponse>{
         // chamar a function para atualizar o perfil.
         functions = Firebase.functions("southamerica-east1")
 
@@ -165,7 +166,7 @@ class CadastroEnderecoFragment : Fragment() {
             "endereco3" to endereco3,
             "uid" to uid,
             "fcmToken" to fcmToken,
-            "status" to status
+            "status" to status,
         )
 
         return functions
