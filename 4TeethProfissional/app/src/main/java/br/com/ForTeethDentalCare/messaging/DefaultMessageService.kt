@@ -26,6 +26,7 @@ class DefaultMessageService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         val msgData = remoteMessage.data
         val msg = msgData["text"]
+        Log.d("mensagem", msg.toString())
         showNotification(msg!!)
     }
 

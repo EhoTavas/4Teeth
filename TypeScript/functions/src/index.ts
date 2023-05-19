@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable spaced-comment */
 
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
@@ -17,6 +19,7 @@ type Dentista = {
   endereco2: string,
   cep3: string,
   endereco3: string,
+  status: string,
   fcmToken: string | undefined,
   uid: string,
 }
@@ -46,6 +49,13 @@ function hasAccountData(data: Dentista) {
     data.email != undefined &&
     data.telefone != undefined &&
     data.curriculo != undefined &&
+    data.cep1 != undefined &&
+    data.endereco1 != undefined &&
+    data.cep2 != undefined &&
+    data.endereco2 != undefined &&
+    data.cep3 != undefined &&
+    data.endereco3 != undefined &&
+    data.status != undefined &&
     data.uid != undefined &&
     data.fcmToken != undefined) {
     return true;
@@ -198,16 +208,46 @@ export const sendFcmMessage = functions
     return JSON.stringify(cResponse);
   });
 
-// exports.onEmergencyCreate = functions
-//   .firestore
-//   .document("Emergencias/{EmergenciaID}")
-//   .onCreate(async (snap, context)=>{
-//     const values = snap.data();
-//
-//     const cResponse: CustomResponse = {
-//       status: "ERROR",
-//       message: "Dados não fornecidos ou incompletos",
-//       payload: undefined,
-//     };
-//     // await db.collection("teste").add({descricao: "Teste de trigger"});
-//   });
+export const onEmergencyCreate = functions
+  .region("southamerica-east1")
+  .firestore
+  .document("Emergencias/{EmergenciaID}")
+  .onCreate(async (snapshot, context) => {
+    db.collection("teste").add({teste: "Sim"});
+    const cResponse: CustomResponse = {
+      status: "ERROR",
+      message: "Dados não fornecidos",
+      payload: undefined,
+    };
+
+    try {
+      const emergency = snapshot.data();
+
+      if (emergency.status === '1') {
+        const dentistaSnapshot = await admin.firestore()
+          .collection('Dentista')
+          .where('status', '==', '1')
+          .get();
+
+        dentistaSnapshot.forEach((dentista) => {
+          const dentistaData = dentista.data();
+          const message = {
+            data: {
+              text: "Nova emergência disponível",
+            },
+            token: dentistaData.fcmToken,
+          };
+
+          const messageId = firebase.messaging().send(message);
+          cResponse.status = "SUCCESS";
+          cResponse.message = "Mensagem enviada";
+          cResponse.payload = JSON.stringify({messageId: messageId});
+          return JSON.stringify(cResponse);
+        });
+      }
+    } catch (error) {
+      console.error('Erro ao enviar notificação:', error);
+      throw new functions.https
+        .HttpsError('internal', 'Erro enviar notificação');
+    }
+  });

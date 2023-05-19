@@ -7,6 +7,7 @@ INJECTED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\m
 MERGED from [androidx.databinding:viewbinding:7.4.0] C:\Users\Luan\.gradle\caches\transforms-3\45fe0bb5a3c04201a3edf5d34c7cdf64\transformed\viewbinding-7.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.work:work-runtime-ktx:2.8.1] C:\Users\Luan\.gradle\caches\transforms-3\7076243ffd0dbdd6e0c23cc68431c0c5\transformed\work-runtime-ktx-2.8.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.1] C:\Users\Luan\.gradle\caches\transforms-3\a53bd61704156f292aaeeb14614a645a\transformed\lifecycle-livedata-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.2.1] C:\Users\Luan\.gradle\caches\transforms-3\65b36b8456def93f6486bd14d322b92d\transformed\firebase-analytics-ktx-21.2.1\AndroidManifest.xml:2:1-17:12
@@ -31,6 +32,7 @@ MERGED from [com.google.firebase:firebase-appcheck-debug:16.1.2] C:\Users\Luan\.
 MERGED from [com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:2:1-23:12
 MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:15:1-33:12
 MERGED from [com.google.android.gms:play-services-location:20.0.0] C:\Users\Luan\.gradle\caches\transforms-3\6c9f18dea47af27b0e4d62ebb381eabd\transformed\play-services-location-20.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:2:1-25:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] C:\Users\Luan\.gradle\caches\transforms-3\3d48caa45c752b66db101663f7e29f27\transformed\firebase-appcheck-interop-16.1.1\AndroidManifest.xml:15:1-25:12
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\Luan\.gradle\caches\transforms-3\9ad9e4136d34c948f2a9f72ae66512f9\transformed\firebase-messaging-23.1.2\AndroidManifest.xml:17:1-61:12
@@ -156,6 +158,8 @@ MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gr
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:13:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:13:5-67
 MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7709c38d841292046ae5ef6ecd78e517\transformed\firebase-iid-21.1.0\AndroidManifest.xml:23:5-67
@@ -182,6 +186,8 @@ MERGED from [com.google.firebase:firebase-auth:21.2.0] C:\Users\Luan\.gradle\cac
 MERGED from [com.google.firebase:firebase-auth:21.2.0] C:\Users\Luan\.gradle\caches\transforms-3\72792d21637fda08b10a1d45f79cb320\transformed\firebase-auth-21.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\Luan\.gradle\caches\transforms-3\7fa852b718acb4eab09d65c734e8b7f2\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\Luan\.gradle\caches\transforms-3\9ad9e4136d34c948f2a9f72ae66512f9\transformed\firebase-messaging-23.1.2\AndroidManifest.xml:24:5-79
@@ -212,6 +218,8 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\
 		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:6:22-76
 application
 ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml:8:5-50:19
+MERGED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:10:5-18:19
+MERGED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:10:5-18:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:10:5-18:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:10:5-18:19
 MERGED from [com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:10:5-18:19
@@ -244,6 +252,8 @@ MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle
 MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:23:5-31:19
 MERGED from [com.google.android.gms:play-services-location:20.0.0] C:\Users\Luan\.gradle\caches\transforms-3\6c9f18dea47af27b0e4d62ebb381eabd\transformed\play-services-location-20.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:20.0.0] C:\Users\Luan\.gradle\caches\transforms-3\6c9f18dea47af27b0e4d62ebb381eabd\transformed\play-services-location-20.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:15:5-23:19
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:15:5-23:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] C:\Users\Luan\.gradle\caches\transforms-3\3d48caa45c752b66db101663f7e29f27\transformed\firebase-appcheck-interop-16.1.1\AndroidManifest.xml:23:5-20
@@ -392,6 +402,8 @@ MERGED from [androidx.work:work-runtime-ktx:2.8.1] C:\Users\Luan\.gradle\caches\
 MERGED from [androidx.work:work-runtime-ktx:2.8.1] C:\Users\Luan\.gradle\caches\transforms-3\7076243ffd0dbdd6e0c23cc68431c0c5\transformed\work-runtime-ktx-2.8.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.1] C:\Users\Luan\.gradle\caches\transforms-3\a53bd61704156f292aaeeb14614a645a\transformed\lifecycle-livedata-ktx-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.1] C:\Users\Luan\.gradle\caches\transforms-3\a53bd61704156f292aaeeb14614a645a\transformed\lifecycle-livedata-ktx-2.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:5:5-7:41
@@ -440,6 +452,8 @@ MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle
 MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.gms:play-services-location:20.0.0] C:\Users\Luan\.gradle\caches\transforms-3\6c9f18dea47af27b0e4d62ebb381eabd\transformed\play-services-location-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:20.0.0] C:\Users\Luan\.gradle\caches\transforms-3\6c9f18dea47af27b0e4d62ebb381eabd\transformed\play-services-location-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] C:\Users\Luan\.gradle\caches\transforms-3\3d48caa45c752b66db101663f7e29f27\transformed\firebase-appcheck-interop-16.1.1\AndroidManifest.xml:18:5-20:41
@@ -645,7 +659,9 @@ INJECTED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\m
 		ADDED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Luan\Documents\GitHub\4Teeth\4TeethProfissional\app\src\main\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:11:9-17:19
+ADDED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:11:9-17:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:11:9-17:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:11:9-17:19
 MERGED from [com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:11:9-17:19
 MERGED from [com.google.firebase:firebase-functions-ktx:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\a294e3a84427dea44e589b631f880866\transformed\firebase-functions-ktx-20.2.2\AndroidManifest.xml:11:9-17:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.2.1] C:\Users\Luan\.gradle\caches\transforms-3\65b36b8456def93f6486bd14d322b92d\transformed\firebase-analytics-ktx-21.2.1\AndroidManifest.xml:8:9-14:19
@@ -664,6 +680,8 @@ MERGED from [com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradl
 MERGED from [com.google.firebase:firebase-functions:20.2.2] C:\Users\Luan\.gradle\caches\transforms-3\21b0ad3f32ecb1ec84f592168e874785\transformed\firebase-functions-20.2.2\AndroidManifest.xml:14:9-20:19
 MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:24:9-30:19
 MERGED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:16:9-22:19
 MERGED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:16:9-22:19
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\Luan\.gradle\caches\transforms-3\9ad9e4136d34c948f2a9f72ae66512f9\transformed\firebase-messaging-23.1.2\AndroidManifest.xml:52:9-58:19
@@ -679,13 +697,19 @@ MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Luan\.g
 MERGED from [com.google.firebase:firebase-common:20.3.2] C:\Users\Luan\.gradle\caches\transforms-3\8663ce2ff26b18f27354e5ac368ece0e\transformed\firebase-common-20.3.2\AndroidManifest.xml:32:9-36:35
 MERGED from [com.google.firebase:firebase-common:20.3.2] C:\Users\Luan\.gradle\caches\transforms-3\8663ce2ff26b18f27354e5ac368ece0e\transformed\firebase-common-20.3.2\AndroidManifest.xml:32:9-36:35
 	android:exported
-		ADDED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:13:13-37
+		ADDED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:13:13-37
 	tools:targetApi
 		ADDED from [com.google.firebase:firebase-common:20.3.2] C:\Users\Luan\.gradle\caches\transforms-3\8663ce2ff26b18f27354e5ac368ece0e\transformed\firebase-common-20.3.2\AndroidManifest.xml:36:13-32
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.3.2] C:\Users\Luan\.gradle\caches\transforms-3\8663ce2ff26b18f27354e5ac368ece0e\transformed\firebase-common-20.3.2\AndroidManifest.xml:34:13-43
 	android:name
-		ADDED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:12:13-84
+		ADDED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:12:13-84
+meta-data#com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar
+ADDED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:14:13-16:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:16:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage-ktx:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\8e7e5f552e4bee6ad9f385825706c12e\transformed\firebase-storage-ktx-20.1.0\AndroidManifest.xml:15:17-122
 meta-data#com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar
 ADDED from [com.google.firebase:firebase-firestore-ktx:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\044df1ad4cddf55c01cf5e92e56148ed\transformed\firebase-firestore-ktx-24.4.5\AndroidManifest.xml:14:13-16:85
 	android:value
@@ -836,6 +860,12 @@ ADDED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\
 		ADDED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:29:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-appcheck:16.1.2] C:\Users\Luan\.gradle\caches\transforms-3\a4f462f781386435bed517e443e79e68\transformed\firebase-appcheck-16.1.2\AndroidManifest.xml:28:17-117
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:20.1.0] C:\Users\Luan\.gradle\caches\transforms-3\507b0de3fe7441bf479a68113403eb4b\transformed\firebase-storage-20.1.0\AndroidManifest.xml:33:17-107
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
 ADDED from [com.google.firebase:firebase-firestore:24.4.5] C:\Users\Luan\.gradle\caches\transforms-3\60ec8eab85498b50a94cb294e01659cd\transformed\firebase-firestore-24.4.5\AndroidManifest.xml:19:13-21:85
 	android:value

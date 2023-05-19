@@ -1,4 +1,4 @@
-#Tue May 16 23:29:11 BRT 2023
+#Thu May 18 21:56:14 BRT 2023
 base.0=C\:\\Users\\Luan\\Documents\\GitHub\\4Teeth\\4TeethProfissional\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Luan\\Documents\\GitHub\\4Teeth\\4TeethProfissional\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Luan\\Documents\\GitHub\\4Teeth\\4TeethProfissional\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
