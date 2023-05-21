@@ -10,7 +10,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import com.google.firebase.storage.StorageReference
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -22,6 +24,8 @@ class LoggedActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityLoggedBinding
     lateinit var storage: FirebaseStorage
+    private lateinit var navController: NavController
+    private lateinit var userPreferencesRepository: UserPreferencesRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +54,8 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        navController.navigate(R.id.userFragment)
+        // TODO: encontrar uma forma de ir para o fragment de usuário, não importa o fragment atual
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -59,4 +65,8 @@ class LoggedActivity : AppCompatActivity() {
         }
     }
 
+    override fun isDestroyed(): Boolean {
+        // TODO: encontrar uma forma de colocar um aviso "deseja mesmo sair do aplicativo?"
+        return super.isDestroyed()
+    }
 }

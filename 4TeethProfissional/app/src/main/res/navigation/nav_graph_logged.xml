@@ -21,6 +21,9 @@
         <action
             android:id="@+id/menuFragment_to_reputationFragment"
             app:destination="@id/reputationFragment" />
+        <action
+            android:id="@+id/menuFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
     <fragment
         android:id="@+id/emergencyFragment"
@@ -54,6 +57,15 @@
         tools:layout="@layout/fragment_reputation">
         <action
             android:id="@+id/statusFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="br.com.ForTeethDentalCare.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/userFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
     </fragment>
 </navigation>

@@ -217,9 +217,7 @@ export const onEmergencyCreate = functions
   .document("Emergencias/{EmergenciaID}")
   .onCreate(async (snapshot, context) => {
     try {
-      await db.collection("teste").add({teste: "Sim"});
-
-      const emergencyDocId = snapshot.data().docId;
+      await db.collection("teste").add({teste: "Teste trigger"});
       const dentistaSnapshot = await admin.firestore()
         .collection('Dentista')
         .where('status', '==', '1')
@@ -227,7 +225,7 @@ export const onEmergencyCreate = functions
       const tokens = dentistaSnapshot.docs.map((doc) => doc.data().fcmToken);
       const multiMessage = {
         data: {
-          text: emergencyDocId + "Nova emergência disponível",
+          text: "Nova emergência disponível",
         },
         tokens: tokens,
       };
