@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,10 +21,15 @@ public final class FragmentUserBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
+  public final AppCompatButton btnLogout;
+
+  @NonNull
   public final ImageView imageView;
 
-  private FragmentUserBinding(@NonNull LinearLayoutCompat rootView, @NonNull ImageView imageView) {
+  private FragmentUserBinding(@NonNull LinearLayoutCompat rootView,
+      @NonNull AppCompatButton btnLogout, @NonNull ImageView imageView) {
     this.rootView = rootView;
+    this.btnLogout = btnLogout;
     this.imageView = imageView;
   }
 
@@ -54,13 +60,19 @@ public final class FragmentUserBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnLogout;
+      AppCompatButton btnLogout = ViewBindings.findChildViewById(rootView, id);
+      if (btnLogout == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }
 
-      return new FragmentUserBinding((LinearLayoutCompat) rootView, imageView);
+      return new FragmentUserBinding((LinearLayoutCompat) rootView, btnLogout, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

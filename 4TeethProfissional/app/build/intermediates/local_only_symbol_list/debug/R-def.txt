@@ -142,6 +142,7 @@ id btnConfirmar
 id btnContinuar
 id btnDecline1
 id btnLogin
+id btnLogout
 id btnRefresh
 id btnReputacaoFinalizar
 id btnSignUp
@@ -166,6 +167,7 @@ id menuFragment_to_askRatingFragment
 id menuFragment_to_emergencyFragment
 id menuFragment_to_reputationFragment
 id menuFragment_to_statusFragment
+id menuFragment_to_userFragment
 id myReputation
 id myStatus
 id nav_graph
@@ -183,6 +185,8 @@ id toolbar
 id tvMessage
 id tvPatientDistance
 id tvPatientName
+id userFragment
+id userFragment_to_MenuFragment
 layout activity_logged
 layout activity_main
 layout content_logged

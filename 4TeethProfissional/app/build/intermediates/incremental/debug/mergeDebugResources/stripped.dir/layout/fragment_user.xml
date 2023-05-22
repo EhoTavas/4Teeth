@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".UserFragment">
 
     <ImageView
@@ -14,5 +15,11 @@
         android:layout_marginTop="25dp"
         android:contentDescription="@string/toothImageDescription"
         app:srcCompat="@drawable/tooth_3d" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogout"
+        android:layout_marginTop="20dp"
+        style="@style/btnDefault"
+        android:text="Deslogar"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
