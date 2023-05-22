@@ -308,6 +308,7 @@ string title_fragment_menu
 string title_fragment_reputacao
 string title_fragment_status
 string title_sign_up
+string title_user_fragment
 string toothImageDescription
 string unable_to_login
 string yes

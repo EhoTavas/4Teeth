@@ -62,8 +62,8 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="br.com.ForTeethDentalCare.UserFragment"
-        android:label="fragment_user"
-        tools:layout="@layout/fragment_user" >
+        android:label="@string/title_user_fragment"
+        tools:layout="@layout/fragment_user">
         <action
             android:id="@+id/userFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />

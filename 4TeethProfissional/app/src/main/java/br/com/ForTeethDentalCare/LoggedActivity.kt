@@ -24,7 +24,7 @@ class LoggedActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityLoggedBinding
     lateinit var storage: FirebaseStorage
-    private lateinit var navController: NavController
+    private final lateinit var Controller: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +54,7 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_logged)
         navController.navigate(R.id.userFragment)
         // TODO: encontrar uma forma de ir para o fragment de usuário, não importa o fragment atual
         // Handle action bar item clicks here. The action bar will
