@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,6 +11,10 @@ import 'firebase_options.dart';
 import 'package:camera/camera.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart' as Path;
+
+import 'call_emergency.dart';
+import 'display_picture.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,17 +22,6 @@ Future<void> main() async {
   final cameras = await availableCameras();
   final firstCamera = cameras.first;
   // Create a storage reference from our app
-  final storageRef = FirebaseStorage.instance.ref();
-
-  // Create a reference to "mountains.jpg"
-  final mountainsRef = storageRef.child("mountains.jpg");
-
-  // Create a reference to 'images/mountains.jpg'
-  final mountainImagesRef = storageRef.child("images/mountains.jpg");
-
-  // While the file names are the same, the references point to different files
-  assert(mountainsRef.name == mountainImagesRef.name);
-  assert(mountainsRef.fullPath != mountainImagesRef.fullPath);
   runApp(
     MaterialApp(
       theme: ThemeData.dark(),
@@ -39,28 +33,8 @@ Future<void> main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
 class TakePictureScreen extends StatefulWidget {
-  const TakePictureScreen({
-    super.key,
-    required this.camera,
-  });
+  const TakePictureScreen({super.key, required this.camera});
 
   final CameraDescription camera;
 
@@ -71,16 +45,18 @@ class TakePictureScreen extends StatefulWidget {
 class TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
+  late final NavigatorState _navigator;
 
   @override
   void initState() {
     super.initState();
+    _navigator = Navigator.of(context);
     // To display the current output from the Camera, create a CameraController.
     _controller = CameraController(
       // Get a specific camera from the list of available cameras.
       widget.camera,
       //Define the resolution to use.
-      ResolutionPreset.medium,
+      ResolutionPreset.high,
     );
 
     // Next, initialize the controller. This returns a Future.
@@ -114,11 +90,20 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        // Provide an onPressed callback.
         onPressed: _takePhoto,
         child: const Icon(Icons.camera_alt),
       ),
     );
+  }
+
+  Future<String> uploadImageToFirebase(File imageFile) async {
+    String fileName = Path.basename(imageFile.path);
+    Reference storageReference =
+        FirebaseStorage.instance.ref().child('images/$fileName');
+    UploadTask uploadTask = storageReference.putFile(imageFile);
+    TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
   }
 
   void _takePhoto() async {
@@ -129,87 +114,29 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       // Attempt to take a picture and get the file 'image' where it was saved.
       final image = await _controller.takePicture();
       if (!mounted) return;
-      // If the picture was taken, display it on a new screen.
+
       String path = image.path;
+      File file = File(path);
+      // Salva a imagem na galeria local do dispositivo
       GallerySaver.saveImage(path, albumName: '4Teeth').then((path) {
         setState(() {
           print("imagem salva na galeria");
         });
       });
-      await Navigator.of(context).push(
+
+      // Faz o upload da imagem para o Firebase Storage
+      String downloadUrl = await uploadImageToFirebase(file);
+      await _navigator.push(
         MaterialPageRoute(
-          builder: (context) => DisplayPictureScreen(
+          builder: (context) => DisplayPicture(
             // Pass the automatically generated path to the DisplayPictureScreen widget.
             imagePath: path,
           ),
         ),
       );
-    } catch (e) { // If an error occurs, log the error to the console.
+    } catch (e) {
+      // If an error occurs, log the error to the console.
       print(e);
     }
-  }
-}
-
-// A widget that displays the picture taken by the user.
-class DisplayPictureScreen extends StatelessWidget {
-  final String imagePath;
-
-  const DisplayPictureScreen({super.key, required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Display the Picture')),
-      // The image is stored as a file on the device. Use the 'Image.file' constructor
-      // with the given path to display the image.
-      body: Image.file(File(imagePath)),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
   }
 }
