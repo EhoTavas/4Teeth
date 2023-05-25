@@ -5,16 +5,14 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:path_provider/path_provider.dart';
-import 'firebase_options.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:path_provider/path_provider.dart';
 import 'package:camera/camera.dart';
-import 'package:gallery_saver/gallery_saver.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as Path;
 
-import 'call_emergency.dart';
 import 'display_picture.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -109,28 +107,28 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   void _takePhoto() async {
     // Take the Picture in a try / catch block. If anything goes wrong, catch the error.
     try {
-      // Ensure that the camera is initialized.
-      await _initializeControllerFuture;
-      // Attempt to take a picture and get the file 'image' where it was saved.
-      final image = await _controller.takePicture();
-      if (!mounted) return;
+      String imageUrl = '';
+      ImagePicker imagePicker = ImagePicker();
+      XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
 
-      String path = image.path;
-      File file = File(path);
-      // Salva a imagem na galeria local do dispositivo
-      GallerySaver.saveImage(path, albumName: '4Teeth').then((path) {
-        setState(() {
-          print("imagem salva na galeria");
-        });
-      });
+      if (file == null) return;
+      String pictureName = DateTime.now().millisecondsSinceEpoch.toString();
 
-      // Faz o upload da imagem para o Firebase Storage
-      String downloadUrl = await uploadImageToFirebase(file);
+      Reference referenceRoot = FirebaseStorage.instance.ref();
+      Reference referenceDirImages = referenceRoot.child('images');
+
+      Reference referenceImageToUpload = referenceDirImages.child(pictureName);
+      try {
+        // Faz o upload da imagem para o Firebase Storage
+        await referenceImageToUpload.putFile(File(file.path));
+
+        imageUrl = await referenceImageToUpload.getDownloadURL();
+      } catch (error) {}
       await _navigator.push(
         MaterialPageRoute(
           builder: (context) => DisplayPicture(
             // Pass the automatically generated path to the DisplayPictureScreen widget.
-            imagePath: path,
+            imagePath: file.path,
           ),
         ),
       );
