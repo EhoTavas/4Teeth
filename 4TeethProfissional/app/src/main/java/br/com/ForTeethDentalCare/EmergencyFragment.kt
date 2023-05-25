@@ -1,27 +1,18 @@
 package br.com.ForTeethDentalCare
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentEmergencyBinding
-import br.com.ForTeethDentalCare.databinding.FragmentLoginBinding
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
-import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class EmergencyFragment : Fragment() {
 
@@ -39,9 +30,23 @@ class EmergencyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val dataSetPatients = Constants.patientsList()
-        val flowersAdapter = EmergenciesAdapter(dataSetPatients)
+        val flowersAdapter = EmergenciesAdapter(emptyList()) // Adaptador inicial vazio
         val recyclerView: RecyclerView = binding.rvPatients
+
+        // Chamada assíncrona da função patientsList()
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val dataSetPatients = withContext(Dispatchers.IO) {
+                    Constants.patientsList()
+                }
+                Log.d("emergencia1", "passouaqui")
+                flowersAdapter.setData(dataSetPatients) // Atualiza os dados do adaptador
+            } catch (e: Exception) {
+                // Trate o erro de forma adequada
+                Log.e("Erro paciente", "Error fetching patient list: ${e.message}", e)
+                Snackbar.make(binding.root, "Error fetching patient list", Snackbar.LENGTH_SHORT).show()
+            }
+        }
         recyclerView.adapter = flowersAdapter
     }
 

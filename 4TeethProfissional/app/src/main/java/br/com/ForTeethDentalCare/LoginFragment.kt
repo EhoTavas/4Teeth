@@ -106,7 +106,7 @@ class LoginFragment : Fragment() {
                     val intent = Intent(requireContext(), LoggedActivity::class.java)
                     startActivity(intent)
                     //findNavController().navigate(R.id.Login_to_menuFragment)
-                    Constants.sendMessage(email, userPrefRep.fcmToken)
+                    //Constants.sendMessage(email, userPrefRep.fcmToken)
                     Snackbar.make(requireView(),R.string.logged_in, Snackbar.LENGTH_LONG).show()
                 } else {
                     if (it.exception is FirebaseAuthException) {

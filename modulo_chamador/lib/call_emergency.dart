@@ -74,10 +74,12 @@ class CallEmergencyState extends State<CallEmergency> {
 
   void _submitEmergency() async {
     try {
+      String userName = nameController.text;
+      String userPhone = phoneController.text;
       // Define os dados que serão enviados
       Map<String, dynamic> data = {
-        'nome': 'Mlk fudido',
-        'telefone': '+55987654321'
+        'nome': userName,
+        'telefone': userPhone,
       };
 
     await db.collection("Emergencias").add(data).then((documentSnapshot) =>

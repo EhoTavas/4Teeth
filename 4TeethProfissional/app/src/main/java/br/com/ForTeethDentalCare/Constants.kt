@@ -1,11 +1,13 @@
 package br.com.ForTeethDentalCare
 
+import android.util.Log
 import br.com.ForTeethDentalCare.dataStore.Patient
 import com.google.android.gms.tasks.Task
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
+import kotlinx.coroutines.tasks.await
 
 object Constants {
     private lateinit var functions: FirebaseFunctions
@@ -27,13 +29,26 @@ object Constants {
             }
     }
 
-    fun patientsList(): List<Patient> {
-        return listOf(
-            Patient(name = "Loren", distance = "50km"),
-            Patient(name = "Luan", distance = "15km"),
-            Patient(name = "Luiza", distance = "5km"),
-            Patient(name = "Duda", distance = "95km"),
-            Patient(name = "Matheus", distance = "80km"),
-        )
+    suspend fun patientsList(): List<Patient> {
+
+        functions = Firebase.functions("southamerica-east1")
+
+        return try {
+            val result = functions.getHttpsCallable("getPatientData")
+                .call().await()
+            Log.d("paciente", "passouaqui")
+            result.data as List<Patient>
+        } catch (e: Exception) {
+            println("Erro ao chamar a função: $e")
+            emptyList()
+        }
+
+        //return listOf(
+        //    Patient(name = "Loren"),//, distance = "50km"),
+        //    Patient(name = "Luan"),//, distance = "15km"),
+        //    Patient(name = "Luiza"),//, distance = "5km"),
+        //    Patient(name = "Duda"),//, distance = "95km"),
+        //    Patient(name = "Matheus"),//, distance = "80km"),
+        //)
     }
 }
