@@ -37,7 +37,7 @@ class EmergenciesListFragment : Fragment() {
         allEmergencies.clear()
         emergenciesAdapter = EmergenciesAdapter(allEmergencies)
 
-        _binding!!.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 2)
+        _binding!!.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
         _binding!!.rvEmergencies.adapter = emergenciesAdapter
     }
 
