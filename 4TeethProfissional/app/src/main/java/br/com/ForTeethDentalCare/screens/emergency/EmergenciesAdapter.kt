@@ -26,7 +26,7 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmergencyViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.emergency_item, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_emergency, parent, false)
             return EmergencyViewHolder(view)
         }
 

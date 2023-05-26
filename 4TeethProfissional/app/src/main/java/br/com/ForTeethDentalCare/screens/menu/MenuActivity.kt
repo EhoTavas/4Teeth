@@ -6,7 +6,7 @@ import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import br.com.ForTeethDentalCare.databinding.ActivityMainBinding
+import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
 import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -30,7 +30,7 @@ import br.com.ForTeethDentalCare.dataStore.Dentist
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMenuBinding
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
@@ -107,7 +107,7 @@ class MenuActivity : AppCompatActivity() {
         channel.vibrationPattern = longArrayOf(0, 500, 500, 500)
         notificationManager.createNotificationChannel(channel)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 

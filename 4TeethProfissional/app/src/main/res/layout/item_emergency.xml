@@ -41,7 +41,7 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/imgMapPing1"
+                android:id="@+id/imgMapPing"
                 android:layout_width="23dp"
                 android:layout_height="23dp"
                 android:layout_gravity="top|center_horizontal"
@@ -71,7 +71,7 @@
             android:padding="5dp">
             <!--BTN-->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnViewImg1"
+                android:id="@+id/btnViewImg"
                 style="@style/btnDefault"
                 android:layout_width="130dp"
                 android:layout_height="35dp"
@@ -93,7 +93,7 @@
             android:padding="5dp">
             <!--BTN DECLINE-->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDecline1"
+                android:id="@+id/btnDecline"
                 style="@style/btnDecline"
                 android:layout_width="80dp"
                 android:layout_height="43dp"
@@ -104,7 +104,7 @@
             <!--FIM BTN DECLINE-->
             <!--BTN ACCEPT-->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnAccept1"
+                android:id="@+id/btnAccept"
                 style="@style/btnAccept"
                 android:layout_width="80dp"
                 android:layout_height="43dp"

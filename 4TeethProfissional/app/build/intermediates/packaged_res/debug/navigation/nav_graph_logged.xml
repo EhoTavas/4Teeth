@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MenuFragment"
-        android:name="br.com.ForTeethDentalCare.MenuFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.MenuFragment"
         android:label="@string/title_fragment_menu" >
         <action
             android:id="@+id/menuFragment_to_emergencyFragment"
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/emergencyFragment"
-        android:name="br.com.ForTeethDentalCare.EmergenciesListFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.EmergenciesListFragment"
         android:label="@string/title_fragment_emergency"
         tools:layout="@layout/fragment_emergencies_list">
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/reputationFragment"
-        android:name="br.com.ForTeethDentalCare.ReputationFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.ReputationFragment"
         android:label="@string/title_fragment_reputacao">
         <action
             android:id="@+id/reputationFragment_to_MenuFragment"
@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/askRatingFragment"
-        android:name="br.com.ForTeethDentalCare.AskEvaluationFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.AskEvaluationFragment"
         android:label="@string/title_fragment_avaliacao">
         <action
             android:id="@+id/askRatingFragment_to_MenuFragment"
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/statusFragment"
-        android:name="br.com.ForTeethDentalCare.StatusFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.StatusFragment"
         android:label="@string/title_fragment_status"
         tools:layout="@layout/fragment_reputation">
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="br.com.ForTeethDentalCare.UserFragment"
+        android:name="br.com.ForTeethDentalCare.screens.login.UserFragment"
         android:label="@string/title_user_fragment"
         tools:layout="@layout/fragment_user">
         <action

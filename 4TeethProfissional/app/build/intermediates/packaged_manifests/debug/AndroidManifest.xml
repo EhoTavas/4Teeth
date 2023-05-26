@@ -48,12 +48,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.4TeethProfissional" >
         <activity
-            android:name="br.com.ForTeethDentalCare.RequestedEmergency"
+            android:name="br.com.ForTeethDentalCare.screens.emergency.RequestedEmergencyActivity"
             android:exported="false" />
         <activity
-            android:name="br.com.ForTeethDentalCare.LoggedActivity"
+            android:name="br.com.ForTeethDentalCare.screens.login.LoggedActivity"
             android:exported="false"
             android:label="@string/title_activity_logged" />
 
@@ -62,7 +63,7 @@
             android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />
 
         <activity
-            android:name="br.com.ForTeethDentalCare.MainActivity"
+            android:name="br.com.ForTeethDentalCare.screens.menu.MenuActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,7 +72,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
+            android:name="br.com.ForTeethDentalCare.screens.login.CadastroEnderecoFragment"
             android:exported="false" />
 
         <service
