@@ -1,98 +1,102 @@
-import 'dart:ffi';
-import 'dart:async';
-import 'dart:io';
-
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:uuid/uuid.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
+var uuid = const Uuid();
 
-class StartEmergencyWidget extends StatefulWidget {
+class PacientDataPage extends StatefulWidget {
+  const PacientDataPage({super.key, required this.title});
+
+  final String title;
+
   @override
-  _StartEmergencyWidgetState createState() => _StartEmergencyWidgetState();
+  State<PacientDataPage> createState() => _PacientDataPageState();
 }
 
-class _CallEmergencyWidgetState extends State<TelainicialWidget> {
+class _PacientDataPageState extends State<PacientDataPage> {
+  String nome = "";
+  String telefone = "";
+
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
-    return Container(
-        width: 360,
-        height: 800,
-        decoration: BoxDecoration(
-          color : Color.fromRGBO(240, 250, 249, 1),
-        ),
-        child: Stack(
-            children: <Widget>[
-              Positioned(
-                  top: 18,
-                  left: 146,
-                  child: Text('4Teeth', textAlign: TextAlign.center, style: TextStyle(
-                      color: Color.fromRGBO(41, 41, 41, 1),
-                      fontFamily: 'Poppins',
-                      fontSize: 20,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.normal,
-                      height: 1
-                  ),)
-              ),Positioned(
-                  top: 246,
-                  left: 35,
-                  child: SizedBox(
-                      width: 290,
-                      height: 242,
-
-                      child: Stack(
-                          children: <Widget>[
-                            Positioned(
-                                top: 0,
-                                left: 0,
-                                child: Container(
-                                    width: 290,
-                                    height: 242,
-                                    decoration: BoxDecoration(
-                                      borderRadius : BorderRadius.only(
-                                        topLeft: Radius.circular(55),
-                                        topRight: Radius.circular(55),
-                                        bottomLeft: Radius.circular(55),
-                                        bottomRight: Radius.circular(55),
-                                      ),
-                                      boxShadow : [BoxShadow(
-                                          color: Color.fromRGBO(0, 0, 0, 0.25),
-                                          offset: Offset(0,4),
-                                          blurRadius: 4
-                                      )],
-                                      color : Color.fromRGBO(255, 255, 255, 1),
-                                    )
-                                )
-                            ),Positioned(
-                                top: 32,
-                                left: 37,
-                                child: Text('Precisando de ajuda?', textAlign: TextAlign.center, style: TextStyle(
-                                    color: Color.fromRGBO(41, 41, 41, 1),
-                                    fontFamily: 'Poppins',
-                                    fontSize: 20,
-                                    letterSpacing: 0
-                                    fontWeight: FontWeight.normal,
-                                    height: 1
-                                ),)
-                            ),Positioned(
-                                top: 92,
-                                left: 21,
-                                child: null
-                            ),
-                          ]
-                      )
-                  )
-              ),Positioned(
-                  top: 418,
-                  left: 1465,
-                  child: null
-              ),
-            ]
-        )
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Solicitar Socorro'),
+        centerTitle: true,
+      ),
+      body: Center(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextFormField(
+                      onChanged: (value) {
+                        setState(() {
+                          nome = value;
+                        });
+                      },
+                      maxLength: 20,
+                      decoration: const InputDecoration(
+                        labelText: 'Nome:',
+                        labelStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue)),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black38),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      onChanged: (value) {
+                        setState(() {
+                          telefone = value;
+                        });
+                      },
+                      maxLength: 15,
+                      decoration: const InputDecoration(
+                        labelText: 'Telefone:',
+                        labelStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue)),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black38),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                  ],
+                ),
+                ElevatedButton(
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all(
+                            const EdgeInsets.fromLTRB(46, 12, 46, 12))),
+                    onPressed: () {
+                      pedirsocorro(args.image).then((value) => {
+                        Navigator.pushNamed(context, '/lista_aprovados',
+                            arguments: ScreenArgumentsIdEmergencia(value))
+                      });
+                    },
+                    child: const Text(
+                      'Pedir socorro imediato',
+                      style: TextStyle(fontSize: 18),
+                    )),
+              ],
+            ),
+          )),
     );
   }
 }

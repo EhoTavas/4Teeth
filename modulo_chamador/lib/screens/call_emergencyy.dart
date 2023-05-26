@@ -12,7 +12,12 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('4Teeth'),
+          centerTitle: true,
+        ),
+      body: Container(
         width: 360,
         height: 800,
         decoration: const BoxDecoration(
