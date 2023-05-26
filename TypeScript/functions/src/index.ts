@@ -26,6 +26,13 @@ type Dentista = {
   uid: string,
 }
 
+// type Emergency = {
+//   name: string,
+//   phone: string,
+//   status: string,
+// //  photos: String,
+// }
+
 /**
  * Tipo para facilitar o retorno
  * de qualquer função.
@@ -211,6 +218,56 @@ export const sendFcmMessage = functions
     return JSON.stringify(cResponse);
   });
 
+export const answerEmergency = functions
+  .region("southamerica-east1")
+  .runWith({ enforceAppCheck: false })
+  .https.onCall(async (data) => {
+    const cResponse: CustomResponse = {
+      status: "ERROR",
+      message: "Dados não informados",
+      payload: undefined,
+    };
+
+    const dentistData = await db
+      .collection('Dentista')
+      .where('uid', '==', data.dentist)
+      .get();
+
+    const answer = {
+      time: admin.firestore.Timestamp.now().toDate().toISOString(),
+      emergency: data.emergency,
+      dentist: data.dentist,
+      status: data.status,
+      name: dentistData.docs[0].data().name,
+      phone: dentistData.docs[0].data().phone,
+    };
+
+    try {
+      const doc = await db.collection('Atendimentos').add(answer);
+      if (doc.id != undefined) {
+        cResponse.status = "SUCCESS";
+        cResponse.message = "Resposta enviada";
+        cResponse.payload = JSON.stringify({ docId: doc.id });
+      } else {
+        cResponse.status = "ERROR";
+        cResponse.message = "Ocorreu um erro ao enviar a resposta";
+        cResponse.payload = undefined;
+      }
+    } catch (e) {
+      let exMessage;
+      if (e instanceof Error) {
+        exMessage = e.message;
+      }
+      functions.logger.error("Erro ao enviar resposta");
+      functions.logger.error("Exception: ", exMessage);
+      cResponse.status = "ERROR";
+      cResponse.message = "Erro ao enviar reposta - Verificar Logs";
+      cResponse.payload = null;
+    }
+
+    return JSON.stringify(cResponse);
+  });
+
 export const onEmergencyCreate = functions
   .region("southamerica-east1")
   .firestore
@@ -218,7 +275,7 @@ export const onEmergencyCreate = functions
   .onCreate(async (snapshot, context) => {
     try {
       await db.collection("teste").add({teste: "Teste trigger"});
-      const dentistaSnapshot = await admin.firestore()
+      const dentistaSnapshot = await db
         .collection('Dentista')
         .where('status', '==', '1')
         .get();

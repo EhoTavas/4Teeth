@@ -11,7 +11,6 @@ import br.com.ForTeethDentalCare.CustomResponse
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.databinding.FragmentEmergencyBinding
 import br.com.ForTeethDentalCare.Constants.answerEmergency
-import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.gson.GsonBuilder
