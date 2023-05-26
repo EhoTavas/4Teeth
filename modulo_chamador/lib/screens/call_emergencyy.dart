@@ -14,7 +14,7 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('4Teeth'),
+          title: const Text('4Teeth'),
           centerTitle: true,
         ),
       body: Container(
@@ -92,6 +92,6 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
               ),
             ]
         )
-    );
+    ));
   }
 }

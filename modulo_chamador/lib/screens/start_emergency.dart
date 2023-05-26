@@ -22,7 +22,7 @@ class _PacientDataPageState extends State<PacientDataPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Solicitar Socorro'),
+        title: const Text('Solicitar Socorro'),
         centerTitle: true,
       ),
       body: Center(
