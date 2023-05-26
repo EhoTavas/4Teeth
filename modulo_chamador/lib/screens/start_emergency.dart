@@ -18,85 +18,64 @@ class _PacientDataPageState extends State<PacientDataPage> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
+    // final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Solicitar Socorro'),
         centerTitle: true,
       ),
-      body: Center(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextFormField(
-                      onChanged: (value) {
-                        setState(() {
-                          nome = value;
-                        });
-                      },
-                      maxLength: 20,
-                      decoration: const InputDecoration(
-                        labelText: 'Nome:',
-                        labelStyle: TextStyle(
-                          color: Colors.black,
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black38),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    TextFormField(
-                      onChanged: (value) {
-                        setState(() {
-                          telefone = value;
-                        });
-                      },
-                      maxLength: 15,
-                      decoration: const InputDecoration(
-                        labelText: 'Telefone:',
-                        labelStyle: TextStyle(
-                          color: Colors.black,
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black38),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                  ],
-                ),
-                ElevatedButton(
-                    style: ButtonStyle(
-                        padding: MaterialStateProperty.all(
-                            const EdgeInsets.fromLTRB(46, 12, 46, 12))),
-                    onPressed: () {
-                      pedirsocorro(args.image).then((value) => {
-                        Navigator.pushNamed(context, '/lista_aprovados',
-                            arguments: ScreenArgumentsIdEmergencia(value))
-                      });
-                    },
-                    child: const Text(
-                      'Pedir socorro imediato',
-                      style: TextStyle(fontSize: 18),
-                    )),
-              ],
+      body: Container(
+          width: 360,
+          height: 606,
+          decoration: const BoxDecoration(
+            borderRadius : BorderRadius.only(
+              topLeft: Radius.circular(45),
+              topRight: Radius.circular(45),
+              bottomLeft: Radius.circular(0),
+              bottomRight: Radius.circular(0),
             ),
-          )),
+            color : Color.fromRGBO(228, 255, 254, 1),
+          ),
+          child: SizedBox(
+          width: 275,
+          height: 104,
+            child: Stack(
+                children: <Widget>[
+                  const Positioned(
+                      top: 0,
+                      left: 0,
+                      child: Text('Fotografe a região/boca acidentada:', textAlign: TextAlign.center, style: TextStyle(
+                          color: Color.fromRGBO(0, 0, 0, 1),
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.normal,
+                          height: 1
+                      ),)
+                  ),Positioned(
+                      top: 56,
+                      left: 26,
+                      child: Container(
+                          width: 59,
+                          height: 48,
+                          decoration: const BoxDecoration(
+                            boxShadow : [BoxShadow(
+                                color: Color.fromRGBO(101, 206, 207, 1),
+                                offset: Offset(15,15),
+                                blurRadius: 50
+                            )],
+                            image : DecorationImage(
+                                image: AssetImage('assets/images/CAM.png'),
+                                fit: BoxFit.fitWidth
+                            ),
+                          )
+                      )
+                  ),
+                ]
+            ),
+          ),
+      )
     );
   }
 }
