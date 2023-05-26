@@ -1,26 +1,32 @@
+import 'dart:ffi';
+import 'dart:async';
+import 'dart:io';
+
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
-class CallEmergencyWidget extends StatefulWidget {
-  const CallEmergencyWidget({Key? key}) : super(key: key);
-
+class StartEmergencyWidget extends StatefulWidget {
   @override
-  _CallEmergencyWidgetState createState() => _CallEmergencyWidgetState();
+  _StartEmergencyWidgetState createState() => _StartEmergencyWidgetState();
 }
 
-class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
+class _CallEmergencyWidgetState extends State<TelainicialWidget> {
   @override
   Widget build(BuildContext context) {
 
     return Container(
         width: 360,
         height: 800,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color : Color.fromRGBO(240, 250, 249, 1),
         ),
         child: Stack(
             children: <Widget>[
-              const Positioned(
+              Positioned(
                   top: 18,
                   left: 146,
                   child: Text('4Teeth', textAlign: TextAlign.center, style: TextStyle(
@@ -46,7 +52,7 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
                                 child: Container(
                                     width: 290,
                                     height: 242,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       borderRadius : BorderRadius.only(
                                         topLeft: Radius.circular(55),
                                         topRight: Radius.circular(55),
@@ -61,21 +67,21 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
                                       color : Color.fromRGBO(255, 255, 255, 1),
                                     )
                                 )
-                            ),const Positioned(
+                            ),Positioned(
                                 top: 32,
                                 left: 37,
                                 child: Text('Precisando de ajuda?', textAlign: TextAlign.center, style: TextStyle(
                                     color: Color.fromRGBO(41, 41, 41, 1),
                                     fontFamily: 'Poppins',
                                     fontSize: 20,
-                                    letterSpacing: 0,
+                                    letterSpacing: 0
                                     fontWeight: FontWeight.normal,
                                     height: 1
                                 ),)
                             ),Positioned(
                                 top: 92,
                                 left: 21,
-                                child: Container(),
+                                child: null
                             ),
                           ]
                       )
@@ -83,7 +89,7 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
               ),Positioned(
                   top: 418,
                   left: 1465,
-                  child: Container(),
+                  child: null
               ),
             ]
         )
