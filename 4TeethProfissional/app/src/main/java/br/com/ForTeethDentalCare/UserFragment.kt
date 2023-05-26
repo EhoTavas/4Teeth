@@ -8,10 +8,16 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentUserBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.functions.FirebaseFunctions
+import com.google.firebase.functions.ktx.functions
+import com.google.firebase.ktx.Firebase
 
 class UserFragment : Fragment() {
 
     private var _binding: FragmentUserBinding? = null
+    private lateinit var auth: FirebaseAuth
+    private lateinit var functions: FirebaseFunctions
     private val binding get() = _binding!!
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 

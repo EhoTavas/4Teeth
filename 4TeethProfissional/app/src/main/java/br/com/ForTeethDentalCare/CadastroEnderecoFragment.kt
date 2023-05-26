@@ -154,18 +154,12 @@ class CadastroEnderecoFragment : Fragment() {
 
         // Create the arguments to the callable function.
         val data = hashMapOf(
-            "nome" to nome,
-            "telefone" to telefone,
-            "email" to email,
-            "curriculo" to curriculo,
-            "cep1" to cep1,
-            "endereco1" to endereco1,
-            "cep2" to cep2,
-            "endereco2" to endereco2,
-            "cep3" to cep3,
-            "endereco3" to endereco3,
-            "uid" to uid,
-            "fcmToken" to fcmToken,
+            "nome" to nome, "telefone" to telefone,
+            "email" to email, "curriculo" to curriculo,
+            "cep1" to cep1, "endereco1" to endereco1,
+            "cep2" to cep2, "endereco2" to endereco2,
+            "cep3" to cep3, "endereco3" to endereco3,
+            "uid" to uid, "fcmToken" to fcmToken,
             "status" to status,
         )
 

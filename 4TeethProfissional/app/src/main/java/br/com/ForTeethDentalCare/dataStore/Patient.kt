@@ -5,5 +5,5 @@ import android.media.Image
 data class Patient(
     val name: String,
     //val picture: Image,
-    val distance: String
+    //val distance: String
 )

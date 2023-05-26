@@ -1,5 +1,7 @@
 package br.com.ForTeethDentalCare
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,20 +12,20 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.ForTeethDentalCare.dataStore.Patient
 
-class EmergenciesAdapter(private val dataSet: List<Patient>) :
+class EmergenciesAdapter(private var dataSet: List<Patient>) :
     ListAdapter<Patient, EmergenciesAdapter.EmergencyViewHolder>(EmergencyDiffCallback) {
 
         class EmergencyViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
                 private val patientName: AppCompatTextView = itemView.findViewById(R.id.tvPatientName)
                 //private val patientPicture: AppCompatImageView = itemView.findViewById(R.id.imgPatientPicture)
-                private val patientDistance: AppCompatTextView = itemView.findViewById(R.id.tvPatientDistance)
+                //private val patientDistance: AppCompatTextView = itemView.findViewById(R.id.tvPatientDistance)
                 private var patientActual: Patient? = null
 
                 fun bind(t: Patient) {
                     patientActual = t
                     patientName.text = t.name
-                    patientDistance.text = t.distance
+                    //patientDistance.text = t.distance
                 }
             }
 
@@ -39,6 +41,11 @@ class EmergenciesAdapter(private val dataSet: List<Patient>) :
 
         override fun getItemCount() = dataSet.size
 
+        fun setData(newData: List<Patient>) {
+            Log.d("emergenciaAdapter", "passouaquiE")
+            dataSet = newData
+            submitList(dataSet)
+        }
 }
 
 object EmergencyDiffCallback : DiffUtil.ItemCallback<Patient>() {

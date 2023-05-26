@@ -56,7 +56,6 @@ class LoggedActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_logged)
         navController.navigate(R.id.userFragment)
-        // TODO: encontrar uma forma de ir para o fragment de usuário, não importa o fragment atual
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
