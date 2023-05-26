@@ -48,8 +48,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.4TeethProfissional" >
+        <activity
+            android:name="br.com.ForTeethDentalCare.RequestedEmergency"
+            android:exported="false" />
         <activity
             android:name="br.com.ForTeethDentalCare.LoggedActivity"
             android:exported="false"
@@ -61,8 +63,7 @@
 
         <activity
             android:name="br.com.ForTeethDentalCare.MainActivity"
-            android:exported="true"
-            android:finishOnTaskLaunch="true" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

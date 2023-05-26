@@ -1,66 +1,70 @@
 [
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/activity_logged.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/activity_logged.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/content_main.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/content_main.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_reputation.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_reputation.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_reputation.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_reputation.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_menu.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_menu.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_ask_rating.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_ask_rating.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_ask_rating.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_ask_rating.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/activity_requested_emergency.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/activity_requested_emergency.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_status.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_status.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/emergency_item.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/emergency_item.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_user.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_user.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_login.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_login.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/pop_up_notifications_blocked.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/pop_up_notifications_blocked.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/content_logged.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/content_logged.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/patient_button.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/patient_button.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_emergencies_list.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_emergencies_list.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/content_main.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/content_main.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/pop_up_notifications_blocked.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/pop_up_notifications_blocked.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/content_logged.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/content_logged.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_sign_up.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_sign_up.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_notifications_are_disabled.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_notifications_are_disabled.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/activity_main.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/activity_main.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_emergency.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_emergency.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_notifications_are_disabled.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_notifications_are_disabled.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_cadastro_endereco.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_cadastro_endereco.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_menu.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_menu.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_sign_up.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_sign_up.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_cadastro_endereco.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_cadastro_endereco.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/activity_main.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/activity_main.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_status.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_status.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/layout/fragment_login.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-66:/layout/fragment_login.xml"
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/activity_logged.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/activity_logged.xml"
+    },
+    {
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_user.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_user.xml"
     }
 ]

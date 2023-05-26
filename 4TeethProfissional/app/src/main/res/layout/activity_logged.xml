@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/fragmentsBackground"
-    tools:context=".LoggedActivity">
+    tools:context=".screens.login.LoggedActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

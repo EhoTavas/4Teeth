@@ -23,43 +23,45 @@ class UserPreferencesRepository private constructor(context: Context) {
         get() {
             return sharedPreferences.getString(UID_KEY, "")!!
         }
-    var fcmToken: String = ""
-        get() {
-            return sharedPreferences.getString(FCMTOKEN_KEY, "")!!
-        }
-    val username: String
-        get() {
-            return sharedPreferences.getString(KEY_USERNAME, "")!!
-        }
-    val password: String
-        get() {
-            return sharedPreferences.getString(KEY_PASSWORD, "")!!
-        }
-    val firstTime: Int
-        get() {
-            return sharedPreferences.getInt(OPENED_BEFORE, 0)
-        }
-
     fun updateUid(newUid: String) {
         sharedPreferences.edit {
             putString(UID_KEY, newUid)
         }
     }
+
+    var fcmToken: String = ""
+        get() {
+            return sharedPreferences.getString(FCMTOKEN_KEY, "")!!
+        }
     fun updateFcmToken(newFcmToken: String) {
         sharedPreferences.edit {
             putString(FCMTOKEN_KEY, newFcmToken)
         }
     }
+
+    val username: String
+        get() {
+            return sharedPreferences.getString(KEY_USERNAME, "")!!
+        }
     fun updateUsername(username: String) {
         sharedPreferences.edit {
             putString(KEY_USERNAME, username)
         }
     }
+
+    val password: String
+        get() {
+            return sharedPreferences.getString(KEY_PASSWORD, "")!!
+        }
     fun updatePassword(password: String) {
         sharedPreferences.edit {
             putString(KEY_PASSWORD, password)
         }
     }
+    val firstTime: Int
+        get() {
+            return sharedPreferences.getInt(OPENED_BEFORE, 0)
+        }
     fun updateFirstTime(firstTime: Int) {
         sharedPreferences.edit {
             putInt(KEY_PASSWORD, firstTime)

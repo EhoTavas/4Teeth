@@ -1,15 +1,12 @@
 package br.com.ForTeethDentalCare.messaging
 
-import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import androidx.core.graphics.toColor
-import br.com.ForTeethDentalCare.MainActivity
+import br.com.ForTeethDentalCare.screens.menu.MenuActivity
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -60,7 +57,7 @@ class DefaultMessageService : FirebaseMessagingService() {
      * ou enviar um parametro na Intent para tratar qual fragment abrir.(desafio para vc fazer)
      */
     private fun showNotification(messageBody: String) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MenuActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)

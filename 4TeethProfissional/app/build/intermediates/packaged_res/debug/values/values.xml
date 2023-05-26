@@ -169,6 +169,7 @@
     <string name="title_fragment_reputacao">Minha Reputação</string>
     <string name="title_fragment_status">Meu Status</string>
     <string name="title_sign_up">Criar conta</string>
+    <string name="title_user_fragment">Meus Dados</string>
     <string name="toothImageDescription">Dente 3D</string>
     <string name="unable_to_login">Não foi possível fazer o login, verifique os dados e tente novamente.</string>
     <string name="yes">Sim</string>

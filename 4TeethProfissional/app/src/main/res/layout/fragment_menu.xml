@@ -7,7 +7,7 @@
     android:background="@drawable/gradient_login_screen"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
-    tools:context=".LoginFragment">
+    tools:context=".screens.login.LoginFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/myReputation"
