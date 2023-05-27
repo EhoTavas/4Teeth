@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:path_provider/path_provider.dart';
@@ -13,6 +14,7 @@ import 'package:path/path.dart' as Path;
 
 import 'display_picture.dart';
 import 'firebase_options.dart';
+import 'screens/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -136,5 +138,20 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       // If an error occurs, log the error to the console.
       print(e);
     }
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Splash(),
+    );
   }
 }
