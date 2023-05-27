@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.navigation.Navigation
 import br.com.ForTeethDentalCare.dataStore.Emergency
-import br.com.ForTeethDentalCare.screens.menu.MenuActivity
+import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -91,8 +91,8 @@ object Constants {
                 if (check) {
                     Navigation.findNavController(view).navigate(R.id.emergencyFragment_to_MenuFragment)
                 } else {
-                    val intentMenuActivity = Intent(context, MenuActivity::class.java)
-                    context.startActivity(intentMenuActivity)
+                    val intentLoginActivity = Intent(context, LoginActivity::class.java)
+                    context.startActivity(intentLoginActivity)
                 }
             } else {
                 Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()

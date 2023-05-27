@@ -21,7 +21,6 @@ class EmergencyFragment : Fragment() {
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
     private lateinit var auth: FirebaseAuth
     private lateinit var id: String
-
     private var _binding: FragmentEmergencyBinding? = null
     private val binding get() = _binding!!
 
@@ -36,13 +35,14 @@ class EmergencyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+//tvPatientName
         id = (activity as RequestedEmergencyActivity).intent.getStringExtra("id").toString()
-
+        binding.tvPatientName.text =
+            (activity as RequestedEmergencyActivity).intent.getStringExtra("name").toString()
 //        Glide.with(this)
 //            .load((activity as RequestedEmergencyActivity).intent.getStringExtra("photos"))
 //            .into(binding.ivEmergencyPhotos)
-        //(activity as RequestedEmergencyActivity).intent.getStringExtra("id")
+//        (activity as RequestedEmergencyActivity).intent.getStringExtra("id")
         binding.btnDecline.setOnClickListener {
             answerEmergency(false, id, it, requireActivity())
         }

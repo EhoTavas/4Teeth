@@ -40,17 +40,11 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as MenuActivity
+        val activity = requireActivity() as LoginActivity
         userPrefRep = UserPreferencesRepository.getInstance(requireContext())
-
-        Log.d("login", userPrefRep.username)
-        Log.d("senha", userPrefRep.password)
-        Log.d("primeira vez", userPrefRep.firstTime.toString())
 
         if (activity.dentist.email != "") {
             binding.EtEmailLogin.setText(activity.dentist.email)
-        } else if (userPrefRep.username != "" && userPrefRep.password != ""){
-            login(userPrefRep.username, userPrefRep.password)
         }
 
         // evento para tratar o login com auth.
@@ -104,7 +98,7 @@ class LoginFragment : Fragment() {
                     val sharedPref = UserPreferencesRepository.getInstance(requireContext())
                     sharedPref.updateUsername(email)
                     sharedPref.updatePassword(password)
-                    val intent = Intent(requireContext(), LoggedActivity::class.java)
+                    val intent = Intent(requireContext(), MenuActivity::class.java)
                     startActivity(intent)
                     //findNavController().navigate(R.id.Login_to_menuFragment)
                     //Constants.sendMessage(email, userPrefRep.fcmToken)

@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentMenuBinding
-import br.com.ForTeethDentalCare.screens.login.LoggedActivity
 
 class MenuFragment : Fragment() {
 
@@ -27,7 +26,7 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as LoggedActivity
+        val activity = requireActivity() as MenuActivity
         userPrefRep = UserPreferencesRepository.getInstance(requireContext())
 
         Log.d("FcmToken", userPrefRep.fcmToken)

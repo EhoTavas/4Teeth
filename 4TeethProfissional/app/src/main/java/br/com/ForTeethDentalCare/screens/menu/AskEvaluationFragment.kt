@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import br.com.ForTeethDentalCare.screens.login.LoggedActivity
 import br.com.ForTeethDentalCare.databinding.FragmentAskRatingBinding
 
 class AskEvaluationFragment : Fragment() {
@@ -24,7 +23,7 @@ class AskEvaluationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as LoggedActivity
+        val activity = requireActivity() as MenuActivity
     }
 
     override fun onDestroyView() {

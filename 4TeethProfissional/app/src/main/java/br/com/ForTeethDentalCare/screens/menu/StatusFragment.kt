@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.ForTeethDentalCare.databinding.FragmentStatusBinding
-import br.com.ForTeethDentalCare.screens.login.LoggedActivity
 
 class StatusFragment : Fragment() {
 
@@ -24,7 +23,7 @@ class StatusFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as LoggedActivity
+        val activity = requireActivity() as MenuActivity
     }
 
     override fun onDestroyView() {

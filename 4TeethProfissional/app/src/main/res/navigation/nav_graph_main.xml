@@ -9,7 +9,7 @@
         android:id="@+id/SignUp"
         android:name="br.com.ForTeethDentalCare.screens.login.SignUpFragment"
         android:label="@string/title_sign_up"
-        tools:layout="@layout/activity_menu">
+        tools:layout="@layout/activity_login">
         <action
             android:id="@+id/SignUp_to_Addresses"
             app:destination="@id/Addresses"
@@ -25,7 +25,7 @@
         android:id="@+id/Login"
         android:name="br.com.ForTeethDentalCare.screens.login.LoginFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/activity_menu">
+        tools:layout="@layout/activity_login">
 
         <action
             android:id="@+id/Login_to_SignUp"

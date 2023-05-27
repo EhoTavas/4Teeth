@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="br.com.ForTeethDentalCare.screens.login.UserFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.UserFragment"
         android:label="@string/title_user_fragment"
         tools:layout="@layout/fragment_user">
         <action

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.databinding.FragmentSignUpBinding
-import br.com.ForTeethDentalCare.screens.menu.MenuActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.gson.GsonBuilder
@@ -33,7 +32,7 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as MenuActivity
+        val activity = requireActivity() as LoginActivity
 
         binding.EtEmail.setText(activity.dentist.email)
         binding.EtNome.setText(activity.dentist.nome)
@@ -53,7 +52,7 @@ class SignUpFragment : Fragment() {
             val passwordConfirm = binding.EtPasswordConfirm.text.toString()
             val curricullum = binding.EtCurriculo.text.toString()
 
-            (activity as MenuActivity).let {
+            (activity as LoginActivity).let {
                 it.dentist.email = email
                 it.dentist.nome = name
                 it.dentist.telefone = phone

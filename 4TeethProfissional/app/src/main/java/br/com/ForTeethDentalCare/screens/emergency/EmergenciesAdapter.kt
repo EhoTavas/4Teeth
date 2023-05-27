@@ -1,5 +1,6 @@
 package br.com.ForTeethDentalCare
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.ForTeethDentalCare.dataStore.Emergency
+import br.com.ForTeethDentalCare.screens.emergency.RequestedEmergencyActivity
 
 class EmergenciesAdapter(private var dataSet: List<Emergency>) :
     ListAdapter<Emergency, EmergenciesAdapter.EmergencyViewHolder>(EmergencyDiffCallback) {
@@ -34,19 +36,17 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             val t = dataSet[position]
             holder.bind(t)
 
-//            holder.itemView.setOnClickListener{
-//                val intentPatientData = Intent(it.context, AnswerEmergencyActivity::class.java)
-//
-//                intentPatientData.putExtra("name", t.name.toString())
-//                intentPatientData.putExtra("phone", t.phone.toString())
+            holder.itemView.setOnClickListener{
+                val intentPatientData = Intent(it.context, RequestedEmergencyActivity::class.java)
+
+                intentPatientData.putExtra("name", t.name.toString())
+                intentPatientData.putExtra("phone", t.phone.toString())
 //                intentPatientData.putExtra("photos", t.photos.toString())
-//                intentPatientData.putExtra("status", t.status.toString())
-//                intentPatientData.putExtra("description", t.description.toString())
 //                intentPatientData.putExtra("time", t.time.toString())
 //                intentPatientData.putExtra("id", t.id.toString())
-//
-//                it.context.starActivity(intentPatientData)
-//            }
+
+                it.context.startActivity(intentPatientData)
+            }
         }
 
         override fun getItemCount() = dataSet.size

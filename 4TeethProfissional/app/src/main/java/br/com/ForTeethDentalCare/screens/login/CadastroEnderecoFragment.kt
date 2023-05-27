@@ -23,7 +23,6 @@ import com.google.gson.GsonBuilder
 import org.json.JSONArray
 import org.json.JSONObject
 import br.com.ForTeethDentalCare.databinding.FragmentCadastroEnderecoBinding
-import br.com.ForTeethDentalCare.screens.menu.MenuActivity
 
 class CadastroEnderecoFragment : Fragment() {
 
@@ -51,7 +50,7 @@ class CadastroEnderecoFragment : Fragment() {
 
         binding.btnConfirmar.setOnClickListener {
 
-            (activity as MenuActivity).let {
+            (activity as LoginActivity).let {
                 it.dentist.endereco1 = binding.EtStreet1.text.toString() + ", " + binding.EtNum1.text.toString() + ", " + binding.EtComp1.text.toString() + ", " + binding.EtNh1.text.toString() + ", " + binding.EtCity1.text.toString() + ", " + binding.EtState1.text.toString()
                 it.dentist.endereco2 = binding.EtStreet2.text.toString() + ", " + binding.EtNum2.text.toString() + ", " + binding.EtComp2.text.toString() + ", " + binding.EtNh2.text.toString() + ", " + binding.EtCity2.text.toString() + ", " + binding.EtState2.text.toString()
                 it.dentist.endereco3 = binding.EtStreet3.text.toString() + ", " + binding.EtNum3.text.toString() + ", " + binding.EtComp3.text.toString() + ", " + binding.EtNh3.text.toString() + ", " + binding.EtCity3.text.toString() + ", " + binding.EtState3.text.toString()
@@ -70,19 +69,19 @@ class CadastroEnderecoFragment : Fragment() {
                 binding.TvError.text = getString(R.string.inputsEmpty)
             } else {
                 signUpNewAccount(
-                    (activity as MenuActivity).dentist.nome,
-                    (activity as MenuActivity).dentist.telefone,
-                    (activity as MenuActivity).dentist.email,
-                    (activity as MenuActivity).dentist.senha,
-                    (activity as MenuActivity).dentist.curriculo,
-                    (activity as MenuActivity).dentist.cep1,
-                    (activity as MenuActivity).dentist.endereco1,
-                    (activity as MenuActivity).dentist.cep2,
-                    (activity as MenuActivity).dentist.endereco2,
-                    (activity as MenuActivity).dentist.cep3,
-                    (activity as MenuActivity).dentist.endereco3,
-                    (activity as MenuActivity).dentist.fcmToken,
-                    (activity as MenuActivity).dentist.status,
+                    (activity as LoginActivity).dentist.nome,
+                    (activity as LoginActivity).dentist.telefone,
+                    (activity as LoginActivity).dentist.email,
+                    (activity as LoginActivity).dentist.senha,
+                    (activity as LoginActivity).dentist.curriculo,
+                    (activity as LoginActivity).dentist.cep1,
+                    (activity as LoginActivity).dentist.endereco1,
+                    (activity as LoginActivity).dentist.cep2,
+                    (activity as LoginActivity).dentist.endereco2,
+                    (activity as LoginActivity).dentist.cep3,
+                    (activity as LoginActivity).dentist.endereco3,
+                    (activity as LoginActivity).dentist.fcmToken,
+                    (activity as LoginActivity).dentist.status,
                 )
             }
         }
@@ -126,7 +125,7 @@ class CadastroEnderecoFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
-                    (activity as MenuActivity).storeUserId(user!!.uid)
+                    (activity as LoginActivity).storeUserId(user!!.uid)
                     // atualizar o perfil do usuário com os dados chamando a function.
                     updateUserProfile(nome, telefone, email, curriculo, cep1, endereco1, cep2, endereco2, cep3, endereco3, user.uid, fcmToken, status)
                         .addOnCompleteListener(requireActivity()) { res ->
