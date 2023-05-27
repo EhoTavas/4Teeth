@@ -23,6 +23,7 @@ class UserPreferencesRepository private constructor(context: Context) {
         get() {
             return sharedPreferences.getString(UID_KEY, "")!!
         }
+
     fun updateUid(newUid: String) {
         sharedPreferences.edit {
             putString(UID_KEY, newUid)
@@ -33,6 +34,7 @@ class UserPreferencesRepository private constructor(context: Context) {
         get() {
             return sharedPreferences.getString(FCMTOKEN_KEY, "")!!
         }
+
     fun updateFcmToken(newFcmToken: String) {
         sharedPreferences.edit {
             putString(FCMTOKEN_KEY, newFcmToken)
@@ -43,6 +45,7 @@ class UserPreferencesRepository private constructor(context: Context) {
         get() {
             return sharedPreferences.getString(KEY_USERNAME, "")!!
         }
+
     fun updateUsername(username: String) {
         sharedPreferences.edit {
             putString(KEY_USERNAME, username)
@@ -53,15 +56,18 @@ class UserPreferencesRepository private constructor(context: Context) {
         get() {
             return sharedPreferences.getString(KEY_PASSWORD, "")!!
         }
+
     fun updatePassword(password: String) {
         sharedPreferences.edit {
             putString(KEY_PASSWORD, password)
         }
     }
+
     val firstTime: Int
         get() {
             return sharedPreferences.getInt(OPENED_BEFORE, 0)
         }
+
     fun updateFirstTime(firstTime: Int) {
         sharedPreferences.edit {
             putInt(KEY_PASSWORD, firstTime)

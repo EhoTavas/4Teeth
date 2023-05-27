@@ -180,6 +180,60 @@ export const getUserProfile = functions
     return JSON.stringify(cResponse);
   });
 
+export const updateFcmToken = functions
+  .region("southamerica-east1")
+  .runWith({ enforceAppCheck: true })
+  .https.onCall(async (data, context) => {
+    const cResponse: CustomResponse = {
+      status: "ERROR",
+      message: "Dados não informados",
+      payload: undefined,
+    };
+
+    const uid = data.uid;
+    const newToken = data.token;
+
+    if (!uid || !newToken) {
+      cResponse.status = "ERROR";
+      cResponse.message = "UID ou Token não fornecido.";
+      cResponse.payload = null;
+      return JSON.stringify(cResponse);
+    }
+
+    try {
+      const userSnapshot = await db
+        .collection('Dentista')
+        .where('uid', '==', uid)
+        .get();
+
+      if (userSnapshot.empty) {
+        cResponse.status = "ERROR";
+        cResponse.message = "Usuário não encontrado.";
+        cResponse.payload = null;
+        return JSON.stringify(cResponse);
+      }
+
+      const userRef = userSnapshot.docs[0].ref;
+
+      await userRef.update({ fcmToken: newToken });
+
+      cResponse.status = "SUCCESS";
+      cResponse.message = "Token atualizado com sucesso.";
+      cResponse.payload = JSON.stringify({ fcmToken: newToken });
+    } catch (error) {
+      let exMessage;
+      if (error instanceof Error) {
+        exMessage = error.message;
+      }
+      functions.logger.error("Erro ao atualizar token", exMessage);
+      cResponse.status = "ERROR";
+      cResponse.message = "Erro ao atualizar o FCM token - Verificar Logs";
+      cResponse.payload = null;
+    }
+
+    return JSON.stringify(cResponse);
+  });
+
 export const sendFcmMessage = functions
   .region("southamerica-east1")
   .runWith({enforceAppCheck: false})

@@ -1,6 +1,7 @@
 package br.com.ForTeethDentalCare.screens.menu
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.ktx.Firebase
@@ -16,17 +17,30 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.functions.ktx.functions
+import com.google.firebase.messaging.ktx.messaging
 
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMenuBinding
     lateinit var storage: FirebaseStorage
+    private val functions = Firebase.functions
     private final lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        userPreferencesRepository = UserPreferencesRepository.getInstance(this)
+
+        storeFcmToken()
+
+        val uid = userPreferencesRepository.uid
+        val fcmToken = userPreferencesRepository.fcmToken
+
+        updateFcmToken(uid, fcmToken)
 
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -61,6 +75,34 @@ class MenuActivity : AppCompatActivity() {
             R.id.profileButton -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun storeFcmToken() {
+        Firebase.messaging.token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                return@OnCompleteListener
+            }
+            // guardar esse token.
+            userPreferencesRepository.updateFcmToken(task.result)
+        })
+    }
+
+    private fun updateFcmToken(uid: String, token: String) {
+        val data = hashMapOf(
+            "uid" to uid,
+            "fcmToken" to token
+        )
+
+        functions
+            .getHttpsCallable("updateFcmToken")
+            .call(data)
+            .addOnSuccessListener {
+                Log.d("FCM", "FCM token updated successfully!")
+            }
+            .addOnFailureListener {
+                // Aqui você pode manipular o erro
+                Log.d("FCM", "Failed to update FCM token: ${it.message}")
+            }
     }
 
     override fun isDestroyed(): Boolean {
