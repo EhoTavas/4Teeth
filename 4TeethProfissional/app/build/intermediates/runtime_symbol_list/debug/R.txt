@@ -3919,6 +3919,7 @@ int id elastic 0x7f0a0102
 int id elevation 0x7f0a0103
 int id embed 0x7f0a0104
 int id emergencyFragment 0x7f0a0105
+int id emergencyFragment2 0x7f0a0299
 int id emergencyFragment_to_MenuFragment 0x7f0a0106
 int id end 0x7f0a0107
 int id endToStart 0x7f0a0108
@@ -4439,7 +4440,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
-int layout activity_logged 0x7f0d001c
+int layout activity_login 0x7f0d00a1
 int layout activity_menu 0x7f0d001d
 int layout activity_requested_emergency 0x7f0d001e
 int layout browser_actions_context_menu_page 0x7f0d001f

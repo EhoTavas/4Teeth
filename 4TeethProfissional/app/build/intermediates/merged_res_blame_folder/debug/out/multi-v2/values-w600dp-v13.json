@@ -4,7 +4,7 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Luan\\Documents\\GitHub\\4Teeth\\4TeethProfissional\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "/home/luan/4Teeth/4TeethProfissional/app/src/main/res/values-w600dp/dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/SignUp"
-        android:name="br.com.ForTeethDentalCare.SignUpFragment"
+        android:name="br.com.ForTeethDentalCare.screens.login.SignUpFragment"
         android:label="@string/title_sign_up"
-        tools:layout="@layout/activity_main">
+        tools:layout="@layout/activity_login">
         <action
             android:id="@+id/SignUp_to_Addresses"
             app:destination="@id/Addresses"
@@ -23,9 +23,9 @@
     </fragment>
     <fragment
         android:id="@+id/Login"
-        android:name="br.com.ForTeethDentalCare.LoginFragment"
+        android:name="br.com.ForTeethDentalCare.screens.login.LoginFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/activity_main">
+        tools:layout="@layout/activity_login">
 
         <action
             android:id="@+id/Login_to_SignUp"
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/Addresses"
-        android:name="br.com.ForTeethDentalCare.CadastroEnderecoFragment"
+        android:name="br.com.ForTeethDentalCare.screens.login.CadastroEnderecoFragment"
         android:label="@string/title_addresses"
         tools:layout="@layout/fragment_cadastro_endereco">
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/notificationsAreDisabledFragment"
-        android:name="br.com.ForTeethDentalCare.NotificationsAreDisabledFragment"
+        android:name="br.com.ForTeethDentalCare.screens.login.NotificationsAreDisabledFragment"
         android:label="fragment_notifications_are_disabled"
         tools:layout="@layout/fragment_notifications_are_disabled" >
         <action

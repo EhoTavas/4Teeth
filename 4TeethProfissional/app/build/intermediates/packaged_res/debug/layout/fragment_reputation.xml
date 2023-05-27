@@ -8,7 +8,7 @@
     android:background="@drawable/gradient_login_screen"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
-    tools:context=".StatusFragment">
+    tools:context=".screens.menu.StatusFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

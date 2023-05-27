@@ -10,5 +10,10 @@
       "nav_graph_logged"
     ],
     "deepLinks": []
+  },
+  {
+    "name": "nav_graph_requested_emergency",
+    "navigationXmlIds": [],
+    "deepLinks": []
   }
 ]

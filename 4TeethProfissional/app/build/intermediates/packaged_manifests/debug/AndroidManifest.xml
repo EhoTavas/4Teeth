@@ -54,7 +54,7 @@
             android:name="br.com.ForTeethDentalCare.screens.emergency.RequestedEmergencyActivity"
             android:exported="false" />
         <activity
-            android:name="br.com.ForTeethDentalCare.screens.login.LoggedActivity"
+            android:name="br.com.ForTeethDentalCare.screens.menu.MenuActivity"
             android:exported="false"
             android:label="@string/title_activity_logged" />
 
@@ -63,7 +63,7 @@
             android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />
 
         <activity
-            android:name="br.com.ForTeethDentalCare.screens.menu.MenuActivity"
+            android:name="br.com.ForTeethDentalCare.screens.login.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
