@@ -1,11 +1,26 @@
-# 4Teeth
-   4Teeth é um projeto elaborado pelo time no curso de Engenharia de Software, da Politécnica da Pontifícia Universidade Católica de Campinas. O projeto se divide em duas grandes partes:
+<h1 align="center">
+🦷<br>4Teeth
+</h1>
+  
+   > 4Teeth é um projeto elaborado pelo time no curso de Engenharia de Software, da Politécnica da PUC Campinas. 
    
-   #### Módulo Chamador (Flutter):
-   dedicado aos responsáveis, pais ou até mesmo uma pessoa no papel de socorrista que precise chamar emergencialmente um dentista para socorrer uma criança que sofreu um acidente odontológico. 
+   <a href="https://www.linkedin.com/in/loren-tavolaro-9bb207234/" target="_blank"><img align="left" src="https://skillicons.dev/icons?i=flutter"></a>
+       
+  ## 
+  
+   ### Módulo Chamador:
+   Dedicado aos responsáveis, pais ou até mesmo uma pessoa no papel de socorrista que precise chamar emergencialmente um dentista para socorrer uma criança que sofreu um acidente odontológico. 
 
-  #### Módulo do profissional (Kotlin): 
+  <a href="https://www.linkedin.com/in/loren-tavolaro-9bb207234/" target="_blank"><img align="left" src="https://skillicons.dev/icons?i=kotlin"></a>
+       
+  ##
+ 
+  ### Módulo Profissional:
   Dedicado exclusivamente ao profissional de odontologia. Neste módulo o profissional receberá os chamados de emergência, para escolher quais deseja atender ou dispensar.
-   
-   ### Desenvolvedores: 
-   Loren Tavolaro, Luan Tarran, Luiza Límoli, Maria Eduarda Carvalho e Matheus Taveira.
+  
+  ##
+  
+   ### Desenvolvedores:  
+   <a href="https://github.com/EhoTavas/4Teeth/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=EhoTavas/4Teeth" />
+</a>
