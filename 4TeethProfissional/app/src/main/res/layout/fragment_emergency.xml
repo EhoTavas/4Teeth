@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/EmergencyPhoto"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,15 +29,19 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDecline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnDefault"
+        android:backgroundTint="@color/btnDecline"
+        android:text="@string/btnDecline"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvPatientName" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAccept"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnDefault"
+        android:backgroundTint="@color/btnAccept"
+        android:text="@string/btnAccept"
+        android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvPatientName" />
 

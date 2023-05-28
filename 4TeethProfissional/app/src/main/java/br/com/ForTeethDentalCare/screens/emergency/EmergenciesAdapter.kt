@@ -24,7 +24,7 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             fun bind(t: Emergency) {
                 emergencyActual = t
                 patientName.text = t.name
-                serviceStatus.text = getString(R.string.service_status)
+                serviceStatus.text = itemView.context.getString(R.string.service_status)
                 //patientDistance.text = t.distance
             }
         }
@@ -41,11 +41,11 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             holder.itemView.setOnClickListener{
                 val intentPatientData = Intent(it.context, RequestedEmergencyActivity::class.java)
 
-                intentPatientData.putExtra("name", t.name.toString())
-                intentPatientData.putExtra("phone", t.phone.toString())
-//                intentPatientData.putExtra("photos", t.photos.toString())
-//                intentPatientData.putExtra("time", t.time.toString())
-                intentPatientData.putExtra("id", t.id.toString())
+                intentPatientData.putExtra("name", t.name)
+                intentPatientData.putExtra("phone", t.phone)
+//                intentPatientData.putExtra("photos", t.photos)
+//                intentPatientData.putExtra("time", t.time)
+                intentPatientData.putExtra("id", t.id)
 
                 it.context.startActivity(intentPatientData)
             }

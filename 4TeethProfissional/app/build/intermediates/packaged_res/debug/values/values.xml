@@ -43,8 +43,8 @@
     <color name="black">#FF000000</color>
     <color name="branco_gelo">#FAFFFE</color>
     <color name="bright_cyan">#33DCDE</color>
-    <color name="btnAccept">@color/rating_background_5</color>
-    <color name="btnDecline">@color/rating_background_1</color>
+    <color name="btnAccept">#085901</color>
+    <color name="btnDecline">#711002</color>
     <color name="container_light_cyan">#EEFFFD</color>
     <color name="errorColor">#FF018786</color>
     <color name="gelo_azulado">#F0FAF9</color>
@@ -71,16 +71,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="very_light_cyan">#DFFDFC</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#9F9C02</color>
     <dimen name="fab_margin">16dp</dimen>
     <string name="app_name">4Teeth Profissional</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_title">Download incoming attachments</string>
+    <string name="btnAccept">Atender</string>
     <string name="btnConfirm">Finalizar</string>
     <string name="btnConfirmar">Confirmar</string>
     <string name="btnContinue">Prosseguir</string>
-    <string name="btnRefresh">Recarregar</string>
+    <string name="btnDecline">Recusar</string>
     <string name="btnSignIn">Entrar</string>
     <string name="btnSignUp"><u>Não possui cadastro?</u></string>
     <string name="btnViewImg">Visualizar Imagem</string>
@@ -89,36 +91,31 @@
     <string name="default_web_client_id" translatable="false">389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com</string>
     <string name="docImageDescription">.</string>
     <string name="fcm_default_title_message">4Teeth</string>
-    <string name="first_fragment_label">First Fragment</string>
     <string name="gcm_defaultSenderId" translatable="false">389378064222</string>
     <string name="google_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
     <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
     <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
     <string name="invalidEmail">O email não é válido</string>
     <string name="logged_in">Login Efetuado!</string>
     <string name="messages_header">Messages</string>
     <string name="mismatchPasswords">As senhas não coincidem</string>
-    <string name="next">Next</string>
     <string name="no">Não</string>
     <string name="passwordLength">A senha deve possuir ao menos 6 dígitos</string>
-    <string name="previous">Previous</string>
     <string name="profile">Perfil</string>
     <string name="project_id" translatable="false">teeth-playground</string>
     <string name="reply_title">Default reply action</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="service_accepted">Emergência aceita</string>
+    <string name="service_declined">Emergência recusada</string>
+    <string name="service_status">Aguardando resposta</string>
     <string name="signUpEmailHint">example@email.com</string>
     <string name="signUpMiniCurriculum">Experiência de 2 anos…</string>
     <string name="signUpNameHint">Nome Completo</string>
     <string name="signUpNumberHint">+55 (11) 98765–4321</string>
     <string name="signUpPasswordHint">senha</string>
     <string name="signature_title">Your signature</string>
-    <string name="str13km">13km</string>
-    <string name="str18km">18km</string>
     <string name="strAddAddress">Adicionar endereço</string>
     <string name="strAddress1">Endereço:</string>
     <string name="strAddress2">Endereço 2 (Opcional):</string>
@@ -145,9 +142,6 @@
     <string name="strMiniCurriculum">Mini-currículo:</string>
     <string name="strName">Nome:</string>
     <string name="strNeighborhood">Bairro</string>
-    <string name="strPaciente1">Paciente 1</string>
-    <string name="strPaciente2">Paciente 2</string>
-    <string name="strPaciente3">Paciente 3</string>
     <string name="strPassword">Senha:</string>
     <string name="strPasswordConfirm">Confirme sua Senha:</string>
     <string name="strPhone">Telefone:</string>

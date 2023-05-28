@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
@@ -49,14 +50,14 @@ class MenuActivity : AppCompatActivity() {
         var storageRef = storage.reference
         var imagesRef: StorageReference? = storageRef.child("DentistUserPictures")
 
-        val navController = findNavController(R.id.nav_host_fragment_content_logged)
+        val navController = findNavController(R.id.nav_host_fragment_content_menu)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_logged)
+        val navController = findNavController(R.id.nav_host_fragment_content_menu)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
@@ -66,13 +67,19 @@ class MenuActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_logged)
-        navController.navigate(R.id.userFragment)
+        val navController = findNavController(R.id.nav_host_fragment_content_menu)
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.profileButton -> true
+            R.id.profileButton -> {
+                navController.navigate(R.id.userFragment)
+                true
+            }
+            android.R.id.home -> {
+                super.onBackPressed()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -82,7 +89,6 @@ class MenuActivity : AppCompatActivity() {
             if (!task.isSuccessful) {
                 return@OnCompleteListener
             }
-            // guardar esse token.
             userPreferencesRepository.updateFcmToken(task.result)
         })
     }
@@ -104,6 +110,20 @@ class MenuActivity : AppCompatActivity() {
                 Log.d("FCM", "Failed to update FCM token: ${it.message}")
             }
     }
+
+    override fun onBackPressed() {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_menu)
+        val currentFragment = navHostFragment?.childFragmentManager?.fragments?.get(0)
+
+        if (currentFragment is MenuFragment) {
+            AlertDialog.Builder(this)
+                .setMessage("Deseja mesmo sair?")
+                .setPositiveButton("Sim") { _, _ -> super.onBackPressed() }
+                .setNegativeButton("Não", null)
+                .show()
+        } else { super.onBackPressed() }
+    }
+
 
     override fun isDestroyed(): Boolean {
         // TODO: encontrar uma forma de colocar um aviso "deseja mesmo sair do aplicativo?"

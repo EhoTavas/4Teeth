@@ -38,31 +38,7 @@ object Constants {
             }
     }
 
-    suspend fun patientsList(): List<Emergency> {
-
-        functions = Firebase.functions("southamerica-east1")
-
-        return try {
-            val result = functions.getHttpsCallable("getPatientData")
-                .call().await()
-            Log.d("paciente", "passouaqui")
-            result.data as List<Emergency>
-        } catch (e: Exception) {
-            println("Erro ao chamar a função: $e")
-            emptyList()
-        }
-
-        //return listOf(
-        //    Emergency(name = "Loren"),//, distance = "50km"),
-        //    Emergency(name = "Luan"),//, distance = "15km"),
-        //    Emergency(name = "Luiza"),//, distance = "5km"),
-        //    Emergency(name = "Duda"),//, distance = "95km"),
-        //    Emergency(name = "Matheus"),//, distance = "80km"),
-        //)
-    }
-
-    fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context)
-    :Task<CustomResponse> {
+    fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth
 
@@ -78,20 +54,25 @@ object Constants {
             .getHttpsCallable("answerEmergency")
             .call(emergencyData)
             .continueWith { task ->
-                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+                val result =
+                    gson.fromJson((task.result?.data as String), CustomResponse::class.java)
                 result
             }
 
         task.addOnCompleteListener { res ->
             if (res.result.status == "1") {
                 if (check) {
-                    Navigation.findNavController(view).navigate(R.id.emergencyFragment_to_MenuFragment)
+                    Navigation.findNavController(view)
+                        .navigate(R.id.emergencyFragment_to_MenuFragment)
                 } else {
                     val intentLoginActivity = Intent(context, LoginActivity::class.java)
                     context.startActivity(intentLoginActivity)
                 }
             } else {
-                Log.d("REQ EMERGENCY", "Ocorreu um erro ao enviar as informações")//Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()
+                Log.d(
+                    "REQ EMERGENCY",
+                    "Ocorreu um erro ao enviar as informações"
+                )//Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()
             }
         }
         return task

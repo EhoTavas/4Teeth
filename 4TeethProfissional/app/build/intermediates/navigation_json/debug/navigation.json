@@ -1,14 +1,14 @@
 [
   {
-    "name": "nav_graph_logged",
-    "navigationXmlIds": [],
+    "name": "nav_graph_login",
+    "navigationXmlIds": [
+      "nav_graph_menu"
+    ],
     "deepLinks": []
   },
   {
-    "name": "nav_graph_main",
-    "navigationXmlIds": [
-      "nav_graph_logged"
-    ],
+    "name": "nav_graph_menu",
+    "navigationXmlIds": [],
     "deepLinks": []
   },
   {

@@ -114,7 +114,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController = findNavController(R.id.nav_host_fragment_content_login)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
         // disponibilizando o token (que deve ser colocado lá no APP CHECK do Firebase).
@@ -140,7 +140,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController = findNavController(R.id.nav_host_fragment_content_login)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

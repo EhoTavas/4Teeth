@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -26,11 +27,25 @@ public final class FragmentUserBinding implements ViewBinding {
   @NonNull
   public final ImageView imageView;
 
+  @NonNull
+  public final AppCompatTextView tvUserMail;
+
+  @NonNull
+  public final AppCompatTextView tvUserName;
+
+  @NonNull
+  public final AppCompatTextView tvUserPhone;
+
   private FragmentUserBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatButton btnLogout, @NonNull ImageView imageView) {
+      @NonNull AppCompatButton btnLogout, @NonNull ImageView imageView,
+      @NonNull AppCompatTextView tvUserMail, @NonNull AppCompatTextView tvUserName,
+      @NonNull AppCompatTextView tvUserPhone) {
     this.rootView = rootView;
     this.btnLogout = btnLogout;
     this.imageView = imageView;
+    this.tvUserMail = tvUserMail;
+    this.tvUserName = tvUserName;
+    this.tvUserPhone = tvUserPhone;
   }
 
   @Override
@@ -72,7 +87,26 @@ public final class FragmentUserBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentUserBinding((LinearLayoutCompat) rootView, btnLogout, imageView);
+      id = R.id.tvUserMail;
+      AppCompatTextView tvUserMail = ViewBindings.findChildViewById(rootView, id);
+      if (tvUserMail == null) {
+        break missingId;
+      }
+
+      id = R.id.tvUserName;
+      AppCompatTextView tvUserName = ViewBindings.findChildViewById(rootView, id);
+      if (tvUserName == null) {
+        break missingId;
+      }
+
+      id = R.id.tvUserPhone;
+      AppCompatTextView tvUserPhone = ViewBindings.findChildViewById(rootView, id);
+      if (tvUserPhone == null) {
+        break missingId;
+      }
+
+      return new FragmentUserBinding((LinearLayoutCompat) rootView, btnLogout, imageView,
+          tvUserMail, tvUserName, tvUserPhone);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

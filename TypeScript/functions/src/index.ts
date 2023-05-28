@@ -274,8 +274,8 @@ export const answerEmergency = functions
       emergency: data.emergency,
       dentist: data.dentist,
       status: data.status,
-      name: dentistData.docs[0].data().name,
-      phone: dentistData.docs[0].data().phone,
+      name: dentistData.docs[0].data().nome,
+      phone: dentistData.docs[0].data().telefone,
     };
 
     try {
