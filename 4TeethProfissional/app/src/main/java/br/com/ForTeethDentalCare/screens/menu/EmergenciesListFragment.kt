@@ -66,6 +66,7 @@ class EmergenciesListFragment : Fragment() {
                 emergency = Emergency(
                     document.data["name"].toString(),
                     document.data["phone"].toString(),
+                    document.data["id"].toString(),
                     //Adicionar aqui as outras informações que serão enviadas pelo socorrista
                 )
 

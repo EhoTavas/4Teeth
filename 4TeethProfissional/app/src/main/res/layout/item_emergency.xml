@@ -91,28 +91,34 @@
             android:elevation="50dp"
             android:orientation="horizontal"
             android:padding="5dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/yellow"
+                android:id="@+id/tvServiceStatus"/>
             <!--BTN DECLINE-->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDecline"
-                style="@style/btnDecline"
-                android:layout_width="80dp"
-                android:layout_height="43dp"
-                android:layout_gravity="center|start"
-                android:layout_marginVertical="1dp"
-                android:drawableStart="@drawable/ic_decline">
-            </androidx.appcompat.widget.AppCompatButton>
-            <!--FIM BTN DECLINE-->
-            <!--BTN ACCEPT-->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnAccept"
-                style="@style/btnAccept"
-                android:layout_width="80dp"
-                android:layout_height="43dp"
-                android:layout_gravity="center|end"
-                android:layout_marginVertical="1dp"
-                android:layout_marginHorizontal="5dp"
-                android:drawableStart="@drawable/ic_accept">
-            </androidx.appcompat.widget.AppCompatButton>
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/btnDecline"-->
+<!--                style="@style/btnDecline"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="43dp"-->
+<!--                android:layout_gravity="center|start"-->
+<!--                android:layout_marginVertical="1dp"-->
+<!--                android:drawableStart="@drawable/ic_decline">-->
+<!--            </androidx.appcompat.widget.AppCompatButton>-->
+<!--            &lt;!&ndash;FIM BTN DECLINE&ndash;&gt;-->
+<!--            &lt;!&ndash;BTN ACCEPT&ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/btnAccept"-->
+<!--                style="@style/btnAccept"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="43dp"-->
+<!--                android:layout_gravity="center|end"-->
+<!--                android:layout_marginVertical="1dp"-->
+<!--                android:layout_marginHorizontal="5dp"-->
+<!--                android:drawableStart="@drawable/ic_accept">-->
+<!--            </androidx.appcompat.widget.AppCompatButton>-->
             <!--FIM BTN ACCEPT-->
         </androidx.appcompat.widget.LinearLayoutCompat>
         <!--FIM CONTAINER BTN OPTIONS-->

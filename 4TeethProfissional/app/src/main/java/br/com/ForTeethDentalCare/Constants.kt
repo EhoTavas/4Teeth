@@ -61,12 +61,8 @@ object Constants {
         //)
     }
 
-    fun answerEmergency(
-        check: Boolean,
-        emergencyId: String,
-        view: View,
-        context: Context
-    ): Task<CustomResponse> {
+    fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context)
+    :Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth
 
@@ -95,7 +91,7 @@ object Constants {
                     context.startActivity(intentLoginActivity)
                 }
             } else {
-                Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()
+                Log.d("REQ EMERGENCY", "Ocorreu um erro ao enviar as informações")//Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()
             }
         }
         return task

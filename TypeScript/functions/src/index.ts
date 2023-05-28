@@ -79,15 +79,6 @@ export const setUserProfile = functions
   .runWith({enforceAppCheck: false})
   .https
   .onCall(async (data, context) => {
-    // verificando se o token de depuracao foi fornecido.
-    /*
-      if (context.app == undefined) {
-        throw new functions.https.HttpsError(
-          "failed-precondition",
-          "Erro ao acessar a function sem token do AppCheck.");
-      }*/
-    // inicializar um objeto padrao de resposta já com erro.
-    // será modificado durante o curso.
     const cResponse: CustomResponse = {
       status: "ERROR",
       message: "Dados não fornecidos",
@@ -134,15 +125,6 @@ export const getUserProfile = functions
   .https
   .onCall(async (data, context) => {
     const uid = data.uid;
-    // verificando se o token de depuracao foi fornecido.
-    /*
-      if (context.app == undefined) {
-        throw new functions.https.HttpsError(
-          "failed-precondition",
-          "Erro ao acessar a function sem token do AppCheck.");
-      }*/
-    // inicializar um objeto padrao de resposta já com erro.
-    // será modificado durante o curso.
     const cResponse: CustomResponse = {
       status: "ERROR",
       message: "Dados não fornecidos",
