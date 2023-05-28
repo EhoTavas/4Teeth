@@ -19,6 +19,7 @@ import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.messaging.ktx.messaging
 
@@ -30,6 +31,8 @@ class MenuActivity : AppCompatActivity() {
     private val functions = Firebase.functions
     private final lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
+    val user = FirebaseAuth.getInstance().currentUser
+    val uid = user!!.uid
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +41,7 @@ class MenuActivity : AppCompatActivity() {
 
         storeFcmToken()
 
-        val uid = userPreferencesRepository.uid
-        val fcmToken = userPreferencesRepository.fcmToken
-
+        val fcmToken = //user!!.sendEmailVerificationToken()
         updateFcmToken(uid, fcmToken)
 
         binding = ActivityMenuBinding.inflate(layoutInflater)

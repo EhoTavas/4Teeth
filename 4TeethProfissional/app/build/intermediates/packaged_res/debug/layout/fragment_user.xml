@@ -25,6 +25,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvUserName"
         style="@style/btnDefault"
+        android:text=""
         android:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
@@ -39,6 +40,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvUserMail"
         style="@style/btnDefault"
+        android:text=""
         android:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
@@ -53,6 +55,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvUserPhone"
         style="@style/btnDefault"
+        android:text=""
         android:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"

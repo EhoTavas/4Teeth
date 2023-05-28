@@ -22,6 +22,7 @@ class UserFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var functions: FirebaseFunctions
     private var user = FirebaseAuth.getInstance().currentUser
+    val uid = user!!.uid
     private val binding get() = _binding!!
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
@@ -37,12 +38,11 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val auth = FirebaseAuth.getInstance()
-        val email = user!!.email
+        val uid = user!!.uid
         val functions = FirebaseFunctions.getInstance("southamerica-east1")
-        userPreferencesRepository = UserPreferencesRepository.getInstance(requireContext())
 
         functions.getHttpsCallable("getUserProfile")
-            .call(mapOf("uid" to userPreferencesRepository.uid))
+            .call(mapOf("uid" to uid))
             .continueWith { task ->
                 if (task.isSuccessful) {
                     val result = task.result.data as String
@@ -54,6 +54,7 @@ class UserFragment : Fragment() {
 
                     val userJson = JSONObject(userData)
                     val userName = userJson.getString("nome")
+                    Log.d("nome", userName)
                     val userMail = userJson.getString("email")
                     val userPhone = userJson.getString("telefone")
 
@@ -64,11 +65,6 @@ class UserFragment : Fragment() {
                     Log.e("Firebase", "Erro ao chamar a função", task.exception)
                 }
             }
-
-        binding.btnLogout.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(requireContext(), LoginActivity::class.java))
-        }
     }
 
     override fun onDestroyView() {
