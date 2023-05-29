@@ -26,10 +26,6 @@ object Constants {
     val uid = user!!.uid
     private var userData: String = ""
 
-    interface UserCallback {
-        fun onCallback(value: String)
-    }
-
     fun sendMessage(textContent: String, fcmToken: String) : Task<CustomResponse> {
         val data = hashMapOf(
             "textContent" to textContent,
@@ -82,28 +78,4 @@ object Constants {
         return task
     }
 
-    fun getUserData(info: String, callback: UserCallback) {
-        val uid = user!!.uid
-        val functions = FirebaseFunctions.getInstance("southamerica-east1")
-
-        functions.getHttpsCallable("getUserProfile")
-            .call(mapOf("uid" to uid))
-            .continueWith { task ->
-                if (task.isSuccessful) {
-                    val result = task.result.data as String
-                    Log.d("getUserData", "Resultado da função: $result")
-
-                    val jsonResult = JSONObject(result)
-                    val userDoc = jsonResult.getString("payload")
-                    val userJson = JSONObject(userDoc)
-                    val userData = userJson.getString(info)
-                    Log.d(info, userData)
-
-                    userData
-                } else {
-                    Log.e("Firebase", "Erro ao chamar a função", task.exception)
-                    "erro ao buscar informações"
-                }
-            }
-    }
 }

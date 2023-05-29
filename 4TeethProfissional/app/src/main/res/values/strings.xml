@@ -122,9 +122,12 @@
 
     //Strings tela Emergências
     <string name="title_fragment_emergency">Emergências</string>
-    <string name="service_status">Aguardando resposta</string>
-    <string name="service_accepted">Emergência aceita</string>
-    <string name="service_declined">Emergência recusada</string>
+    <string name="service_status">Aguardando dentista</string>
+    <string name="service_accepted">Dentista aceitou</string>
+    <string name="service_declined">Dentista recusou</string>
+    <string name="rescuer_status">Aguardando socorrista</string>
+    <string name="rescuer_accepted">Socorrista aceitou</string>
+    <string name="rescuer_declined">Socorrista recusou</string>
     <string name="btnViewImg">Visualizar Imagem</string>
     <string name="title_activity_logged">LoggedActivity</string>
     <string name="btnDecline">Recusar</string>

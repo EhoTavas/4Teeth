@@ -15,7 +15,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.R
+import br.com.ForTeethDentalCare.dataStore.Dentist
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
 import com.google.android.gms.tasks.OnCompleteListener
@@ -31,8 +33,10 @@ class MenuActivity : AppCompatActivity() {
     private val functions = Firebase.functions
     private final lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
-    val user = FirebaseAuth.getInstance().currentUser
+    private val user = FirebaseAuth.getInstance().currentUser
     val uid = user!!.uid
+
+    public var email = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +45,6 @@ class MenuActivity : AppCompatActivity() {
 
         storeFcmToken()
 
-//        val fcmToken = //user!!.sendEmailVerificationToken()
 //        updateFcmToken(uid, fcmToken)
 
         binding = ActivityMenuBinding.inflate(layoutInflater)

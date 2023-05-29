@@ -11,13 +11,11 @@
     android:theme="@style/Theme.4TeethProfissional"
     tools:context=".screens.menu.EmergenciesListFragment">
 
-    <!--CONTAINER IMG-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_emergencies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"/>
-    <!--FIM CONTAINER IMG-->
 
 <!--    <androidx.appcompat.widget.AppCompatButton-->
 <!--        android:id="@+id/btnRefresh"-->
