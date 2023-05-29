@@ -16,11 +16,19 @@ import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.tasks.await
+import org.json.JSONObject
 
 object Constants {
     private lateinit var functions: FirebaseFunctions
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
     private lateinit var auth: FirebaseAuth
+    private var user = FirebaseAuth.getInstance().currentUser
+    val uid = user!!.uid
+    private var userData: String = ""
+
+    interface UserCallback {
+        fun onCallback(value: String)
+    }
 
     fun sendMessage(textContent: String, fcmToken: String) : Task<CustomResponse> {
         val data = hashMapOf(
@@ -54,8 +62,7 @@ object Constants {
             .getHttpsCallable("answerEmergency")
             .call(emergencyData)
             .continueWith { task ->
-                val result =
-                    gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
                 result
             }
 
@@ -69,12 +76,34 @@ object Constants {
                     context.startActivity(intentLoginActivity)
                 }
             } else {
-                Log.d(
-                    "REQ EMERGENCY",
-                    "Ocorreu um erro ao enviar as informações"
-                )//Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()
+                Log.d("REQ EMERGENCY", "Ocorreu um erro ao enviar as informações")
             }
         }
         return task
+    }
+
+    fun getUserData(info: String, callback: UserCallback) {
+        val uid = user!!.uid
+        val functions = FirebaseFunctions.getInstance("southamerica-east1")
+
+        functions.getHttpsCallable("getUserProfile")
+            .call(mapOf("uid" to uid))
+            .continueWith { task ->
+                if (task.isSuccessful) {
+                    val result = task.result.data as String
+                    Log.d("getUserData", "Resultado da função: $result")
+
+                    val jsonResult = JSONObject(result)
+                    val userDoc = jsonResult.getString("payload")
+                    val userJson = JSONObject(userDoc)
+                    val userData = userJson.getString(info)
+                    Log.d(info, userData)
+
+                    userData
+                } else {
+                    Log.e("Firebase", "Erro ao chamar a função", task.exception)
+                    "erro ao buscar informações"
+                }
+            }
     }
 }

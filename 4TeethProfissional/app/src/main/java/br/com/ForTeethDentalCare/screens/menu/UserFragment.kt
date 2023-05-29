@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import br.com.ForTeethDentalCare.Constants.getUserData
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentUserBinding
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
@@ -38,33 +39,15 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val auth = FirebaseAuth.getInstance()
-        val uid = user!!.uid
-        val functions = FirebaseFunctions.getInstance("southamerica-east1")
 
-        functions.getHttpsCallable("getUserProfile")
-            .call(mapOf("uid" to uid))
-            .continueWith { task ->
-                if (task.isSuccessful) {
-                    val result = task.result.data as String
-                    Log.d("Firebase", "Resultado da função: $result")
+        binding.tvUserName.text = getUserData("nome")
+        binding.tvUserPhone.text = getUserData("telefone")
+        binding.tvUserMail.text = getUserData("email")
 
-                    val jsonResult = JSONObject(result)
-
-                    val userData = jsonResult.getString("payload")
-
-                    val userJson = JSONObject(userData)
-                    val userName = userJson.getString("nome")
-                    Log.d("nome", userName)
-                    val userMail = userJson.getString("email")
-                    val userPhone = userJson.getString("telefone")
-
-                    binding.tvUserName.text = userName
-                    binding.tvUserMail.text = userMail
-                    binding.tvUserPhone.text = userPhone
-                } else {
-                    Log.e("Firebase", "Erro ao chamar a função", task.exception)
-                }
-            }
+        binding.btnLogout.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {

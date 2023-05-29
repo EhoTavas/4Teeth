@@ -28,6 +28,7 @@
         android:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
+        android:textColor="@color/black"
         android:backgroundTint="@color/branco_gelo"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -42,6 +43,7 @@
         android:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
+        android:textColor="@color/black"
         android:backgroundTint="@color/branco_gelo"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -56,6 +58,7 @@
         android:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
+        android:textColor="@color/black"
         android:backgroundTint="@color/branco_gelo"/>
 
     <androidx.appcompat.widget.AppCompatButton

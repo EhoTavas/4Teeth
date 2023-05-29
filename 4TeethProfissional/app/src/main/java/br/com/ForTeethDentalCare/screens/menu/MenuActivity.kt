@@ -41,8 +41,8 @@ class MenuActivity : AppCompatActivity() {
 
         storeFcmToken()
 
-        val fcmToken = //user!!.sendEmailVerificationToken()
-        updateFcmToken(uid, fcmToken)
+//        val fcmToken = //user!!.sendEmailVerificationToken()
+//        updateFcmToken(uid, fcmToken)
 
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
