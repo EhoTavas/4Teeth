@@ -1,15 +1,15 @@
 package br.com.ForTeethDentalCare.screens.menu
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import br.com.ForTeethDentalCare.databinding.FragmentAskRatingBinding
+import br.com.ForTeethDentalCare.databinding.FragmentAttendedEmergenciesBinding
 
-class AskEvaluationFragment : Fragment() {
+class AttendedEmergenciesFragment : Fragment() {
 
-    private var _binding: FragmentAskRatingBinding? = null
+    private var _binding: FragmentAttendedEmergenciesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class AskEvaluationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAskRatingBinding.inflate(inflater, container, false)
+        _binding = FragmentAttendedEmergenciesBinding.inflate(inflater, container, false)
         return binding.root
     }
 

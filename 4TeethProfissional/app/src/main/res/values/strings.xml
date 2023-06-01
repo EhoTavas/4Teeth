@@ -117,8 +117,9 @@
     <string name="docImageDescription">.</string>
     <string name="strMinhaReputacao">Minha Reputação</string>
     <string name="strMeuStatus">MeuStatus</string>
-    <string name="strEmergenciasDisponiveis">Emergências Disponíveis</string>
-    <string name="strSolicitarAvaliação">Solicitar Avaliação</string>
+    <string name="strAvailableEmergencies">Emergências Disponíveis</string>
+    <string name="strAttendedEmergencies">Emergências Atendidas</string>
+    <string name="strServiceAddresses">Endereços de Atendimento</string>
 
     //Strings tela Emergências
     <string name="title_fragment_emergency">Emergências</string>

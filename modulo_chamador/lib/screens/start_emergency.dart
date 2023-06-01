@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+//Tela inicial
 void main() {
   runApp(const MyApp());
 }
@@ -15,11 +15,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: const Color(0xFFF0FAF9),
           centerTitle: true,
-          title: const Text('Solicitar Socorro',
+          title: const Text(
+            'Solicitar Socorro',
             style: TextStyle(
               color: Color(0xFF292929),
               fontFamily: 'Poppins',
-            ),),
+            ),
+          ),
         ),
         body: Container(
           decoration: const BoxDecoration(
@@ -77,7 +79,8 @@ class MyApp extends StatelessWidget {
                                     vertical: 1.0,
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Nome:',
@@ -212,17 +215,18 @@ class ContainerWithText extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Lógica para abrir a câmera
-                },style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: const Color(0xFF33DCDE),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(45.0),
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xFF33DCDE),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(45.0),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 12.0,
+                    horizontal: 24.0,
+                  ),
                 ),
-                padding: const EdgeInsets.symmetric(
-                  vertical: 12.0,
-                  horizontal: 24.0,
-                ),
-              ),
                 child: Text(buttonText),
               ),
             ],

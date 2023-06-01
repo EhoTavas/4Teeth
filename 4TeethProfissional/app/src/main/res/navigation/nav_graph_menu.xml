@@ -13,17 +13,11 @@
             android:id="@+id/menuFragment_to_emergencyFragment"
             app:destination="@id/emergencyFragment" />
         <action
-            android:id="@+id/menuFragment_to_statusFragment"
-            app:destination="@id/statusFragment" />
-        <action
-            android:id="@+id/menuFragment_to_askRatingFragment"
-            app:destination="@id/askRatingFragment" />
-        <action
-            android:id="@+id/menuFragment_to_reputationFragment"
-            app:destination="@id/reputationFragment" />
-        <action
             android:id="@+id/menuFragment_to_userFragment"
             app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/menuFragment_to_attendedEmergenciesFragment"
+            app:destination="@id/attendedEmergenciesFragment" />
     </fragment>
     <fragment
         android:id="@+id/emergencyFragment"
@@ -35,37 +29,21 @@
             app:destination="@id/MenuFragment" />
     </fragment>
     <fragment
-        android:id="@+id/reputationFragment"
-        android:name="br.com.ForTeethDentalCare.screens.menu.ReputationFragment"
-        android:label="@string/title_fragment_reputacao">
-        <action
-            android:id="@+id/reputationFragment_to_MenuFragment"
-            app:destination="@id/MenuFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/askRatingFragment"
-        android:name="br.com.ForTeethDentalCare.screens.menu.AskEvaluationFragment"
-        android:label="@string/title_fragment_avaliacao">
-        <action
-            android:id="@+id/askRatingFragment_to_MenuFragment"
-            app:destination="@id/MenuFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/statusFragment"
-        android:name="br.com.ForTeethDentalCare.screens.menu.StatusFragment"
-        android:label="@string/title_fragment_status"
-        tools:layout="@layout/fragment_reputation">
-        <action
-            android:id="@+id/statusFragment_to_MenuFragment"
-            app:destination="@id/MenuFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/userFragment"
         android:name="br.com.ForTeethDentalCare.screens.menu.UserFragment"
         android:label="@string/title_user_fragment"
         tools:layout="@layout/fragment_user">
         <action
             android:id="@+id/userFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendedEmergenciesFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.AttendedEmergenciesFragment"
+        android:label="fragment_attended_emergencies"
+        tools:layout="@layout/fragment_attended_emergencies" >
+        <action
+            android:id="@+id/attendedEmergenciesFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
     </fragment>
 </navigation>
