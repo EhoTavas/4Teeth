@@ -1,5 +1,6 @@
 package br.com.ForTeethDentalCare.screens.menu
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -21,6 +22,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.databinding.ActivityCameraPreviewBinding
 import com.google.common.util.concurrent.ListenableFuture
@@ -151,7 +153,7 @@ class CameraPreviewActivity : AppCompatActivity() {
                             Log.e("DatabaseSaving", "Não foi possível salvar a imagem")
                         }.addOnSuccessListener {
                             Log.d("DatabaseSaving", "A imagem foi salva com sucesso!")
-
+                            Constants.updateDentistData(dentistGallery.toString(), "foto")
                         }
                     }
 

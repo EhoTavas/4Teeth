@@ -18,6 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.ui.navigateUp
+import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseApp

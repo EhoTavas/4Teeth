@@ -103,7 +103,9 @@ class UserFragment : Fragment() {
 //                    Glide.with(requireContext())
 //                        .load(gsReference)
 //                        .into(imageView)
-
+                    if (document.data["status"].toString() == "1") {
+                        binding.BtnSwitch.toggle()
+                    }
                     binding.tvUserName.text = document.data["nome"].toString()
                     binding.tvUserMail.text = document.data["email"].toString()
                     binding.tvUserPhone.text = document.data["telefone"].toString()
