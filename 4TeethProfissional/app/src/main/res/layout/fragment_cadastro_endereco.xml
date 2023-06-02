@@ -8,25 +8,6 @@
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
     tools:context=".screens.login.CadastroEnderecoFragment" >
-
-<!--    <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/icNavBackSignUp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:src="@drawable/ic_navegar_voltar" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatTextView-->
-<!--            style="@style/screenTitle"-->
-<!--            android:text="@string/Addresses_title" />-->
-
-<!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

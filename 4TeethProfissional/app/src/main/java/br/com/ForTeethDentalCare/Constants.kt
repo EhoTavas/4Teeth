@@ -38,6 +38,28 @@ object Constants {
             }
     }
 
+//    fun updateDentistData(data: String, field: String, view: View, context: Context) : Task<CustomResponse> {
+//        functions = Firebase.functions("southamerica-east1")
+//        auth = Firebase.auth
+//
+//        val dentistData = hashMapOf(
+//            "uid" to auth.currentUser!!.uid,
+//            field to data
+//        )
+//
+//        val task = functions
+//            .getHttpsCallable("updateUserProfile")
+//            .call(dentistData)
+//            .continueWith { task ->
+//                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+//                result
+//            }
+//
+//        task.addOnCompleteListener { res ->
+//
+//        }
+//    }
+
     fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth

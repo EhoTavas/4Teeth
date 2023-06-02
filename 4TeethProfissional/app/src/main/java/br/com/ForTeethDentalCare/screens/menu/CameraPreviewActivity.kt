@@ -145,12 +145,13 @@ class CameraPreviewActivity : AppCompatActivity() {
                         Log.i("CameraPreview", "A imagem foi salva: ${file.toUri()}")
                         val firebaseFile = file.toUri()
                         val dentistGallery = storage.child("DentistUserPictures/${firebaseFile.lastPathSegment}")
-                        var uploadTask = dentistGallery.putFile(firebaseFile)
+                        val uploadTask = dentistGallery.putFile(firebaseFile)
 
                         uploadTask.addOnFailureListener {
                             Log.e("DatabaseSaving", "Não foi possível salvar a imagem")
                         }.addOnSuccessListener {
                             Log.d("DatabaseSaving", "A imagem foi salva com sucesso!")
+
                         }
                     }
 
