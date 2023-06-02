@@ -15,9 +15,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.R
-import br.com.ForTeethDentalCare.dataStore.Dentist
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
 import com.google.android.gms.tasks.OnCompleteListener

@@ -5,18 +5,14 @@ import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.navigation.Navigation
-import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import com.google.android.gms.tasks.Task
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
-import kotlinx.coroutines.tasks.await
-import org.json.JSONObject
 
 object Constants {
     private lateinit var functions: FirebaseFunctions

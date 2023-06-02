@@ -10,12 +10,13 @@
     tools:context=".screens.menu.UserFragment">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:id="@+id/userPicture"
+        android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:contentDescription="@string/toothImageDescription"
-        app:srcCompat="@drawable/tooth_3d" />
+        android:contentDescription="@string/user_picture"
+        app:srcCompat="@drawable/ic_doc_red" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"

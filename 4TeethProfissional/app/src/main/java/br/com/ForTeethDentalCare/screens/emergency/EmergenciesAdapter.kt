@@ -1,7 +1,6 @@
 package br.com.ForTeethDentalCare
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.screens.emergency.RequestedEmergencyActivity
+
 class EmergenciesAdapter(private var dataSet: List<Emergency>) :
     ListAdapter<Emergency, EmergenciesAdapter.EmergencyViewHolder>(EmergencyDiffCallback) {
 

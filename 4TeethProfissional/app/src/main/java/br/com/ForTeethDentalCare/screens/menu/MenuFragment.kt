@@ -18,7 +18,9 @@ class MenuFragment : Fragment() {
     private lateinit var userPrefRep: UserPreferencesRepository
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         return binding.root
@@ -26,7 +28,6 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as MenuActivity
         userPrefRep = UserPreferencesRepository.getInstance(requireContext())
 
         Log.d("FcmToken", userPrefRep.fcmToken)

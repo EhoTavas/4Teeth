@@ -6,9 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import br.com.ForTeethDentalCare.CustomResponse
-import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.databinding.FragmentEmergencyBinding
 import br.com.ForTeethDentalCare.Constants.answerEmergency
 import br.com.ForTeethDentalCare.screens.menu.MenuActivity

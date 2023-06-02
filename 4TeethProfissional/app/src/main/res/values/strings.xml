@@ -139,6 +139,12 @@
 
     //Strings tela Usuário
     <string name="title_user_fragment">Meus Dados</string>
+    <string name="user_picture">Imagem do dentista</string>
+
+    /Camera
+    <string name="cancel_picture">Cancelar</string>
+    <string name="take_picture">Tirar foto</string>
+    <string name="accept_picture">Salvar</string>
 
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
