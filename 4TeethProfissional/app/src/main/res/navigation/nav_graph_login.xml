@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/Login">
+
+    <fragment
+        android:id="@+id/SignUp"
+        android:name="br.com.ForTeethDentalCare.screens.login.SignUpFragment"
+        android:label="@string/title_sign_up"
+        tools:layout="@layout/activity_login">
+        <action
+            android:id="@+id/SignUp_to_Addresses"
+            app:destination="@id/Addresses"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/SignUp_to_Login"
+            app:destination="@id/Login"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/Login"
+        android:name="br.com.ForTeethDentalCare.screens.login.LoginFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/activity_login">
+
+        <action
+            android:id="@+id/Login_to_SignUp"
+            app:destination="@id/SignUp"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/Login_to_notificationsAreDisabledFragment"
+            app:destination="@id/notificationsAreDisabledFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_Login_to_nav_graph2"
+            app:destination="@id/nav_graph_menu"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/Addresses"
+        android:name="br.com.ForTeethDentalCare.screens.login.CadastroEnderecoFragment"
+        android:label="@string/title_addresses"
+        tools:layout="@layout/fragment_cadastro_endereco">
+        <action
+            android:id="@+id/Addresses_to_SignUp"
+            app:destination="@id/SignUp"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/Addresses_to_Login"
+            app:destination="@id/Login"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsAreDisabledFragment"
+        android:name="br.com.ForTeethDentalCare.screens.login.NotificationsAreDisabledFragment"
+        android:label="fragment_notifications_are_disabled"
+        tools:layout="@layout/fragment_notifications_are_disabled" >
+        <action
+            android:id="@+id/NotificationsAreDisabledFragment_to_Login"
+            app:destination="@id/Login"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <include app:graph="@navigation/nav_graph_menu" />
+</navigation>

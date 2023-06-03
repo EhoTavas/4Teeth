@@ -4,7 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -15,17 +15,19 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
     ListAdapter<Emergency, EmergenciesAdapter.EmergencyViewHolder>(EmergencyDiffCallback) {
 
         class EmergencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-                private val patientName: AppCompatTextView = itemView.findViewById(R.id.tvPatientName)
-                //private val patientPicture: AppCompatImageView = itemView.findViewById(R.id.imgPatientPicture)
-                //private val patientDistance: AppCompatTextView = itemView.findViewById(R.id.tvPatientDistance)
-                private var emergencyActual: Emergency? = null
+            private val patientName: AppCompatTextView = itemView.findViewById(R.id.tvPatientName)
+            private val serviceStatus: AppCompatTextView = itemView.findViewById(R.id.tvServiceStatus)
+            //private val patientPicture: AppCompatImageView = itemView.findViewById(R.id.imgPatientPicture)
+            //private val patientDistance: AppCompatTextView = itemView.findViewById(R.id.tvPatientDistance)
+            private var emergencyActual: Emergency? = null
 
-                fun bind(t: Emergency) {
-                    emergencyActual = t
-                    patientName.text = t.name
-                    //patientDistance.text = t.distance
-                }
+            fun bind(t: Emergency) {
+                emergencyActual = t
+                patientName.text = t.name
+                serviceStatus.text = itemView.context.getString(R.string.service_status)
+                //patientDistance.text = t.distance
             }
+        }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmergencyViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_emergency, parent, false)
@@ -39,11 +41,11 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             holder.itemView.setOnClickListener{
                 val intentPatientData = Intent(it.context, RequestedEmergencyActivity::class.java)
 
-                intentPatientData.putExtra("name", t.name.toString())
-                intentPatientData.putExtra("phone", t.phone.toString())
-//                intentPatientData.putExtra("photos", t.photos.toString())
-//                intentPatientData.putExtra("time", t.time.toString())
-//                intentPatientData.putExtra("id", t.id.toString())
+                intentPatientData.putExtra("name", t.name)
+                intentPatientData.putExtra("phone", t.phone)
+//                intentPatientData.putExtra("photos", t.photos)
+//                intentPatientData.putExtra("time", t.time)
+                intentPatientData.putExtra("id", t.id)
 
                 it.context.startActivity(intentPatientData)
             }

@@ -18,7 +18,9 @@ class MenuFragment : Fragment() {
     private lateinit var userPrefRep: UserPreferencesRepository
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         return binding.root
@@ -26,22 +28,18 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = requireActivity() as MenuActivity
         userPrefRep = UserPreferencesRepository.getInstance(requireContext())
 
         Log.d("FcmToken", userPrefRep.fcmToken)
 
-        binding.myReputation.setOnClickListener{
-            findNavController().navigate(R.id.menuFragment_to_reputationFragment)
-        }
-        binding.myStatus.setOnClickListener{
-            findNavController().navigate(R.id.menuFragment_to_statusFragment)
-        }
         binding.availableEmergencies.setOnClickListener{
             findNavController().navigate(R.id.menuFragment_to_emergencyFragment)
         }
-        binding.askEvaluation.setOnClickListener{
-            findNavController().navigate(R.id.menuFragment_to_askRatingFragment)
+        binding.attendedEmergencies.setOnClickListener{
+            findNavController().navigate(R.id.menuFragment_to_attendedEmergenciesFragment)
+        }
+        binding.serviceAddresses.setOnClickListener{
+            findNavController().navigate(R.id.menuFragment_to_serviceAddressesFragment)
         }
     }
 

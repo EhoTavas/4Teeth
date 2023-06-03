@@ -2,6 +2,7 @@
 /* eslint-disable quotes */
 /* eslint-disable spaced-comment */
 /* eslint-disable object-curly-spacing */
+/* eslint-disable require-jsdoc */
 
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
@@ -15,15 +16,28 @@ type Dentista = {
   email: string,
   telefone: string,
   curriculo: string,
-  cep1: string,
-  endereco1: string,
-  cep2: string,
-  endereco2: string,
-  cep3: string,
-  endereco3: string,
+//  cep1: string,
+//  endereco1: string,
+//  cep2: string,
+//  endereco2: string,
+//  cep3: string,
+//  endereco3: string,
   status: string,
   fcmToken: string | undefined,
+//  foto: string,
   uid: string,
+}
+
+type Endereco = {
+  cep: string,
+  numero: string,
+  complemento: string,
+  rua: string,
+  bairro: string,
+  cidade: string,
+  estado: string,
+  dentista: string,
+  ativo: string,
 }
 
 // type Emergency = {
@@ -59,15 +73,30 @@ function hasAccountData(data: Dentista) {
     data.email != undefined &&
     data.telefone != undefined &&
     data.curriculo != undefined &&
-    data.cep1 != undefined &&
-    data.endereco1 != undefined &&
-    data.cep2 != undefined &&
-    data.endereco2 != undefined &&
-    data.cep3 != undefined &&
-    data.endereco3 != undefined &&
+  //    data.cep1 != undefined &&
+  //    data.endereco1 != undefined &&
+  //    data.cep2 != undefined &&
+  //    data.endereco2 != undefined &&
+  //    data.cep3 != undefined &&
+  //    data.endereco3 != undefined &&
     data.status != undefined &&
     data.uid != undefined &&
     data.fcmToken != undefined) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function hasAddressData(data: Endereco) {
+  if (data.ativo != undefined &&
+    data.bairro != undefined &&
+    data.cep != undefined &&
+    data.cidade != undefined &&
+    data.complemento != undefined &&
+    data.dentista != undefined &&
+    data.estado != undefined &&
+    data.numero != undefined &&
+    data.rua != undefined) {
     return true;
   } else {
     return false;
@@ -79,15 +108,6 @@ export const setUserProfile = functions
   .runWith({enforceAppCheck: false})
   .https
   .onCall(async (data, context) => {
-    // verificando se o token de depuracao foi fornecido.
-    /*
-      if (context.app == undefined) {
-        throw new functions.https.HttpsError(
-          "failed-precondition",
-          "Erro ao acessar a function sem token do AppCheck.");
-      }*/
-    // inicializar um objeto padrao de resposta já com erro.
-    // será modificado durante o curso.
     const cResponse: CustomResponse = {
       status: "ERROR",
       message: "Dados não fornecidos",
@@ -128,21 +148,95 @@ export const setUserProfile = functions
     return JSON.stringify(cResponse);
   });
 
+export const updateUserProfile = functions
+  .region("southamerica-east1")
+  .runWith({enforceAppCheck: false})
+  .https
+  .onCall(async (data, context) => {
+    const cResponse: CustomResponse = {
+      status: "ERROR",
+      message: "Dados não fornecidos",
+      payload: undefined,
+    };
+    const dentista = (data as Dentista);
+    if (dentista && dentista.uid) {
+      const dentistData = await firebase.firestore()
+        .collection("Dentista")
+        .where('uid', '==', data.uid)
+        .get();
+
+      if (!dentistData.empty) {
+        const doc = dentistData.docs[0];
+        try {
+          await doc.ref.set(dentista, {merge: true});
+          cResponse.status = "SUCCESS";
+          cResponse.message = "Perfil de dentista atualizado";
+          cResponse.payload = JSON.stringify({ docId: doc.id });
+        } catch (e) {
+          functions.logger.error("Erro ao atualizar perfil:", dentista.email);
+          cResponse.status = "ERROR";
+          cResponse.message = "Erro ao atualizar usuário - Verificar Logs";
+          cResponse.payload = null;
+        }
+      } else {
+        cResponse.status = "ERROR";
+        cResponse.message = "Nenhum usuário encontrado com o uid fornecido";
+        cResponse.payload = null;
+      }
+    }
+    return JSON.stringify(cResponse);
+  });
+
+export const setUserAddresses = functions
+  .region("southamerica-east1")
+  .runWith({enforceAppCheck: false})
+  .https
+  .onCall(async (data, context) => {
+    const cResponse: CustomResponse = {
+      status: "ERROR",
+      message: "Dados não fornecidos",
+      payload: undefined,
+    };
+    const endereco = (data as Endereco);
+    if (hasAddressData(endereco)) {
+      try {
+        const doc = await firebase.firestore()
+          .collection("Endereco")
+          .add(endereco);
+        if (doc.id != undefined) {
+          cResponse.status = "STATUS";
+          cResponse.message = "Endereço inserido";
+          cResponse.payload = JSON.stringify({docId: doc.id});
+        } else {
+          cResponse.status = "ERROR";
+          cResponse.message = "Não foi possível inserir o endereço";
+          cResponse.payload = JSON.stringify({errorDetail: "doc.id"});
+        }
+      } catch (e) {
+        let exMessage;
+        if (e instanceof Error) {
+          exMessage = e.message;
+        }
+        functions.logger.error("Erro ao incluir endereço: ", endereco.cep);
+        functions.logger.error("Exception: ", exMessage);
+        cResponse.status = "ERROR";
+        cResponse.message = "Erro ao incluir endereço - Verificar Logs";
+        cResponse.payload = null;
+      }
+    } else {
+      cResponse.status = "ERROR";
+      cResponse.message = "Endereço com informações insuficientes";
+      cResponse.payload = undefined;
+    }
+    return JSON.stringify(cResponse);
+  });
+
 export const getUserProfile = functions
   .region("southamerica-east1")
   .runWith({enforceAppCheck: false})
   .https
   .onCall(async (data, context) => {
     const uid = data.uid;
-    // verificando se o token de depuracao foi fornecido.
-    /*
-      if (context.app == undefined) {
-        throw new functions.https.HttpsError(
-          "failed-precondition",
-          "Erro ao acessar a function sem token do AppCheck.");
-      }*/
-    // inicializar um objeto padrao de resposta já com erro.
-    // será modificado durante o curso.
     const cResponse: CustomResponse = {
       status: "ERROR",
       message: "Dados não fornecidos",
@@ -292,8 +386,8 @@ export const answerEmergency = functions
       emergency: data.emergency,
       dentist: data.dentist,
       status: data.status,
-      name: dentistData.docs[0].data().name,
-      phone: dentistData.docs[0].data().phone,
+      name: dentistData.docs[0].data().nome,
+      phone: dentistData.docs[0].data().telefone,
     };
 
     try {

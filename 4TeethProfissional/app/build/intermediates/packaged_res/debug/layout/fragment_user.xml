@@ -16,6 +16,51 @@
         android:contentDescription="@string/toothImageDescription"
         app:srcCompat="@drawable/tooth_3d" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/strName"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserName"
+        style="@style/btnDefault"
+        android:text=""
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="25dp"
+        android:backgroundTint="@color/branco_gelo"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/strEmail"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserMail"
+        style="@style/btnDefault"
+        android:text=""
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="25dp"
+        android:backgroundTint="@color/branco_gelo"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/strPhone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserPhone"
+        style="@style/btnDefault"
+        android:text=""
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="25dp"
+        android:backgroundTint="@color/branco_gelo"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogout"
         android:layout_marginTop="20dp"

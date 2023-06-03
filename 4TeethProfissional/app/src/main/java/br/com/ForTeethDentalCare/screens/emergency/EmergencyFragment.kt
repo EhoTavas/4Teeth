@@ -6,11 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import br.com.ForTeethDentalCare.CustomResponse
-import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.databinding.FragmentEmergencyBinding
 import br.com.ForTeethDentalCare.Constants.answerEmergency
+import br.com.ForTeethDentalCare.screens.menu.MenuActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.gson.GsonBuilder
@@ -45,9 +43,15 @@ class EmergencyFragment : Fragment() {
 //        (activity as RequestedEmergencyActivity).intent.getStringExtra("id")
         binding.btnDecline.setOnClickListener {
             answerEmergency(false, id, it, requireActivity())
+            val intent = Intent(requireContext(), MenuActivity::class.java)
+            startActivity(intent)
+            //requireActivity().finish()
         }
         binding.btnAccept.setOnClickListener {
             answerEmergency(true, id, it, requireActivity())
+            val intent = Intent(requireContext(), MenuActivity::class.java)
+            startActivity(intent)
+            //requireActivity().finish()
         }
     }
 

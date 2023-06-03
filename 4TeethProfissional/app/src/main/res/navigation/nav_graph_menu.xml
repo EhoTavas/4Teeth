@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_menu"
+    app:startDestination="@id/MenuFragment">
+
+    <fragment
+        android:id="@+id/MenuFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.MenuFragment"
+        android:label="@string/title_fragment_menu" >
+        <action
+            android:id="@+id/menuFragment_to_emergencyFragment"
+            app:destination="@id/emergencyFragment" />
+        <action
+            android:id="@+id/menuFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/menuFragment_to_attendedEmergenciesFragment"
+            app:destination="@id/attendedEmergenciesFragment" />
+        <action
+            android:id="@+id/menuFragment_to_serviceAddressesFragment"
+            app:destination="@id/serviceAddressesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emergencyFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.EmergenciesListFragment"
+        android:label="@string/title_fragment_emergency"
+        tools:layout="@layout/fragment_emergencies_list">
+        <action
+            android:id="@+id/emergencyFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.UserFragment"
+        android:label="@string/title_user_fragment"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/userFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendedEmergenciesFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.AttendedEmergenciesFragment"
+        android:label="fragment_attended_emergencies"
+        tools:layout="@layout/fragment_attended_emergencies" >
+        <action
+            android:id="@+id/attendedEmergenciesFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serviceAddressesFragment"
+        android:name="br.com.ForTeethDentalCare.screens.menu.ServiceAddressesFragment"
+        android:label="fragment_service_addresses"
+        tools:layout="@layout/fragment_service_addresses" >
+        <action
+            android:id="@+id/serviceAddressesFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+</navigation>

@@ -5,22 +5,22 @@ import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.navigation.Navigation
-import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import com.google.android.gms.tasks.Task
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
-import kotlinx.coroutines.tasks.await
 
 object Constants {
     private lateinit var functions: FirebaseFunctions
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
     private lateinit var auth: FirebaseAuth
+    private var user = FirebaseAuth.getInstance().currentUser
+    val uid = user!!.uid
+    private var userData: String = ""
 
     fun sendMessage(textContent: String, fcmToken: String) : Task<CustomResponse> {
         val data = hashMapOf(
@@ -38,35 +38,26 @@ object Constants {
             }
     }
 
-    suspend fun patientsList(): List<Emergency> {
-
+    fun updateDentistData(data: String, field: String) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
+        auth = Firebase.auth
 
-        return try {
-            val result = functions.getHttpsCallable("getPatientData")
-                .call().await()
-            Log.d("paciente", "passouaqui")
-            result.data as List<Emergency>
-        } catch (e: Exception) {
-            println("Erro ao chamar a função: $e")
-            emptyList()
-        }
+        val dentistData = hashMapOf(
+            "uid" to auth.currentUser!!.uid,
+            field to data
+        )
 
-        //return listOf(
-        //    Emergency(name = "Loren"),//, distance = "50km"),
-        //    Emergency(name = "Luan"),//, distance = "15km"),
-        //    Emergency(name = "Luiza"),//, distance = "5km"),
-        //    Emergency(name = "Duda"),//, distance = "95km"),
-        //    Emergency(name = "Matheus"),//, distance = "80km"),
-        //)
+        val task = functions
+            .getHttpsCallable("updateUserProfile")
+            .call(dentistData)
+            .continueWith { task ->
+                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+                result
+            }
+        return task
     }
 
-    fun answerEmergency(
-        check: Boolean,
-        emergencyId: String,
-        view: View,
-        context: Context
-    ): Task<CustomResponse> {
+    fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth
 
@@ -89,15 +80,17 @@ object Constants {
         task.addOnCompleteListener { res ->
             if (res.result.status == "1") {
                 if (check) {
-                    Navigation.findNavController(view).navigate(R.id.emergencyFragment_to_MenuFragment)
+                    Navigation.findNavController(view)
+                        .navigate(R.id.emergencyFragment_to_MenuFragment)
                 } else {
                     val intentLoginActivity = Intent(context, LoginActivity::class.java)
                     context.startActivity(intentLoginActivity)
                 }
             } else {
-                Snackbar.make(view, "Ocorreu um erro ao executar a ação", Snackbar.LENGTH_LONG).show()
+                Log.d("REQ EMERGENCY", "Ocorreu um erro ao enviar as informações")
             }
         }
         return task
     }
+
 }

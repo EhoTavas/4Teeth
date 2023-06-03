@@ -4,7 +4,7 @@
             "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "/home/luan/.gradle/caches/transforms-3/3379f33b4bc5753ee1ed515c5f73554b/transformed/material-1.9.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\3379f33b4bc5753ee1ed515c5f73554b\\transformed\\material-1.9.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

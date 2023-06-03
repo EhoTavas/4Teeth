@@ -14,8 +14,13 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('4Teeth'),
+          backgroundColor: const Color(0xFFF0FAF9),
           centerTitle: true,
+          title: const Text('4Teeth',
+            style: TextStyle(
+              color: Color(0xFF292929),
+              fontFamily: 'Poppins',
+            ),),
         ),
       body: Container(
         width: 360,
@@ -28,7 +33,9 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
               const Positioned(
                   top: 18,
                   left: 146,
-                  child: Text('4Teeth', textAlign: TextAlign.center, style: TextStyle(
+                  child: Text('4Teeth',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
                       color: Color.fromRGBO(41, 41, 41, 1),
                       fontFamily: 'Poppins',
                       fontSize: 20,
@@ -69,7 +76,9 @@ class _CallEmergencyWidgetState extends State<CallEmergencyWidget> {
                             ),const Positioned(
                                 top: 32,
                                 left: 37,
-                                child: Text('Precisando de ajuda?', textAlign: TextAlign.center, style: TextStyle(
+                                child: Text('Precisando de ajuda?',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
                                     color: Color.fromRGBO(41, 41, 41, 1),
                                     fontFamily: 'Poppins',
                                     fontSize: 20,

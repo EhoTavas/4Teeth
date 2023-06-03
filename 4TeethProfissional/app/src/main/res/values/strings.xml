@@ -117,32 +117,34 @@
     <string name="docImageDescription">.</string>
     <string name="strMinhaReputacao">Minha Reputação</string>
     <string name="strMeuStatus">MeuStatus</string>
-    <string name="strEmergenciasDisponiveis">Emergências Disponíveis</string>
-    <string name="strSolicitarAvaliação">Solicitar Avaliação</string>
+    <string name="strAvailableEmergencies">Emergências Disponíveis</string>
+    <string name="strAttendedEmergencies">Emergências Atendidas</string>
+    <string name="strServiceAddresses">Endereços de Atendimento</string>
 
     //Strings tela Emergências
     <string name="title_fragment_emergency">Emergências</string>
-    <string name="strPaciente1">Paciente 1</string>
-    <string name="strPaciente2">Paciente 2</string>
-    <string name="strPaciente3">Paciente 3</string>
-    <string name="str13km">13km</string>
-    <string name="str18km">18km</string>
+    <string name="service_status">Aguardando dentista</string>
+    <string name="service_accepted">Dentista aceitou</string>
+    <string name="service_declined">Dentista recusou</string>
+    <string name="rescuer_status">Aguardando socorrista</string>
+    <string name="rescuer_accepted">Socorrista aceitou</string>
+    <string name="rescuer_declined">Socorrista recusou</string>
     <string name="btnViewImg">Visualizar Imagem</string>
-    <string name="btnRefresh">Recarregar</string>
     <string name="title_activity_logged">LoggedActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="btnDecline">Recusar</string>
+    <string name="btnAccept">Atender</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
-    <!-- User Fragment -->
+
+    //Strings tela Usuário
     <string name="title_user_fragment">Meus Dados</string>
+    <string name="user_picture">Imagem do dentista</string>
+
+    /Camera
+    <string name="cancel_picture">Cancelar</string>
+    <string name="take_picture">Tirar foto</string>
+    <string name="accept_picture">Salvar</string>
 
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
