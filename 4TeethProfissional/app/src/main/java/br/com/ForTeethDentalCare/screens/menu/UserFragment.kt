@@ -71,7 +71,7 @@ class UserFragment : Fragment() {
     }
 
     private fun abrirTelaDePreview() {
-        val intentCameraPreview = Intent(requireContext(), CameraPreviewActivity::class.java)
+        val intentCameraPreview = Intent(requireContext(), CameraActivity::class.java)
         startActivity(intentCameraPreview)
     }
 
