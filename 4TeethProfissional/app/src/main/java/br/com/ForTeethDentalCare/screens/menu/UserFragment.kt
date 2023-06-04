@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
+import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentUserBinding
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
@@ -36,7 +37,7 @@ class UserFragment : Fragment() {
     private val cameraProviderResult =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {
             if(it) {
-                abrirTelaDePreview()
+                cameraScreen()
             } else {
                 Snackbar.make(
                     binding.root,
@@ -68,9 +69,18 @@ class UserFragment : Fragment() {
         binding.userPicture.setOnClickListener {
             cameraProviderResult.launch(android.Manifest.permission.CAMERA)
         }
+        
+//        binding.BtnSwitch.setOnCheckedChangeListener { _, isChecked ->
+//            binding.BtnSwitch.isEnabled = false
+//            if (isChecked) {
+//                Constants.updateDentistData()
+//            } else {
+//                binding.btnLogout.text = "not checked"
+//            }
+//        }
     }
 
-    private fun abrirTelaDePreview() {
+    private fun cameraScreen() {
         val intentCameraPreview = Intent(requireContext(), CameraActivity::class.java)
         startActivity(intentCameraPreview)
     }

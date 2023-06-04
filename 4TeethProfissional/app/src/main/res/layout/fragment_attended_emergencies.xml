@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/elevation"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_login_screen"
+    android:clickable="true"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
     tools:context=".screens.menu.AttendedEmergenciesFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:contentDescription="@string/toothImageDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/tooth_3d" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_attended_emergencies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/border_rounded_login_screen"
-        android:orientation="vertical"
-        android:theme="@style/Theme.4TeethProfissional">
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        app:layoutManager="LinearLayoutManager"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

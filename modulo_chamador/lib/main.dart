@@ -1,9 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'firebase_options.dart';
+
 //Tela inicial
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -279,22 +290,6 @@ class ContainerWithText extends StatelessWidget {
   }
 }
 
-// import 'dart:ffi';
-// import 'dart:async';
-// import 'dart:io';
-//
-// import 'package:firebase_storage/firebase_storage.dart';
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
-// // import 'package:firebase_core/firebase_core.dart';
-// // import 'package:path_provider/path_provider.dart';
-// import 'package:camera/camera.dart';
-// import 'package:image_picker/image_picker.dart';
-// import 'package:path/path.dart' as Path;
-//
-// import 'display_picture.dart';
-// import 'firebase_options.dart';
-// import 'screens/splash.dart';
 //
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();

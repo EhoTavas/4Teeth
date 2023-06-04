@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import br.com.ForTeethDentalCare.EmergenciesAdapter
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.databinding.FragmentEmergenciesListBinding
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -37,8 +38,8 @@ class EmergenciesListFragment : Fragment() {
         allEmergencies.clear()
         emergenciesAdapter = EmergenciesAdapter(allEmergencies)
 
-        _binding!!.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
-        _binding!!.rvEmergencies.adapter = emergenciesAdapter
+        binding.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
+        binding.rvEmergencies.adapter = emergenciesAdapter
     }
 
     override fun onStart() {
@@ -53,7 +54,7 @@ class EmergenciesListFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun loadEmergencies() {
-        val collection = db.collection("Emergencias").orderBy("time")
+        val collection = db.collection("Emergencias").orderBy("time", Query.Direction.DESCENDING)
         var emergency: Emergency
         collection.addSnapshotListener { value, e ->
             allEmergencies.clear()
