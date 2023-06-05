@@ -14,6 +14,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import com.google.firebase.storage.StorageReference
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -37,26 +38,19 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMenuBinding
     lateinit var storage: FirebaseStorage
-    private val functions = Firebase.functions
-    private final lateinit var navController: NavController
+    private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
     private val user = FirebaseAuth.getInstance().currentUser
-    val uid = user!!.uid
 
-    public var email = ""
-
-    // Declare the launcher at the top of your Activity/Fragment:
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
         if (!isGranted) {
-            // mostrar o fragment
             navController.navigate(R.id.Login_to_notificationsAreDisabledFragment)
         }
     }
 
-    private fun prepareFirebaseAppCheckDebug(){
-        // Ajustando o AppCheck para modo depuração.
+    private fun prepareFirebaseAppCheckDebug() {
         FirebaseApp.initializeApp(this)
         val firebaseAppCheck = FirebaseAppCheck.getInstance()
         firebaseAppCheck.installAppCheckProviderFactory(
@@ -65,14 +59,10 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun askNotificationPermission() {
-        // This is only necessary for API level >= 33 (TIRAMISU)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) !=
                 PackageManager.PERMISSION_GRANTED
             ) {
-                // FCM SDK (and your app) can post notifications.
-            } else {
-                // Directly ask for the permission
                 requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
         }
@@ -85,13 +75,11 @@ class MenuActivity : AppCompatActivity() {
 
         storeFcmToken()
 
-//        updateFcmToken(uid, fcmToken)
-
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         storage = Firebase.storage
-        var storageRef = storage.reference
+        val storageRef = storage.reference
         var imagesRef: StorageReference? = storageRef.child("DentistUserPictures")
 
         val navController = findNavController(R.id.nav_host_fragment_content_menu)
@@ -101,7 +89,6 @@ class MenuActivity : AppCompatActivity() {
         askNotificationPermission()
 
         prepareFirebaseAppCheckDebug()
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -143,24 +130,6 @@ class MenuActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateFcmToken(uid: String, token: String) {
-        val data = hashMapOf(
-            "uid" to uid,
-            "fcmToken" to token
-        )
-
-        functions
-            .getHttpsCallable("updateFcmToken")
-            .call(data)
-            .addOnSuccessListener {
-                Log.d("FCM", "FCM token updated successfully!")
-            }
-            .addOnFailureListener {
-                // Aqui você pode manipular o erro
-                Log.d("FCM", "Failed to update FCM token: ${it.message}")
-            }
-    }
-
     override fun onBackPressed() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_menu)
         val currentFragment = navHostFragment?.childFragmentManager?.fragments?.get(0)
@@ -172,11 +141,5 @@ class MenuActivity : AppCompatActivity() {
                 .setNegativeButton("Não", null)
                 .show()
         } else { super.onBackPressed() }
-    }
-
-
-    override fun isDestroyed(): Boolean {
-        // TODO: encontrar uma forma de colocar um aviso "deseja mesmo sair do aplicativo?"
-        return super.isDestroyed()
     }
 }

@@ -1,6 +1,9 @@
 package br.com.ForTeethDentalCare.screens.menu
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,7 +11,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.CustomResponse
@@ -39,16 +44,25 @@ class UserFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+            val fineLocationGranted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false
+            val coarseLocationGranted = permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false
+            if (fineLocationGranted && coarseLocationGranted) {
+                // Ambas as permissões foram concedidas
+                findNavController().navigate(R.id.userFragment_to_mapsFragment)
+            } else {
+                // Ao menos uma das permissões não foi concedida
+                Toast.makeText(context, "Permissão de localização é necessária para abrir a tela.", Toast.LENGTH_LONG).show()
+            }
+        }
+
     private val cameraProviderResult =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {
             if(it) {
                 cameraScreen()
             } else {
-                Snackbar.make(
-                    binding.root,
-                    "Não foi possível iniciar a câmera",
-                    Snackbar.LENGTH_LONG
-                ).show()
+                Snackbar.make(binding.root, "Não foi possível iniciar a câmera", Snackbar.LENGTH_LONG).show()
             }
         }
 
@@ -69,14 +83,18 @@ class UserFragment : Fragment() {
         loadUserData()
 
         binding.btnLocation.setOnClickListener {
-            findNavController().navigate(R.id.userFragment_to_mapsFragment)
+            val permissionsToRequest = arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+            requestPermissionLauncher.launch(permissionsToRequest)
         }
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
         binding.userPicture.setOnClickListener {
-            cameraProviderResult.launch(android.Manifest.permission.CAMERA)
+            cameraProviderResult.launch(Manifest.permission.CAMERA)
         }
 
         statusBtn.setOnCheckedChangeListener { _, isChecked ->

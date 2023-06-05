@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.4TeethProfissional"
     tools:context=".screens.menu.CameraActivity">
 
     <androidx.camera.view.PreviewView
@@ -20,20 +21,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnTakePhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnDefault"
         android:text="@string/take_picture"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCancelPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnDefault"
         android:text="@string/cancel_picture"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnTakePhoto"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,10 +39,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAcceptPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnDefault"
         android:text="@string/accept_picture"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toEndOf="@+id/btnTakePhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
