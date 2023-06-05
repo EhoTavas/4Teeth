@@ -133,6 +133,7 @@
     <string name="title_activity_logged">LoggedActivity</string>
     <string name="btnDecline">Recusar</string>
     <string name="btnAccept">Atender</string>
+    <string name="btnFinish">Finalizar</string>
 
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>

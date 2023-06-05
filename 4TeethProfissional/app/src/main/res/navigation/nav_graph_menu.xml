@@ -39,12 +39,15 @@
         <action
             android:id="@+id/userFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
+        <action
+            android:id="@+id/userFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/attendedEmergenciesFragment"
         android:name="br.com.ForTeethDentalCare.screens.menu.AttendedEmergenciesFragment"
-        android:label="fragment_attended_emergencies"
-        tools:layout="@layout/fragment_attended_emergencies" >
+        android:label="@string/strAttendedEmergencies"
+        tools:layout="@layout/fragment_attended_emergencies">
         <action
             android:id="@+id/attendedEmergenciesFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
@@ -57,5 +60,14 @@
         <action
             android:id="@+id/serviceAddressesFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="br.com.ForTeethDentalCare.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/mapsFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
 </navigation>

@@ -210,11 +210,15 @@ class _MyAppState extends State<MyApp> {
         'phone': userPhone,
         'time': FieldValue.serverTimestamp(),
       };
-
-      await db.collection("Emergencias").add(data).then((documentSnapshot) =>
-          print("Added Data with ID: ${documentSnapshot.id}"));
+      var docRef = await db.collection("Emergencias").add(data);
+          // .then((documentSnapshot) =>
+          // print("Added Data with ID: ${documentSnapshot.id}"));
+      String docId = docRef.id;
+      await db.collection("Emergencias").doc(docId).update({
+        'id': docId,
+      });
     } catch (error) {
-      print('deu merda aqui $error');
+      print('Não foi possível adicionar dados ao banco $error');
     }
   }
 }

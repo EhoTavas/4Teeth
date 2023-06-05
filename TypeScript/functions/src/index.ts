@@ -422,7 +422,6 @@ export const onEmergencyCreate = functions
   .document("Emergencias/{EmergenciaID}")
   .onCreate(async (snapshot, context) => {
     try {
-      await db.collection("teste").add({teste: "Teste trigger"});
       const dentistaSnapshot = await db
         .collection('Dentista')
         .where('status', '==', '1')

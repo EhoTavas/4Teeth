@@ -93,6 +93,12 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLocation"
+        android:layout_marginTop="20dp"
+        style="@style/btnDefault"
+        android:text="Localia"/>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogout"
         android:layout_marginTop="20dp"
         style="@style/btnDefault"

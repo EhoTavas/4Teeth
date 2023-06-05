@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.CustomResponse
+import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentUserBinding
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
@@ -66,6 +68,9 @@ class UserFragment : Fragment() {
 
         loadUserData()
 
+        binding.btnLocation.setOnClickListener {
+            findNavController().navigate(R.id.userFragment_to_mapsFragment)
+        }
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             startActivity(Intent(requireContext(), LoginActivity::class.java))
@@ -76,10 +81,10 @@ class UserFragment : Fragment() {
 
         statusBtn.setOnCheckedChangeListener { _, isChecked ->
             statusBtn.isEnabled = false
-            if (isChecked) {
-                status = Constants.updateDentistData("1", "status")
+            status = if (isChecked) {
+                Constants.updateDentistData("1", "status")
             } else {
-                status = Constants.updateDentistData("0", "status")
+                Constants.updateDentistData("0", "status")
             }
             status.addOnSuccessListener {
                 statusBtn.isEnabled = true
@@ -103,6 +108,11 @@ class UserFragment : Fragment() {
                 return@addSnapshotListener
             }
 
+            if (_binding == null) {
+                Log.e("Binding", "Erro ao recuperar o binding")
+                return@addSnapshotListener
+            }
+
             for (document in value!!) {
                 if (document.data["email"].toString() == email) {
                     val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(
@@ -119,10 +129,9 @@ class UserFragment : Fragment() {
                     }.addOnFailureListener {
                         Log.e("Imagem", "A imagem não pôde ser recuperada")
                     }
-
-//                    Glide.with(requireContext())
-//                        .load(gsReference)
-//                        .into(imageView)
+                    if (document.data["status"].toString() == "1") {
+                        binding.BtnSwitch.isChecked = true
+                    }
                     binding.tvUserName.text = document.data["nome"].toString()
                     binding.tvUserMail.text = document.data["email"].toString()
                     binding.tvUserPhone.text = document.data["telefone"].toString()

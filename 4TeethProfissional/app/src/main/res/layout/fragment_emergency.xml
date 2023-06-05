@@ -36,6 +36,16 @@
         app:layout_constraintTop_toBottomOf="@id/tvPatientName" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnFinish"
+        style="@style/btnDefault"
+        android:backgroundTint="@color/btnAccept"
+        android:text="@string/btnFinish"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/btnDecline"
+        app:layout_constraintTop_toBottomOf="@id/tvPatientName"
+        app:layout_constraintEnd_toStartOf="@id/btnAccept"/>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAccept"
         style="@style/btnDefault"
         android:backgroundTint="@color/btnAccept"

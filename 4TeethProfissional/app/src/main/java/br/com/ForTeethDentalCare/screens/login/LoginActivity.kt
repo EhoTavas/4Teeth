@@ -40,15 +40,6 @@ class LoginActivity : AppCompatActivity() {
 
     public var dentist: Dentist = Dentist("", "", "", "", "", "", "", "", "", "", "", "", "1")
 
-    private fun prepareFirebaseAppCheckDebug(){
-        // Ajustando o AppCheck para modo depuração.
-        FirebaseApp.initializeApp(this)
-        val firebaseAppCheck = FirebaseAppCheck.getInstance()
-        firebaseAppCheck.installAppCheckProviderFactory(
-            DebugAppCheckProviderFactory.getInstance()
-        )
-    }
-
     fun storeUserId(uid: String){
         userPreferencesRepository.uid = uid
     }
@@ -65,30 +56,6 @@ class LoginActivity : AppCompatActivity() {
 
     fun getFcmToken(): String {
         return userPreferencesRepository.fcmToken
-    }
-
-    // Declare the launcher at the top of your Activity/Fragment:
-    private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { isGranted: Boolean ->
-        if (!isGranted) {
-            // mostrar o fragment
-            navController.navigate(R.id.Login_to_notificationsAreDisabledFragment)
-        }
-    }
-
-    private fun askNotificationPermission() {
-        // This is only necessary for API level >= 33 (TIRAMISU)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
-                PackageManager.PERMISSION_GRANTED
-            ) {
-                // FCM SDK (and your app) can post notifications.
-            } else {
-                // Directly ask for the permission
-                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-            }
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,18 +85,9 @@ class LoginActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_login)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        // disponibilizando o token (que deve ser colocado lá no APP CHECK do Firebase).
-        prepareFirebaseAppCheckDebug()
         // guardar o token FCM pois iremos precisar.
         storeFcmToken()
-        // invocar as permissões para notificar.
-        askNotificationPermission()
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        menuInflater.inflate(R.id., menu)
-//        return true
-//    }
 
     override fun onStart() {
         super.onStart()

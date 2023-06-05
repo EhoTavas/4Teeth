@@ -19,10 +19,10 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             private val serviceStatus: AppCompatTextView = itemView.findViewById(R.id.tvServiceStatus)
             //private val patientPicture: AppCompatImageView = itemView.findViewById(R.id.imgPatientPicture)
             //private val patientDistance: AppCompatTextView = itemView.findViewById(R.id.tvPatientDistance)
-            private var emergencyActual: Emergency? = null
+            private var thisEmergency: Emergency? = null
 
             fun bind(t: Emergency) {
-                emergencyActual = t
+                thisEmergency = t
                 patientName.text = t.name
                 serviceStatus.text = itemView.context.getString(R.string.service_status)
                 //patientDistance.text = t.distance
@@ -38,7 +38,7 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
             val t = dataSet[position]
             holder.bind(t)
 
-            holder.itemView.setOnClickListener{
+            holder.itemView.setOnClickListener {
                 val intentPatientData = Intent(it.context, RequestedEmergencyActivity::class.java)
 
                 intentPatientData.putExtra("name", t.name)
