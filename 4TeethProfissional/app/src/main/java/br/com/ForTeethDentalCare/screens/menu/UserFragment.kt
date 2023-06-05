@@ -10,10 +10,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import br.com.ForTeethDentalCare.Constants
+import br.com.ForTeethDentalCare.CustomResponse
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentUserBinding
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import com.bumptech.glide.Glide
+import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -27,6 +29,7 @@ class UserFragment : Fragment() {
     private var _binding: FragmentUserBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var functions: FirebaseFunctions
+    private lateinit var status: Task<CustomResponse>
     private val db = Firebase.firestore
     private val storage = Firebase.storage
     private var user = FirebaseAuth.getInstance().currentUser
@@ -59,6 +62,7 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val auth = FirebaseAuth.getInstance()
+        val statusBtn = binding.BtnSwitch
 
         loadUserData()
 
@@ -69,15 +73,21 @@ class UserFragment : Fragment() {
         binding.userPicture.setOnClickListener {
             cameraProviderResult.launch(android.Manifest.permission.CAMERA)
         }
-        
-//        binding.BtnSwitch.setOnCheckedChangeListener { _, isChecked ->
-//            binding.BtnSwitch.isEnabled = false
-//            if (isChecked) {
-//                Constants.updateDentistData()
-//            } else {
-//                binding.btnLogout.text = "not checked"
-//            }
-//        }
+
+        statusBtn.setOnCheckedChangeListener { _, isChecked ->
+            statusBtn.isEnabled = false
+            if (isChecked) {
+                status = Constants.updateDentistData("1", "status")
+            } else {
+                status = Constants.updateDentistData("0", "status")
+            }
+            status.addOnSuccessListener {
+                statusBtn.isEnabled = true
+            }.addOnFailureListener {e ->
+                statusBtn.isEnabled = true
+                Log.w("Firebase", "erro ao alterar status", e)
+            }
+        }
     }
 
     private fun cameraScreen() {
@@ -113,9 +123,6 @@ class UserFragment : Fragment() {
 //                    Glide.with(requireContext())
 //                        .load(gsReference)
 //                        .into(imageView)
-                    if (document.data["status"].toString() == "1") {
-                        binding.BtnSwitch.toggle()
-                    }
                     binding.tvUserName.text = document.data["nome"].toString()
                     binding.tvUserMail.text = document.data["email"].toString()
                     binding.tvUserPhone.text = document.data["telefone"].toString()
