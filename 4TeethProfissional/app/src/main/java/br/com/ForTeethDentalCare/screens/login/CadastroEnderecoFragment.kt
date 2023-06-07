@@ -26,7 +26,6 @@ import br.com.ForTeethDentalCare.databinding.FragmentCadastroEnderecoBinding
 
 class CadastroEnderecoFragment : Fragment() {
 
-    private val TAG = "SignUpFragment"
     private lateinit var auth: FirebaseAuth
     private lateinit var functions: FirebaseFunctions
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
@@ -83,7 +82,7 @@ class CadastroEnderecoFragment : Fragment() {
         }
     }
 
-    fun JSONObject.toMap(): Map<String, *> = keys().asSequence().associateWith {
+    fun JSONObject.toMap(): Map<String, *> = keys().asSequence().associateWith { it ->
         when (val value = this[it])
         {
             is JSONArray ->
@@ -112,19 +111,16 @@ class CadastroEnderecoFragment : Fragment() {
         status: String
     ) {
         auth = Firebase.auth
-        // auth.useEmulator("127.0.0.1", 5001)
-        // invocar a função e receber o retorno fazendo Cast para "CustomResponse"
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "createUserWithEmail:success")
+                    Log.d("SignUpFragment", "createUserWithEmail:success")
                     val user = auth.currentUser
                     (activity as LoginActivity).storeUserId(user!!.uid)
                     // atualizar o perfil do usuário com os dados chamando a function.
                     updateUserProfile(nome, telefone, email, curriculo, cep1, endereco1, cep2, endereco2, cep3, endereco3, user.uid, fcmToken, status)
                         .addOnCompleteListener(requireActivity()) { res ->
-                            // conta criada com sucesso.
                             if(res.result.status == "SUCCESS"){
                                 hideKeyboard()
                                 Snackbar.make(requireView(),"Conta cadastrada! Pode fazer o login!",Snackbar.LENGTH_LONG).show()
@@ -132,11 +128,9 @@ class CadastroEnderecoFragment : Fragment() {
                             }
                         }
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    Log.w("SignUpFragment", "createUserWithEmail:failure", task.exception)
                     Toast.makeText(requireActivity(), "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-                    // dar seguimento ao tratamento de erro.
                 }
             }
     }
@@ -145,7 +139,6 @@ class CadastroEnderecoFragment : Fragment() {
         // chamar a function para atualizar o perfil.
         functions = Firebase.functions("southamerica-east1")
 
-        // Create the arguments to the callable function.
         val data = hashMapOf(
             "nome" to nome, "telefone" to telefone,
             "email" to email, "curriculo" to curriculo,

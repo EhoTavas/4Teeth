@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -37,7 +38,7 @@ class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMenuBinding
-    lateinit var storage: FirebaseStorage
+    private lateinit var storage: FirebaseStorage
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
     private val user = FirebaseAuth.getInstance().currentUser
@@ -46,7 +47,7 @@ class MenuActivity : AppCompatActivity() {
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
         if (!isGranted) {
-            navController.navigate(R.id.Login_to_notificationsAreDisabledFragment)
+            navController.navigate(R.id.menuFragment_to_notificationsAreDisabledFragment)
         }
     }
 
@@ -82,7 +83,7 @@ class MenuActivity : AppCompatActivity() {
         val storageRef = storage.reference
         var imagesRef: StorageReference? = storageRef.child("DentistUserPictures")
 
-        val navController = findNavController(R.id.nav_host_fragment_content_menu)
+        navController = findNavController(R.id.nav_host_fragment_content_menu)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 

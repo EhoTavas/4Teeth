@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/notificationsAreDisabledFragment"
-        android:name="br.com.ForTeethDentalCare.screens.login.NotificationsAreDisabledFragment"
+        android:name="br.com.ForTeethDentalCare.screens.NotificationsAreDisabledFragment"
         android:label="fragment_notifications_are_disabled"
         tools:layout="@layout/fragment_notifications_are_disabled" >
         <action
