@@ -1,7 +1,14 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:path/path.dart' as Path;
 
+import 'display_picture.dart';
 import 'firebase_options.dart';
 
 //Tela inicial
@@ -83,17 +90,14 @@ class _MyAppState extends State<MyApp> {
                   child: Column(
                     children: [
                       const ContainerWithText(
-                        imagePath: 'assets/images/CAM.png',
                         buttonText: 'Tirar Foto',
                         text: 'Fotografe a região/boca acidentada:',
                       ),
                       const ContainerWithText(
-                        imagePath: 'assets/images/CAM.png',
                         buttonText: 'Tirar Foto',
                         text: 'Envie uma foto do documento do responsável:',
                       ),
                       const ContainerWithText(
-                        imagePath: 'assets/images/CAM.png',
                         buttonText: 'Tirar Foto',
                         text: 'Tire uma foto com a criança:',
                       ),
@@ -223,17 +227,49 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class ContainerWithText extends StatelessWidget {
-  final String imagePath;
+class ContainerWithText extends StatefulWidget {
   final String buttonText;
   final String text;
 
   const ContainerWithText({
     Key? key,
-    required this.imagePath,
     required this.buttonText,
     required this.text,
   }) : super(key: key);
+
+  @override
+  State<ContainerWithText> createState() => _ContainerWithTextState();
+}
+
+class _ContainerWithTextState extends State<ContainerWithText> {
+  String? imagePath;
+
+  void _takePhoto() async {
+    try {
+      ImagePicker imagePicker = ImagePicker();
+      XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
+
+      if (file == null) return;
+      String pictureName = DateTime.now().millisecondsSinceEpoch.toString();
+
+      Reference referenceRoot = FirebaseStorage.instance.ref();
+      Reference referenceDirImages = referenceRoot.child('images');
+      Reference referenceImageToUpload = referenceDirImages.child(pictureName);
+      try {
+        // Faz o upload da imagem para o Firebase Storage
+        await referenceImageToUpload.putFile(File(file.path));
+
+        // Recupera a URL de download e atualiza a variável imagePath
+        String imageUrl = await referenceImageToUpload.getDownloadURL();
+
+        setState(() {
+          imagePath = imageUrl;
+        });
+      } catch (error) {}
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -243,8 +279,8 @@ class ContainerWithText extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            text,
-            textAlign: TextAlign.center,
+            widget.text,
+            textAlign: TextAlign.left,
             style: const TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
@@ -263,16 +299,13 @@ class ContainerWithText extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.contain,
+                  child: imagePath == null
+                      ? Image.asset('assets/images/CAM.png', fit: BoxFit.cover)
+                      : Image.network(imagePath!, fit: BoxFit.cover)
                 ),
-              ),
               const SizedBox(width: 20.0),
               ElevatedButton(
-                onPressed: () {
-                  // Lógica para abrir a câmera
-                },
+                onPressed: _takePhoto,
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: const Color(0xFF33DCDE),
@@ -284,7 +317,7 @@ class ContainerWithText extends StatelessWidget {
                     horizontal: 24.0,
                   ),
                 ),
-                child: Text(buttonText),
+                child: Text(widget.buttonText),
               ),
             ],
           ),
@@ -292,9 +325,18 @@ class ContainerWithText extends StatelessWidget {
       ),
     );
   }
+
+  Future<String> uploadImageToFirebase(File imageFile) async {
+    String fileName = Path.basename(imageFile.path);
+    Reference storageReference =
+    FirebaseStorage.instance.ref().child('images/$fileName');
+    UploadTask uploadTask = storageReference.putFile(imageFile);
+    TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
+  }
 }
 
-//
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -385,39 +427,6 @@ class ContainerWithText extends StatelessWidget {
 //     return downloadUrl;
 //   }
 //
-//   void _takePhoto() async {
-//     // Take the Picture in a try / catch block. If anything goes wrong, catch the error.
-//     try {
-//       String imageUrl = '';
-//       ImagePicker imagePicker = ImagePicker();
-//       XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
-//
-//       if (file == null) return;
-//       String pictureName = DateTime.now().millisecondsSinceEpoch.toString();
-//
-//       Reference referenceRoot = FirebaseStorage.instance.ref();
-//       Reference referenceDirImages = referenceRoot.child('images');
-//
-//       Reference referenceImageToUpload = referenceDirImages.child(pictureName);
-//       try {
-//         // Faz o upload da imagem para o Firebase Storage
-//         await referenceImageToUpload.putFile(File(file.path));
-//
-//         imageUrl = await referenceImageToUpload.getDownloadURL();
-//       } catch (error) {}
-//       await _navigator.push(
-//         MaterialPageRoute(
-//           builder: (context) => DisplayPicture(
-//             // Pass the automatically generated path to the DisplayPictureScreen widget.
-//             imagePath: file.path,
-//           ),
-//         ),
-//       );
-//     } catch (e) {
-//       // If an error occurs, log the error to the console.
-//       print(e);
-//     }
-//   }
 // }
 //
 // class MyApp extends StatelessWidget {
