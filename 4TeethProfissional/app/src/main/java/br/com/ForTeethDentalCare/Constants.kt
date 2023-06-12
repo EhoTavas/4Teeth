@@ -9,11 +9,13 @@ import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
+import java.time.LocalDateTime
 
 object Constants {
     private lateinit var functions: FirebaseFunctions
@@ -67,8 +69,7 @@ object Constants {
         val emergencyData = hashMapOf(
             "dentist" to auth.currentUser!!.uid,
             "emergency" to emergencyId,
-            "status" to status,
-            "time" to FieldValue.serverTimestamp()
+            "status" to status
         )
 
         val task = functions

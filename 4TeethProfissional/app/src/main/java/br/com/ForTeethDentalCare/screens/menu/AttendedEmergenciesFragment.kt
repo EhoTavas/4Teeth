@@ -8,10 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import br.com.ForTeethDentalCare.EmergenciesAdapter
+import br.com.ForTeethDentalCare.AttendedEmergenciesAdapter
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.databinding.FragmentAttendedEmergenciesBinding
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -19,7 +18,7 @@ class AttendedEmergenciesFragment : Fragment() {
 
     private var _binding: FragmentAttendedEmergenciesBinding? = null
     private val binding get() = _binding!!
-    private lateinit var emergenciesAdapter: EmergenciesAdapter
+    private lateinit var attendedEmergenciesAdapter: AttendedEmergenciesAdapter
     private val db = Firebase.firestore
     private var allEmergencies = ArrayList<Emergency>()
 
@@ -36,10 +35,10 @@ class AttendedEmergenciesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         allEmergencies.clear()
-        emergenciesAdapter = EmergenciesAdapter(allEmergencies)
+        attendedEmergenciesAdapter = AttendedEmergenciesAdapter(allEmergencies)
 
         binding.rvAttendedEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
-        binding.rvAttendedEmergencies.adapter = emergenciesAdapter
+        binding.rvAttendedEmergencies.adapter = attendedEmergenciesAdapter
     }
 
     override fun onStart() {
@@ -78,7 +77,7 @@ class AttendedEmergenciesFragment : Fragment() {
                 allEmergencies.add(emergency)
             }
 
-            emergenciesAdapter.notifyDataSetChanged()
+            attendedEmergenciesAdapter.notifyDataSetChanged()
         }
     }
 

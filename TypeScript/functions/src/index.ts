@@ -376,13 +376,8 @@ export const answerEmergency = functions
       payload: undefined,
     };
 
-    const dentistData = await db
-      .collection('Dentista')
-      .where('uid', '==', data.dentist)
-      .get();
-
     const answer = {
-      time: data.time,
+      time: admin.firestore.FieldValue.serverTimestamp(),
       emergency: data.emergency,
       dentist: data.dentist,
       status: data.status,
