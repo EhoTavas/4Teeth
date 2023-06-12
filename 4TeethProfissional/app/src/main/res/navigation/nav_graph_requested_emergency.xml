@@ -8,6 +8,5 @@
     <fragment
         android:id="@+id/emergencyFragment2"
         android:name="br.com.ForTeethDentalCare.screens.emergency.EmergencyFragment"
-        android:label="@string/title_fragment_emergency"
         tools:layout="@layout/fragment_emergency" />
 </navigation>

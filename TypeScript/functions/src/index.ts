@@ -382,12 +382,12 @@ export const answerEmergency = functions
       .get();
 
     const answer = {
-      time: admin.firestore.Timestamp.now().toDate().toISOString(),
+      time: data.time,
       emergency: data.emergency,
       dentist: data.dentist,
       status: data.status,
-      name: dentistData.docs[0].data().nome,
-      phone: dentistData.docs[0].data().telefone,
+      //name: dentistData.docs[0].data().nome,
+      //phone: dentistData.docs[0].data().telefone,
     };
 
     try {

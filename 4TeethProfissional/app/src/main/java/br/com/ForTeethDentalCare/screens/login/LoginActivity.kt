@@ -84,7 +84,6 @@ class LoginActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_login)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        // guardar o token FCM pois iremos precisar.
         storeFcmToken()
     }
 

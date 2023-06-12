@@ -29,7 +29,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08" />
 
         <activity
             android:name=".screens.menu.CameraActivity"
@@ -66,6 +66,9 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/teal_200" />
+        <meta-data
+            android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+            android:value="com.google.firebase.components.ComponentRegistrar" />
     </application>
 
 </manifest>

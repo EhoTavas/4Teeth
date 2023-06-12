@@ -43,7 +43,9 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>) :
 
                 intentPatientData.putExtra("name", t.name)
                 intentPatientData.putExtra("phone", t.phone)
-//                intentPatientData.putExtra("photos", t.photos)
+                intentPatientData.putExtra("fotoBoca", t.mouth)
+                intentPatientData.putExtra("fotoCrianca", t.document)
+                intentPatientData.putExtra("fotoDocumento", t.child)
 //                intentPatientData.putExtra("time", t.time)
                 intentPatientData.putExtra("id", t.id)
 

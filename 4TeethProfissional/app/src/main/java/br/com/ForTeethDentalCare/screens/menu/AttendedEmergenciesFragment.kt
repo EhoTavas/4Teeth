@@ -70,6 +70,9 @@ class AttendedEmergenciesFragment : Fragment() {
                     document.data["name"].toString(),
                     document.data["phone"].toString(),
                     document.data["dentist"].toString(),
+                    document.data["fotoBoca"].toString(),
+                    document.data["fotoCrianca"].toString(),
+                    document.data["fotoDocumento"].toString(),
                 )
 
                 allEmergencies.add(emergency)

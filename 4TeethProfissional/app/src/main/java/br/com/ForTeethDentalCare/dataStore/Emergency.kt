@@ -4,6 +4,8 @@ data class Emergency(
     val name: String,
     val phone: String,
     val id: String,
-    //val picture: Image,
+    val mouth: String,
+    val document: String,
+    val child: String,
     //val distance: String
 )

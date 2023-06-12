@@ -9,6 +9,7 @@ import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
@@ -66,7 +67,8 @@ object Constants {
         val emergencyData = hashMapOf(
             "dentist" to auth.currentUser!!.uid,
             "emergency" to emergencyId,
-            "status" to status
+            "status" to status,
+            "time" to FieldValue.serverTimestamp()
         )
 
         val task = functions
@@ -87,7 +89,7 @@ object Constants {
                     context.startActivity(intentLoginActivity)
                 }
             } else {
-                Log.d("REQ EMERGENCY", "Ocorreu um erro ao enviar as informações")
+                Log.e("REQ EMERGENCY", "Ocorreu um erro ao enviar as informações")
             }
         }
         return task

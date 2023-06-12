@@ -36,6 +36,9 @@ class _MyAppState extends State<MyApp> {
   TextEditingController phoneController = TextEditingController();
   FirebaseFirestore db = FirebaseFirestore.instance;
   late final NavigatorState _navigator;
+  XFile? fotoBoca;
+  XFile? fotoDocumento;
+  XFile? fotoCrianca;
 
   @override
   void dispose() {
@@ -89,17 +92,32 @@ class _MyAppState extends State<MyApp> {
                   padding: const EdgeInsets.all(7.0),
                   child: Column(
                     children: [
-                      const ContainerWithText(
+                      ContainerWithText(
                         buttonText: 'Tirar Foto',
                         text: 'Fotografe a região/boca acidentada:',
+                        onPhotoTaken: (XFile? photo) {
+                          setState(() {
+                            fotoBoca = photo;
+                          });
+                        },
                       ),
-                      const ContainerWithText(
+                      ContainerWithText(
                         buttonText: 'Tirar Foto',
                         text: 'Envie uma foto do documento do responsável:',
+                        onPhotoTaken: (XFile? photo) {
+                          setState(() {
+                            fotoDocumento = photo;
+                          });
+                        },
                       ),
-                      const ContainerWithText(
+                      ContainerWithText(
                         buttonText: 'Tirar Foto',
                         text: 'Tire uma foto com a criança:',
+                        onPhotoTaken: (XFile? photo) {
+                          setState(() {
+                            fotoCrianca = photo;
+                          });
+                        },
                       ),
                       const SizedBox(height: 1.0),
                       Container(
@@ -204,19 +222,46 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  Future<void> _takePhotoAndUpdate(XFile? imageFile) async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+
+    if (photo != null) {
+      setState(() {
+        imageFile = photo;
+      });
+    }
+  }
+
+  Future<String> uploadImageToFirebase(XFile? imageFile) async {
+    String fileName = Path.basename(imageFile!.path);
+    Reference storageReference =
+        FirebaseStorage.instance.ref().child('images/$fileName');
+    UploadTask uploadTask = storageReference.putFile(File(imageFile.path));
+    TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
+  }
+
   void _submitEmergency() async {
     try {
       String userName = nameController.text;
       String userPhone = phoneController.text;
+
+      String? fotoBocaUrl = fotoBoca == null ? null : await uploadImageToFirebase(fotoBoca);
+      String? fotoDocumentoUrl = fotoDocumento == null ? null : await uploadImageToFirebase(fotoDocumento);
+      String? fotoCriancaUrl = fotoCrianca == null ? null : await uploadImageToFirebase(fotoCrianca);
+
       // Define os dados que serão enviados
       Map<String, dynamic> data = {
         'name': userName,
         'phone': userPhone,
+        'fotoBoca': fotoBocaUrl,
+        'fotoDocumento': fotoDocumentoUrl,
+        'fotoCrianca': fotoCriancaUrl,
         'time': FieldValue.serverTimestamp(),
       };
       var docRef = await db.collection("Emergencias").add(data);
-          // .then((documentSnapshot) =>
-          // print("Added Data with ID: ${documentSnapshot.id}"));
       String docId = docRef.id;
       await db.collection("Emergencias").doc(docId).update({
         'id': docId,
@@ -230,11 +275,13 @@ class _MyAppState extends State<MyApp> {
 class ContainerWithText extends StatefulWidget {
   final String buttonText;
   final String text;
+  final Function(XFile?) onPhotoTaken;
 
   const ContainerWithText({
     Key? key,
     required this.buttonText,
     required this.text,
+    required this.onPhotoTaken,
   }) : super(key: key);
 
   @override
@@ -243,33 +290,6 @@ class ContainerWithText extends StatefulWidget {
 
 class _ContainerWithTextState extends State<ContainerWithText> {
   String? imagePath;
-
-  void _takePhoto() async {
-    try {
-      ImagePicker imagePicker = ImagePicker();
-      XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
-
-      if (file == null) return;
-      String pictureName = DateTime.now().millisecondsSinceEpoch.toString();
-
-      Reference referenceRoot = FirebaseStorage.instance.ref();
-      Reference referenceDirImages = referenceRoot.child('images');
-      Reference referenceImageToUpload = referenceDirImages.child(pictureName);
-      try {
-        // Faz o upload da imagem para o Firebase Storage
-        await referenceImageToUpload.putFile(File(file.path));
-
-        // Recupera a URL de download e atualiza a variável imagePath
-        String imageUrl = await referenceImageToUpload.getDownloadURL();
-
-        setState(() {
-          imagePath = imageUrl;
-        });
-      } catch (error) {}
-    } catch (e) {
-      print(e);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -305,7 +325,11 @@ class _ContainerWithTextState extends State<ContainerWithText> {
                 ),
               const SizedBox(width: 20.0),
               ElevatedButton(
-                onPressed: _takePhoto,
+                onPressed: () async {
+                  final ImagePicker _picker = ImagePicker();
+                  final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+                  widget.onPhotoTaken(photo);
+                },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: const Color(0xFF33DCDE),
