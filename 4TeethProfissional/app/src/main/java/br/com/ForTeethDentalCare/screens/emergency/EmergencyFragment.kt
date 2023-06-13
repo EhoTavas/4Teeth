@@ -55,15 +55,11 @@ class EmergencyFragment : Fragment() {
         binding.recyclerView.adapter = GalleryAdapter(imageRefs)
         binding.btnDecline.setOnClickListener {
             answerEmergency(false, id, it, requireActivity())
-            val intent = Intent(requireContext(), MenuActivity::class.java)
-            startActivity(intent)
-            //requireActivity().finish()
+            requireActivity().finish()
         }
         binding.btnAccept.setOnClickListener {
             answerEmergency(true, id, it, requireActivity())
-            val intent = Intent(requireContext(), MenuActivity::class.java)
-            startActivity(intent)
-            //requireActivity().finish()
+            requireActivity().finish()
         }
     }
 

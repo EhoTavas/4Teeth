@@ -68,13 +68,15 @@ class ServicesFragment : Fragment() {
             }
 
             for (document in value!!) {
-                service = Service(
-                    document.data["dentist"].toString(),
-                    document.data["emergency"].toString(),
-                    document.data["status"].toString()
-                )
+                if (document.data["status"].toString() == "0" || document.data["status"].toString() == "3") {
+                    service = Service(
+                        document.data["dentist"].toString(),
+                        document.data["emergency"].toString(),
+                        document.data["status"].toString()
+                    )
+                    allServices.add(service)
+                }
 
-                allServices.add(service)
             }
 
             servicesAdapter.notifyDataSetChanged()

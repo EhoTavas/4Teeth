@@ -39,7 +39,7 @@ class ServicesAdapter(private var dataSet: List<Service>) :
 
                 patientName.text = document?.get("name").toString()
             }
-            if (t.status == "1") {
+            if (t.status == "3") {
                 serviceStatus.text = itemView.context.getString(R.string.service_finished)
                 serviceStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.btnAccept))
             } else {

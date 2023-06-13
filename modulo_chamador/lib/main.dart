@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:modulo_chamador/accept_dentist.dart';
 import 'package:path/path.dart' as Path;
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -234,17 +235,6 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Future<void> _takePhotoAndUpdate(XFile? imageFile) async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-
-    if (photo != null) {
-      setState(() {
-        imageFile = photo;
-      });
-    }
-  }
-
   Future<String> uploadImageToFirebase(XFile? imageFile) async {
     String fileName = Path.basename(imageFile!.path);
     Reference storageReference =
@@ -283,6 +273,11 @@ class _MyAppState extends State<MyApp> {
         await db.collection("Emergencias").doc(docId).update({
           'id': docId,
         });
+        await _navigator.push(
+          MaterialPageRoute(builder: (context) => AcceptDentist(
+            docId: docId,
+          )),
+        );
       } catch (error) {
         print('Não foi possível adicionar dados ao banco $error');
       }
@@ -387,3 +382,33 @@ class _ContainerWithTextState extends State<ContainerWithText> {
     );
   }
 }
+//       } catch (error) {}
+//       await _navigator.push(
+//         MaterialPageRoute(
+//           builder: (context) => DisplayPicture(
+//             // Pass the automatically generated path to the DisplayPictureScreen widget.
+//             imagePath: file.path,
+//           ),
+//         ),
+//       );
+//     } catch (e) {
+//       // If an error occurs, log the error to the console.
+//       print(e);
+//     }
+//   }
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: '',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const Splash(),
+//     );
+//   }
+// }
