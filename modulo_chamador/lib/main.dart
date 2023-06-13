@@ -308,6 +308,7 @@ class _MyAppState extends State<MyApp> {
           'fotoBoca': fotoBocaUrl,
           'fotoDocumento': fotoDocumentoUrl,
           'fotoCrianca': fotoCriancaUrl,
+          'status': '0',
           'time': FieldValue.serverTimestamp(),
           'location': geoPoint,
         };

@@ -62,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:textColor="@color/yellow"
-                android:id="@+id/tvServiceStatus2"/>
+                android:id="@+id/tvRescuerStatus"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
