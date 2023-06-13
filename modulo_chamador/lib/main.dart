@@ -4,10 +4,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:path/path.dart' as Path;
 import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'display_picture.dart';
 import 'firebase_options.dart';
@@ -16,6 +20,13 @@ import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+
+    print('Usuário anônimo logado com sucesso: ${userCredential.user!.uid}');
+  } catch (e) {
+    print('Falha ao fazer login anônimo: $e');
+  }
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -245,33 +256,50 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _submitEmergency() async {
-    try {
-      String userName = nameController.text;
-      String userPhone = phoneController.text;
-      Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-      GeoPoint geoPoint = GeoPoint(position.latitude, position.longitude);
+    PermissionStatus status = await Permission.location.request();
 
-      String? fotoBocaUrl = fotoBoca == null ? null : await uploadImageToFirebase(fotoBoca);
-      String? fotoDocumentoUrl = fotoDocumento == null ? null : await uploadImageToFirebase(fotoDocumento);
-      String? fotoCriancaUrl = fotoCrianca == null ? null : await uploadImageToFirebase(fotoCrianca);
+    if (status.isGranted) {
+      try {
+        String userName = nameController.text;
+        String userPhone = phoneController.text;
+        Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+        GeoPoint geoPoint = GeoPoint(position.latitude, position.longitude);
 
-      // Define os dados que serão enviados
-      Map<String, dynamic> data = {
-        'name': userName,
-        'phone': userPhone,
-        'fotoBoca': fotoBocaUrl,
-        'fotoDocumento': fotoDocumentoUrl,
-        'fotoCrianca': fotoCriancaUrl,
-        'time': FieldValue.serverTimestamp(),
-        'location': geoPoint,
-      };
-      var docRef = await db.collection("Emergencias").add(data);
-      String docId = docRef.id;
-      await db.collection("Emergencias").doc(docId).update({
-        'id': docId,
-      });
-    } catch (error) {
-      print('Não foi possível adicionar dados ao banco $error');
+        String? fotoBocaUrl = fotoBoca == null ? null : await uploadImageToFirebase(fotoBoca);
+        String? fotoDocumentoUrl = fotoDocumento == null ? null : await uploadImageToFirebase(fotoDocumento);
+        String? fotoCriancaUrl = fotoCrianca == null ? null : await uploadImageToFirebase(fotoCrianca);
+
+        Map<String, dynamic> data = {
+          'name': userName,
+          'phone': userPhone,
+          'fotoBoca': fotoBocaUrl,
+          'fotoDocumento': fotoDocumentoUrl,
+          'fotoCrianca': fotoCriancaUrl,
+          'time': FieldValue.serverTimestamp(),
+          'location': geoPoint,
+        };
+        var docRef = await db.collection("Emergencias").add(data);
+        String docId = docRef.id;
+        await db.collection("Emergencias").doc(docId).update({
+          'id': docId,
+        });
+      } catch (error) {
+        print('Não foi possível adicionar dados ao banco $error');
+      }
+    } else {
+      if (status.isDenied) {
+        Fluttertoast.showToast(
+            msg: "Por favor, permita o acesso à localização para que possamos encontrar dentistas próximos a você.",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+      } else if (status.isPermanentlyDenied) {
+        openAppSettings();
+      }
     }
   }
 }
@@ -317,22 +345,27 @@ class _ContainerWithTextState extends State<ContainerWithText> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 100.0,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                   child: imagePath == null
                       ? Image.asset('assets/images/CAM.png', fit: BoxFit.cover)
-                      : Image.network(imagePath!, fit: BoxFit.cover)
-                ),
+                      : Image.file(File(imagePath!), fit: BoxFit.cover)),
               const SizedBox(width: 20.0),
               ElevatedButton(
                 onPressed: () async {
                   final ImagePicker _picker = ImagePicker();
-                  final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-                  widget.onPhotoTaken(photo);
+                  final XFile? photo =
+                      await _picker.pickImage(source: ImageSource.camera);
+                  if (photo != null) {
+                    widget.onPhotoTaken(photo);
+                    setState(() {
+                      imagePath = photo.path;
+                    });
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
@@ -352,15 +385,5 @@ class _ContainerWithTextState extends State<ContainerWithText> {
         ],
       ),
     );
-  }
-
-  Future<String> uploadImageToFirebase(File imageFile) async {
-    String fileName = Path.basename(imageFile.path);
-    Reference storageReference =
-    FirebaseStorage.instance.ref().child('images/$fileName');
-    UploadTask uploadTask = storageReference.putFile(imageFile);
-    TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
-    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
-    return downloadUrl;
   }
 }

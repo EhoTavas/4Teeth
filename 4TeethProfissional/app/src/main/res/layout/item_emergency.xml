@@ -20,22 +20,23 @@
 
     <!--CONTAINER CONTEUDO-->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="203dp"
+        android:layout_width="match_parent"
         android:layout_height="163dp"
         android:layout_gravity="top|center"
         android:orientation="vertical">
 
         <!--STR TITLE-->
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="183dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPatientName"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -44,7 +45,7 @@
                 android:id="@+id/imgMapPing"
                 android:layout_width="23dp"
                 android:layout_height="23dp"
-                android:layout_gravity="top|center_horizontal"
+                android:layout_gravity="top|end"
                 android:layout_marginTop="2dp"
                 android:textAppearance="?attr/textAppearanceHeadline5"
                 android:contentDescription="@string/clientImageDescription"
@@ -52,8 +53,9 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPatientDistance"
-                android:layout_width="39dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
                 android:text="5km"
                 android:textColor="@color/black"

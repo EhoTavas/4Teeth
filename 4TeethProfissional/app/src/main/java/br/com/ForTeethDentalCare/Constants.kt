@@ -21,25 +21,6 @@ object Constants {
     private lateinit var functions: FirebaseFunctions
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
     private lateinit var auth: FirebaseAuth
-    private var user = FirebaseAuth.getInstance().currentUser
-    val uid = user!!.uid
-    private var userData: String = ""
-
-    fun sendMessage(textContent: String, fcmToken: String) : Task<CustomResponse> {
-        val data = hashMapOf(
-            "textContent" to textContent,
-            "fcmToken" to fcmToken
-        )
-        // enviar a mensagem, invocando a function...
-        functions = Firebase.functions("southamerica-east1")
-        return functions.getHttpsCallable("sendFcmMessage")
-            .call(data)
-            .continueWith { task ->
-                val result =
-                    gson.fromJson((task.result?.data as String), CustomResponse::class.java)
-                result
-            }
-    }
 
     fun updateDentistData(data: String, field: String) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")

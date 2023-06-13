@@ -9,7 +9,7 @@
     android:clickable="true"
     android:orientation="vertical"
     android:theme="@style/Theme.4TeethProfissional"
-    tools:context=".screens.menu.AttendedEmergenciesFragment">
+    tools:context=".screens.menu.ServicesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_attended_emergencies"

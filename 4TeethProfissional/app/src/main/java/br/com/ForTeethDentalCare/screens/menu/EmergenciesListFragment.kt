@@ -71,7 +71,6 @@ class EmergenciesListFragment : Fragment() {
                     document.data["fotoBoca"].toString(),
                     document.data["fotoCrianca"].toString(),
                     document.data["fotoDocumento"].toString(),
-                    //Adicionar aqui as outras informações que serão enviadas pelo socorrista
                 )
 
                 allEmergencies.add(emergency)

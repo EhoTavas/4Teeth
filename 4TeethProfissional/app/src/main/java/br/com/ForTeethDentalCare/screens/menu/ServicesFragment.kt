@@ -8,37 +8,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import br.com.ForTeethDentalCare.AttendedEmergenciesAdapter
-import br.com.ForTeethDentalCare.dataStore.Emergency
-import br.com.ForTeethDentalCare.databinding.FragmentAttendedEmergenciesBinding
+import br.com.ForTeethDentalCare.ServicesAdapter
+import br.com.ForTeethDentalCare.dataStore.Service
+import br.com.ForTeethDentalCare.databinding.FragmentServicesBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class AttendedEmergenciesFragment : Fragment() {
+class ServicesFragment : Fragment() {
 
-    private var _binding: FragmentAttendedEmergenciesBinding? = null
+    private var _binding: FragmentServicesBinding? = null
     private val binding get() = _binding!!
-    private lateinit var attendedEmergenciesAdapter: AttendedEmergenciesAdapter
+    private lateinit var servicesAdapter: ServicesAdapter
     private val db = Firebase.firestore
-    private var allEmergencies = ArrayList<Emergency>()
+    private var user = FirebaseAuth.getInstance().currentUser
+    private var allServices = ArrayList<Service>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAttendedEmergenciesBinding.inflate(inflater, container, false)
+        _binding = FragmentServicesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        allEmergencies.clear()
-        attendedEmergenciesAdapter = AttendedEmergenciesAdapter(allEmergencies)
+        allServices.clear()
+        servicesAdapter = ServicesAdapter(allServices)
 
         binding.rvAttendedEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
-        binding.rvAttendedEmergencies.adapter = attendedEmergenciesAdapter
+        binding.rvAttendedEmergencies.adapter = servicesAdapter
     }
 
     override fun onStart() {
@@ -54,30 +57,27 @@ class AttendedEmergenciesFragment : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     private fun loadEmergencies() {
         val collection = db.collection("Atendimentos")
-            .whereEqualTo("status", "1")
-            //.orderBy("time", Query.Direction.DESCENDING)
-        var emergency: Emergency
+            .whereEqualTo("dentist", user!!.uid)
+            .orderBy("time", Query.Direction.DESCENDING)
+        var service: Service
         collection.addSnapshotListener { value, e ->
-            allEmergencies.clear()
+            allServices.clear()
             if (e!= null) {
                 Log.e("FirestoreListener", "Erro ao ler emergencias atendidas", e)
                 return@addSnapshotListener
             }
 
             for (document in value!!) {
-                emergency = Emergency(
-                    document.data["name"].toString(),
-                    document.data["phone"].toString(),
+                service = Service(
                     document.data["dentist"].toString(),
-                    document.data["fotoBoca"].toString(),
-                    document.data["fotoCrianca"].toString(),
-                    document.data["fotoDocumento"].toString(),
+                    document.data["emergency"].toString(),
+                    document.data["status"].toString()
                 )
 
-                allEmergencies.add(emergency)
+                allServices.add(service)
             }
 
-            attendedEmergenciesAdapter.notifyDataSetChanged()
+            servicesAdapter.notifyDataSetChanged()
         }
     }
 

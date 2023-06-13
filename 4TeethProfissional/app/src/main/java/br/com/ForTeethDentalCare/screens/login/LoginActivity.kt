@@ -48,7 +48,6 @@ class LoginActivity : AppCompatActivity() {
             if (!task.isSuccessful) {
                 return@OnCompleteListener
             }
-            // guardar esse token.
             userPreferencesRepository.fcmToken = task.result
         })
     }

@@ -43,14 +43,13 @@ class EmergencyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//tvPatientName
+
         id = getInfo("id")
         name = getInfo("name")
         mouth = getInfo("fotoBoca")
         document = getInfo("fotoDocumento")
         child = getInfo("fotoCrianca")
         binding.tvPatientName.text = name
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = name
         val imageRefs = listOf(mouth, document, child)
 
         binding.recyclerView.adapter = GalleryAdapter(imageRefs)

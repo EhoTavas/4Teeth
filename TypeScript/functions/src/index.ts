@@ -328,43 +328,46 @@ export const updateFcmToken = functions
     return JSON.stringify(cResponse);
   });
 
-export const sendFcmMessage = functions
-  .region("southamerica-east1")
-  .runWith({enforceAppCheck: false})
-  .https
-  .onCall(async (data, context) => {
-    const cResponse: CustomResponse = {
-      status: "ERROR",
-      message: "Dados não fornecidos ou incompletos",
-      payload: undefined,
-    };
-    // enviar uma mensagem para o token que veio.
-    if (data.fcmToken != undefined && data.textContent != undefined) {
-      try {
-        const message = {
-          data: {
-            text: data.textContent,
-          },
-          token: data.fcmToken,
-        };
-        const messageId = await firebase.messaging().send(message);
-        cResponse.status = "SUCCESS";
-        cResponse.message = "Mensagem enviada";
-        cResponse.payload = JSON.stringify({messageId: messageId});
-      } catch (e) {
-        let exMessage;
-        if (e instanceof Error) {
-          exMessage = e.message;
-        }
-        functions.logger.error("Erro ao enviar mensagem");
-        functions.logger.error("Exception: ", exMessage);
-        cResponse.status = "ERROR";
-        cResponse.message = "Erro ao enviar mensagem - Verificar Logs";
-        cResponse.payload = null;
-      }
-    }
-    return JSON.stringify(cResponse);
-  });
+// export const sendFcmMessage = functions
+//   .region("southamerica-east1")
+//   .runWith({enforceAppCheck: false})
+//   .https
+//   .onCall(async (data, context) => {
+//     const cResponse: CustomResponse = {
+//       status: "ERROR",
+//       message: "Dados não fornecidos ou incompletos",
+//       payload: undefined,
+//     };
+//     // enviar uma mensagem para o token que veio.
+//     if (data.fcmToken != undefined && data.textContent != undefined) {
+//       try {
+//         const message = {
+//           data: {
+//             text: data.textContent,
+//           },
+//           notification: {
+//             "title": data.title,
+//           },
+//           token: data.fcmToken,
+//         };
+//         const messageId = await firebase.messaging().send(message);
+//         cResponse.status = "SUCCESS";
+//         cResponse.message = "Mensagem enviada";
+//         cResponse.payload = JSON.stringify({messageId: messageId});
+//       } catch (e) {
+//         let exMessage;
+//         if (e instanceof Error) {
+//           exMessage = e.message;
+//         }
+//         functions.logger.error("Erro ao enviar mensagem");
+//         functions.logger.error("Exception: ", exMessage);
+//         cResponse.status = "ERROR";
+//         cResponse.message = "Erro ao enviar mensagem - Verificar Logs";
+//         cResponse.payload = null;
+//       }
+//     }
+//     return JSON.stringify(cResponse);
+//   });
 
 export const answerEmergency = functions
   .region("southamerica-east1")
@@ -424,13 +427,18 @@ export const onEmergencyCreate = functions
       const tokens = dentistaSnapshot.docs.map((doc) => doc.data().fcmToken);
       const multiMessage = {
         data: {
-          text: "Nova emergência disponível",
+          text: "Você possui uma nova emergência!",
+          name: snapshot.get('name'),
+          //phone: socorrista.phone,
+          //fotoBoca: socorrista.fotoBoca,
+          //fotoCrianca: socorrista.fotoCrianca,
+          //fotoDocumento: socorrista.fotoDocumento,
+          //id: socorrista.id,
         },
         tokens: tokens,
       };
 
-      await firebase
-        .messaging().sendEachForMulticast(multiMessage);
+      await firebase.messaging().sendEachForMulticast(multiMessage);
     } catch (error) {
       functions.logger.error("Erro critico notificacoes", error);
     }

@@ -30,6 +30,7 @@ class RequestedEmergencyActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        supportActionBar!!.title = intent.getStringExtra("name")
 
         val navController = findNavController(R.id.nav_host_fragment_content_requested_emergency)
         appBarConfiguration = AppBarConfiguration(navController.graph)
