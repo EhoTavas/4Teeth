@@ -7,6 +7,5 @@ data class Emergency(
     val mouth: String,
     val document: String,
     val child: String,
-    val status: String
     //val distance: String
 )

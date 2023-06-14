@@ -37,7 +37,6 @@ type Endereco = {
   cidade: string,
   estado: string,
   dentista: string,
-  ativo: string,
 }
 
 // type Emergency = {
@@ -73,12 +72,6 @@ function hasAccountData(data: Dentista) {
     data.email != undefined &&
     data.telefone != undefined &&
     data.curriculo != undefined &&
-  //    data.cep1 != undefined &&
-  //    data.endereco1 != undefined &&
-  //    data.cep2 != undefined &&
-  //    data.endereco2 != undefined &&
-  //    data.cep3 != undefined &&
-  //    data.endereco3 != undefined &&
     data.status != undefined &&
     data.uid != undefined &&
     data.fcmToken != undefined) {
@@ -87,21 +80,20 @@ function hasAccountData(data: Dentista) {
     return false;
   }
 }
-function hasAddressData(data: Endereco) {
-  if (data.ativo != undefined &&
-    data.bairro != undefined &&
-    data.cep != undefined &&
-    data.cidade != undefined &&
-    data.complemento != undefined &&
-    data.dentista != undefined &&
-    data.estado != undefined &&
-    data.numero != undefined &&
-    data.rua != undefined) {
-    return true;
-  } else {
-    return false;
-  }
-}
+
+// function hasAddressData(data: Endereco) {
+//   if (data.bairro != undefined &&
+//     data.cep != undefined &&
+//     data.cidade != undefined &&
+//     data.dentista != undefined &&
+//     data.estado != undefined &&
+//     data.numero != undefined &&
+//     data.rua != undefined) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 export const setUserProfile = functions
   .region("southamerica-east1")
@@ -113,7 +105,6 @@ export const setUserProfile = functions
       message: "Dados não fornecidos",
       payload: undefined,
     };
-    // verificar se o objeto dentista foi fornecido
     const dentista = (data as Dentista);
     if (hasAccountData(dentista)) {
       try {
@@ -198,35 +189,29 @@ export const setUserAddresses = functions
       payload: undefined,
     };
     const endereco = (data as Endereco);
-    if (hasAddressData(endereco)) {
-      try {
-        const doc = await firebase.firestore()
-          .collection("Endereco")
-          .add(endereco);
-        if (doc.id != undefined) {
-          cResponse.status = "STATUS";
-          cResponse.message = "Endereço inserido";
-          cResponse.payload = JSON.stringify({docId: doc.id});
-        } else {
-          cResponse.status = "ERROR";
-          cResponse.message = "Não foi possível inserir o endereço";
-          cResponse.payload = JSON.stringify({errorDetail: "doc.id"});
-        }
-      } catch (e) {
-        let exMessage;
-        if (e instanceof Error) {
-          exMessage = e.message;
-        }
-        functions.logger.error("Erro ao incluir endereço: ", endereco.cep);
-        functions.logger.error("Exception: ", exMessage);
+    try {
+      const doc = await firebase.firestore()
+        .collection("Endereco")
+        .add(endereco);
+      if (doc.id != undefined) {
+        cResponse.status = "STATUS";
+        cResponse.message = "Endereço inserido";
+        cResponse.payload = JSON.stringify({docId: doc.id});
+      } else {
         cResponse.status = "ERROR";
-        cResponse.message = "Erro ao incluir endereço - Verificar Logs";
-        cResponse.payload = null;
+        cResponse.message = "Não foi possível inserir o endereço";
+        cResponse.payload = JSON.stringify({errorDetail: "doc.id"});
       }
-    } else {
+    } catch (e) {
+      let exMessage;
+      if (e instanceof Error) {
+        exMessage = e.message;
+      }
+      functions.logger.error("Erro ao incluir endereço: ", endereco.cep);
+      functions.logger.error("Exception: ", exMessage);
       cResponse.status = "ERROR";
-      cResponse.message = "Endereço com informações insuficientes";
-      cResponse.payload = undefined;
+      cResponse.message = "Erro ao incluir endereço - Verificar Logs";
+      cResponse.payload = null;
     }
     return JSON.stringify(cResponse);
   });

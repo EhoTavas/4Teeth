@@ -382,33 +382,3 @@ class _ContainerWithTextState extends State<ContainerWithText> {
     );
   }
 }
-//       } catch (error) {}
-//       await _navigator.push(
-//         MaterialPageRoute(
-//           builder: (context) => DisplayPicture(
-//             // Pass the automatically generated path to the DisplayPictureScreen widget.
-//             imagePath: file.path,
-//           ),
-//         ),
-//       );
-//     } catch (e) {
-//       // If an error occurs, log the error to the console.
-//       print(e);
-//     }
-//   }
-// }
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: '',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: const Splash(),
-//     );
-//   }
-// }

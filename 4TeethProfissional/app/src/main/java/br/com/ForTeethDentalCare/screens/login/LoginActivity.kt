@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.ui.navigateUp
 import br.com.ForTeethDentalCare.R
+import br.com.ForTeethDentalCare.dataStore.Address
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
@@ -37,7 +38,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
-    public var dentist: Dentist = Dentist("", "", "", "", "", "", "", "", "", "", "", "", "1")
+    public var dentist: Dentist = Dentist("", "", "", "", "", "", "1")
+    public var address: Address = Address("", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "","")
 
     fun storeUserId(uid: String){
         userPreferencesRepository.uid = uid

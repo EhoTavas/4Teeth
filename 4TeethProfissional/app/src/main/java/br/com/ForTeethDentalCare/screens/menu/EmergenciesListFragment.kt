@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import br.com.ForTeethDentalCare.EmergenciesAdapter
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.databinding.FragmentEmergenciesListBinding
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -20,7 +23,9 @@ class EmergenciesListFragment : Fragment() {
     private var _binding: FragmentEmergenciesListBinding? = null
     private val binding get() = _binding!!
     private lateinit var emergenciesAdapter: EmergenciesAdapter
+    private lateinit var service: Task<QuerySnapshot>
     private val db = Firebase.firestore
+    private var user = FirebaseAuth.getInstance().currentUser
     private var allEmergencies = ArrayList<Emergency>()
 
     override fun onCreateView(
@@ -64,19 +69,34 @@ class EmergenciesListFragment : Fragment() {
             }
 
             for (document in value!!) {
-                emergency = Emergency(
-                    document.data["name"].toString(),
-                    document.data["phone"].toString(),
-                    document.data["id"].toString(),
-                    document.data["fotoBoca"].toString(),
-                    document.data["fotoCrianca"].toString(),
-                    document.data["fotoDocumento"].toString(),
-                )
+                val emergencyId = document.data["id"].toString()
+                val servicesRef = db.collection("Atendimentos").whereEqualTo("emergency", emergencyId)
+                servicesRef.get().addOnSuccessListener { services ->
+                    var addEmergency = true
+                    for (service in services) {
+                        val dentistUid = service.data["dentist"].toString()
+                        val status = service.data["status"].toString()
 
-                allEmergencies.add(emergency)
+                        if (dentistUid == user!!.uid && !(status == "1" || status == "2")) {
+                            addEmergency = false
+                            break
+                        }
+                    }
+
+                    if (addEmergency) {
+                        emergency = Emergency(
+                            document.data["name"].toString(),
+                            document.data["phone"].toString(),
+                            document.data["id"].toString(),
+                            document.data["fotoBoca"].toString(),
+                            document.data["fotoCrianca"].toString(),
+                            document.data["fotoDocumento"].toString(),
+                        )
+                        allEmergencies.add(emergency)
+                        emergenciesAdapter.notifyDataSetChanged()
+                    }
+                }
             }
-
-            emergenciesAdapter.notifyDataSetChanged()
         }
     }
 }

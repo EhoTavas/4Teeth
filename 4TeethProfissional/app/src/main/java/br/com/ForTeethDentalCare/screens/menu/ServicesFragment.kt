@@ -68,7 +68,7 @@ class ServicesFragment : Fragment() {
             }
 
             for (document in value!!) {
-                if (document.data["status"].toString() == "0" || document.data["status"].toString() == "3") {
+                if (document.data["status"].toString() == "3") {
                     service = Service(
                         document.data["dentist"].toString(),
                         document.data["emergency"].toString(),

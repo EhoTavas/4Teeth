@@ -133,19 +133,21 @@ class UserFragment : Fragment() {
 
             for (document in value!!) {
                 if (document.data["email"].toString() == email) {
-                    val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(
-                        document.data["foto"].toString()
-                    )
-                    val imageView: ImageView = binding.userPicture
+                    if (document.data["foto"] != null) {
+                        val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(
+                            document.data["foto"].toString()
+                        )
+                        val imageView: ImageView = binding.userPicture
 
-                    storageReference.downloadUrl.addOnSuccessListener {
-                        val imageUrl = it.toString()
-                        Glide.with(requireContext())
-                            .load(imageUrl)
-                            .circleCrop()
-                            .into(imageView)
-                    }.addOnFailureListener {
-                        Log.e("Imagem", "A imagem não pôde ser recuperada")
+                        storageReference.downloadUrl.addOnSuccessListener {
+                            val imageUrl = it.toString()
+                            Glide.with(requireContext())
+                                .load(imageUrl)
+                                .circleCrop()
+                                .into(imageView)
+                        }.addOnFailureListener {
+                            Log.e("Imagem", "A imagem não pôde ser recuperada")
+                        }
                     }
                     if (document.data["status"].toString() == "1") {
                         binding.BtnSwitch.isChecked = true

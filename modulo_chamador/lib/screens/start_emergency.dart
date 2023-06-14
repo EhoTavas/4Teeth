@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-//Tela inicial
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +32,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           child: SingleChildScrollView(
+            physics: const ClampingScrollPhysics(), // Adicionado para evitar o erro
             child: Column(
               children: [
                 const SizedBox(height: 75.0),
@@ -69,34 +69,34 @@ class MyApp extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20.0),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.0,
+                                  vertical: 1.0,
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 20.0,
-                                    vertical: 1.0,
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Nome:',
-                                        style: TextStyle(
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Nome:',
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      TextField(
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                        ),
+                                    ),
+                                    TextField(
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
                                       ),
-                                    ],
-                                  ),
-                                )),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                             const SizedBox(height: 10.0),
                             Container(
                               decoration: BoxDecoration(
@@ -122,7 +122,7 @@ class MyApp extends StatelessWidget {
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -130,7 +130,70 @@ class MyApp extends StatelessWidget {
                             const SizedBox(height: 10.0),
                             ElevatedButton(
                               onPressed: () {
-                                // Ação do botão
+                                showDialog(
+                                  context: context,
+                                  barrierDismissible: false,
+                                  builder: (BuildContext context) {
+                                    return Dialog(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(10.0),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            const SizedBox(height: 20.0),
+                                            const CircularProgressIndicator(),
+                                            const SizedBox(height: 20.0),
+                                            const Text(
+                                              'Estamos procurando profissionais para te auxiliar',
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            const SizedBox(height: 10.0),
+                                            const Text(
+                                              'Profissionais avisados...',
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            const SizedBox(height: 10.0),
+                                            const Text(
+                                              'Aguarde...',
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            const SizedBox(height: 20.0),
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.pop(context); // Fechar a caixa de diálogo
+                                              },
+                                              style: ElevatedButton.styleFrom(
+                                                foregroundColor: Colors.white,
+                                                backgroundColor: const Color(0xFF33DCDE),
+                                                textStyle: const TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(20.0),
+                                                ),
+                                                padding: const EdgeInsets.symmetric(
+                                                  vertical: 12.0,
+                                                  horizontal: 24.0,
+                                                ),
+                                              ),
+                                              child: const Text('Cancelar'),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white,
