@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class MapSample extends StatefulWidget {
   final double callerLongitude;
   final double dentistLatitude;
   final double dentistLongitude;
+  final String phone;
 
   const MapSample({
     Key? key,
@@ -18,6 +20,7 @@ class MapSample extends StatefulWidget {
     required this.callerLongitude,
     required this.dentistLatitude,
     required this.dentistLongitude,
+    required this.phone,
   }) : super(key: key);
 
   @override
@@ -85,7 +88,6 @@ class MapSampleState extends State<MapSample> {
         index++;
         shift++;
       } while (c >= 32);
-      /* if value is negtive then bitwise not the value */
       if (result & 1 == 1) {
         result = ~result;
       }
@@ -93,19 +95,15 @@ class MapSampleState extends State<MapSample> {
       lList.add(result1);
     } while (index < len);
 
-    /* adding to previous value as done in encoding */
     for (var i = 2; i < lList.length; i++) {
       lList[i] += lList[i - 2];
     }
-
-    print(lList.toString());
 
     return lList;
   }
   @override
   void initState() {
     super.initState();
-
     setupPolylines();
   }
 
@@ -130,18 +128,73 @@ class MapSampleState extends State<MapSample> {
   Widget build(BuildContext context) {
     CameraPosition kGooglePlex = CameraPosition(
       target: LatLng(widget.dentistLatitude, widget.dentistLongitude),
-      zoom: 10.000,
+      zoom: 15.000,
     );
     return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.normal,
-        initialCameraPosition: kGooglePlex,
-        markers: _markers,
-        polylines: _polylines,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+      body: Stack(
+        children: [
+          GoogleMap(
+            mapType: MapType.normal,
+            initialCameraPosition: kGooglePlex,
+            markers: _markers,
+            polylines: _polylines,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
+          ),
+          // Positioned(
+          //   bottom: 10,
+          //   left: 10,
+          //   right: 10,
+          //   child: Container(
+          //     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+          //     decoration: BoxDecoration(
+          //       color: Colors.white,
+          //       borderRadius: BorderRadius.circular(50.0),
+          //       boxShadow: [BoxShadow(
+          //         color: Colors.black.withOpacity(0.16),
+          //         offset: const Offset(0, 3),
+          //         blurRadius: 6,
+          //       )],
+          //     ),
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //       children: <Widget>[
+          //         Text(
+          //           widget.phone, // Substitua com o número de telefone do dentista
+          //           style: const TextStyle(
+          //             fontSize: 16,
+          //             color: Colors.black,
+          //           ),
+          //         ),
+          //         Container(
+          //           width: 50,
+          //           height: 50,
+          //           decoration: const BoxDecoration(
+          //             shape: BoxShape.circle,
+          //             color: Colors.lightBlue,
+          //           ),
+          //           child: IconButton(
+          //             onPressed: () {
+          //               final strippedNumber = widget.phone.replaceAll(RegExp(r'[^0-9+]'), '');
+          //               _launchURL("tel:$strippedNumber");
+          //             }, // Substitua com o número de telefone do dentista
+          //             icon: const Icon(
+          //               Icons.phone,
+          //               color: Colors.white,
+          //             ),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+        ],
       ),
     );
   }
+
+  void _launchURL(String url) async =>
+      await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+
 }

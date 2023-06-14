@@ -51,6 +51,7 @@ dependencies:
   permission_handler: ^10.3.0
   path_provider:
   path: ^1.8.0
+  url_launcher: ^6.0.10
   uuid: ^3.0.7
 
 dev_dependencies:
