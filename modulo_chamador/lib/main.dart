@@ -4,20 +4,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:modulo_chamador/accept_dentist.dart';
 import 'package:path/path.dart' as Path;
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'display_picture.dart';
 import 'firebase_options.dart';
 
-//Tela inicial
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -201,7 +197,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             const SizedBox(height: 10.0),
                             ElevatedButton(
-                              onPressed: _submitEmergency,
+                              onPressed: _onButtonPressed,
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white,
                                 backgroundColor: const Color(0xFF33DCDE),
@@ -245,7 +241,53 @@ class _MyAppState extends State<MyApp> {
     return downloadUrl;
   }
 
-  void _submitEmergency() async {
+  void _onButtonPressed() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Container(
+            padding: const EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 10.0),
+                CircularProgressIndicator(),
+                SizedBox(height: 10.0),
+                Text(
+                  'Estamos procurando profissionais para te auxiliar',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Profissionais avisados...',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Aguarde...',
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+
+    _submitEmergency().then((_) {
+      Navigator.of(context, rootNavigator: true).pop();
+    });
+  }
+  Future<void> _submitEmergency() async {
     PermissionStatus status = await Permission.location.request();
 
     if (status.isGranted) {

@@ -43,6 +43,7 @@ dependencies:
   fluttertoast: ^8.2.2
   gallery_saver: ^2.3.2
   geolocator: ^9.0.2
+  google_maps_flutter: ^2.3.0
   image_picker: ^0.8.7+5
   permission_handler: ^10.3.0
   path_provider:

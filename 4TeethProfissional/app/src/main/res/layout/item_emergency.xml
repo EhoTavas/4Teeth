@@ -10,14 +10,6 @@
     android:orientation="horizontal"
     android:padding="8dp">
 
-    <ImageView
-        android:id="@+id/imgPatientPicture"
-        android:layout_width="120dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center"
-        android:contentDescription="@string/clientImageDescription"
-        app:srcCompat="@drawable/ic_man_cyan" />
-
     <!--CONTAINER CONTEUDO-->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
