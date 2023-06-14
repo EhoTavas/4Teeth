@@ -12,6 +12,8 @@ import br.com.ForTeethDentalCare.EmergenciesAdapter
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.databinding.FragmentEmergenciesListBinding
 import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
@@ -61,8 +63,11 @@ class EmergenciesListFragment : Fragment() {
     private fun loadEmergencies() {
         val collection = db.collection("Emergencias").orderBy("time", Query.Direction.DESCENDING)
         var emergency: Emergency
+
         collection.addSnapshotListener { value, e ->
             allEmergencies.clear()
+            val pendingTasks = mutableListOf<Task<*>>()
+
             if (e != null) {
                 Log.e("FirestoreListener", "Erro ao ler novas emergências", e)
                 return@addSnapshotListener
@@ -70,33 +75,44 @@ class EmergenciesListFragment : Fragment() {
 
             for (document in value!!) {
                 val emergencyId = document.data["id"].toString()
-                val servicesRef = db.collection("Atendimentos").whereEqualTo("emergency", emergencyId)
-                servicesRef.get().addOnSuccessListener { services ->
-                    var addEmergency = true
-                    for (service in services) {
-                        val dentistUid = service.data["dentist"].toString()
-                        val status = service.data["status"].toString()
+                val servicesRef =
+                    db.collection("Atendimentos").whereEqualTo("emergency", emergencyId)
+                val task = servicesRef.get().continueWith { task ->
+                    if (task.isSuccessful) {
+                        var addEmergency = true
+                        for (service in task.result!!) {
+                            val dentistUid = service.data["dentist"].toString()
+                            val status = service.data["status"].toString()
 
-                        if (dentistUid == user!!.uid && !(status == "1" || status == "2")) {
-                            addEmergency = false
-                            break
+                            if (dentistUid == user!!.uid && !(status == "1" || status == "2")) {
+                                addEmergency = false
+                                break
+                            }
+                        }
+
+                        if (addEmergency) {
+                            emergency = Emergency(
+                                document.data["name"].toString(),
+                                document.data["phone"].toString(),
+                                document.data["id"].toString(),
+                                document.data["fotoBoca"].toString(),
+                                document.data["fotoCrianca"].toString(),
+                                document.data["fotoDocumento"].toString(),
+                                document.data["time"] as Timestamp,
+                            )
+                            allEmergencies.add(emergency)
                         }
                     }
-
-                    if (addEmergency) {
-                        emergency = Emergency(
-                            document.data["name"].toString(),
-                            document.data["phone"].toString(),
-                            document.data["id"].toString(),
-                            document.data["fotoBoca"].toString(),
-                            document.data["fotoCrianca"].toString(),
-                            document.data["fotoDocumento"].toString(),
-                        )
-                        allEmergencies.add(emergency)
-                        emergenciesAdapter.notifyDataSetChanged()
-                    }
                 }
+                pendingTasks.add(task)
             }
+
+            Tasks.whenAllComplete(pendingTasks)
+                .addOnCompleteListener {
+                    // This may require adjusting based on how your 'time' field is structured
+                    allEmergencies.sortByDescending { it.time }
+                    emergenciesAdapter.notifyDataSetChanged()
+                }
         }
     }
 }

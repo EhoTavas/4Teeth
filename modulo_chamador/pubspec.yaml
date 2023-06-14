@@ -40,9 +40,12 @@ dependencies:
   firebase_database: ^10.2.1
   firebase_messaging: ^14.6.1
   firebase_storage: ^11.2.1
+  flutter_dotenv: ^5.1.0
+  flutter_rating_bar: ^4.0.0
   fluttertoast: ^8.2.2
   gallery_saver: ^2.3.2
   geolocator: ^9.0.2
+  http: ^0.13.3
   google_maps_flutter: ^2.3.0
   image_picker: ^0.8.7+5
   permission_handler: ^10.3.0

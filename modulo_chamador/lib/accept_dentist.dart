@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:modulo_chamador/service_info.dart';
 
 class AcceptDentist extends StatefulWidget {
   final String docId;
@@ -158,8 +160,19 @@ class _AcceptDentistState extends State<AcceptDentist> {
                                   color: Colors.blue,
                                 ),
                                 child: IconButton(
-                                  onPressed: () {
-                                    // Implementação do botão de ligação
+                                  onPressed: () async {
+                                    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+                                    // Checar se o widget ainda está montado.
+                                    if (!mounted) return;
+                                    GeoPoint dentistLocation = doc['location'];
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (context) => MapSample(
+                                        callerLatitude: position.latitude,
+                                        callerLongitude: position.longitude,
+                                        dentistLatitude: dentistLocation.latitude,
+                                        dentistLongitude: dentistLocation.longitude,
+                                      )),
+                                    );
                                   },
                                   icon: const Icon(
                                     Icons.check,
