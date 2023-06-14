@@ -51,7 +51,6 @@ class CameraActivity : AppCompatActivity() {
         cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
         imgCaptureExecutor = Executors.newSingleThreadExecutor()
 
-        //chamar o método startCamera()
         startCamera()
 
         binding.btnTakePhoto.setOnClickListener {
@@ -122,6 +121,7 @@ class CameraActivity : AppCompatActivity() {
                         }
                         binding.btnAcceptPhoto.setOnClickListener {
                             savePhoto(photoFile)
+                            onBackPressed()
                         }
                     }
 

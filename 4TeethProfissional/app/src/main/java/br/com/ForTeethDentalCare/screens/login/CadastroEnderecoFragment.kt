@@ -26,7 +26,6 @@ import br.com.ForTeethDentalCare.databinding.FragmentCadastroEnderecoBinding
 
 class CadastroEnderecoFragment : Fragment() {
 
-    private val TAG = "SignUpFragment"
     private lateinit var auth: FirebaseAuth
     private lateinit var functions: FirebaseFunctions
     private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
@@ -44,19 +43,32 @@ class CadastroEnderecoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.icNavBackSignUp.setOnClickListener {
-//            findNavController().navigate(R.id.Addresses_to_SignUp)
-//        }
-
         binding.btnConfirmar.setOnClickListener {
 
             (activity as LoginActivity).let {
-                it.dentist.endereco1 = binding.EtStreet1.text.toString() + ", " + binding.EtNum1.text.toString() + ", " + binding.EtComp1.text.toString() + ", " + binding.EtNh1.text.toString() + ", " + binding.EtCity1.text.toString() + ", " + binding.EtState1.text.toString()
-                it.dentist.endereco2 = binding.EtStreet2.text.toString() + ", " + binding.EtNum2.text.toString() + ", " + binding.EtComp2.text.toString() + ", " + binding.EtNh2.text.toString() + ", " + binding.EtCity2.text.toString() + ", " + binding.EtState2.text.toString()
-                it.dentist.endereco3 = binding.EtStreet3.text.toString() + ", " + binding.EtNum3.text.toString() + ", " + binding.EtComp3.text.toString() + ", " + binding.EtNh3.text.toString() + ", " + binding.EtCity3.text.toString() + ", " + binding.EtState3.text.toString()
-                it.dentist.cep1 = binding.EtCep1.text.toString()
-                it.dentist.cep2 = binding.EtCep2.text.toString()
-                it.dentist.cep3 = binding.EtCep3.text.toString()
+
+                it.address.cep1 = binding.EtCep1.text.toString()
+                it.address.enderecoNumero1 = binding.EtNum1.text.toString()
+                it.address.complemento1 = binding.EtComp1.text.toString()
+                it.address.rua1 = binding.EtStreet1.text.toString()
+                it.address.bairro1 = binding.EtNh1.text.toString()
+                it.address.cidade1 = binding.EtCity1.text.toString()
+                it.address.estado1 = binding.EtState1.text.toString()
+                it.address.cep2 = binding.EtCep2.text.toString()
+                it.address.enderecoNumero2 = binding.EtNum2.text.toString()
+                it.address.complemento2 = binding.EtComp2.text.toString()
+                it.address.rua2 = binding.EtStreet2.text.toString()
+                it.address.bairro2 = binding.EtNh2.text.toString()
+                it.address.cidade2 = binding.EtCity2.text.toString()
+                it.address.estado2 = binding.EtState2.text.toString()
+                it.address.cep3 = binding.EtCep3.text.toString()
+                it.address.enderecoNumero3 = binding.EtNum3.text.toString()
+                it.address.complemento3 = binding.EtComp3.text.toString()
+                it.address.rua3 = binding.EtStreet3.text.toString()
+                it.address.bairro3 = binding.EtNh3.text.toString()
+                it.address.cidade3 = binding.EtCity3.text.toString()
+                it.address.estado3 = binding.EtState3.text.toString()
+
                 it.dentist.fcmToken = it.getFcmToken()
             }
             if (
@@ -74,20 +86,63 @@ class CadastroEnderecoFragment : Fragment() {
                     (activity as LoginActivity).dentist.email,
                     (activity as LoginActivity).dentist.senha,
                     (activity as LoginActivity).dentist.curriculo,
-                    (activity as LoginActivity).dentist.cep1,
-                    (activity as LoginActivity).dentist.endereco1,
-                    (activity as LoginActivity).dentist.cep2,
-                    (activity as LoginActivity).dentist.endereco2,
-                    (activity as LoginActivity).dentist.cep3,
-                    (activity as LoginActivity).dentist.endereco3,
                     (activity as LoginActivity).dentist.fcmToken,
                     (activity as LoginActivity).dentist.status,
                 )
+
+                setAdress(
+                    (activity as LoginActivity).address.cep1,
+                    (activity as LoginActivity).address.enderecoNumero1,
+                    (activity as LoginActivity).address.complemento1,
+                    (activity as LoginActivity).address.rua1,
+                    (activity as LoginActivity).address.bairro1,
+                    (activity as LoginActivity).address.cidade1,
+                    (activity as LoginActivity).address.estado1,
+                    (activity as LoginActivity).dentist.email,
+                )
+
+                if (
+                    binding.EtStreet2.text.toString() != "" &&
+                    binding.EtNum2.text.toString() != "" &&
+                    binding.EtNh2.text.toString() != "" &&
+                    binding.EtCity2.text.toString() != "" &&
+                    binding.EtState2.text.toString() != ""
+                ) {
+                    setAdress(
+                        (activity as LoginActivity).address.cep2,
+                        (activity as LoginActivity).address.enderecoNumero2,
+                        (activity as LoginActivity).address.complemento2,
+                        (activity as LoginActivity).address.rua2,
+                        (activity as LoginActivity).address.bairro2,
+                        (activity as LoginActivity).address.cidade2,
+                        (activity as LoginActivity).address.estado2,
+                        (activity as LoginActivity).dentist.email,
+                    )
+                }
+                if (
+                    binding.EtStreet3.text.toString() != "" &&
+                    binding.EtNum3.text.toString() != "" &&
+                    binding.EtNh3.text.toString() != "" &&
+                    binding.EtCity3.text.toString() != "" &&
+                    binding.EtState3.text.toString() != ""
+                ) {
+                    setAdress(
+                        (activity as LoginActivity).address.cep3,
+                        (activity as LoginActivity).address.enderecoNumero3,
+                        (activity as LoginActivity).address.complemento3,
+                        (activity as LoginActivity).address.rua3,
+                        (activity as LoginActivity).address.bairro3,
+                        (activity as LoginActivity).address.cidade3,
+                        (activity as LoginActivity).address.estado3,
+                        (activity as LoginActivity).dentist.email,
+                    )
+                }
             }
+
         }
     }
 
-    fun JSONObject.toMap(): Map<String, *> = keys().asSequence().associateWith {
+    fun JSONObject.toMap(): Map<String, *> = keys().asSequence().associateWith { it ->
         when (val value = this[it])
         {
             is JSONArray ->
@@ -109,53 +164,51 @@ class CadastroEnderecoFragment : Fragment() {
     private fun signUpNewAccount(
         nome: String, telefone: String,
         email: String, password: String, curriculo: String,
-        cep1: String, endereco1: String,
-        cep2: String, endereco2: String,
-        cep3: String, endereco3: String,
-        fcmToken: String,
-        status: String
+        fcmToken: String, status: String
     ) {
         auth = Firebase.auth
-        // auth.useEmulator("127.0.0.1", 5001)
-        // invocar a função e receber o retorno fazendo Cast para "CustomResponse"
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "createUserWithEmail:success")
+                    Log.d("SignUpFragment", "createUserWithEmail:success")
                     val user = auth.currentUser
                     (activity as LoginActivity).storeUserId(user!!.uid)
                     // atualizar o perfil do usuário com os dados chamando a function.
-                    updateUserProfile(nome, telefone, email, curriculo, cep1, endereco1, cep2, endereco2, cep3, endereco3, user.uid, fcmToken, status)
+                    updateUserProfile(nome, telefone, email, curriculo, user.uid, fcmToken, status)
                         .addOnCompleteListener(requireActivity()) { res ->
-                            // conta criada com sucesso.
                             if(res.result.status == "SUCCESS"){
                                 hideKeyboard()
                                 Snackbar.make(requireView(),"Conta cadastrada! Pode fazer o login!",Snackbar.LENGTH_LONG).show()
                                 findNavController().navigate(R.id.Addresses_to_Login)
                             }
                         }
+
+
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    Log.w("SignUpFragment", "createUserWithEmail:failure", task.exception)
                     Toast.makeText(requireActivity(), "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-                    // dar seguimento ao tratamento de erro.
                 }
+
             }
+
     }
 
-    private fun updateUserProfile(nome: String, telefone: String, email: String, curriculo: String, cep1: String, endereco1: String,cep2: String, endereco2: String,cep3: String, endereco3: String, uid: String, fcmToken: String, status: String) : Task<CustomResponse>{
-        // chamar a function para atualizar o perfil.
+    private fun updateUserProfile(
+        nome: String,
+        telefone: String,
+        email: String,
+        curriculo: String,
+        uid: String,
+        fcmToken: String,
+        status: String
+    ) : Task<CustomResponse>{
         functions = Firebase.functions("southamerica-east1")
 
-        // Create the arguments to the callable function.
         val data = hashMapOf(
             "nome" to nome, "telefone" to telefone,
             "email" to email, "curriculo" to curriculo,
-            "cep1" to cep1, "endereco1" to endereco1,
-            "cep2" to cep2, "endereco2" to endereco2,
-            "cep3" to cep3, "endereco3" to endereco3,
             "uid" to uid, "fcmToken" to fcmToken,
             "status" to status,
         )
@@ -167,6 +220,40 @@ class CadastroEnderecoFragment : Fragment() {
                 val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
                 result
             }
+    }
+
+    private fun setAdress(
+        cep: String,
+        numero: String,
+        complemento: String,
+        rua: String,
+        bairro: String,
+        cidade: String,
+        estado: String,
+        email: String
+    ) : Task<CustomResponse>{
+        functions = Firebase.functions("southamerica-east1")
+
+        val data = hashMapOf(
+            "Cep" to cep, "numero" to numero,
+            "complemento" to complemento, "rua" to rua,
+            "bairro" to bairro, "cidade" to cidade,
+            "estado" to estado, "dentista" to email,
+        )
+        val task = functions
+            .getHttpsCallable("setUserAddresses")
+            .call(data)
+            .continueWith { task ->
+                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+                result
+            }
+
+        task.addOnCompleteListener {
+            Log.d("ADDRESSES", "Endereços inseridos com sucesso")
+        }.addOnFailureListener { exception ->
+            Log.e("ADDRESSES", "Falha ao inserir endereços no banco de dados", exception)
+        }
+        return task
     }
 
     override fun onDestroyView() {

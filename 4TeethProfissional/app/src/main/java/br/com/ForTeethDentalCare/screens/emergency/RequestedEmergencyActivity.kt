@@ -1,13 +1,22 @@
 package br.com.ForTeethDentalCare.screens.emergency
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.set
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.databinding.ActivityRequestedEmergencyBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RequestedEmergencyActivity : AppCompatActivity() {
 
@@ -21,10 +30,15 @@ class RequestedEmergencyActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        supportActionBar!!.title = intent.getStringExtra("name")
 
         val navController = findNavController(R.id.nav_host_fragment_content_requested_emergency)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onSupportNavigateUp(): Boolean {

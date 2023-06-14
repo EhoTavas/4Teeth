@@ -65,28 +65,6 @@ class LoginFragment : Fragment() {
         imm.hideSoftInputFromWindow(requireView().windowToken, 0)
     }
 
-    private fun showCustomDialog() {
-        val builder = AlertDialog.Builder(requireContext())
-        val inflater = layoutInflater
-        val dialogView = inflater.inflate(R.layout.pop_up_notifications_blocked, null)
-        builder.setView(dialogView)
-
-        val dialogTitle = dialogView.findViewById<TextView>(R.id.dialog_title)
-        val dialogMessage = dialogView.findViewById<TextView>(R.id.dialog_message)
-        val dialogOkButton = dialogView.findViewById<Button>(R.id.dialog_ok)
-
-        dialogTitle.text = "Título do diálogo"
-        dialogMessage.text = "Mensagem do diálogo"
-
-        val dialog = builder.create()
-
-        dialogOkButton.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        dialog.show()
-    }
-
     private fun login(email: String, password: String){
         hideKeyboard()
         // inicializando o auth.

@@ -1,9 +1,37 @@
+import 'dart:io';
+
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:modulo_chamador/accept_dentist.dart';
+import 'package:path/path.dart' as Path;
+import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-//Tela inicial
-void main() {
-  runApp(const MyApp());
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+
+    print('Usuário anônimo logado com sucesso: ${userCredential.user!.uid}');
+  } catch (e) {
+    print('Falha ao fazer login anônimo: $e');
+  }
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -18,6 +46,9 @@ class _MyAppState extends State<MyApp> {
   TextEditingController phoneController = TextEditingController();
   FirebaseFirestore db = FirebaseFirestore.instance;
   late final NavigatorState _navigator;
+  XFile? fotoBoca;
+  XFile? fotoDocumento;
+  XFile? fotoCrianca;
 
   @override
   void dispose() {
@@ -71,20 +102,32 @@ class _MyAppState extends State<MyApp> {
                   padding: const EdgeInsets.all(7.0),
                   child: Column(
                     children: [
-                      const ContainerWithText(
-                        imagePath: 'assets/images/CAM.png',
+                      ContainerWithText(
                         buttonText: 'Tirar Foto',
                         text: 'Fotografe a região/boca acidentada:',
+                        onPhotoTaken: (XFile? photo) {
+                          setState(() {
+                            fotoBoca = photo;
+                          });
+                        },
                       ),
-                      const ContainerWithText(
-                        imagePath: 'assets/images/CAM.png',
+                      ContainerWithText(
                         buttonText: 'Tirar Foto',
                         text: 'Envie uma foto do documento do responsável:',
+                        onPhotoTaken: (XFile? photo) {
+                          setState(() {
+                            fotoDocumento = photo;
+                          });
+                        },
                       ),
-                      const ContainerWithText(
-                        imagePath: 'assets/images/CAM.png',
+                      ContainerWithText(
                         buttonText: 'Tirar Foto',
                         text: 'Tire uma foto com a criança:',
+                        onPhotoTaken: (XFile? photo) {
+                          setState(() {
+                            fotoCrianca = photo;
+                          });
+                        },
                       ),
                       const SizedBox(height: 1.0),
                       Container(
@@ -155,7 +198,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             const SizedBox(height: 10.0),
                             ElevatedButton(
-                              onPressed: _submitEmergency,
+                              onPressed: _onButtonPressed,
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white,
                                 backgroundColor: const Color(0xFF33DCDE),
@@ -189,36 +232,135 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void _submitEmergency() async {
-    try {
-      String userName = nameController.text;
-      String userPhone = phoneController.text;
-      // Define os dados que serão enviados
-      Map<String, dynamic> data = {
-        'name': userName,
-        'phone': userPhone,
-        'time': FieldValue.serverTimestamp(),
-      };
+  Future<String> uploadImageToFirebase(XFile? imageFile) async {
+    String fileName = Path.basename(imageFile!.path);
+    Reference storageReference =
+        FirebaseStorage.instance.ref().child('images/$fileName');
+    UploadTask uploadTask = storageReference.putFile(File(imageFile.path));
+    TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
+  }
 
-      await db.collection("Emergencias").add(data).then((documentSnapshot) =>
-          print("Added Data with ID: ${documentSnapshot.id}"));
-    } catch (error) {
-      print('deu merda aqui $error');
+  void _onButtonPressed() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Container(
+            padding: const EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 10.0),
+                CircularProgressIndicator(),
+                SizedBox(height: 10.0),
+                Text(
+                  'Estamos procurando profissionais para te auxiliar',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Profissionais avisados...',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Aguarde...',
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+
+    _submitEmergency().then((_) {
+      Navigator.of(context, rootNavigator: true).pop();
+    });
+  }
+  Future<void> _submitEmergency() async {
+    PermissionStatus status = await Permission.location.request();
+
+    if (status.isGranted) {
+      try {
+        String userName = nameController.text;
+        String userPhone = phoneController.text;
+        Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+        GeoPoint geoPoint = GeoPoint(position.latitude, position.longitude);
+
+        String? fotoBocaUrl = fotoBoca == null ? null : await uploadImageToFirebase(fotoBoca);
+        String? fotoDocumentoUrl = fotoDocumento == null ? null : await uploadImageToFirebase(fotoDocumento);
+        String? fotoCriancaUrl = fotoCrianca == null ? null : await uploadImageToFirebase(fotoCrianca);
+
+        Map<String, dynamic> data = {
+          'name': userName,
+          'phone': userPhone,
+          'fotoBoca': fotoBocaUrl,
+          'fotoDocumento': fotoDocumentoUrl,
+          'fotoCrianca': fotoCriancaUrl,
+          'status': '0',
+          'time': FieldValue.serverTimestamp(),
+          'location': geoPoint,
+        };
+        var docRef = await db.collection("Emergencias").add(data);
+        String docId = docRef.id;
+        await db.collection("Emergencias").doc(docId).update({
+          'id': docId,
+        });
+        await _navigator.push(
+          MaterialPageRoute(builder: (context) => AcceptDentist(
+            docId: docId,
+          )),
+        );
+      } catch (error) {
+        print('Não foi possível adicionar dados ao banco $error');
+      }
+    } else {
+      if (status.isDenied) {
+        Fluttertoast.showToast(
+            msg: "Por favor, permita o acesso à localização para que possamos encontrar dentistas próximos a você.",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+      } else if (status.isPermanentlyDenied) {
+        openAppSettings();
+      }
     }
   }
 }
 
-class ContainerWithText extends StatelessWidget {
-  final String imagePath;
+class ContainerWithText extends StatefulWidget {
   final String buttonText;
   final String text;
+  final Function(XFile?) onPhotoTaken;
 
   const ContainerWithText({
     Key? key,
-    required this.imagePath,
     required this.buttonText,
     required this.text,
+    required this.onPhotoTaken,
   }) : super(key: key);
+
+  @override
+  State<ContainerWithText> createState() => _ContainerWithTextState();
+}
+
+class _ContainerWithTextState extends State<ContainerWithText> {
+  String? imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -228,8 +370,8 @@ class ContainerWithText extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            text,
-            textAlign: TextAlign.center,
+            widget.text,
+            textAlign: TextAlign.left,
             style: const TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
@@ -242,21 +384,27 @@ class ContainerWithText extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 100.0,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.contain,
-                ),
-              ),
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: imagePath == null
+                      ? Image.asset('assets/images/CAM.png', fit: BoxFit.cover)
+                      : Image.file(File(imagePath!), fit: BoxFit.cover)),
               const SizedBox(width: 20.0),
               ElevatedButton(
-                onPressed: () {
-                  // Lógica para abrir a câmera
+                onPressed: () async {
+                  final ImagePicker _picker = ImagePicker();
+                  final XFile? photo =
+                      await _picker.pickImage(source: ImageSource.camera);
+                  if (photo != null) {
+                    widget.onPhotoTaken(photo);
+                    setState(() {
+                      imagePath = photo.path;
+                    });
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
@@ -269,7 +417,7 @@ class ContainerWithText extends StatelessWidget {
                     horizontal: 24.0,
                   ),
                 ),
-                child: Text(buttonText),
+                child: Text(widget.buttonText),
               ),
             ],
           ),
@@ -278,160 +426,3 @@ class ContainerWithText extends StatelessWidget {
     );
   }
 }
-
-// import 'dart:ffi';
-// import 'dart:async';
-// import 'dart:io';
-//
-// import 'package:firebase_storage/firebase_storage.dart';
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
-// // import 'package:firebase_core/firebase_core.dart';
-// // import 'package:path_provider/path_provider.dart';
-// import 'package:camera/camera.dart';
-// import 'package:image_picker/image_picker.dart';
-// import 'package:path/path.dart' as Path;
-//
-// import 'display_picture.dart';
-// import 'firebase_options.dart';
-// import 'screens/splash.dart';
-//
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//   final cameras = await availableCameras();
-//   final firstCamera = cameras.first;
-//   // Create a storage reference from our app
-//   runApp(
-//     MaterialApp(
-//       theme: ThemeData.dark(),
-//       home: TakePictureScreen(
-//         // Pass the appropriate camera to the TakePictureScreen widget.
-//         camera: firstCamera,
-//       ),
-//     ),
-//   );
-// }
-//
-// class TakePictureScreen extends StatefulWidget {
-//   const TakePictureScreen({super.key, required this.camera});
-//
-//   final CameraDescription camera;
-//
-//   @override
-//   TakePictureScreenState createState() => TakePictureScreenState();
-// }
-//
-// class TakePictureScreenState extends State<TakePictureScreen> {
-//   late CameraController _controller;
-//   late Future<void> _initializeControllerFuture;
-//   late final NavigatorState _navigator;
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     _navigator = Navigator.of(context);
-//     // To display the current output from the Camera, create a CameraController.
-//     _controller = CameraController(
-//       // Get a specific camera from the list of available cameras.
-//       widget.camera,
-//       //Define the resolution to use.
-//       ResolutionPreset.high,
-//     );
-//
-//     // Next, initialize the controller. This returns a Future.
-//     _initializeControllerFuture = _controller.initialize();
-//   }
-//
-//   @override
-//   void dispose() {
-//     // Dispose of the controller when the widget is disposed.
-//     _controller.dispose();
-//     super.dispose();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // Fill this out in the next steps.
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('Take a picture')),
-//       // You must wait until the controller is initialized before displaying the camera preview.
-//       // Use a FutureBuilder to display a loading spinner until the controller has finished initializing.
-//       body: FutureBuilder<void>(
-//         future: _initializeControllerFuture,
-//         builder: (context, snapshot) {
-//           if (snapshot.connectionState == ConnectionState.done) {
-//             // If the Future is complete, display the preview.
-//             return CameraPreview(_controller);
-//           } else {
-//             // Otherwise, display a loading indicator.
-//             return const Center(child: CircularProgressIndicator());
-//           }
-//         },
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _takePhoto,
-//         child: const Icon(Icons.camera_alt),
-//       ),
-//     );
-//   }
-//
-//   Future<String> uploadImageToFirebase(File imageFile) async {
-//     String fileName = Path.basename(imageFile.path);
-//     Reference storageReference =
-//         FirebaseStorage.instance.ref().child('images/$fileName');
-//     UploadTask uploadTask = storageReference.putFile(imageFile);
-//     TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
-//     String downloadUrl = await taskSnapshot.ref.getDownloadURL();
-//     return downloadUrl;
-//   }
-//
-//   void _takePhoto() async {
-//     // Take the Picture in a try / catch block. If anything goes wrong, catch the error.
-//     try {
-//       String imageUrl = '';
-//       ImagePicker imagePicker = ImagePicker();
-//       XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
-//
-//       if (file == null) return;
-//       String pictureName = DateTime.now().millisecondsSinceEpoch.toString();
-//
-//       Reference referenceRoot = FirebaseStorage.instance.ref();
-//       Reference referenceDirImages = referenceRoot.child('images');
-//
-//       Reference referenceImageToUpload = referenceDirImages.child(pictureName);
-//       try {
-//         // Faz o upload da imagem para o Firebase Storage
-//         await referenceImageToUpload.putFile(File(file.path));
-//
-//         imageUrl = await referenceImageToUpload.getDownloadURL();
-//       } catch (error) {}
-//       await _navigator.push(
-//         MaterialPageRoute(
-//           builder: (context) => DisplayPicture(
-//             // Pass the automatically generated path to the DisplayPictureScreen widget.
-//             imagePath: file.path,
-//           ),
-//         ),
-//       );
-//     } catch (e) {
-//       // If an error occurs, log the error to the console.
-//       print(e);
-//     }
-//   }
-// }
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: '',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: const Splash(),
-//     );
-//   }
-// }

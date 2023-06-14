@@ -21,6 +21,9 @@
         <action
             android:id="@+id/menuFragment_to_serviceAddressesFragment"
             app:destination="@id/serviceAddressesFragment" />
+        <action
+            android:id="@+id/menuFragment_to_notificationsAreDisabledFragment"
+            app:destination="@id/notificationsAreDisabledFragment2" />
     </fragment>
     <fragment
         android:id="@+id/emergencyFragment"
@@ -39,12 +42,15 @@
         <action
             android:id="@+id/userFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
+        <action
+            android:id="@+id/userFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/attendedEmergenciesFragment"
-        android:name="br.com.ForTeethDentalCare.screens.menu.AttendedEmergenciesFragment"
-        android:label="fragment_attended_emergencies"
-        tools:layout="@layout/fragment_attended_emergencies" >
+        android:name="br.com.ForTeethDentalCare.screens.menu.ServicesFragment"
+        android:label="@string/strAttendedEmergencies"
+        tools:layout="@layout/fragment_services">
         <action
             android:id="@+id/attendedEmergenciesFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
@@ -56,6 +62,24 @@
         tools:layout="@layout/fragment_service_addresses" >
         <action
             android:id="@+id/serviceAddressesFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="br.com.ForTeethDentalCare.screens.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/mapsFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsAreDisabledFragment2"
+        android:name="br.com.ForTeethDentalCare.screens.NotificationsAreDisabledFragment"
+        android:label="fragment_notifications_are_disabled"
+        tools:layout="@layout/fragment_notifications_are_disabled" >
+        <action
+            android:id="@+id/notificationsAreDisabledFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
     </fragment>
 </navigation>

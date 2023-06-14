@@ -9,22 +9,17 @@ import androidx.core.app.NotificationCompat
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
+import br.com.ForTeethDentalCare.screens.emergency.RequestedEmergencyActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
 class DefaultMessageService : FirebaseMessagingService() {
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
-    /***
-     * Evento disparado automaticamente
-     * quando o FCM envia uma mensagem. Lembrando que este serviço
-     * "DefaultMessageService" está registrado no Manifesto como um serviço.
-     */
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         val msgData = remoteMessage.data
-        val msg = msgData["text"]
         Log.d("mensagem", "Message data payload: ${remoteMessage.data}")
-        showNotification(msg!!)
+        showNotification(msgData)
         remoteMessage.notification?.let {
             Log.d("notification body", "Message Notification Body: ${it.body}")
         }
@@ -35,10 +30,6 @@ class DefaultMessageService : FirebaseMessagingService() {
         sendRegistrationToServer(token)
     }
 
-    /**
-     * Atualizar o FCM token caso tenha mudado.
-     * Sem implementação para este exemplo.
-     */
     private fun sendRegistrationToServer(token: String?) {
         Log.d("DefaultMessageService", "sendRegistrationTokenToServer($token)")
         // Guardar apenas no DataStore. Vamos manipular isso sempre no Login ou criação de conta.
@@ -47,24 +38,16 @@ class DefaultMessageService : FirebaseMessagingService() {
 
     }
 
-    /***
-     * Este método cria uma Intent
-     * para a activity Main, vinculada a notificação.
-     * ou seja, quando acontecer a notificação, se o usuário clicar,
-     * abrirá a activity Main.
-     * Trabalhar isso para que dependendo da mensagem,
-     * você poderá abrir uma ou outra activity
-     * ou enviar um parametro na Intent para tratar qual fragment abrir.(desafio para vc fazer)
-     */
-    private fun showNotification(messageBody: String) {
-        val intent = Intent(this, LoginActivity::class.java)
+    private fun showNotification(data: Map<String, String>) {
+        val intent = Intent(this, RequestedEmergencyActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        intent.putExtra("name", data["name"])
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, getString(R.string.default_notification_channel_id))
             .setSmallIcon(R.drawable.logo_4teeth)
-            .setContentTitle(getString(R.string.fcm_default_title_message))
-            .setContentText(messageBody)
+            .setContentTitle(data["name"])//(getString(R.string.fcm_default_title_message))
+            .setContentText(data["text"])
             .setAutoCancel(true)
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)

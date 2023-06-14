@@ -5,17 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_login_screen"
+    android:theme="@style/Theme.4TeethProfissional"
     tools:context=".screens.emergency.EmergencyFragment">
 
-    <ImageView
-        android:id="@+id/EmergencyPhoto"
-        android:layout_width="match_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
+        app:layout_constraintHeight_percent="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="1" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvPatientName"
@@ -24,24 +28,47 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/EmergencyPhoto"/>
+        app:layout_constraintBottom_toTopOf="@+id/buttons"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDecline"
         style="@style/btnDefault"
         android:backgroundTint="@color/btnDecline"
-        android:text="@string/btnDecline"
-        android:layout_marginStart="5dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPatientName" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/btnDecline" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnFinish"
+        style="@style/btnDefault"
+        android:backgroundTint="@color/btnAccept"
+        android:text="@string/btnFinish"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAccept"
         style="@style/btnDefault"
         android:backgroundTint="@color/btnAccept"
-        android:text="@string/btnAccept"
-        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPatientName" />
+        android:text="@string/btnAccept" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,23 @@
 package br.com.ForTeethDentalCare.screens.menu
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import com.google.firebase.storage.StorageReference
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -20,6 +27,9 @@ import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.messaging.ktx.messaging
@@ -28,14 +38,36 @@ class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMenuBinding
-    lateinit var storage: FirebaseStorage
-    private val functions = Firebase.functions
-    private final lateinit var navController: NavController
+    private lateinit var storage: FirebaseStorage
+    private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
     private val user = FirebaseAuth.getInstance().currentUser
-    val uid = user!!.uid
 
-    public var email = ""
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (!isGranted) {
+            navController.navigate(R.id.menuFragment_to_notificationsAreDisabledFragment)
+        }
+    }
+
+    private fun prepareFirebaseAppCheckDebug() {
+        FirebaseApp.initializeApp(this)
+        val firebaseAppCheck = FirebaseAppCheck.getInstance()
+        firebaseAppCheck.installAppCheckProviderFactory(
+            DebugAppCheckProviderFactory.getInstance()
+        )
+    }
+
+    private fun askNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) !=
+                PackageManager.PERMISSION_GRANTED
+            ) {
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,19 +76,20 @@ class MenuActivity : AppCompatActivity() {
 
         storeFcmToken()
 
-//        updateFcmToken(uid, fcmToken)
-
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         storage = Firebase.storage
-        var storageRef = storage.reference
+        val storageRef = storage.reference
         var imagesRef: StorageReference? = storageRef.child("DentistUserPictures")
 
-        val navController = findNavController(R.id.nav_host_fragment_content_menu)
+        navController = findNavController(R.id.nav_host_fragment_content_menu)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+        askNotificationPermission()
+
+        prepareFirebaseAppCheckDebug()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -98,24 +131,6 @@ class MenuActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateFcmToken(uid: String, token: String) {
-        val data = hashMapOf(
-            "uid" to uid,
-            "fcmToken" to token
-        )
-
-        functions
-            .getHttpsCallable("updateFcmToken")
-            .call(data)
-            .addOnSuccessListener {
-                Log.d("FCM", "FCM token updated successfully!")
-            }
-            .addOnFailureListener {
-                // Aqui você pode manipular o erro
-                Log.d("FCM", "Failed to update FCM token: ${it.message}")
-            }
-    }
-
     override fun onBackPressed() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_menu)
         val currentFragment = navHostFragment?.childFragmentManager?.fragments?.get(0)
@@ -127,11 +142,5 @@ class MenuActivity : AppCompatActivity() {
                 .setNegativeButton("Não", null)
                 .show()
         } else { super.onBackPressed() }
-    }
-
-
-    override fun isDestroyed(): Boolean {
-        // TODO: encontrar uma forma de colocar um aviso "deseja mesmo sair do aplicativo?"
-        return super.isDestroyed()
     }
 }

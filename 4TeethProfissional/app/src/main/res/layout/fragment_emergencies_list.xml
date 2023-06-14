@@ -17,15 +17,4 @@
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"/>
 
-<!--    <androidx.appcompat.widget.AppCompatButton-->
-<!--        android:id="@+id/btnRefresh"-->
-<!--        style="@style/btnDefault"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="55dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:drawableStart="@drawable/ic_refresh"-->
-<!--        android:text="@string/btnRefresh"/>-->
-
 </androidx.appcompat.widget.LinearLayoutCompat>
-    <!--FIM TITLE-->

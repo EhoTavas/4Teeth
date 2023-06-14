@@ -11,6 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import br.com.ForTeethDentalCare.EmergenciesAdapter
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.databinding.FragmentEmergenciesListBinding
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
+import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -19,7 +25,9 @@ class EmergenciesListFragment : Fragment() {
     private var _binding: FragmentEmergenciesListBinding? = null
     private val binding get() = _binding!!
     private lateinit var emergenciesAdapter: EmergenciesAdapter
+    private lateinit var service: Task<QuerySnapshot>
     private val db = Firebase.firestore
+    private var user = FirebaseAuth.getInstance().currentUser
     private var allEmergencies = ArrayList<Emergency>()
 
     override fun onCreateView(
@@ -37,8 +45,8 @@ class EmergenciesListFragment : Fragment() {
         allEmergencies.clear()
         emergenciesAdapter = EmergenciesAdapter(allEmergencies)
 
-        _binding!!.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
-        _binding!!.rvEmergencies.adapter = emergenciesAdapter
+        binding.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
+        binding.rvEmergencies.adapter = emergenciesAdapter
     }
 
     override fun onStart() {
@@ -53,27 +61,58 @@ class EmergenciesListFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun loadEmergencies() {
-        val collection = db.collection("Emergencias").orderBy("time")
+        val collection = db.collection("Emergencias").orderBy("time", Query.Direction.DESCENDING)
         var emergency: Emergency
+
         collection.addSnapshotListener { value, e ->
             allEmergencies.clear()
+            val pendingTasks = mutableListOf<Task<*>>()
+
             if (e != null) {
                 Log.e("FirestoreListener", "Erro ao ler novas emergências", e)
                 return@addSnapshotListener
             }
 
             for (document in value!!) {
-                emergency = Emergency(
-                    document.data["name"].toString(),
-                    document.data["phone"].toString(),
-                    document.data["id"].toString(),
-                    //Adicionar aqui as outras informações que serão enviadas pelo socorrista
-                )
+                val emergencyId = document.data["id"].toString()
+                val servicesRef =
+                    db.collection("Atendimentos").whereEqualTo("emergency", emergencyId)
+                val task = servicesRef.get().continueWith { task ->
+                    if (task.isSuccessful) {
+                        var addEmergency = true
+                        for (service in task.result!!) {
+                            val dentistUid = service.data["dentist"].toString()
+                            val status = service.data["status"].toString()
 
-                allEmergencies.add(emergency)
+                            if (dentistUid == user!!.uid && !(status == "1" || status == "2")) {
+                                addEmergency = false
+                                break
+                            }
+                        }
+
+                        if (addEmergency) {
+                            emergency = Emergency(
+                                document.data["name"].toString(),
+                                document.data["phone"].toString(),
+                                document.data["id"].toString(),
+                                document.data["fotoBoca"].toString(),
+                                document.data["fotoCrianca"].toString(),
+                                document.data["fotoDocumento"].toString(),
+                                document.data["time"] as Timestamp,
+                            )
+                            allEmergencies.add(emergency)
+                        }
+                    }
+                }
+                pendingTasks.add(task)
             }
 
-            emergenciesAdapter.notifyDataSetChanged()
+            Tasks.whenAllComplete(pendingTasks)
+                .addOnCompleteListener {
+                    // This may require adjusting based on how your 'time' field is structured
+                    allEmergencies.sortByDescending { it.time }
+                    emergenciesAdapter.notifyDataSetChanged()
+                }
         }
     }
 }
