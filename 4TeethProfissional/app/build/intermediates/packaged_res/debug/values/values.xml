@@ -73,6 +73,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#9F9C02</color>
     <dimen name="fab_margin">16dp</dimen>
+    <string name="accept_picture">Salvar</string>
     <string name="app_name">4Teeth Profissional</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
@@ -83,9 +84,11 @@
     <string name="btnConfirmar">Confirmar</string>
     <string name="btnContinue">Prosseguir</string>
     <string name="btnDecline">Recusar</string>
+    <string name="btnFinish">Finalizar</string>
     <string name="btnSignIn">Entrar</string>
     <string name="btnSignUp"><u>Não possui cadastro?</u></string>
     <string name="btnViewImg">Visualizar Imagem</string>
+    <string name="cancel_picture">Cancelar</string>
     <string name="clientImageDescription">.</string>
     <string name="default_notification_channel_id">4teeth emergency</string>
     <string name="default_web_client_id" translatable="false">389378064222-tl0mm0cah8qrfl20rumbg9qmtqmj57pn.apps.googleusercontent.com</string>
@@ -96,7 +99,6 @@
     <string name="google_app_id" translatable="false">1:389378064222:android:3cce7f4841de8c3cc4d9cf</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWCXlzQE0qluoXSiMhalAZku01gRXMg08</string>
     <string name="google_storage_bucket" translatable="false">teeth-playground.appspot.com</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="inputsEmpty">Preencha todos os campos obrigatórios</string>
     <string name="invalidEmail">O email não é válido</string>
     <string name="logged_in">Login Efetuado!</string>
@@ -107,9 +109,13 @@
     <string name="profile">Perfil</string>
     <string name="project_id" translatable="false">teeth-playground</string>
     <string name="reply_title">Default reply action</string>
-    <string name="service_accepted">Emergência aceita</string>
-    <string name="service_declined">Emergência recusada</string>
-    <string name="service_status">Aguardando resposta</string>
+    <string name="rescuer_accepted">Socorrista aceitou</string>
+    <string name="rescuer_declined">Socorrista recusou</string>
+    <string name="rescuer_status">Aguardando socorrista</string>
+    <string name="service_accepted">Dentista aceitou</string>
+    <string name="service_declined">Dentista recusou</string>
+    <string name="service_finished">Atendimento finalizado</string>
+    <string name="service_status">Aguardando dentista</string>
     <string name="signUpEmailHint">example@email.com</string>
     <string name="signUpMiniCurriculum">Experiência de 2 anos…</string>
     <string name="signUpNameHint">Nome Completo</string>
@@ -123,7 +129,9 @@
     <string name="strAddressNumber">Número da residência ou s/n</string>
     <string name="strAppMotto">Dental Care</string>
     <string name="strAppName">4Teeth</string>
+    <string name="strAttendedEmergencies">Emergências Atendidas</string>
     <string name="strAvailability">Diponível para emergências</string>
+    <string name="strAvailableEmergencies">Emergências Disponíveis</string>
     <string name="strAvaliacao">Deseja solicitar uma avaliação do responsável?</string>
     <string name="strCasos">Casos atendidos:</string>
     <string name="strCity">Cidade</string>
@@ -133,7 +141,6 @@
     <string name="strComentarios">Comentários Recebidos:</string>
     <string name="strComplement">Complemento (opcional)</string>
     <string name="strEmail">E-mail:</string>
-    <string name="strEmergenciasDisponiveis">Emergências Disponíveis</string>
     <string name="strExComentario1">"Ótimo profissional, resiliente e muito querido com todos seus pacientes."</string>
     <string name="strExComentario2">"Embora seja um bom profissional, demorou muito a atender meu filho."</string>
     <string name="strLogin">Login</string>
@@ -149,11 +156,12 @@
     <string name="strRating4.1">4.1</string>
     <string name="strRating5.0">5.0</string>
     <string name="strRua">Rua</string>
-    <string name="strSolicitarAvaliação">Solicitar Avaliação</string>
+    <string name="strServiceAddresses">Endereços de Atendimento</string>
     <string name="strState">Estado</string>
     <string name="strZipCode">Cep</string>
     <string name="sync_header">Sync</string>
     <string name="sync_title">Sync email periodically</string>
+    <string name="take_picture">Tirar foto</string>
     <string name="title_activity_initial_menu">Menu</string>
     <string name="title_activity_logged">LoggedActivity</string>
     <string name="title_addresses">Endereços de atendimento</string>
@@ -166,6 +174,7 @@
     <string name="title_user_fragment">Meus Dados</string>
     <string name="toothImageDescription">Dente 3D</string>
     <string name="unable_to_login">Não foi possível fazer o login, verifique os dados e tente novamente.</string>
+    <string name="user_picture">Imagem do dentista</string>
     <string name="yes">Sim</string>
     <style name="Theme.4TeethProfissional" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
@@ -178,10 +187,11 @@
         <item name="colorOnSecondary">@color/black</item>
         
         <item name="android:statusBarColor">@color/gelo_esverdeado</item>
+        <item name="android:buttonBarStyle">@color/black</item>
         
         <item name="android:windowBackground">@color/gelo_esverdeado</item>
         <item name="android:fontFamily">@font/poppins_family</item>
-        <item name="android:navigationBarColor">@color/very_light_cyan</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">@color/black</item>
     </style>
     <style name="Theme.4TeethProfissional.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

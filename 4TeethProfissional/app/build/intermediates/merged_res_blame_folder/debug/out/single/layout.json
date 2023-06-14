@@ -1,86 +1,90 @@
 [
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\content_requested_emergency.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\content_requested_emergency.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_emergencies_list.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_emergencies_list.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_menu.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_emergency.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_emergency.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\activity_menu.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\activity_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\activity_menu.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\activity_menu.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\content_requested_emergency.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\content_requested_emergency.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\content_login.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\content_login.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_cadastro_endereco.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_cadastro_endereco.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_login.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_login.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_services.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_services.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_ask_rating.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_ask_rating.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\item_emergency.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\item_emergency.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_cadastro_endereco.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_cadastro_endereco.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\activity_camera.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\activity_camera.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_notifications_are_disabled.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_notifications_are_disabled.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\pop_up_notifications_blocked.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\pop_up_notifications_blocked.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_status.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_status.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_sign_up.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_sign_up.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_user.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_user.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_user.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_user.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\pop_up_notifications_blocked.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\pop_up_notifications_blocked.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_notifications_are_disabled.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_notifications_are_disabled.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\content_menu.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\content_menu.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_maps.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_maps.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_reputation.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_reputation.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\activity_requested_emergency.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\activity_requested_emergency.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_menu.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_menu.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_emergencies_list.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_emergencies_list.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\item_emergency.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\item_emergency.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\content_login.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\content_login.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\content_logged.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\content_logged.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\content_menu.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\content_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\fragment_sign_up.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\fragment_sign_up.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_service_addresses.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_service_addresses.xml"
     },
     {
-        "merged": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-64:\\layout\\activity_requested_emergency.xml",
-        "source": "C:\\Users\\Luan\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-67:\\layout\\activity_requested_emergency.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\item_emergency_picture.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\item_emergency_picture.xml"
     },
     {
-        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-64:/layout/fragment_user.xml",
-        "source": "br.com.ForTeethDentalCare.app-main-67:/layout/fragment_user.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-mergeDebugResources-71:\\layout\\fragment_emergency.xml",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\7.5\\br.com.ForTeethDentalCare.app-main-74:\\layout\\fragment_emergency.xml"
+    },
+    {
+        "merged": "br.com.ForTeethDentalCare.app-mergeDebugResources-71:/layout/fragment_user.xml",
+        "source": "br.com.ForTeethDentalCare.app-main-74:/layout/fragment_user.xml"
     }
 ]

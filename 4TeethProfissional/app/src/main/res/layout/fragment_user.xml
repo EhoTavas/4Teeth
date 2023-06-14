@@ -22,12 +22,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/strName"/>
+        android:text="@string/strName"
+        android:textSize="18sp"
+        />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvUserName"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etUserName"
         style="@style/btnDefault"
         android:elevation="0dp"
+        android:layout_height="32dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
         android:textColor="@color/black"
@@ -37,12 +40,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/strEmail"/>
+        android:text="@string/strEmail"
+        android:textSize="18sp"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvUserMail"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etUserMail"
         style="@style/btnDefault"
         android:elevation="0dp"
+        android:layout_height="32dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
         android:textColor="@color/black"
@@ -52,22 +57,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/strPhone"/>
+        android:text="@string/strPhone"
+        android:textSize="18sp"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvUserPhone"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etUserPhone"
         style="@style/btnDefault"
         android:elevation="0dp"
+        android:layout_height="32dp"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="25dp"
         android:textColor="@color/black"
         android:backgroundTint="@color/branco_gelo"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="25dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_gravity="center"
         android:background="@drawable/container_status_light_cyan"
         android:orientation="vertical"
@@ -81,13 +88,13 @@
             android:gravity="center"
             android:text="@string/strAvailability"
             android:textColor="@color/black"
-            android:textSize="23sp" />
+            android:textSize="18sp" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/BtnSwitch"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="4dp"
             android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -96,12 +103,25 @@
         android:id="@+id/btnLocation"
         android:layout_marginTop="20dp"
         style="@style/btnDefault"
-        android:text="Localia"/>
+        android:text="Localização"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnChangeData"
+        android:layout_marginTop="20dp"
+        style="@style/btnDefault"
+        android:text="Alterar dados"/>
+
+
+    <!-- <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogout"
         android:layout_marginTop="20dp"
         style="@style/btnDefault"
-        android:text="Deslogar"/>
+        android:text="Deslogar"/> -->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnsaveData"
+        android:layout_marginTop="20dp"
+        style="@style/btnDefault"
+        android:text="Salvar"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
