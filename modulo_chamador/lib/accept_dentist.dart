@@ -175,7 +175,7 @@ class _AcceptDentistState extends State<AcceptDentist> {
                                   color: Colors.blue,
                                 ),
                                 child: IconButton(
-                                  onPressed: () => _onButtonPressed(doc['id'], dentistLocation, dentistDoc['telefone']),
+                                  onPressed: () => _onButtonPressed(doc['id'], doc['emergency'], dentistLocation, dentistDoc['telefone']),
                                   icon: const Icon(
                                     Icons.check,
                                     color: Colors.white,
@@ -197,9 +197,9 @@ class _AcceptDentistState extends State<AcceptDentist> {
     );
   }
 
-  void _onButtonPressed(String id, GeoPoint dentistLocation, String phone) async {
+  void _onButtonPressed(String id, String emergency, GeoPoint dentistLocation, String phone) async {
     // Perform Firestore update
-    await _acceptDentist(id);
+    await _acceptDentist(id, emergency);
     if (mounted) {
       Navigator.of(context).push(
         MaterialPageRoute(builder: (context) =>
@@ -214,9 +214,12 @@ class _AcceptDentistState extends State<AcceptDentist> {
     }
   }
 
-  Future<void> _acceptDentist(String id) async {
+  Future<void> _acceptDentist(String id, String emergency) async {
     await _firestore.collection("Atendimentos").doc(id).set({
       'status': '2',
+    }, SetOptions(merge: true));
+    await _firestore.collection("Emergencias").doc(emergency).set({
+      'atendimento': id,
     }, SetOptions(merge: true));
   }
 }

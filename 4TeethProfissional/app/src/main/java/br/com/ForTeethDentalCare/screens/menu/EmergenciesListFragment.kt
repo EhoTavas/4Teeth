@@ -115,6 +115,7 @@ class EmergenciesListFragment : Fragment() {
                                         status,
                                         location.latitude,
                                         location.longitude,
+                                        emergencyDocument.data["atendimento"].toString()
                                     )
                                     Log.d("emergencyStatus", status)
                                     allEmergencies.add(emergency)
@@ -134,6 +135,7 @@ class EmergenciesListFragment : Fragment() {
                                 "0",
                                 location.latitude,
                                 location.longitude,
+                                ""
                             )
                             allEmergencies.add(emergency)
                         }

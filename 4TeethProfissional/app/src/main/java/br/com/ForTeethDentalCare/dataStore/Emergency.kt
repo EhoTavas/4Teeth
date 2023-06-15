@@ -13,5 +13,6 @@ data class Emergency(
     val time: Timestamp,
     val status: String,
     val latitude: Double,
-    val longitude: Double
+    val longitude: Double,
+    val atendimento: String
 )

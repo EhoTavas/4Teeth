@@ -105,13 +105,16 @@ class EmergencyFragment : Fragment() {
         binding.btnFinish.setOnClickListener {
             val db = FirebaseFirestore.getInstance()
 
-            val docRef = db.collection("Atendimentos").document("id_do_documento")
+            val atendimento = db.collection("Atendimentos").document(getInfo("atendimento"))
+            val emergencia = db.collection("Emergencias").document(getInfo("id"))
 
-            val updates = hashMapOf<String, Any>(
-                "status" to "3"
-            )
+            val updatesA = hashMapOf<String, Any>("status" to "3")
+            val updatesE = hashMapOf<String, Any>("status" to "finalizado")
 
-            docRef.update(updates)
+            atendimento.update(updatesA)
+                .addOnSuccessListener { Log.d("database", "DocumentSnapshot successfully updated!") }
+                .addOnFailureListener { e -> Log.e("database", "Error updating document", e) }
+            emergencia.update(updatesE)
                 .addOnSuccessListener { Log.d("database", "DocumentSnapshot successfully updated!") }
                 .addOnFailureListener { e -> Log.e("database", "Error updating document", e) }
         }

@@ -82,6 +82,7 @@ class EmergenciesAdapter(private var dataSet: List<Emergency>,
             intentPatientData.putExtra("status", t.status)
 //                intentPatientData.putExtra("time", t.time)
             intentPatientData.putExtra("id", t.id)
+            intentPatientData.putExtra("atendimento", t.atendimento)
 
             it.context.startActivity(intentPatientData)
         }
