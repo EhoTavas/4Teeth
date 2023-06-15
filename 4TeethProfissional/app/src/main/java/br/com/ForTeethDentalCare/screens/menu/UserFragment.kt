@@ -38,31 +38,13 @@ import com.google.gson.GsonBuilder
 class UserFragment : Fragment() {
 
     private var _binding: FragmentUserBinding? = null
-    private lateinit var auth: FirebaseAuth
-    private lateinit var functions: FirebaseFunctions
-    private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
     private lateinit var status: Task<CustomResponse>
     private val db = Firebase.firestore
-    private val storage = Firebase.storage
     private var user = FirebaseAuth.getInstance().currentUser
     private val email = user!!.email
 
 
     private val binding get() = _binding!!
-    private lateinit var userPreferencesRepository: UserPreferencesRepository
-
-    private val requestPermissionLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
-            val fineLocationGranted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false
-            val coarseLocationGranted = permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false
-            if (fineLocationGranted && coarseLocationGranted) {
-                // Ambas as permissões foram concedidas
-                findNavController().navigate(R.id.userFragment_to_mapsFragment)
-            } else {
-                // Ao menos uma das permissões não foi concedida
-                Toast.makeText(context, "Permissão de localização é necessária para abrir a tela.", Toast.LENGTH_LONG).show()
-            }
-        }
 
     private val cameraProviderResult =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {
@@ -89,17 +71,10 @@ class UserFragment : Fragment() {
 
         loadUserData()
 
-        binding.btnLocation.setOnClickListener {
-            val permissionsToRequest = arrayOf(
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            )
-            requestPermissionLauncher.launch(permissionsToRequest)
-        }
-        /*binding.btnLogout.setOnClickListener {
+        binding.btnLogout.setOnClickListener {
             auth.signOut()
             startActivity(Intent(requireContext(), LoginActivity::class.java))
-        }*/
+        }
         binding.btnChangeData.setOnClickListener{
             binding.etUserName.isEnabled = true
             binding.etUserMail.isEnabled = true
