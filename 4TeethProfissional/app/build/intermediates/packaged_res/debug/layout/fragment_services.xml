@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_login_screen"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:theme="@style/Theme.4TeethProfissional"
+    tools:context=".screens.menu.ServicesFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_attended_emergencies"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
