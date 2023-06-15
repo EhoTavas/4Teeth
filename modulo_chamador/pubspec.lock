@@ -460,10 +460,10 @@ packages:
     dependency: transitive
     description:
       name: geolocator_android
-      sha256: "6cd3c622df085a79fd61f5c14fa024c3ba593aa6b1df2ee809ac59f45e6a9861"
+      sha256: "94c2cf51f4a8387335cc2d1a21cc50897bc93069e05fc09aee29bd353a14f6f5"
       url: "https://pub.dev"
     source: hosted
-    version: "4.1.8"
+    version: "4.1.9"
   geolocator_apple:
     dependency: transitive
     description:
@@ -632,6 +632,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.1"
   js:
     dependency: transitive
     description:
@@ -656,6 +664,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  mask_text_input_formatter:
+    dependency: "direct main"
+    description:
+      name: mask_text_input_formatter
+      sha256: "19bb7809c3c2559277e95521b3ee421e1409eb2cc85efd2feb191696c92490f4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.0"
   matcher:
     dependency: transitive
     description:

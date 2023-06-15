@@ -20,7 +20,7 @@ public final class FragmentMenuBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final LinearLayoutCompat askEvaluation;
+  public final LinearLayoutCompat attendedEmergencies;
 
   @NonNull
   public final LinearLayoutCompat availableEmergencies;
@@ -32,22 +32,18 @@ public final class FragmentMenuBinding implements ViewBinding {
   public final ImageView imgTooth4;
 
   @NonNull
-  public final LinearLayoutCompat myReputation;
-
-  @NonNull
-  public final LinearLayoutCompat myStatus;
+  public final LinearLayoutCompat serviceAddresses;
 
   private FragmentMenuBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull LinearLayoutCompat askEvaluation, @NonNull LinearLayoutCompat availableEmergencies,
-      @NonNull ImageView imgTooth3, @NonNull ImageView imgTooth4,
-      @NonNull LinearLayoutCompat myReputation, @NonNull LinearLayoutCompat myStatus) {
+      @NonNull LinearLayoutCompat attendedEmergencies,
+      @NonNull LinearLayoutCompat availableEmergencies, @NonNull ImageView imgTooth3,
+      @NonNull ImageView imgTooth4, @NonNull LinearLayoutCompat serviceAddresses) {
     this.rootView = rootView;
-    this.askEvaluation = askEvaluation;
+    this.attendedEmergencies = attendedEmergencies;
     this.availableEmergencies = availableEmergencies;
     this.imgTooth3 = imgTooth3;
     this.imgTooth4 = imgTooth4;
-    this.myReputation = myReputation;
-    this.myStatus = myStatus;
+    this.serviceAddresses = serviceAddresses;
   }
 
   @Override
@@ -77,9 +73,9 @@ public final class FragmentMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.askEvaluation;
-      LinearLayoutCompat askEvaluation = ViewBindings.findChildViewById(rootView, id);
-      if (askEvaluation == null) {
+      id = R.id.attendedEmergencies;
+      LinearLayoutCompat attendedEmergencies = ViewBindings.findChildViewById(rootView, id);
+      if (attendedEmergencies == null) {
         break missingId;
       }
 
@@ -101,20 +97,14 @@ public final class FragmentMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.myReputation;
-      LinearLayoutCompat myReputation = ViewBindings.findChildViewById(rootView, id);
-      if (myReputation == null) {
+      id = R.id.serviceAddresses;
+      LinearLayoutCompat serviceAddresses = ViewBindings.findChildViewById(rootView, id);
+      if (serviceAddresses == null) {
         break missingId;
       }
 
-      id = R.id.myStatus;
-      LinearLayoutCompat myStatus = ViewBindings.findChildViewById(rootView, id);
-      if (myStatus == null) {
-        break missingId;
-      }
-
-      return new FragmentMenuBinding((LinearLayoutCompat) rootView, askEvaluation,
-          availableEmergencies, imgTooth3, imgTooth4, myReputation, myStatus);
+      return new FragmentMenuBinding((LinearLayoutCompat) rootView, attendedEmergencies,
+          availableEmergencies, imgTooth3, imgTooth4, serviceAddresses);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -693,6 +693,7 @@ attr imagePanX
 attr imagePanY
 attr imageRotate
 attr imageZoom
+attr implementationMode
 attr indeterminateAnimationType
 attr indeterminateProgressStyle
 attr indicatorColor
@@ -1095,6 +1096,7 @@ attr roundPercent
 attr route
 attr saturation
 attr scaleFromTextSize
+attr scaleType
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -3667,7 +3669,6 @@ id BOTTOM_END
 id BOTTOM_START
 id BtnSwitch
 id CTRL
-id EmergencyPhoto
 id EtCep1
 id EtCep2
 id EtCep3
@@ -3799,10 +3800,10 @@ id antiClockwise
 id anticipate
 id arc
 id asConfigured
-id askEvaluation
-id askRatingFragment
-id askRatingFragment_to_MenuFragment
 id async
+id attendedEmergencies
+id attendedEmergenciesFragment
+id attendedEmergenciesFragment_to_MenuFragment
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -3825,20 +3826,23 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAccept
-id btnAndroidSettings
-id btnAvaliacaoNao
-id btnAvaliacaoSim
+id btnAcceptPhoto
+id btnAllowNotifications
+id btnCancelPhoto
 id btnConfirmar
 id btnContinuar
 id btnDecline
+id btnFinish
+id btnLocation
 id btnLogin
 id btnLogout
-id btnReputacaoFinalizar
 id btnSignUp
-id btnViewImg
+id btnTakePhoto
 id buttonPanel
+id buttons
 id cache_measures
 id callMeasure
+id cameraPreview
 id cancel_action
 id cancel_button
 id carryVelocity
@@ -3860,6 +3864,7 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id compatible
 id completable
 id compress
 id confirm_button
@@ -3932,6 +3937,9 @@ id expand_activities_button
 id expanded_menu
 id fade
 id fill
+id fillCenter
+id fillEnd
+id fillStart
 id fill_horizontal
 id fill_vertical
 id filled
@@ -3971,14 +3979,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageStar
-id imageStar1
-id imageStar2
 id imageView
-id imgClient1
-id imgClient2
 id imgMapPing
-id imgPatientPicture
 id imgTooth3
 id imgTooth4
 id immediateStop
@@ -3990,6 +3992,7 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id ivCapturedPhoto
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -4006,6 +4009,9 @@ id list_item
 id locale
 id ltr
 id m3_side_sheet
+id map
+id mapsFragment
+id mapsFragment_to_userFragment
 id marquee
 id masked
 id match_constraint
@@ -4032,10 +4038,10 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id media_actions
-id menuFragment_to_askRatingFragment
+id menuFragment_to_attendedEmergenciesFragment
 id menuFragment_to_emergencyFragment
-id menuFragment_to_reputationFragment
-id menuFragment_to_statusFragment
+id menuFragment_to_notificationsAreDisabledFragment
+id menuFragment_to_serviceAddressesFragment
 id menuFragment_to_userFragment
 id message
 id middle
@@ -4071,8 +4077,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id myReputation
-id myStatus
 id nav_controller_view_tag
 id nav_graph_login
 id nav_graph_menu
@@ -4100,6 +4104,8 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id notificationsAreDisabledFragment
+id notificationsAreDisabledFragment2
+id notificationsAreDisabledFragment_to_MenuFragment
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -4117,6 +4123,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id performance
 id persistent
 id pin
 id places_autocomplete_back_button
@@ -4150,9 +4157,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerView
 id recycler_view
-id reputationFragment
-id reputationFragment_to_MenuFragment
 id reverseSawtooth
 id right
 id rightToLeft
@@ -4161,6 +4167,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id rv_attended_emergencies
 id rv_emergencies
 id satellite
 id save_non_transition_alpha
@@ -4202,6 +4209,9 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
+id serviceAddresses
+id serviceAddressesFragment
+id serviceAddressesFragment_to_MenuFragment
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -4238,8 +4248,6 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
-id statusFragment
-id statusFragment_to_MenuFragment
 id status_bar_latest_event_content
 id stop
 id stretch
@@ -4295,9 +4303,11 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDentistStatus
 id tvMessage
 id tvPatientDistance
 id tvPatientName
+id tvRescuerStatus
 id tvServiceStatus
 id tvUserMail
 id tvUserName
@@ -4309,6 +4319,8 @@ id up
 id useLogo
 id userFragment
 id userFragment_to_MenuFragment
+id userFragment_to_mapsFragment
+id userPicture
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -4445,6 +4457,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_camera
 layout activity_login
 layout activity_menu
 layout activity_requested_emergency
@@ -4470,19 +4483,20 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout expand_button
-layout fragment_ask_rating
 layout fragment_cadastro_endereco
 layout fragment_emergencies_list
 layout fragment_emergency
 layout fragment_login
+layout fragment_maps
 layout fragment_menu
 layout fragment_notifications_are_disabled
-layout fragment_reputation
+layout fragment_service_addresses
+layout fragment_services
 layout fragment_sign_up
-layout fragment_status
 layout fragment_user
 layout image_frame
 layout item_emergency
+layout item_emergency_picture
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4618,6 +4632,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accept_picture
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -4635,6 +4650,7 @@ string btnConfirm
 string btnConfirmar
 string btnContinue
 string btnDecline
+string btnFinish
 string btnSignIn
 string btnSignUp
 string btnViewImg
@@ -4645,6 +4661,7 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string cancel_picture
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4672,6 +4689,9 @@ string copy
 string copy_toast_msg
 string default_notification_channel_id
 string default_web_client_id
+string dentist_accepted
+string dentist_waiting
+string dest_title
 string docImageDescription
 string error_a11y_label
 string error_icon_content_description
@@ -4819,13 +4839,14 @@ string preference_copied
 string profile
 string project_id
 string reply_title
+string rescuer_accepted
+string rescuer_waiting
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
-string service_accepted
-string service_declined
-string service_status
+string service_finished
+string service_waiting
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string signUpEmailHint
@@ -4842,7 +4863,9 @@ string strAddress3
 string strAddressNumber
 string strAppMotto
 string strAppName
+string strAttendedEmergencies
 string strAvailability
+string strAvailableEmergencies
 string strAvaliacao
 string strCasos
 string strCity
@@ -4852,7 +4875,6 @@ string strClient2
 string strComentarios
 string strComplement
 string strEmail
-string strEmergenciasDisponiveis
 string strExComentario1
 string strExComentario2
 string strLogin
@@ -4868,12 +4890,13 @@ string strRating3_2
 string strRating4_1
 string strRating5_0
 string strRua
-string strSolicitarAvaliação
+string strServiceAddresses
 string strState
 string strZipCode
 string summary_collapsed_preference_list
 string sync_header
 string sync_title
+string take_picture
 string title_activity_initial_menu
 string title_activity_logged
 string title_addresses
@@ -4886,6 +4909,7 @@ string title_sign_up
 string title_user_fragment
 string toothImageDescription
 string unable_to_login
+string user_picture
 string v7_preference_off
 string v7_preference_on
 string yes
@@ -6188,6 +6212,7 @@ styleable PreferenceFragmentCompat android_layout android_divider android_divide
 styleable PreferenceGroup android_orderingFromXml initialExpandedChildrenCount orderingFromXml
 styleable PreferenceImageView android_maxWidth android_maxHeight maxHeight maxWidth
 styleable PreferenceTheme checkBoxPreferenceStyle dialogPreferenceStyle dropdownPreferenceStyle editTextPreferenceStyle preferenceCategoryStyle preferenceCategoryTitleTextAppearance preferenceCategoryTitleTextColor preferenceFragmentCompatStyle preferenceFragmentListStyle preferenceFragmentStyle preferenceInformationStyle preferenceScreenStyle preferenceStyle preferenceTheme seekBarPreferenceStyle switchPreferenceCompatStyle switchPreferenceStyle
+styleable PreviewView implementationMode scaleType
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
 styleable RadialViewGroup materialCircleRadius
 styleable RangeSlider minSeparation values

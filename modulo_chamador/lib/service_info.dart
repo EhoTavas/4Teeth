@@ -58,7 +58,7 @@ class MapSampleState extends State<MapSample> {
         visible: true,
         points: _convertToLatLng(_decodePoly(encodedPoly)),
         color: Colors.green.shade300,
-        width: 1,
+        width: 2,
       ));
     });
   }

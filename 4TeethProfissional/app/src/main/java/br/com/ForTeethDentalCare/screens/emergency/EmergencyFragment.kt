@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import br.com.ForTeethDentalCare.screens.menu.MenuActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.storage.FirebaseStorage
@@ -59,6 +61,11 @@ class EmergencyFragment : Fragment() {
         child = getInfo("fotoCrianca")
         binding.tvPatientName.text = name
         val imageRefs = listOf(mouth, document, child)
+        if (getInfo("status") == "2") {
+            binding.btnDecline.visibility = View.GONE
+            binding.btnAccept.visibility = View.GONE
+            binding.btnFinish.visibility = View.VISIBLE
+        }
 
         binding.recyclerView.adapter = GalleryAdapter(imageRefs)
         if (ActivityCompat.checkSelfPermission(
@@ -94,6 +101,24 @@ class EmergencyFragment : Fragment() {
             }
             requireActivity().finish()
         }
+
+        binding.btnFinish.setOnClickListener {
+            val db = FirebaseFirestore.getInstance()
+
+            val atendimento = db.collection("Atendimentos").document(getInfo("atendimento"))
+            val emergencia = db.collection("Emergencias").document(getInfo("id"))
+
+            val updatesA = hashMapOf<String, Any>("status" to "3")
+            val updatesE = hashMapOf<String, Any>("status" to "finalizado")
+
+            atendimento.update(updatesA)
+                .addOnSuccessListener { Log.d("database", "DocumentSnapshot successfully updated!") }
+                .addOnFailureListener { e -> Log.e("database", "Error updating document", e) }
+            emergencia.update(updatesE)
+                .addOnSuccessListener { Log.d("database", "DocumentSnapshot successfully updated!") }
+                .addOnFailureListener { e -> Log.e("database", "Error updating document", e) }
+        }
+
     }
 
     override fun onDestroyView() {

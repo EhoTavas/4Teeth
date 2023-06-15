@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:modulo_chamador/accept_dentist.dart';
 import 'package:path/path.dart' as Path;
 import 'package:geolocator/geolocator.dart';
@@ -25,6 +27,7 @@ Future<void> main() async {
   } catch (e) {
     print('Falha ao fazer login anônimo: $e');
   }
+  Intl.defaultLocale = 'pt_BR';
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -49,6 +52,11 @@ class _MyAppState extends State<MyApp> {
   XFile? fotoBoca;
   XFile? fotoDocumento;
   XFile? fotoCrianca;
+  var maskFormatter = MaskTextInputFormatter(
+      mask: '+## (##) #####-####',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
 
   @override
   void dispose() {
@@ -187,6 +195,7 @@ class _MyAppState extends State<MyApp> {
                                       ),
                                     ),
                                     TextField(
+                                      inputFormatters: [maskFormatter],
                                       controller: phoneController,
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
@@ -320,6 +329,7 @@ class _MyAppState extends State<MyApp> {
         await _navigator.push(
           MaterialPageRoute(builder: (context) => AcceptDentist(
             docId: docId,
+            location: geoPoint,
           )),
         );
       } catch (error) {

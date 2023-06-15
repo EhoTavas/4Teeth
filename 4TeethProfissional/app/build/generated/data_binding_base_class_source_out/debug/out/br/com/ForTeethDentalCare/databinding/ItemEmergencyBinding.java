@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
@@ -22,13 +21,10 @@ public final class ItemEmergencyBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final AppCompatButton btnViewImg;
-
-  @NonNull
   public final ImageView imgMapPing;
 
   @NonNull
-  public final ImageView imgPatientPicture;
+  public final AppCompatTextView tvDentistStatus;
 
   @NonNull
   public final AppCompatTextView tvPatientDistance;
@@ -37,18 +33,21 @@ public final class ItemEmergencyBinding implements ViewBinding {
   public final AppCompatTextView tvPatientName;
 
   @NonNull
+  public final AppCompatTextView tvRescuerStatus;
+
+  @NonNull
   public final AppCompatTextView tvServiceStatus;
 
-  private ItemEmergencyBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatButton btnViewImg, @NonNull ImageView imgMapPing,
-      @NonNull ImageView imgPatientPicture, @NonNull AppCompatTextView tvPatientDistance,
-      @NonNull AppCompatTextView tvPatientName, @NonNull AppCompatTextView tvServiceStatus) {
+  private ItemEmergencyBinding(@NonNull LinearLayoutCompat rootView, @NonNull ImageView imgMapPing,
+      @NonNull AppCompatTextView tvDentistStatus, @NonNull AppCompatTextView tvPatientDistance,
+      @NonNull AppCompatTextView tvPatientName, @NonNull AppCompatTextView tvRescuerStatus,
+      @NonNull AppCompatTextView tvServiceStatus) {
     this.rootView = rootView;
-    this.btnViewImg = btnViewImg;
     this.imgMapPing = imgMapPing;
-    this.imgPatientPicture = imgPatientPicture;
+    this.tvDentistStatus = tvDentistStatus;
     this.tvPatientDistance = tvPatientDistance;
     this.tvPatientName = tvPatientName;
+    this.tvRescuerStatus = tvRescuerStatus;
     this.tvServiceStatus = tvServiceStatus;
   }
 
@@ -79,21 +78,15 @@ public final class ItemEmergencyBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnViewImg;
-      AppCompatButton btnViewImg = ViewBindings.findChildViewById(rootView, id);
-      if (btnViewImg == null) {
-        break missingId;
-      }
-
       id = R.id.imgMapPing;
       ImageView imgMapPing = ViewBindings.findChildViewById(rootView, id);
       if (imgMapPing == null) {
         break missingId;
       }
 
-      id = R.id.imgPatientPicture;
-      ImageView imgPatientPicture = ViewBindings.findChildViewById(rootView, id);
-      if (imgPatientPicture == null) {
+      id = R.id.tvDentistStatus;
+      AppCompatTextView tvDentistStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvDentistStatus == null) {
         break missingId;
       }
 
@@ -109,14 +102,20 @@ public final class ItemEmergencyBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvRescuerStatus;
+      AppCompatTextView tvRescuerStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvRescuerStatus == null) {
+        break missingId;
+      }
+
       id = R.id.tvServiceStatus;
       AppCompatTextView tvServiceStatus = ViewBindings.findChildViewById(rootView, id);
       if (tvServiceStatus == null) {
         break missingId;
       }
 
-      return new ItemEmergencyBinding((LinearLayoutCompat) rootView, btnViewImg, imgMapPing,
-          imgPatientPicture, tvPatientDistance, tvPatientName, tvServiceStatus);
+      return new ItemEmergencyBinding((LinearLayoutCompat) rootView, imgMapPing, tvDentistStatus,
+          tvPatientDistance, tvPatientName, tvRescuerStatus, tvServiceStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -35,35 +35,26 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
         <!--FIM STR TITLE-->
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:elevation="50dp"
-            android:orientation="horizontal"
-            android:padding="5dp">
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/yellow"
-                android:id="@+id/tvServiceStatus"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                android:id="@+id/tvDentistStatus"/>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:elevation="50dp"
-            android:orientation="horizontal"
-            android:padding="5dp">
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/yellow"
                 android:id="@+id/tvRescuerStatus"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/btnAccept"
+            android:id="@+id/tvServiceStatus"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"

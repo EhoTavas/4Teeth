@@ -2,11 +2,13 @@ package br.com.ForTeethDentalCare.screens.menu
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.ktx.Firebase
@@ -23,14 +25,18 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.ForTeethDentalCare.Constants
+import br.com.ForTeethDentalCare.EmergenciesAdapter
 import br.com.ForTeethDentalCare.R
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.ActivityMenuBinding
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
 import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.messaging.ktx.messaging
 
@@ -38,9 +44,9 @@ class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMenuBinding
-    private lateinit var storage: FirebaseStorage
     private lateinit var navController: NavController
     private lateinit var userPreferencesRepository: UserPreferencesRepository
+    public lateinit var emergenciesAdapter: EmergenciesAdapter
     private val user = FirebaseAuth.getInstance().currentUser
 
     private val requestPermissionLauncher = registerForActivityResult(
@@ -79,9 +85,6 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-        storage = Firebase.storage
-        val storageRef = storage.reference
-        var imagesRef: StorageReference? = storageRef.child("DentistUserPictures")
 
         navController = findNavController(R.id.nav_host_fragment_content_menu)
         appBarConfiguration = AppBarConfiguration(navController.graph)

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-63:/values-v16/values-v16.xml",
+            "outputFile": "br.com.ForTeethDentalCare.app-mergeDebugResources-70:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\265d55ef23d68b4398b64d055d628c98\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\6c4cbed0a0a9a0d58a9394094ac7ecb4\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\309d2376e2ae00322782a773708e7b7c\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Luan\\.gradle\\caches\\transforms-3\\42b72fec25df68df6b590395be8b1c97\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

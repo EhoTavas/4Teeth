@@ -5,7 +5,9 @@ import 'package:modulo_chamador/service_info.dart';
 
 class AcceptDentist extends StatefulWidget {
   final String docId;
-  const AcceptDentist({super.key, required this.docId});
+  final GeoPoint location;
+
+  const AcceptDentist({super.key, required this.docId, required this.location});
 
   @override
   State<AcceptDentist> createState() => _AcceptDentistState();
@@ -13,6 +15,7 @@ class AcceptDentist extends StatefulWidget {
 
 class _AcceptDentistState extends State<AcceptDentist> {
   late Stream<QuerySnapshot> stream;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
   void initState() {
@@ -55,7 +58,8 @@ class _AcceptDentistState extends State<AcceptDentist> {
         backgroundColor: const Color(0xFFF0FAF9),
         body: StreamBuilder<QuerySnapshot>(
           stream: stream,
-          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
               return const Text('Something went wrong');
             }
@@ -68,17 +72,26 @@ class _AcceptDentistState extends State<AcceptDentist> {
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (context, index) {
                 var doc = snapshot.data!.docs[index];
-
                 return FutureBuilder<DocumentSnapshot>(
                   future: getDentist(doc['dentist']),
-                  builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> dentistSnapshot) {
+                  builder: (BuildContext context,
+                      AsyncSnapshot<DocumentSnapshot> dentistSnapshot) {
                     if (dentistSnapshot.hasError) {
                       return const Text('Something went wrong');
                     }
-                    if (dentistSnapshot.connectionState == ConnectionState.waiting) {
+                    if (dentistSnapshot.connectionState ==
+                        ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
                     }
                     var dentistDoc = dentistSnapshot.data!;
+                    GeoPoint dentistLocation = doc['location'];
+                    double distanceInMeters = Geolocator.distanceBetween(
+                        widget.location.latitude,
+                        widget.location.longitude,
+                        dentistLocation.latitude,
+                        dentistLocation.longitude) /
+                        1000;
+                    String distance = distanceInMeters.toStringAsFixed(2);
                     return Center(
                       child: Material(
                         elevation: 8,
@@ -109,7 +122,8 @@ class _AcceptDentistState extends State<AcceptDentist> {
                                         Container(
                                           padding: const EdgeInsets.all(10),
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(15),
+                                            borderRadius:
+                                            BorderRadius.circular(15),
                                             color: const Color(0xffb5ef55),
                                           ),
                                           child: const Row(
@@ -141,8 +155,9 @@ class _AcceptDentistState extends State<AcceptDentist> {
                                             ),
                                             const SizedBox(width: 5),
                                             Text(
-                                              dentistDoc['status'],
-                                              style: const TextStyle(fontSize: 16),
+                                              "$distance km",
+                                              style:
+                                              const TextStyle(fontSize: 16),
                                             ),
                                           ],
                                         ),
@@ -160,21 +175,7 @@ class _AcceptDentistState extends State<AcceptDentist> {
                                   color: Colors.blue,
                                 ),
                                 child: IconButton(
-                                  onPressed: () async {
-                                    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-                                    // Checar se o widget ainda está montado.
-                                    if (!mounted) return;
-                                    GeoPoint dentistLocation = doc['location'];
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) => MapSample(
-                                        callerLatitude: position.latitude,
-                                        callerLongitude: position.longitude,
-                                        dentistLatitude: dentistLocation.latitude,
-                                        dentistLongitude: dentistLocation.longitude,
-                                        phone: dentistDoc['telefone'],
-                                      )),
-                                    );
-                                  },
+                                  onPressed: () => _onButtonPressed(doc['id'], doc['emergency'], dentistLocation, dentistDoc['telefone']),
                                   icon: const Icon(
                                     Icons.check,
                                     color: Colors.white,
@@ -194,5 +195,31 @@ class _AcceptDentistState extends State<AcceptDentist> {
         ),
       ),
     );
+  }
+
+  void _onButtonPressed(String id, String emergency, GeoPoint dentistLocation, String phone) async {
+    // Perform Firestore update
+    await _acceptDentist(id, emergency);
+    if (mounted) {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) =>
+            MapSample(
+              callerLatitude: widget.location.latitude,
+              callerLongitude: widget.location.longitude,
+              dentistLatitude: dentistLocation.latitude,
+              dentistLongitude: dentistLocation.longitude,
+              phone: phone,
+            )),
+      );
+    }
+  }
+
+  Future<void> _acceptDentist(String id, String emergency) async {
+    await _firestore.collection("Atendimentos").doc(id).set({
+      'status': '2',
+    }, SetOptions(merge: true));
+    await _firestore.collection("Emergencias").doc(emergency).set({
+      'atendimento': id,
+    }, SetOptions(merge: true));
   }
 }

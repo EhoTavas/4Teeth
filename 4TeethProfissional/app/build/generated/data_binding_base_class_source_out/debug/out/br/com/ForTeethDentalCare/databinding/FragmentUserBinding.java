@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import br.com.ForTeethDentalCare.R;
@@ -22,10 +23,13 @@ public final class FragmentUserBinding implements ViewBinding {
   private final LinearLayoutCompat rootView;
 
   @NonNull
-  public final AppCompatButton btnLogout;
+  public final SwitchCompat BtnSwitch;
 
   @NonNull
-  public final ImageView imageView;
+  public final AppCompatButton btnLocation;
+
+  @NonNull
+  public final AppCompatButton btnLogout;
 
   @NonNull
   public final AppCompatTextView tvUserMail;
@@ -36,16 +40,21 @@ public final class FragmentUserBinding implements ViewBinding {
   @NonNull
   public final AppCompatTextView tvUserPhone;
 
-  private FragmentUserBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull AppCompatButton btnLogout, @NonNull ImageView imageView,
+  @NonNull
+  public final ImageView userPicture;
+
+  private FragmentUserBinding(@NonNull LinearLayoutCompat rootView, @NonNull SwitchCompat BtnSwitch,
+      @NonNull AppCompatButton btnLocation, @NonNull AppCompatButton btnLogout,
       @NonNull AppCompatTextView tvUserMail, @NonNull AppCompatTextView tvUserName,
-      @NonNull AppCompatTextView tvUserPhone) {
+      @NonNull AppCompatTextView tvUserPhone, @NonNull ImageView userPicture) {
     this.rootView = rootView;
+    this.BtnSwitch = BtnSwitch;
+    this.btnLocation = btnLocation;
     this.btnLogout = btnLogout;
-    this.imageView = imageView;
     this.tvUserMail = tvUserMail;
     this.tvUserName = tvUserName;
     this.tvUserPhone = tvUserPhone;
+    this.userPicture = userPicture;
   }
 
   @Override
@@ -75,15 +84,21 @@ public final class FragmentUserBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnLogout;
-      AppCompatButton btnLogout = ViewBindings.findChildViewById(rootView, id);
-      if (btnLogout == null) {
+      id = R.id.BtnSwitch;
+      SwitchCompat BtnSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (BtnSwitch == null) {
         break missingId;
       }
 
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
+      id = R.id.btnLocation;
+      AppCompatButton btnLocation = ViewBindings.findChildViewById(rootView, id);
+      if (btnLocation == null) {
+        break missingId;
+      }
+
+      id = R.id.btnLogout;
+      AppCompatButton btnLogout = ViewBindings.findChildViewById(rootView, id);
+      if (btnLogout == null) {
         break missingId;
       }
 
@@ -105,8 +120,14 @@ public final class FragmentUserBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentUserBinding((LinearLayoutCompat) rootView, btnLogout, imageView,
-          tvUserMail, tvUserName, tvUserPhone);
+      id = R.id.userPicture;
+      ImageView userPicture = ViewBindings.findChildViewById(rootView, id);
+      if (userPicture == null) {
+        break missingId;
+      }
+
+      return new FragmentUserBinding((LinearLayoutCompat) rootView, BtnSwitch, btnLocation,
+          btnLogout, tvUserMail, tvUserName, tvUserPhone, userPicture);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

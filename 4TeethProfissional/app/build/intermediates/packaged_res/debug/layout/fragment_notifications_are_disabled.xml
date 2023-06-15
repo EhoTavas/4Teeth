@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.4TeethProfissional"
     android:padding="30dp"
-    tools:context=".screens.login.NotificationsAreDisabledFragment">
+    tools:context=".screens.NotificationsAreDisabledFragment">
 
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="Notificações estão desabilitadas"
         android:textSize="16sp"
         android:textStyle="bold"
         />
 
     <Button
-        android:id="@+id/btnAndroidSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnAllowNotifications"
+        style="@style/btnDefault"
         android:layout_below="@id/tvMessage"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
