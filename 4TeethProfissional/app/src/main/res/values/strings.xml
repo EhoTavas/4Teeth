@@ -86,7 +86,7 @@
 
     //Strings tela Status
     <string name="title_fragment_status">Meu Status</string>
-    <string name="strAvailability">Diponível para emergências</string>
+    <string name="strAvailability">Diponível</string>
 
     //Strings tela Menu
     <string name="title_activity_initial_menu">Menu</string>
