@@ -196,6 +196,7 @@ class _MyAppState extends State<MyApp> {
                                     ),
                                     TextField(
                                       inputFormatters: [maskFormatter],
+                                      keyboardType: TextInputType.phone,
                                       controller: phoneController,
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
@@ -252,51 +253,55 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _onButtonPressed() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return Dialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Container(
-            padding: const EdgeInsets.all(16.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
+    if (_validateInput(context)) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return Dialog(
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
-            child: const Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(height: 10.0),
-                CircularProgressIndicator(),
-                SizedBox(height: 10.0),
-                Text(
-                  'Estamos procurando profissionais para te auxiliar',
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 10.0),
-                Text(
-                  'Profissionais avisados...',
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 10.0),
-                Text(
-                  'Aguarde...',
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            child: Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(height: 10.0),
+                  CircularProgressIndicator(),
+                ],
+              ),
             ),
-          ),
-        );
-      },
-    );
+          );
+        },
+      );
 
-    _submitEmergency().then((_) {
-      Navigator.of(context, rootNavigator: true).pop();
-    });
+      _submitEmergency().then((_) {
+        Navigator.of(context, rootNavigator: true).pop();
+      });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Por favor, preencha todos os campos.')),
+      );
+    }
   }
+
+  bool _validateInput(BuildContext context) {
+    if (fotoBoca == null || fotoDocumento == null || fotoCrianca == null) {
+      return false;
+    }
+
+    if (nameController.text.isEmpty || phoneController.text.isEmpty) {
+      return false;
+    }
+
+    return true;
+  }
+
   Future<void> _submitEmergency() async {
     PermissionStatus status = await Permission.location.request();
 
