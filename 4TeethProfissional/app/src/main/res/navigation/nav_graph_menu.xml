@@ -58,8 +58,8 @@
     <fragment
         android:id="@+id/serviceAddressesFragment"
         android:name="br.com.ForTeethDentalCare.screens.menu.ServiceAddressesFragment"
-        android:label="fragment_service_addresses"
-        tools:layout="@layout/fragment_service_addresses" >
+        android:label="@string/strServiceAddresses"
+        tools:layout="@layout/fragment_service_addresses">
         <action
             android:id="@+id/serviceAddressesFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />

@@ -22,408 +22,432 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:text="Primeiro endereço"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cep:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etCep1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llEnderecoUm"
                             android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Numero:"
-                            android:textSize="18sp"
-                            />
+                            android:orientation="vertical">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Primeiro endereço"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etEnderecoNumero1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Cep:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCep1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Numero:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etEnderecoNumero1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Complemento:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etComplemento1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Rua:"
+                                    android:textSize="18sp"
+                                    />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etRua1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Bairro:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etBairro1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Cidade:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCidade1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Estado:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etEstado1"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llEnderecoDois"
                             android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Complemento:"
-                            android:textSize="18sp"
-                            />
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etComplemento1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Segundo endereço"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Cep:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCep2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Numero:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etEnderecoNumero2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Complemento:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etComplemento2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Rua:"
+                                    android:textSize="18sp"
+                                    />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etRua2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Bairro:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etBairro2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Cidade:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCidade2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Estado:"
+                                    android:textSize="18sp"
+                                    />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etEstado2"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llEnderecoTres"
                             android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Rua:"
-                            android:textSize="18sp"
-                            />
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etRua1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Bairro:"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Terceiro endereço"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etBairro1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Cep:"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cidade:"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCep3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etCidade1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Numero:"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Estado:"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etEnderecoNumero3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etEstado1"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Complemento:"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:text="Segundo endereço"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etComplemento3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cep:"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Rua:"
+                                    android:textSize="18sp"
+                                    />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etRua3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etCep2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Bairro:"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Numero:"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etBairro3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etEnderecoNumero2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Cidade:"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Complemento:"
-                            android:textSize="18sp"
-                            />
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCidade3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etComplemento2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:text="Estado:"
+                                    android:textSize="18sp"
+                                    />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Rua:"
-                            android:textSize="18sp"
-                            />
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etRua2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etEstado3"
+                                    style="@style/btnDefault"
+                                    android:elevation="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="25dp"
+                                    android:textColor="@color/black"
+                                    android:backgroundTint="@color/branco_gelo"/>
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Bairro:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etBairro2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cidade:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etCidade2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Estado:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etEstado2"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:text="Terceiro endereço"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cep:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etCep3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Numero:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etEnderecoNumero3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Complemento:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etComplemento3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Rua:"
-                            android:textSize="18sp"
-                            />
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etRua3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Bairro:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etBairro3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cidade:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etCidade3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Estado:"
-                            android:textSize="18sp"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/etEstado3"
-                            style="@style/btnDefault"
-                            android:elevation="0dp"
-                            android:layout_height="32dp"
-                            android:layout_width="match_parent"
-                            android:layout_marginHorizontal="25dp"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/branco_gelo"/>
-
+                        </androidx.appcompat.widget.LinearLayoutCompat>
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnChangeData"
                             android:layout_marginTop="20dp"
@@ -434,7 +458,8 @@
                             android:id="@+id/btnsaveData"
                             android:layout_marginTop="20dp"
                             style="@style/btnDefault"
-                            android:text="Salvar dados"/>
+                            android:text="Salvar dados"
+                            android:visibility="gone"/>
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -4030,6 +4030,9 @@ int id line3 0x7f0a016e
 int id linear 0x7f0a016f
 int id listMode 0x7f0a0170
 int id list_item 0x7f0a0171
+int id llEnderecoDois 0x7f0a02bc
+int id llEnderecoTres 0x7f0a02bd
+int id llEnderecoUm 0x7f0a02be
 int id locale 0x7f0a0172
 int id ltr 0x7f0a0173
 int id m3_side_sheet 0x7f0a0174

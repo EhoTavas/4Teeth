@@ -41,6 +41,25 @@ object Constants {
         return task
     }
 
+    fun updateAdress(data: String, field: String) : Task<CustomResponse> {
+        functions = Firebase.functions("southamerica-east1")
+        auth = Firebase.auth
+
+        val dentistData = hashMapOf(
+            "uid" to auth.currentUser!!.uid,
+            field to data
+        )
+
+        val task = functions
+            .getHttpsCallable("setUserAddresses")
+            .call(dentistData)
+            .continueWith { task ->
+                val result = gson.fromJson((task.result?.data as String), CustomResponse::class.java)
+                result
+            }
+        return task
+    }
+
     fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth

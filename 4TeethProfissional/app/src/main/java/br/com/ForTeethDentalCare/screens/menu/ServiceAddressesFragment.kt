@@ -52,21 +52,27 @@ class ServiceAddressesFragment : Fragment() {
 
         loadUserData()
 
-        binding.etCep2.visibility = View.INVISIBLE
-        binding.etEnderecoNumero2.visibility = View.INVISIBLE
-        binding.etComplemento2.visibility = View.INVISIBLE
-        binding.etRua2.visibility = View.INVISIBLE
-        binding.etBairro2.visibility = View.INVISIBLE
-        binding.etCidade2.visibility = View.INVISIBLE
-        binding.etEstado2.visibility = View.INVISIBLE
-        binding.etCep3.visibility = View.INVISIBLE
-        binding.etEnderecoNumero3.visibility = View.INVISIBLE
-        binding.etComplemento3.visibility = View.INVISIBLE
-        binding.etRua3.visibility = View.INVISIBLE
-        binding.etBairro3.visibility = View.INVISIBLE
-        binding.etCidade3.visibility = View.INVISIBLE
-        binding.etEstado3.visibility = View.INVISIBLE
-
+        binding.etCep1.isEnabled = false
+        binding.etEnderecoNumero1.isEnabled = false
+        binding.etComplemento1.isEnabled = false
+        binding.etRua1.isEnabled = false
+        binding.etBairro1.isEnabled = false
+        binding.etCidade1.isEnabled = false
+        binding.etEstado1.isEnabled = false
+        binding.etCep2.isEnabled = false
+        binding.etEnderecoNumero2.isEnabled = false
+        binding.etComplemento2.isEnabled = false
+        binding.etRua2.isEnabled = false
+        binding.etBairro2.isEnabled = false
+        binding.etCidade2.isEnabled = false
+        binding.etEstado2.isEnabled = false
+        binding.etCep3.isEnabled = false
+        binding.etEnderecoNumero3.isEnabled = false
+        binding.etComplemento3.isEnabled = false
+        binding.etRua3.isEnabled = false
+        binding.etBairro3.isEnabled = false
+        binding.etCidade3.isEnabled = false
+        binding.etEstado3.isEnabled = false
 
         binding.btnChangeData.setOnClickListener{
             binding.etCep1.isEnabled = true
@@ -76,6 +82,24 @@ class ServiceAddressesFragment : Fragment() {
             binding.etBairro1.isEnabled = true
             binding.etCidade1.isEnabled = true
             binding.etEstado1.isEnabled = true
+            binding.etCep2.isEnabled = true
+            binding.etEnderecoNumero2.isEnabled = true
+            binding.etComplemento2.isEnabled = true
+            binding.etRua2.isEnabled = true
+            binding.etBairro2.isEnabled = true
+            binding.etCidade2.isEnabled = true
+            binding.etEstado2.isEnabled = true
+            binding.etCep3.isEnabled = true
+            binding.etEnderecoNumero3.isEnabled = true
+            binding.etComplemento3.isEnabled = true
+            binding.etRua3.isEnabled = true
+            binding.etBairro3.isEnabled = true
+            binding.etCidade3.isEnabled = true
+            binding.etEstado3.isEnabled = true
+
+            binding.btnChangeData.visibility = View.GONE
+            binding.btnsaveData.visibility = View.VISIBLE
+
         }
 
         binding.btnsaveData.setOnClickListener{
@@ -87,6 +111,23 @@ class ServiceAddressesFragment : Fragment() {
             binding.etBairro1.isEnabled = false
             binding.etCidade1.isEnabled = false
             binding.etEstado1.isEnabled = false
+            binding.etCep2.isEnabled = false
+            binding.etEnderecoNumero2.isEnabled = false
+            binding.etComplemento2.isEnabled = false
+            binding.etRua2.isEnabled = false
+            binding.etBairro2.isEnabled = false
+            binding.etCidade2.isEnabled = false
+            binding.etEstado2.isEnabled = false
+            binding.etCep3.isEnabled = false
+            binding.etEnderecoNumero3.isEnabled = false
+            binding.etComplemento3.isEnabled = false
+            binding.etRua3.isEnabled = false
+            binding.etBairro3.isEnabled = false
+            binding.etCidade3.isEnabled = false
+            binding.etEstado3.isEnabled = false
+
+            binding.btnChangeData.visibility = View.VISIBLE
+            binding.btnsaveData.visibility = View.GONE
 
             loadUserData()
         }
@@ -116,7 +157,6 @@ class ServiceAddressesFragment : Fragment() {
                     binding.etBairro1.setText (document.data["bairro"].toString())
                     binding.etCidade1.setText(document.data["cidade"].toString())
                     binding.etEstado1.setText(document.data["estado"].toString())
-                    binding.btnsaveData.isInvisible = true
 
                 }
 
@@ -130,14 +170,7 @@ class ServiceAddressesFragment : Fragment() {
                     binding.etCidade2.setText(document.data["cidade"].toString())
                     binding.etEstado2.setText(document.data["estado"].toString())
 
-                    binding.etCep2.visibility = View.VISIBLE
-                    binding.etEnderecoNumero2.visibility = View.VISIBLE
-                    binding.etComplemento2.visibility = View.VISIBLE
-                    binding.etRua2.visibility = View.VISIBLE
-                    binding.etBairro2.visibility = View.VISIBLE
-                    binding.etCidade2.visibility = View.VISIBLE
-                    binding.etEstado2.visibility = View.VISIBLE
-
+                    binding.llEnderecoDois.visibility = View.VISIBLE
                 }
 
                 if ((document.data["dentista"].toString() == email) && (document.data["tipo"].toString() == "3")) {
@@ -150,14 +183,7 @@ class ServiceAddressesFragment : Fragment() {
                     binding.etCidade3.setText(document.data["cidade"].toString())
                     binding.etEstado3.setText(document.data["estado"].toString())
 
-                    binding.etCep3.visibility = View.VISIBLE
-                    binding.etEnderecoNumero3.visibility = View.VISIBLE
-                    binding.etComplemento3.visibility = View.VISIBLE
-                    binding.etRua3.visibility = View.VISIBLE
-                    binding.etBairro3.visibility = View.VISIBLE
-                    binding.etCidade3.visibility = View.VISIBLE
-                    binding.etEstado3.visibility = View.VISIBLE
-
+                    binding.llEnderecoTres.visibility = View.VISIBLE
                 }
             }
         }
