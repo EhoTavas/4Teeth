@@ -21,15 +21,15 @@ public final class FragmentNotificationsAreDisabledBinding implements ViewBindin
   private final RelativeLayout rootView;
 
   @NonNull
-  public final Button btnAndroidSettings;
+  public final Button btnAllowNotifications;
 
   @NonNull
   public final TextView tvMessage;
 
   private FragmentNotificationsAreDisabledBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button btnAndroidSettings, @NonNull TextView tvMessage) {
+      @NonNull Button btnAllowNotifications, @NonNull TextView tvMessage) {
     this.rootView = rootView;
-    this.btnAndroidSettings = btnAndroidSettings;
+    this.btnAllowNotifications = btnAllowNotifications;
     this.tvMessage = tvMessage;
   }
 
@@ -60,9 +60,9 @@ public final class FragmentNotificationsAreDisabledBinding implements ViewBindin
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnAndroidSettings;
-      Button btnAndroidSettings = ViewBindings.findChildViewById(rootView, id);
-      if (btnAndroidSettings == null) {
+      id = R.id.btnAllowNotifications;
+      Button btnAllowNotifications = ViewBindings.findChildViewById(rootView, id);
+      if (btnAllowNotifications == null) {
         break missingId;
       }
 
@@ -73,7 +73,7 @@ public final class FragmentNotificationsAreDisabledBinding implements ViewBindin
       }
 
       return new FragmentNotificationsAreDisabledBinding((RelativeLayout) rootView,
-          btnAndroidSettings, tvMessage);
+          btnAllowNotifications, tvMessage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

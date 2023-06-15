@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
     public var dentist: Dentist = Dentist("", "", "", "", "", "", "1")
-    public var address: Address = Address("", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "","")
+    public var address: Address = Address("", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "","", "1", "2", "3")
 
     fun storeUserId(uid: String){
         userPreferencesRepository.uid = uid

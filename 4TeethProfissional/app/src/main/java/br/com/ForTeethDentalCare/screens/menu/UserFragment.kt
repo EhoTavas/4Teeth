@@ -14,10 +14,12 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isInvisible
 import androidx.navigation.fragment.findNavController
 import br.com.ForTeethDentalCare.Constants
 import br.com.ForTeethDentalCare.CustomResponse
 import br.com.ForTeethDentalCare.R
+import br.com.ForTeethDentalCare.dataStore.Dentist
 import br.com.ForTeethDentalCare.dataStore.UserPreferencesRepository
 import br.com.ForTeethDentalCare.databinding.FragmentUserBinding
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
@@ -27,20 +29,25 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.functions.FirebaseFunctions
+import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
+import com.google.gson.GsonBuilder
 
 class UserFragment : Fragment() {
 
     private var _binding: FragmentUserBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var functions: FirebaseFunctions
+    private val gson = GsonBuilder().enableComplexMapKeySerialization().create()
     private lateinit var status: Task<CustomResponse>
     private val db = Firebase.firestore
     private val storage = Firebase.storage
     private var user = FirebaseAuth.getInstance().currentUser
     private val email = user!!.email
+
+
     private val binding get() = _binding!!
     private lateinit var userPreferencesRepository: UserPreferencesRepository
 
@@ -89,9 +96,30 @@ class UserFragment : Fragment() {
             )
             requestPermissionLauncher.launch(permissionsToRequest)
         }
-        binding.btnLogout.setOnClickListener {
+        /*binding.btnLogout.setOnClickListener {
             auth.signOut()
             startActivity(Intent(requireContext(), LoginActivity::class.java))
+        }*/
+        binding.btnChangeData.setOnClickListener{
+            binding.etUserName.isEnabled = true
+            binding.etUserMail.isEnabled = true
+            binding.etUserPhone.isEnabled = true
+            binding.btnsaveData.isInvisible = false
+        }
+
+        binding.btnsaveData.setOnClickListener{
+            binding.etUserName.isEnabled = false
+            binding.etUserMail.isEnabled = false
+            binding.etUserPhone.isEnabled = false
+            binding.btnsaveData.isInvisible = true
+
+            val nome = binding.etUserName.text.toString()
+            val telefone = binding.etUserPhone.text.toString()
+
+
+            Constants.updateDentistData(nome,"nome")
+            Constants.updateDentistData(telefone, "telefone")
+            loadUserData()
         }
         binding.userPicture.setOnClickListener {
             cameraProviderResult.launch(Manifest.permission.CAMERA)
@@ -152,13 +180,22 @@ class UserFragment : Fragment() {
                     if (document.data["status"].toString() == "1") {
                         binding.BtnSwitch.isChecked = true
                     }
-                    binding.tvUserName.text = document.data["nome"].toString()
-                    binding.tvUserMail.text = document.data["email"].toString()
-                    binding.tvUserPhone.text = document.data["telefone"].toString()
+                    binding.etUserName.setText (document.data["nome"].toString())
+                    binding.etUserMail.setText (document.data["email"].toString())
+                    binding.etUserPhone.setText(document.data["telefone"].toString())
+
+                    binding.etUserName.isEnabled = false
+                    binding.etUserMail.isEnabled = false
+                    binding.etUserPhone.isEnabled = false
+
+                    binding.btnsaveData.isInvisible = true
+
                 }
             }
         }
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
