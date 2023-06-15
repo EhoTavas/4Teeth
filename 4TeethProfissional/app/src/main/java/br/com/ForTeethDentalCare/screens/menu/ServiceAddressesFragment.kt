@@ -52,6 +52,20 @@ class ServiceAddressesFragment : Fragment() {
 
         loadUserData()
 
+        binding.etCep2.visibility = View.INVISIBLE
+        binding.etEnderecoNumero2.visibility = View.INVISIBLE
+        binding.etComplemento2.visibility = View.INVISIBLE
+        binding.etRua2.visibility = View.INVISIBLE
+        binding.etBairro2.visibility = View.INVISIBLE
+        binding.etCidade2.visibility = View.INVISIBLE
+        binding.etEstado2.visibility = View.INVISIBLE
+        binding.etCep3.visibility = View.INVISIBLE
+        binding.etEnderecoNumero3.visibility = View.INVISIBLE
+        binding.etComplemento3.visibility = View.INVISIBLE
+        binding.etRua3.visibility = View.INVISIBLE
+        binding.etBairro3.visibility = View.INVISIBLE
+        binding.etCidade3.visibility = View.INVISIBLE
+        binding.etEstado3.visibility = View.INVISIBLE
 
 
         binding.btnChangeData.setOnClickListener{
@@ -102,10 +116,47 @@ class ServiceAddressesFragment : Fragment() {
                     binding.etBairro1.setText (document.data["bairro"].toString())
                     binding.etCidade1.setText(document.data["cidade"].toString())
                     binding.etEstado1.setText(document.data["estado"].toString())
-
-
-
                     binding.btnsaveData.isInvisible = true
+
+                }
+
+                if ((document.data["dentista"].toString() == email) && (document.data["tipo"].toString() == "2")) {
+
+                    binding.etCep2.setText (document.data["Cep"].toString())
+                    binding.etEnderecoNumero2.setText (document.data["numero"].toString())
+                    binding.etComplemento2.setText(document.data["complemento"].toString())
+                    binding.etRua2.setText (document.data["rua"].toString())
+                    binding.etBairro2.setText (document.data["bairro"].toString())
+                    binding.etCidade2.setText(document.data["cidade"].toString())
+                    binding.etEstado2.setText(document.data["estado"].toString())
+
+                    binding.etCep2.visibility = View.VISIBLE
+                    binding.etEnderecoNumero2.visibility = View.VISIBLE
+                    binding.etComplemento2.visibility = View.VISIBLE
+                    binding.etRua2.visibility = View.VISIBLE
+                    binding.etBairro2.visibility = View.VISIBLE
+                    binding.etCidade2.visibility = View.VISIBLE
+                    binding.etEstado2.visibility = View.VISIBLE
+
+                }
+
+                if ((document.data["dentista"].toString() == email) && (document.data["tipo"].toString() == "3")) {
+
+                    binding.etCep3.setText (document.data["Cep"].toString())
+                    binding.etEnderecoNumero3.setText (document.data["numero"].toString())
+                    binding.etComplemento3.setText(document.data["complemento"].toString())
+                    binding.etRua3.setText (document.data["rua"].toString())
+                    binding.etBairro3.setText (document.data["bairro"].toString())
+                    binding.etCidade3.setText(document.data["cidade"].toString())
+                    binding.etEstado3.setText(document.data["estado"].toString())
+
+                    binding.etCep3.visibility = View.VISIBLE
+                    binding.etEnderecoNumero3.visibility = View.VISIBLE
+                    binding.etComplemento3.visibility = View.VISIBLE
+                    binding.etRua3.visibility = View.VISIBLE
+                    binding.etBairro3.visibility = View.VISIBLE
+                    binding.etCidade3.visibility = View.VISIBLE
+                    binding.etEstado3.visibility = View.VISIBLE
 
                 }
             }
