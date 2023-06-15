@@ -369,6 +369,7 @@ export const answerEmergency = functions
       emergency: data.emergency,
       dentist: data.dentist,
       status: data.status,
+      location: new admin.firestore.GeoPoint(data.latitude, data.longitude),
       //name: dentistData.docs[0].data().nome,
       //phone: dentistData.docs[0].data().telefone,
     };

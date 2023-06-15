@@ -14,14 +14,14 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="163dp"
-        android:layout_gravity="top|center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <!--STR TITLE-->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -32,26 +32,6 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-
-            <ImageView
-                android:id="@+id/imgMapPing"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_gravity="top|end"
-                android:layout_marginTop="2dp"
-                android:textAppearance="?attr/textAppearanceHeadline5"
-                android:contentDescription="@string/clientImageDescription"
-                app:srcCompat="@drawable/ic_map_ping" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvPatientDistance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:text="5km"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
         <!--FIM STR TITLE-->
 
@@ -82,7 +62,35 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:textColor="@color/yellow"
-                android:id="@+id/tvServiceStatus2"/>
+                android:id="@+id/tvRescuerStatus"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgMapPing"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="2dp"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:contentDescription="@string/clientImageDescription"
+                app:srcCompat="@drawable/ic_map_ping" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPatientDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="5km"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -22,13 +22,11 @@ class MapsFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     private val callback = OnMapReadyCallback { googleMap ->
-        fusedLocationClient.lastLocation
-            .addOnSuccessListener { location: Location? ->
-                // Use the location object to get latitude, longitude, etc.
-                val currentLocation = LatLng(location?.latitude!!, location.longitude)
-                googleMap.addMarker(MarkerOptions().position(currentLocation).title("You are here"))
-                googleMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation))
-            }
+        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+            val currentLocation = LatLng(location?.latitude!!, location.longitude)
+            googleMap.addMarker(MarkerOptions().position(currentLocation).title("You are here"))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation))
+        }
     }
 
     override fun onCreateView(

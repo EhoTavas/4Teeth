@@ -1,16 +1,21 @@
 package br.com.ForTeethDentalCare
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.location.Location
 import android.util.Log
 import android.view.View
 import androidx.navigation.Navigation
 import br.com.ForTeethDentalCare.screens.login.LoginActivity
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
@@ -41,6 +46,7 @@ object Constants {
         return task
     }
 
+
     fun updateAdress(data: String, field: String) : Task<CustomResponse> {
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth
@@ -60,7 +66,15 @@ object Constants {
         return task
     }
 
-    fun answerEmergency(check: Boolean, emergencyId: String, view: View, context: Context) : Task<CustomResponse> {
+    fun answerEmergency(
+        check: Boolean,
+        emergencyId: String,
+        view: View,
+        context: Context,
+        latitude: Double,
+        longitude: Double
+    ) : Task<CustomResponse> {
+
         functions = Firebase.functions("southamerica-east1")
         auth = Firebase.auth
 
@@ -69,7 +83,9 @@ object Constants {
         val emergencyData = hashMapOf(
             "dentist" to auth.currentUser!!.uid,
             "emergency" to emergencyId,
-            "status" to status
+            "status" to status,
+            "latitude" to latitude,
+            "longitude" to longitude
         )
 
         val task = functions
@@ -95,5 +111,6 @@ object Constants {
         }
         return task
     }
+
 
 }
