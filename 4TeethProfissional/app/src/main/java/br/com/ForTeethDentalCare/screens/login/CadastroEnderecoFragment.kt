@@ -99,6 +99,7 @@ class CadastroEnderecoFragment : Fragment() {
                     (activity as LoginActivity).address.cidade1,
                     (activity as LoginActivity).address.estado1,
                     (activity as LoginActivity).dentist.email,
+                    (activity as LoginActivity).address.primeiroEndereco,
                 )
 
                 if (
@@ -117,6 +118,7 @@ class CadastroEnderecoFragment : Fragment() {
                         (activity as LoginActivity).address.cidade2,
                         (activity as LoginActivity).address.estado2,
                         (activity as LoginActivity).dentist.email,
+                        (activity as LoginActivity).address.segundoEndereco,
                     )
                 }
                 if (
@@ -135,6 +137,7 @@ class CadastroEnderecoFragment : Fragment() {
                         (activity as LoginActivity).address.cidade3,
                         (activity as LoginActivity).address.estado3,
                         (activity as LoginActivity).dentist.email,
+                        (activity as LoginActivity).address.terceiroEndereco,
                     )
                 }
             }
@@ -230,7 +233,8 @@ class CadastroEnderecoFragment : Fragment() {
         bairro: String,
         cidade: String,
         estado: String,
-        email: String
+        email: String,
+        tipo: String
     ) : Task<CustomResponse>{
         functions = Firebase.functions("southamerica-east1")
 
@@ -239,6 +243,7 @@ class CadastroEnderecoFragment : Fragment() {
             "complemento" to complemento, "rua" to rua,
             "bairro" to bairro, "cidade" to cidade,
             "estado" to estado, "dentista" to email,
+            "tipo" to tipo,
         )
         val task = functions
             .getHttpsCallable("setUserAddresses")

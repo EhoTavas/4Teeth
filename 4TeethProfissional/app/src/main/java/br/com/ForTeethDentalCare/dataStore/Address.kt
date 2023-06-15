@@ -21,5 +21,8 @@ data class Address(
     var rua3: String,
     var bairro3: String,
     var cidade3: String,
-    var estado3: String
+    var estado3: String,
+    var primeiroEndereco: String,
+    var segundoEndereco: String,
+    var terceiroEndereco: String,
 )
