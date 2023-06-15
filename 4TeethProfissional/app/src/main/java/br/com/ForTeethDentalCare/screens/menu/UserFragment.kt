@@ -53,7 +53,7 @@ class UserFragment : Fragment() {
                 findNavController().navigate(R.id.userFragment_to_mapsFragment)
             } else {
                 // Ao menos uma das permissões não foi concedida
-                Toast.makeText(context, "Permissão de localização é necessária para abrir a tela.", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Permissão de localização é necessária para abrir a tela.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -83,11 +83,10 @@ class UserFragment : Fragment() {
         loadUserData()
 
         binding.btnLocation.setOnClickListener {
-            val permissionsToRequest = arrayOf(
+            requestPermissionLauncher.launch(arrayOf(
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION
-            )
-            requestPermissionLauncher.launch(permissionsToRequest)
+            ))
         }
         binding.btnLogout.setOnClickListener {
             auth.signOut()

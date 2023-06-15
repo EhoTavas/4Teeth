@@ -184,7 +184,6 @@ class CadastroEnderecoFragment : Fragment() {
                             }
                         }
 
-
                 } else {
                     Log.w("SignUpFragment", "createUserWithEmail:failure", task.exception)
                     Toast.makeText(requireActivity(), "Authentication failed.",

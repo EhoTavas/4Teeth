@@ -1,6 +1,8 @@
 package br.com.ForTeethDentalCare.screens.menu
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,10 +13,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import br.com.ForTeethDentalCare.EmergenciesAdapter
 import br.com.ForTeethDentalCare.dataStore.Emergency
 import br.com.ForTeethDentalCare.databinding.FragmentEmergenciesListBinding
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -29,6 +34,7 @@ class EmergenciesListFragment : Fragment() {
     private val db = Firebase.firestore
     private var user = FirebaseAuth.getInstance().currentUser
     private var allEmergencies = ArrayList<Emergency>()
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,14 +45,21 @@ class EmergenciesListFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("MissingPermission")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
         allEmergencies.clear()
-        emergenciesAdapter = EmergenciesAdapter(allEmergencies)
-
-        binding.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
-        binding.rvEmergencies.adapter = emergenciesAdapter
+        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location ->
+            emergenciesAdapter = EmergenciesAdapter(
+                allEmergencies,
+                location.latitude,
+                location.longitude
+            )
+            binding.rvEmergencies.layoutManager = GridLayoutManager(binding.root.context, 1)
+            binding.rvEmergencies.adapter = emergenciesAdapter
+        }
     }
 
     override fun onStart() {
@@ -61,58 +74,74 @@ class EmergenciesListFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun loadEmergencies() {
-        val collection = db.collection("Emergencias").orderBy("time", Query.Direction.DESCENDING)
-        var emergency: Emergency
+        val dentistUid = user!!.uid
+        val emergencyCollection = db
+            .collection("Emergencias")
+            .whereEqualTo("status", "0")
+            .orderBy("time", Query.Direction.DESCENDING)
+        val serviceCollection = db.collection("Atendimentos")
 
-        collection.addSnapshotListener { value, e ->
+        emergencyCollection.addSnapshotListener { emergencias, e ->
             allEmergencies.clear()
-            val pendingTasks = mutableListOf<Task<*>>()
 
             if (e != null) {
                 Log.e("FirestoreListener", "Erro ao ler novas emergências", e)
                 return@addSnapshotListener
             }
 
-            for (document in value!!) {
-                val emergencyId = document.data["id"].toString()
-                val servicesRef =
-                    db.collection("Atendimentos").whereEqualTo("emergency", emergencyId)
-                val task = servicesRef.get().continueWith { task ->
-                    if (task.isSuccessful) {
-                        var addEmergency = true
-                        for (service in task.result!!) {
-                            val dentistUid = service.data["dentist"].toString()
-                            val status = service.data["status"].toString()
+            for (emergencyDocument in emergencias!!) {
+                val emergencyId = emergencyDocument.data["id"].toString()
+                Log.d("EmergencyId", emergencyId)
 
-                            if (dentistUid == user!!.uid && !(status == "1" || status == "2")) {
-                                addEmergency = false
-                                break
+                serviceCollection
+                    .whereEqualTo("emergency", emergencyId)
+                    .whereEqualTo("dentist", dentistUid)
+                    .addSnapshotListener { atendimento, _ ->
+                        if (!atendimento!!.isEmpty) {
+                            for (serviceDocument in atendimento) {
+                                val status = serviceDocument.data["status"].toString()
+
+                                if (status == "1" || status == "2") {
+                                    val location: GeoPoint = emergencyDocument.data["location"] as GeoPoint
+
+                                    val emergency = Emergency(
+                                        emergencyDocument.data["name"].toString(),
+                                        emergencyDocument.data["phone"].toString(),
+                                        emergencyDocument.data["id"].toString(),
+                                        emergencyDocument.data["fotoBoca"].toString(),
+                                        emergencyDocument.data["fotoCrianca"].toString(),
+                                        emergencyDocument.data["fotoDocumento"].toString(),
+                                        emergencyDocument.data["time"] as Timestamp,
+                                        status,
+                                        location.latitude,
+                                        location.longitude,
+                                    )
+                                    Log.d("emergencyStatus", status)
+                                    allEmergencies.add(emergency)
+                                }
                             }
-                        }
+                        } else {
+                            val location: GeoPoint = emergencyDocument.data["location"] as GeoPoint
 
-                        if (addEmergency) {
-                            emergency = Emergency(
-                                document.data["name"].toString(),
-                                document.data["phone"].toString(),
-                                document.data["id"].toString(),
-                                document.data["fotoBoca"].toString(),
-                                document.data["fotoCrianca"].toString(),
-                                document.data["fotoDocumento"].toString(),
-                                document.data["time"] as Timestamp,
+                            val emergency = Emergency(
+                                emergencyDocument.data["name"].toString(),
+                                emergencyDocument.data["phone"].toString(),
+                                emergencyDocument.data["id"].toString(),
+                                emergencyDocument.data["fotoBoca"].toString(),
+                                emergencyDocument.data["fotoCrianca"].toString(),
+                                emergencyDocument.data["fotoDocumento"].toString(),
+                                emergencyDocument.data["time"] as Timestamp,
+                                "0",
+                                location.latitude,
+                                location.longitude,
                             )
                             allEmergencies.add(emergency)
                         }
-                    }
-                }
-                pendingTasks.add(task)
-            }
 
-            Tasks.whenAllComplete(pendingTasks)
-                .addOnCompleteListener {
-                    // This may require adjusting based on how your 'time' field is structured
-                    allEmergencies.sortByDescending { it.time }
-                    emergenciesAdapter.notifyDataSetChanged()
-                }
+                        allEmergencies.sortByDescending { it.time }
+                        emergenciesAdapter.notifyDataSetChanged()
+                    }
+            }
         }
     }
 }

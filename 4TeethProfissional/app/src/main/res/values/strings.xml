@@ -123,13 +123,12 @@
 
     //Strings tela Emergências
     <string name="title_fragment_emergency">Emergências</string>
-    <string name="service_waiting">Aguardando dentista</string>
-    <string name="service_accepted">Dentista aceitou</string>
-    <string name="service_declined">Dentista recusou</string>
+    <string name="dentist_waiting">Aguardando dentista</string>
+    <string name="dentist_accepted">Você aceitou</string>
+    <string name="service_waiting">Aguardando atendimento</string>
     <string name="service_finished">Atendimento finalizado</string>
     <string name="rescuer_waiting">Aguardando socorrista</string>
     <string name="rescuer_accepted">Socorrista aceitou</string>
-    <string name="rescuer_declined">Socorrista recusou</string>
     <string name="btnViewImg">Visualizar Imagem</string>
     <string name="title_activity_logged">LoggedActivity</string>
     <string name="btnDecline">Recusar</string>
@@ -158,6 +157,8 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>
