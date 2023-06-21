@@ -4,14 +4,14 @@
   
    > 4Teeth é um projeto elaborado pelo time no curso de Engenharia de Software, da Politécnica da PUC Campinas. 
    
-   <a href="https://www.linkedin.com/in/loren-tavolaro-9bb207234/" target="_blank"><img align="left" src="https://skillicons.dev/icons?i=flutter"></a>
+   <a target="_blank"><img align="left" src="https://skillicons.dev/icons?i=flutter"></a>
        
   ## 
   
    ### Módulo Chamador:
    Dedicado aos responsáveis, pais ou até mesmo uma pessoa no papel de socorrista que precise chamar emergencialmente um dentista para socorrer uma criança que sofreu um acidente odontológico. 
 
-  <a href="https://www.linkedin.com/in/loren-tavolaro-9bb207234/" target="_blank"><img align="left" src="https://skillicons.dev/icons?i=kotlin"></a>
+  <a target="_blank"><img align="left" src="https://skillicons.dev/icons?i=kotlin"></a>
        
   ##
  
